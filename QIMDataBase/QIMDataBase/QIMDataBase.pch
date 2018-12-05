@@ -1,0 +1,23 @@
+//
+//  QIMDataBase.pch
+//  QIMDataBase
+//
+//  Created by 李露 on 2018/6/26.
+//  Copyright © 2018年 QIM. All rights reserved.
+//
+
+#ifndef QIMDataBase_pch
+#define QIMDataBase_pch
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+#ifdef __OBJC__
+// Include any system framework and library headers here that should be included in all compilation units.
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#endif
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* QIMDataBase_pch */

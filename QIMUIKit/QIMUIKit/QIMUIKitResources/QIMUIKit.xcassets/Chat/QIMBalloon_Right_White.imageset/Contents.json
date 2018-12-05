@@ -1,0 +1,32 @@
+{
+  "images" : [
+    {
+      "resizing" : {
+        "mode" : "3-part-horizontal",
+        "center" : {
+          "mode" : "tile",
+          "width" : 21
+        },
+        "cap-insets" : {
+          "right" : 0,
+          "left" : 469
+        }
+      },
+      "idiom" : "universal",
+      "filename" : "QIMBalloon_Right_White.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

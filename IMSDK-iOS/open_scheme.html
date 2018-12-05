@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+	<script type="text/javascript">
+        function loadURL(url) {
+	        var iFrame;
+	        iFrame = document.createElement("iframe");
+	        iFrame.setAttribute("src", url);
+	        iFrame.setAttribute("style", "display:none;");
+	        iFrame.setAttribute("height", "0px");
+	        iFrame.setAttribute("width", "0px");
+	        iFrame.setAttribute("frameborder", "0");
+	        document.body.appendChild(iFrame);
+	        iFrame.parentNode.removeChild(iFrame);
+	        iFrame = null;
+	    }
+    
+        //打开群会话
+        function openGroupChat() {
+            loadURL("qtalkaphone://qunarchat/openGroupChat?jid=dba632082f6b4c7f89159c47537df561@conference.apple.ejabhost1");
+        }
+        //打开单人会话
+        function openSingleChat() {
+            loadURL("qtalkaphone://qunarchat/openSingleChat?jid=licas.li@ejabhost1&realJid=licas.li@ejabhost1");
+        }
+    
+        //打开系统聊天
+        function openHeadLine() {
+            loadURL("qtalkaphone://qunarchat/headLine?jid=SystemMessage&realJid=SystemMessage");
+        }
+    
+        //打开群会话详情
+        function openGroupChatInfo() {
+            loadURL("qtalkaphone://qunarchat/openGroupChatInfo?groupId=dba632082f6b4c7f89159c47537df561@conference.apple.ejabhost1");
+        }
+    
+        //打开单人会话详情
+        function openSingleChatInfo() {
+            loadURL("qtalkaphone://qunarchat/openSingleChatInfo?userId=licas.li@ejabhost1&realJid=licas.li@ejabhost1");
+        }
+    
+        //打开单人名片
+        function openUserCard() {
+            loadURL("qtalkaphone://qunarchat/openUserCard?jid=licas.li@ejabhost1");
+        }
+        
+        //我的红包
+        function openRedPack() {
+            loadURL("qtalkaphone://qunarchat/hongbao");
+        }
+    
+        //我的账户余额
+        function openHongbaoBalance() {
+            loadURL("qtalkaphone://qunarchat/hongbao_balance");
+        }
+    
+        //个人账户信息
+        function openAccount_info() {
+            loadURL("qtalkaphone://qunarchat/account_info");
+        }
+        //打开未读消息页面
+        function openUnreadList() {
+            loadURL("qtalkaphone://qunarchat/unreadList");
+        }
+        //我的公众号
+        function openPublicNumber() {
+            loadURL("qtalkaphone://qunarchat/publicNumber");
+        }
+        //组织架构
+        function openOrganizational() {
+            loadURL("qtalkaphone://qunarchat/openOrganizational");
+        }
+        //我的文件
+        function openMyFile() {
+            loadURL("qtalkaphone://qunarchat/myfile");
+        }
+        //创建群组
+        function createGroup() {
+            loadURL("qtalkaphone://rnservice?module=GroupCard&Screen=GroupMemberAdd");
+        }
+        //我的群组
+        function openGroupList() {
+            loadURL("qtalkaphone://rnservice?module=Contacts&Screen=GroupList");
+        }
+        //扫一扫
+		function openQRcode() {
+            loadURL("qtalkaphone://qrcode");
+        }
+        //退出登录
+        function quit() {
+            loadURL("qtalkaphone://logout");
+        }
+        //切换账号
+        function switchAccount() {
+            loadURL("qtalkaphone://accountSwitch");
+        }
+	</script>
+
+	<title>UIWebView拦截URL</title>
+</head>
+<body>
+    <h1>iOS Schema跳转demo</h1>
+    
+    <input type="button" name="打开群会话" value="打开群会话" onclick="openGroupChat()"/>
+    <input type="button" name="打开单人会话" value="打开单人会话" onclick="openSingleChat()"/>
+    <input type="button" name="打开系统消息" value="打开系统消息" onclick="openHeadLine()"/>
+    <input type="button" name="打开群会话详情" value="打开群会话详情" onclick="openGroupChatInfo()"/>
+    <input type="button" name="打开单人会话详情" value="打开单人会话详情" onclick="openSingleChatInfo()"/>
+    <input type="button" name="打开单人名片" value="打开单人名片" onclick="openUserCard()"/>
+    <input type="button" name="我的红包" value="我的红包" onclick="openRedPack()"/>
+    <input type="button" name="我的账户余额" value="我的账户余额" onclick="openHongbaoBalance()"/>
+    <input type="button" name="个人账户信息" value="个人账户信息" onclick="openAccount_info()"/>
+    <input type="button" name="打开未读消息页面" value="打开未读消息页面" onclick="openUnreadList()"/>
+    <input type="button" name="我的公众号" value="我的公众号" onclick="openPublicNumber()"/>
+    <input type="button" name="组织架构" value="组织架构" onclick="openOrganizational()"/>
+    <input type="button" name="我的文件" value="我的文件" onclick="openMyFile()"/>
+    <input type="button" name="创建群组" value="创建群组" onclick="createGroup()"/>
+    <input type="button" name="我的群组" value="我的群组" onclick="openGroupList()"/>
+    <input type="button" name="扫一扫" value="扫一扫" onclick="openQRcode()"/>
+    <input type="button" name="退出登录" value="退出登录" onclick="quit()"/>
+    <input type="button" name="切换账号" value="切换账号" onclick="switchAccount()"/>
+    
+</body>
+</html>

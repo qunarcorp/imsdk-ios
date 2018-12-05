@@ -1,0 +1,631 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C794BF921B173F90063BA11 /* open_scheme.html in Resources */ = {isa = PBXBuildFile; fileRef = 2C794BF821B173F90063BA11 /* open_scheme.html */; };
+		2CC52E1721B027DC0009EAB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC52E1621B027DC0009EAB5 /* AppDelegate.m */; };
+		2CC52E1A21B027DC0009EAB5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC52E1921B027DC0009EAB5 /* ViewController.m */; };
+		2CC52E1D21B027DC0009EAB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC52E1B21B027DC0009EAB5 /* Main.storyboard */; };
+		2CC52E1F21B027DE0009EAB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC52E1E21B027DE0009EAB5 /* Assets.xcassets */; };
+		2CC52E2221B027DE0009EAB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC52E2021B027DE0009EAB5 /* LaunchScreen.storyboard */; };
+		2CC52E2521B027DE0009EAB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC52E2421B027DE0009EAB5 /* main.m */; };
+		BC9908A376B6B28934DA4BC2 /* libPods-IMSDK-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5739EC91D4FD5A403CFE4C /* libPods-IMSDK-iOS.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C794BF821B173F90063BA11 /* open_scheme.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = open_scheme.html; sourceTree = "<group>"; };
+		2CC52E1221B027DC0009EAB5 /* IMSDK-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IMSDK-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CC52E1521B027DC0009EAB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2CC52E1621B027DC0009EAB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2CC52E1821B027DC0009EAB5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2CC52E1921B027DC0009EAB5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2CC52E1C21B027DC0009EAB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2CC52E1E21B027DE0009EAB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2CC52E2121B027DE0009EAB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2CC52E2321B027DE0009EAB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CC52E2421B027DE0009EAB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6BFF7E29ACF67F0EDFD9CEAE /* Pods-IMSDK-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMSDK-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IMSDK-iOS/Pods-IMSDK-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		9A830545AC1BCEB56DED8FEE /* Pods-IMSDK-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMSDK-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-IMSDK-iOS/Pods-IMSDK-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		CD5739EC91D4FD5A403CFE4C /* libPods-IMSDK-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IMSDK-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2CC52E0F21B027DC0009EAB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC9908A376B6B28934DA4BC2 /* libPods-IMSDK-iOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		062F977CF210DA8C15089C39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD5739EC91D4FD5A403CFE4C /* libPods-IMSDK-iOS.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2CC52E0921B027DC0009EAB5 = {
+			isa = PBXGroup;
+			children = (
+				2CC52E1421B027DC0009EAB5 /* IMSDK-iOS */,
+				2CC52E1321B027DC0009EAB5 /* Products */,
+				D2BCDABEE36D10B63C2FD6F0 /* Pods */,
+				062F977CF210DA8C15089C39 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2CC52E1321B027DC0009EAB5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CC52E1221B027DC0009EAB5 /* IMSDK-iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2CC52E1421B027DC0009EAB5 /* IMSDK-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2C794BF821B173F90063BA11 /* open_scheme.html */,
+				2CC52E1521B027DC0009EAB5 /* AppDelegate.h */,
+				2CC52E1621B027DC0009EAB5 /* AppDelegate.m */,
+				2CC52E1821B027DC0009EAB5 /* ViewController.h */,
+				2CC52E1921B027DC0009EAB5 /* ViewController.m */,
+				2CC52E1B21B027DC0009EAB5 /* Main.storyboard */,
+				2CC52E1E21B027DE0009EAB5 /* Assets.xcassets */,
+				2CC52E2021B027DE0009EAB5 /* LaunchScreen.storyboard */,
+				2CC52E2321B027DE0009EAB5 /* Info.plist */,
+				2CC52E2421B027DE0009EAB5 /* main.m */,
+			);
+			path = "IMSDK-iOS";
+			sourceTree = "<group>";
+		};
+		D2BCDABEE36D10B63C2FD6F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6BFF7E29ACF67F0EDFD9CEAE /* Pods-IMSDK-iOS.debug.xcconfig */,
+				9A830545AC1BCEB56DED8FEE /* Pods-IMSDK-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2CC52E1121B027DC0009EAB5 /* IMSDK-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CC52E2821B027DE0009EAB5 /* Build configuration list for PBXNativeTarget "IMSDK-iOS" */;
+			buildPhases = (
+				85837ABA31E07E39268060DF /* [CP] Check Pods Manifest.lock */,
+				2CC52E0E21B027DC0009EAB5 /* Sources */,
+				2CC52E0F21B027DC0009EAB5 /* Frameworks */,
+				2CC52E1021B027DC0009EAB5 /* Resources */,
+				35B71279B55488FAB2F12B0A /* [CP] Copy Pods Resources */,
+				7F99527C83A268ACC0A3615F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IMSDK-iOS";
+			productName = "IMSDK-iOS";
+			productReference = 2CC52E1221B027DC0009EAB5 /* IMSDK-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2CC52E0A21B027DC0009EAB5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = QIM;
+				TargetAttributes = {
+					2CC52E1121B027DC0009EAB5 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 2CC52E0D21B027DC0009EAB5 /* Build configuration list for PBXProject "IMSDK-iOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2CC52E0921B027DC0009EAB5;
+			productRefGroup = 2CC52E1321B027DC0009EAB5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2CC52E1121B027DC0009EAB5 /* IMSDK-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2CC52E1021B027DC0009EAB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CC52E2221B027DE0009EAB5 /* LaunchScreen.storyboard in Resources */,
+				2CC52E1F21B027DE0009EAB5 /* Assets.xcassets in Resources */,
+				2C794BF921B173F90063BA11 /* open_scheme.html in Resources */,
+				2CC52E1D21B027DC0009EAB5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35B71279B55488FAB2F12B0A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-IMSDK-iOS/Pods-IMSDK-iOS-resources.sh",
+				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/call_bg@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_audio_receive_normal@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_audio_receive_press@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_camera_white@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_invite_black@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_invite_blue@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_invite_gray@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_invite_white@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_loudspeaker_black@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_loudspeaker_blue@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_loudspeaker_gray@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_loudspeaker_white@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_mute_black@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_mute_blue@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_mute_gray@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_mute_white@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_reduce_black@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_reduce_blue@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_reduce_gray@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_reduce_white@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_video_black@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_video_blue@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_video_gray@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_avp_video_white@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_av_audio_micro_normal@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_av_audio_micro_press@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_av_audio_receive_normal@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_av_audio_receive_press@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_av_reply_message_normal@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_av_reply_message_press@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_call_reject_normal@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_call_reject_press@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/im_skin_icon_audiocall_bg.jpg",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/portrait.jpg",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/portrait@2x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/voip_camera_icons_130x130_@1x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/voip_camera_icons_66x66_@3x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/voip_convert_icons_130x130_@1x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/voip_convert_icons_66x66_@3x.png",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/sound/AVChat_busy.mp3",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/sound/AVChat_endCall.mp3",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/sound/AVChat_incoming.mp3",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/sound/AVChat_waitingForAnswer.mp3",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/sound/incomingRing.wav",
+				"${PODS_ROOT}/../QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/sound/Message_system.mp3",
+				"${PODS_CONFIGURATION_BUILD_DIR}/QIMKitVendor/QIMPinYin.bundle",
+				"${PODS_ROOT}/../QIMNoteUI/QIMNoteUI/CKEditor5.bundle",
+				"${PODS_ROOT}/../QIMNoteUI/QIMNoteUI/QTPassword/EditPasswordView.xib",
+				"${PODS_ROOT}/../QIMNoteUI/QIMNoteUI/QTalkTodoList/Model/FirstTime.plist",
+				"${PODS_ROOT}/../QIMNoteUI/QIMNoteUI/QTalkTodoList/Model/random.plist",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/片段/eula.html",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/片段/NetWorkSetting.html",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/片段/QIMMicroTourRoot.css",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/片段/QIMMicroTourRoot.html",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Audio/end.wav",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Audio/right_answer.mp3",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Audio/新咨询的播报.wav",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Certificate/certificate.der",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Certificate/public_key.der",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Fonts/DS-DIGI.TTF",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Fonts/DS-DIGIB.TTF",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Fonts/DS-DIGII.TTF",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Fonts/DS-DIGIT.TTF",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Fonts/iconfont.eot",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Fonts/iconfont.ttf",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Fonts/iconfont.woff",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Fonts/ops_opsapp.eot",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Fonts/ops_opsapp.svg",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Fonts/ops_opsapp.ttf",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Fonts/ops_opsapp.woff",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Fonts/QTalk-QChat.eot",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Fonts/QTalk-QChat.html",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Fonts/QTalk-QChat.svg",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Fonts/QTalk-QChat.ttf",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Fonts/QTalk-QChat.woff",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Fonts/方正兰亭黑简.TTF",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Stickers/EmojiOne.zip",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/Stickers/qunar_camel.zip",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/QIMUIKit.xcassets",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMUIKitResources/QIMI18N.bundle",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/General/Verders/QIMMWPhotoBrowser/Assets",
+				"${PODS_ROOT}/../QIMUIKit/QIMUIKit/QIMRNKit/QIMRNKit.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/QIMUIKit/QIMSourceCode.bundle",
+				"${PODS_ROOT}/../QIMUIVendorKit/QIMUIVendorKit/QIMArrowView/QIMArrowCellTableViewCell.xib",
+				"${PODS_ROOT}/../QIMUIVendorKit/QIMUIVendorKit/QIMDaePickerView/QIMWSDatePickerView.xib",
+				"${PODS_ROOT}/../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/call_bg@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_audio_receive_normal@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_audio_receive_press@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_camera_white@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_invite_black@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_invite_blue@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_invite_gray@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_invite_white@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_loudspeaker_black@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_loudspeaker_blue@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_loudspeaker_gray@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_loudspeaker_white@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_mute_black@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_mute_blue@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_mute_gray@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_mute_white@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_reduce_black@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_reduce_blue@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_reduce_gray@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_reduce_white@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_video_black@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_video_blue@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_video_gray@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_avp_video_white@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_av_audio_micro_normal@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_av_audio_micro_press@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_av_audio_receive_normal@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_av_audio_receive_press@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_av_reply_message_normal@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_av_reply_message_press@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_call_reject_normal@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_call_reject_press@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/im_skin_icon_audiocall_bg.jpg",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/portrait.jpg",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/portrait@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/voip_camera_icons_130x130_@1x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/voip_camera_icons_66x66_@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/voip_convert_icons_130x130_@1x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/voip_convert_icons_66x66_@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AVChat_busy.mp3",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AVChat_endCall.mp3",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AVChat_incoming.mp3",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AVChat_waitingForAnswer.mp3",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/incomingRing.wav",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Message_system.mp3",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QIMPinYin.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CKEditor5.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EditPasswordView.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirstTime.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/random.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/eula.html",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NetWorkSetting.html",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QIMMicroTourRoot.css",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QIMMicroTourRoot.html",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/end.wav",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/right_answer.mp3",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/新咨询的播报.wav",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/certificate.der",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/public_key.der",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DS-DIGI.TTF",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DS-DIGIB.TTF",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DS-DIGII.TTF",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DS-DIGIT.TTF",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/iconfont.eot",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/iconfont.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/iconfont.woff",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ops_opsapp.eot",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ops_opsapp.svg",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ops_opsapp.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ops_opsapp.woff",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QTalk-QChat.eot",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QTalk-QChat.html",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QTalk-QChat.svg",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QTalk-QChat.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QTalk-QChat.woff",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/方正兰亭黑简.TTF",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EmojiOne.zip",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/qunar_camel.zip",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Assets.car",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QIMI18N.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Assets",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QIMRNKit.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QIMSourceCode.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QIMArrowCellTableViewCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QIMWSDatePickerView.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IMSDK-iOS/Pods-IMSDK-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F99527C83A268ACC0A3615F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-IMSDK-iOS/Pods-IMSDK-iOS-frameworks.sh",
+				"${PODS_ROOT}/GoogleWebRTC/Frameworks/frameworks/WebRTC.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IMSDK-iOS/Pods-IMSDK-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85837ABA31E07E39268060DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IMSDK-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2CC52E0E21B027DC0009EAB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CC52E1A21B027DC0009EAB5 /* ViewController.m in Sources */,
+				2CC52E2521B027DE0009EAB5 /* main.m in Sources */,
+				2CC52E1721B027DC0009EAB5 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2CC52E1B21B027DC0009EAB5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CC52E1C21B027DC0009EAB5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2CC52E2021B027DE0009EAB5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CC52E2121B027DE0009EAB5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2CC52E2621B027DE0009EAB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2CC52E2721B027DE0009EAB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2CC52E2921B027DE0009EAB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BFF7E29ACF67F0EDFD9CEAE /* Pods-IMSDK-iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "IMSDK-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ProductName.IMSDK-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2CC52E2A21B027DE0009EAB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A830545AC1BCEB56DED8FEE /* Pods-IMSDK-iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "IMSDK-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ProductName.IMSDK-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2CC52E0D21B027DC0009EAB5 /* Build configuration list for PBXProject "IMSDK-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CC52E2621B027DE0009EAB5 /* Debug */,
+				2CC52E2721B027DE0009EAB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CC52E2821B027DE0009EAB5 /* Build configuration list for PBXNativeTarget "IMSDK-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CC52E2921B027DE0009EAB5 /* Debug */,
+				2CC52E2A21B027DE0009EAB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2CC52E0A21B027DC0009EAB5 /* Project object */;
+}

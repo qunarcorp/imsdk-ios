@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" charset="utf-8" content="width=width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" http-equiv="content-type">
+        <!--ckeditor5默认编辑器的高度-->
+        <script>
+            function setCKEditor5ReadOnly(isReadOnly) {
+                var editor = window.editor;
+                editor.isReadOnly = isReadOnly;
+                return '设置成功';
+            }
+        </script>
+    </head>
+    <body>
+        
+        <div id="editor">
+            [CONTENT]
+        </div>
+        <script src="jquery.min.js"></script>
+        <script src="QIMCKEditor5.config.js"></script>
+        <script src="QIMCKEditor5.js"></script>
+        <script>
+            function getData() {
+                var editor = window.editor;
+                if (editor) {
+                    //设置值 editor.setData(htmlStr);
+                    //获取值
+                    var htmlStr = editor.getData();
+                    return htmlStr;
+                } else{
+                    alert("error");
+                    return "";
+                }
+            }
+        
+            function getText() {
+                // body...
+                var editor = window.editor;
+                if (editor) {
+                    
+                    var htmlStr = editor.getData();
+                    htmlStr = htmlStr.replace(/<[^>]*>/ig,"");
+                    
+                    return htmlStr;
+                }else{
+                    alert("error");
+                    return "";
+                }
+            }
+            ClassicEditor.create( document.querySelector( '#editor' ), ckeditorConfig)
+            .then( editor => {
+                  window.editor = editor;
+                  editor.plugins.get('FileRepository').createUploadAdapter = (loader)=>{
+                      return new UploadAdapter(loader);
+                      };
+                  })
+            .catch( err => {
+                console.error( err.stack );
+            } );
+
+            class UploadAdapter {
+            constructor(loader) {
+                this.loader = loader;
+                this.imageUrl = "";
+            }
+            
+            loadURL(url) {
+                var iFrame;
+                iFrame = document.createElement("iframe");
+                iFrame.setAttribute("src", url);
+                iFrame.setAttribute("style", "display:none;");
+                iFrame.setAttribute("height", "0px");
+                iFrame.setAttribute("width", "0px");
+                iFrame.setAttribute("frameborder", "0");
+                document.body.appendChild(iFrame);
+                iFrame.parentNode.removeChild(iFrame);
+                iFrame = null;
+            }
+
+            uploadImage(fileBase64Str, fileName) {
+                this.loadURL("qtalkaphone://uploadNoteImage?fileName=" + fileName + "&fileStr=" + fileBase64Str);
+            }
+
+            uploadCallback(imageUrl) {
+                alert("Native传递过来参数" + imageUrl);
+                if (imageUrl !== '' && imageUrl != null) {
+                    this.imageUrl = imageUrl;
+                }
+            }
+
+            upload() {
+                this.uploadImage(this.loader._reader._reader.result, this.loader.file.name);
+                
+                return new Promise((resolve, reject) => {
+                    if (this.imageUrl !== '' && this.imageUrl != null) {
+                        console.log("this.imageUrl" + this.imageUrl);
+                        resolve({
+                            default: this.imageUrl
+                        });
+                    } else {
+                        reject("上传图片失败");
+                    }               
+                });
+            }
+            abort() {
+            }
+        }
+            </script>
+    </body>
+</html>

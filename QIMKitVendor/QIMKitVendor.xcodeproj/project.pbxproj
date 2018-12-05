@@ -1,0 +1,1400 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		2CCB1D5A2160B00100707A81 /* QIMKitVendorBuild */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2CCB1D5D2160B00100707A81 /* Build configuration list for PBXAggregateTarget "QIMKitVendorBuild" */;
+			buildPhases = (
+				2CCB1D5E2160B00600707A81 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = QIMKitVendorBuild;
+			productName = QIMKitVendorBuild;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		2C027DB02113362F00D111DC /* QIMHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C027DAE2113362F00D111DC /* QIMHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C027DB12113362F00D111DC /* QIMHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C027DAF2113362F00D111DC /* QIMHTTPRequest.m */; };
+		2C027DB82113368300D111DC /* QIMHTTPUploadComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C027DB62113368300D111DC /* QIMHTTPUploadComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C027DB92113368300D111DC /* QIMHTTPUploadComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C027DB72113368300D111DC /* QIMHTTPUploadComponent.m */; };
+		2C027DC02113394A00D111DC /* QIMHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C027DBE2113394A00D111DC /* QIMHTTPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C027DC12113394A00D111DC /* QIMHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C027DBF2113394A00D111DC /* QIMHTTPClient.m */; };
+		2C027DC421133CBA00D111DC /* QIMHTTPResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C027DC221133CBA00D111DC /* QIMHTTPResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C027DC521133CBA00D111DC /* QIMHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C027DC321133CBA00D111DC /* QIMHTTPResponse.m */; };
+		2C027DCB21133F1A00D111DC /* QIMNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C027DCA21133F1A00D111DC /* QIMNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C0E48A520908A1200E234E3 /* QIMKitVendor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C0E48A320908A1200E234E3 /* QIMKitVendor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C21D2EC20C0377D00DEC74C /* QIMUUIDTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D2DE20C0377D00DEC74C /* QIMUUIDTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C21D2ED20C0377E00DEC74C /* QIMUUIDTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D2DF20C0377D00DEC74C /* QIMUUIDTools.m */; };
+		2C21D2EE20C0377E00DEC74C /* QIMHttpRequestMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D2E120C0377D00DEC74C /* QIMHttpRequestMonitor.m */; };
+		2C21D2EF20C0377E00DEC74C /* QIMHttpRequestMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D2E220C0377D00DEC74C /* QIMHttpRequestMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C21D2F020C0377E00DEC74C /* QIMDESHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D2E420C0377D00DEC74C /* QIMDESHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C21D2F120C0377E00DEC74C /* QIMDESHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D2E520C0377D00DEC74C /* QIMDESHelper.m */; };
+		2C21D2F220C0377E00DEC74C /* QIMJSONSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D2E720C0377D00DEC74C /* QIMJSONSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C21D2F320C0377E00DEC74C /* QIMJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D2E820C0377D00DEC74C /* QIMJSONSerializer.m */; };
+		2C21D2F420C0377E00DEC74C /* QIMWatchDog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D2EA20C0377D00DEC74C /* QIMWatchDog.m */; };
+		2C21D2F520C0377E00DEC74C /* QIMWatchDog.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D2EB20C0377D00DEC74C /* QIMWatchDog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C21D5EE20C6670E00DEC74C /* QIMBMChineseSort.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D5EC20C6670B00DEC74C /* QIMBMChineseSort.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C21D5EF20C6670E00DEC74C /* QIMBMChineseSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D5ED20C6670E00DEC74C /* QIMBMChineseSort.m */; };
+		2C26886F214B950500EAC609 /* QIMGCDMulticastDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C26886D214B950400EAC609 /* QIMGCDMulticastDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C268870214B950500EAC609 /* QIMGCDMulticastDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C26886E214B950400EAC609 /* QIMGCDMulticastDelegate.m */; };
+		2C9E9432219AFFDC0047FC90 /* NSJSONSerialization+QIMRemovingNulls.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9E9430219AFFDC0047FC90 /* NSJSONSerialization+QIMRemovingNulls.m */; };
+		2C9E9433219AFFDC0047FC90 /* NSJSONSerialization+QIMRemovingNulls.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C9E9431219AFFDC0047FC90 /* NSJSONSerialization+QIMRemovingNulls.h */; };
+		2C9E9436219B00940047FC90 /* NSJSONSerialization+SpecialCharacters.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C9E9434219B00940047FC90 /* NSJSONSerialization+SpecialCharacters.h */; };
+		2C9E9437219B00940047FC90 /* NSJSONSerialization+SpecialCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9E9435219B00940047FC90 /* NSJSONSerialization+SpecialCharacters.m */; };
+		2CB8DD6B214A341200B57B8D /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB8DD33214A341200B57B8D /* libzbar.a */; };
+		2CB8DD6C214A341200B57B8D /* qrcode_scan_btn_scan_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8DD36214A341200B57B8D /* qrcode_scan_btn_scan_off@2x.png */; };
+		2CB8DD6D214A341200B57B8D /* qrcode_scan_btn_photo_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8DD37214A341200B57B8D /* qrcode_scan_btn_photo_down@2x.png */; };
+		2CB8DD6E214A341200B57B8D /* qrcode_scan_bg_Green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8DD38214A341200B57B8D /* qrcode_scan_bg_Green@2x.png */; };
+		2CB8DD6F214A341200B57B8D /* qrcode_scan_btn_myqrcode_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8DD39214A341200B57B8D /* qrcode_scan_btn_myqrcode_nor@2x.png */; };
+		2CB8DD70214A341200B57B8D /* qrcode_scan_btn_photo_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8DD3A214A341200B57B8D /* qrcode_scan_btn_photo_nor@2x.png */; };
+		2CB8DD71214A341200B57B8D /* qrcode_scan_btn_myqrcode_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8DD3B214A341200B57B8D /* qrcode_scan_btn_myqrcode_down@2x.png */; };
+		2CB8DD72214A341200B57B8D /* qrcode_scan_btn_flash_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8DD3C214A341200B57B8D /* qrcode_scan_btn_flash_down@2x.png */; };
+		2CB8DD73214A341200B57B8D /* qrcode_scan_btn_flash_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8DD3D214A341200B57B8D /* qrcode_scan_btn_flash_nor@2x.png */; };
+		2CB8DD74214A341200B57B8D /* qrcode_scan_titlebar_back_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8DD3E214A341200B57B8D /* qrcode_scan_titlebar_back_nor@2x.png */; };
+		2CB8DD75214A341200B57B8D /* qrcode_scan_bg_Green_iphone5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8DD3F214A341200B57B8D /* qrcode_scan_bg_Green_iphone5@2x.png */; };
+		2CB8DD76214A341200B57B8D /* qrcode_scan_titlebar_back_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8DD40214A341200B57B8D /* qrcode_scan_titlebar_back_pressed@2x.png */; };
+		2CB8DD77214A341200B57B8D /* qrcode_scan_light_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8DD41214A341200B57B8D /* qrcode_scan_light_green@2x.png */; };
+		2CB8DD78214A341200B57B8D /* qrcode_scan_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB8DD42214A341200B57B8D /* qrcode_scan_bar@2x.png */; };
+		2CB8DD79214A341200B57B8D /* ZBarCaptureReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD45214A341200B57B8D /* ZBarCaptureReader.h */; };
+		2CB8DD7A214A341200B57B8D /* ZBarImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD46214A341200B57B8D /* ZBarImage.h */; };
+		2CB8DD7B214A341200B57B8D /* Processor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD48214A341200B57B8D /* Processor.h */; };
+		2CB8DD7C214A341200B57B8D /* Symbol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD49214A341200B57B8D /* Symbol.h */; };
+		2CB8DD7D214A341200B57B8D /* Decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD4A214A341200B57B8D /* Decoder.h */; };
+		2CB8DD7E214A341200B57B8D /* Window.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD4B214A341200B57B8D /* Window.h */; };
+		2CB8DD7F214A341200B57B8D /* ImageScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD4C214A341200B57B8D /* ImageScanner.h */; };
+		2CB8DD80214A341200B57B8D /* Scanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD4D214A341200B57B8D /* Scanner.h */; };
+		2CB8DD81214A341200B57B8D /* Video.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD4E214A341200B57B8D /* Video.h */; };
+		2CB8DD82214A341200B57B8D /* Exception.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD4F214A341200B57B8D /* Exception.h */; };
+		2CB8DD83214A341200B57B8D /* Image.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD50214A341200B57B8D /* Image.h */; };
+		2CB8DD84214A341200B57B8D /* ZBarReaderController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD51214A341200B57B8D /* ZBarReaderController.h */; };
+		2CB8DD85214A341200B57B8D /* ZBarReaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD52214A341200B57B8D /* ZBarReaderView.h */; };
+		2CB8DD86214A341200B57B8D /* ZBarHelpController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD53214A341200B57B8D /* ZBarHelpController.h */; };
+		2CB8DD87214A341200B57B8D /* zbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD54214A341200B57B8D /* zbar.h */; };
+		2CB8DD88214A341200B57B8D /* ZBarCameraSimulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD55214A341200B57B8D /* ZBarCameraSimulator.h */; };
+		2CB8DD89214A341200B57B8D /* ZBarSymbol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD56214A341200B57B8D /* ZBarSymbol.h */; };
+		2CB8DD8A214A341200B57B8D /* ZBarImageScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD57214A341200B57B8D /* ZBarImageScanner.h */; };
+		2CB8DD8B214A341200B57B8D /* ZBarSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD58214A341200B57B8D /* ZBarSDK.h */; };
+		2CB8DD8C214A341200B57B8D /* ZBarReaderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD59214A341200B57B8D /* ZBarReaderViewController.h */; };
+		2CB8DD8D214A341200B57B8D /* mask.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD5B214A341200B57B8D /* mask.h */; };
+		2CB8DD8E214A341200B57B8D /* qrinput.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD5C214A341200B57B8D /* qrinput.h */; };
+		2CB8DD8F214A341200B57B8D /* bitstream.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CB8DD5D214A341200B57B8D /* bitstream.c */; };
+		2CB8DD90214A341200B57B8D /* qrencode.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CB8DD5E214A341200B57B8D /* qrencode.c */; };
+		2CB8DD91214A341200B57B8D /* qrspec.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD5F214A341200B57B8D /* qrspec.h */; };
+		2CB8DD92214A341200B57B8D /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CB8DD60214A341200B57B8D /* split.c */; };
+		2CB8DD93214A341200B57B8D /* rscode.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD61214A341200B57B8D /* rscode.h */; };
+		2CB8DD94214A341200B57B8D /* QRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB8DD62214A341200B57B8D /* QRCodeGenerator.m */; };
+		2CB8DD95214A341200B57B8D /* qrinput.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CB8DD63214A341200B57B8D /* qrinput.c */; };
+		2CB8DD96214A341200B57B8D /* bitstream.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD64214A341200B57B8D /* bitstream.h */; };
+		2CB8DD97214A341200B57B8D /* mask.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CB8DD65214A341200B57B8D /* mask.c */; };
+		2CB8DD98214A341200B57B8D /* qrspec.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CB8DD66214A341200B57B8D /* qrspec.c */; };
+		2CB8DD99214A341200B57B8D /* qrencode.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD67214A341200B57B8D /* qrencode.h */; };
+		2CB8DD9A214A341200B57B8D /* QRCodeGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD68214A341200B57B8D /* QRCodeGenerator.h */; };
+		2CB8DD9B214A341200B57B8D /* split.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB8DD69214A341200B57B8D /* split.h */; };
+		2CB8DD9C214A341200B57B8D /* rscode.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CB8DD6A214A341200B57B8D /* rscode.c */; };
+		2CC52E7C21B0E80E0009EAB5 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC52E2D21B0E80D0009EAB5 /* libcrypto.a */; };
+		2CC52E7D21B0E80E0009EAB5 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC52E2E21B0E80D0009EAB5 /* libssl.a */; };
+		2CC52E7E21B0E80E0009EAB5 /* pem2.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E3121B0E80D0009EAB5 /* pem2.h */; };
+		2CC52E7F21B0E80E0009EAB5 /* pem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E3221B0E80D0009EAB5 /* pem.h */; };
+		2CC52E8021B0E80E0009EAB5 /* ssl3.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E3321B0E80D0009EAB5 /* ssl3.h */; };
+		2CC52E8121B0E80E0009EAB5 /* ossl_typ.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E3421B0E80D0009EAB5 /* ossl_typ.h */; };
+		2CC52E8221B0E80E0009EAB5 /* dtls1.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E3521B0E80D0009EAB5 /* dtls1.h */; };
+		2CC52E8321B0E80E0009EAB5 /* err.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E3621B0E80D0009EAB5 /* err.h */; };
+		2CC52E8421B0E80E0009EAB5 /* bn.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E3721B0E80D0009EAB5 /* bn.h */; };
+		2CC52E8521B0E80E0009EAB5 /* blowfish.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E3821B0E80D0009EAB5 /* blowfish.h */; };
+		2CC52E8621B0E80E0009EAB5 /* cms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E3921B0E80D0009EAB5 /* cms.h */; };
+		2CC52E8721B0E80E0009EAB5 /* engine.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E3A21B0E80D0009EAB5 /* engine.h */; };
+		2CC52E8821B0E80E0009EAB5 /* conf_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E3B21B0E80D0009EAB5 /* conf_api.h */; };
+		2CC52E8921B0E80E0009EAB5 /* x509.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E3C21B0E80D0009EAB5 /* x509.h */; };
+		2CC52E8A21B0E80E0009EAB5 /* asn1_mac.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E3D21B0E80D0009EAB5 /* asn1_mac.h */; };
+		2CC52E8B21B0E80E0009EAB5 /* ui.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E3E21B0E80D0009EAB5 /* ui.h */; };
+		2CC52E8C21B0E80E0009EAB5 /* kssl.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E3F21B0E80D0009EAB5 /* kssl.h */; };
+		2CC52E8D21B0E80E0009EAB5 /* sha.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E4021B0E80D0009EAB5 /* sha.h */; };
+		2CC52E8E21B0E80E0009EAB5 /* symhacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E4121B0E80D0009EAB5 /* symhacks.h */; };
+		2CC52E8F21B0E80E0009EAB5 /* asn1.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E4221B0E80D0009EAB5 /* asn1.h */; };
+		2CC52E9021B0E80E0009EAB5 /* opensslconf.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E4321B0E80D0009EAB5 /* opensslconf.h */; };
+		2CC52E9121B0E80E0009EAB5 /* bio.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E4421B0E80D0009EAB5 /* bio.h */; };
+		2CC52E9221B0E80E0009EAB5 /* rc2.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E4521B0E80D0009EAB5 /* rc2.h */; };
+		2CC52E9321B0E80E0009EAB5 /* dh.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E4621B0E80D0009EAB5 /* dh.h */; };
+		2CC52E9421B0E80E0009EAB5 /* ui_compat.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E4721B0E80D0009EAB5 /* ui_compat.h */; };
+		2CC52E9521B0E80E0009EAB5 /* x509v3.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E4821B0E80D0009EAB5 /* x509v3.h */; };
+		2CC52E9621B0E80E0009EAB5 /* ssl23.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E4921B0E80D0009EAB5 /* ssl23.h */; };
+		2CC52E9721B0E80E0009EAB5 /* conf.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E4A21B0E80D0009EAB5 /* conf.h */; };
+		2CC52E9821B0E80E0009EAB5 /* md5.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E4B21B0E80D0009EAB5 /* md5.h */; };
+		2CC52E9921B0E80E0009EAB5 /* x509_vfy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E4C21B0E80D0009EAB5 /* x509_vfy.h */; };
+		2CC52E9A21B0E80E0009EAB5 /* txt_db.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E4D21B0E80D0009EAB5 /* txt_db.h */; };
+		2CC52E9B21B0E80E0009EAB5 /* safestack.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E4E21B0E80D0009EAB5 /* safestack.h */; };
+		2CC52E9C21B0E80E0009EAB5 /* ecdsa.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E4F21B0E80D0009EAB5 /* ecdsa.h */; };
+		2CC52E9D21B0E80E0009EAB5 /* objects.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E5021B0E80D0009EAB5 /* objects.h */; };
+		2CC52E9E21B0E80E0009EAB5 /* pkcs12.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E5121B0E80D0009EAB5 /* pkcs12.h */; };
+		2CC52E9F21B0E80E0009EAB5 /* crypto.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E5221B0E80D0009EAB5 /* crypto.h */; };
+		2CC52EA021B0E80E0009EAB5 /* opensslv.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E5321B0E80D0009EAB5 /* opensslv.h */; };
+		2CC52EA121B0E80E0009EAB5 /* pkcs7.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E5421B0E80D0009EAB5 /* pkcs7.h */; };
+		2CC52EA221B0E80E0009EAB5 /* obj_mac.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E5521B0E80D0009EAB5 /* obj_mac.h */; };
+		2CC52EA321B0E80E0009EAB5 /* buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E5621B0E80D0009EAB5 /* buffer.h */; };
+		2CC52EA421B0E80E0009EAB5 /* ssl.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E5721B0E80D0009EAB5 /* ssl.h */; };
+		2CC52EA521B0E80E0009EAB5 /* srp.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E5821B0E80D0009EAB5 /* srp.h */; };
+		2CC52EA621B0E80E0009EAB5 /* camellia.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E5921B0E80D0009EAB5 /* camellia.h */; };
+		2CC52EA721B0E80E0009EAB5 /* evp.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E5A21B0E80D0009EAB5 /* evp.h */; };
+		2CC52EA821B0E80E0009EAB5 /* e_os2.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E5B21B0E80D0009EAB5 /* e_os2.h */; };
+		2CC52EA921B0E80E0009EAB5 /* md4.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E5C21B0E80D0009EAB5 /* md4.h */; };
+		2CC52EAA21B0E80E0009EAB5 /* hmac.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E5D21B0E80D0009EAB5 /* hmac.h */; };
+		2CC52EAB21B0E80E0009EAB5 /* aes.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E5E21B0E80D0009EAB5 /* aes.h */; };
+		2CC52EAC21B0E80E0009EAB5 /* comp.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E5F21B0E80D0009EAB5 /* comp.h */; };
+		2CC52EAD21B0E80E0009EAB5 /* cast.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E6021B0E80D0009EAB5 /* cast.h */; };
+		2CC52EAE21B0E80E0009EAB5 /* rc4.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E6121B0E80D0009EAB5 /* rc4.h */; };
+		2CC52EAF21B0E80E0009EAB5 /* stack.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E6221B0E80D0009EAB5 /* stack.h */; };
+		2CC52EB021B0E80E0009EAB5 /* des.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E6321B0E80D0009EAB5 /* des.h */; };
+		2CC52EB121B0E80E0009EAB5 /* ocsp.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E6421B0E80D0009EAB5 /* ocsp.h */; };
+		2CC52EB221B0E80E0009EAB5 /* ec.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E6521B0E80D0009EAB5 /* ec.h */; };
+		2CC52EB321B0E80E0009EAB5 /* ecdh.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E6621B0E80D0009EAB5 /* ecdh.h */; };
+		2CC52EB421B0E80E0009EAB5 /* rand.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E6721B0E80D0009EAB5 /* rand.h */; };
+		2CC52EB521B0E80E0009EAB5 /* ts.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E6821B0E80D0009EAB5 /* ts.h */; };
+		2CC52EB621B0E80E0009EAB5 /* pqueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E6921B0E80D0009EAB5 /* pqueue.h */; };
+		2CC52EB721B0E80E0009EAB5 /* dso.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E6A21B0E80D0009EAB5 /* dso.h */; };
+		2CC52EB821B0E80E0009EAB5 /* seed.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E6B21B0E80D0009EAB5 /* seed.h */; };
+		2CC52EB921B0E80E0009EAB5 /* modes.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E6C21B0E80D0009EAB5 /* modes.h */; };
+		2CC52EBA21B0E80E0009EAB5 /* ssl2.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E6D21B0E80D0009EAB5 /* ssl2.h */; };
+		2CC52EBB21B0E80E0009EAB5 /* rsa.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E6E21B0E80D0009EAB5 /* rsa.h */; };
+		2CC52EBC21B0E80E0009EAB5 /* krb5_asn.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E6F21B0E80D0009EAB5 /* krb5_asn.h */; };
+		2CC52EBD21B0E80E0009EAB5 /* des_old.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E7021B0E80D0009EAB5 /* des_old.h */; };
+		2CC52EBE21B0E80E0009EAB5 /* ripemd.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E7121B0E80D0009EAB5 /* ripemd.h */; };
+		2CC52EBF21B0E80E0009EAB5 /* whrlpool.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E7221B0E80D0009EAB5 /* whrlpool.h */; };
+		2CC52EC021B0E80E0009EAB5 /* tls1.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E7321B0E80D0009EAB5 /* tls1.h */; };
+		2CC52EC121B0E80E0009EAB5 /* mdc2.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E7421B0E80D0009EAB5 /* mdc2.h */; };
+		2CC52EC221B0E80E0009EAB5 /* dsa.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E7521B0E80D0009EAB5 /* dsa.h */; };
+		2CC52EC321B0E80E0009EAB5 /* srtp.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E7621B0E80D0009EAB5 /* srtp.h */; };
+		2CC52EC421B0E80E0009EAB5 /* asn1t.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E7721B0E80D0009EAB5 /* asn1t.h */; };
+		2CC52EC521B0E80E0009EAB5 /* cmac.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E7821B0E80D0009EAB5 /* cmac.h */; };
+		2CC52EC621B0E80E0009EAB5 /* ebcdic.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E7921B0E80D0009EAB5 /* ebcdic.h */; };
+		2CC52EC721B0E80E0009EAB5 /* idea.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E7A21B0E80D0009EAB5 /* idea.h */; };
+		2CC52EC821B0E80E0009EAB5 /* lhash.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC52E7B21B0E80D0009EAB5 /* lhash.h */; };
+		2CE7B48720B6BD3B003FF88D /* QIMHanyuPinyinOutputFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE7B46520B6BD3B003FF88D /* QIMHanyuPinyinOutputFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CE7B48820B6BD3B003FF88D /* QIMChineseInclude.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7B46620B6BD3B003FF88D /* QIMChineseInclude.m */; };
+		2CE7B48920B6BD3B003FF88D /* QIMChineseToPinyinResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE7B46720B6BD3B003FF88D /* QIMChineseToPinyinResource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CE7B48A20B6BD3B003FF88D /* QIMPinyinHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE7B46820B6BD3B003FF88D /* QIMPinyinHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CE7B48B20B6BD3B003FF88D /* QIMPinyinFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7B46920B6BD3B003FF88D /* QIMPinyinFormatter.m */; };
+		2CE7B48C20B6BD3B003FF88D /* NSString+QIMPinYin4Cocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7B46A20B6BD3B003FF88D /* NSString+QIMPinYin4Cocoa.m */; };
+		2CE7B48D20B6BD3B003FF88D /* QIMPinYinForObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7B46B20B6BD3B003FF88D /* QIMPinYinForObjc.m */; };
+		2CE7B48E20B6BD3B003FF88D /* unicode_to_hanyu_qim_pinyin.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2CE7B46C20B6BD3B003FF88D /* unicode_to_hanyu_qim_pinyin.txt */; };
+		2CE7B48F20B6BD3B003FF88D /* QIMChineseInclude.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE7B46D20B6BD3B003FF88D /* QIMChineseInclude.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CE7B49020B6BD3B003FF88D /* QIMHanyuPinyinOutputFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7B46E20B6BD3B003FF88D /* QIMHanyuPinyinOutputFormat.m */; };
+		2CE7B49120B6BD3B003FF88D /* QIMPinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7B46F20B6BD3B003FF88D /* QIMPinyinHelper.m */; };
+		2CE7B49220B6BD3B003FF88D /* QIMChineseToPinyinResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7B47020B6BD3B003FF88D /* QIMChineseToPinyinResource.m */; };
+		2CE7B49320B6BD3B003FF88D /* QIMPinYinForObjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE7B47120B6BD3B003FF88D /* QIMPinYinForObjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CE7B49420B6BD3B003FF88D /* NSString+QIMPinYin4Cocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE7B47220B6BD3B003FF88D /* NSString+QIMPinYin4Cocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CE7B49520B6BD3B003FF88D /* QIMPinyinFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE7B47320B6BD3B003FF88D /* QIMPinyinFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CE7B49620B6BD3B003FF88D /* IMAmrFileCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7B47520B6BD3B003FF88D /* IMAmrFileCodec.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2CE7B49720B6BD3B003FF88D /* if_rom.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE7B47920B6BD3B003FF88D /* if_rom.h */; };
+		2CE7B49820B6BD3B003FF88D /* dec_if.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE7B47A20B6BD3B003FF88D /* dec_if.h */; };
+		2CE7B49920B6BD3B003FF88D /* interf_dec.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE7B47C20B6BD3B003FF88D /* interf_dec.h */; };
+		2CE7B49A20B6BD3B003FF88D /* interf_enc.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE7B47D20B6BD3B003FF88D /* interf_enc.h */; };
+		2CE7B49B20B6BD3B003FF88D /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE7B47F20B6BD3B003FF88D /* libopencore-amrwb.a */; };
+		2CE7B49C20B6BD3B003FF88D /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE7B48020B6BD3B003FF88D /* libopencore-amrnb.a */; };
+		2CE7B49D20B6BD3B003FF88D /* IMAmrFileCodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE7B48120B6BD3B003FF88D /* IMAmrFileCodec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CE7B49E20B6BD3B003FF88D /* QIMZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7B48320B6BD3B003FF88D /* QIMZipArchive.m */; };
+		2CE7B49F20B6BD3B003FF88D /* QIMZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE7B48420B6BD3B003FF88D /* QIMZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9922B4FFF72903ACBF7193A /* libPods-QIMKitVendor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A998C56C840F07E52F84B323 /* libPods-QIMKitVendor.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C027DAE2113362F00D111DC /* QIMHTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QIMHTTPRequest.h; sourceTree = "<group>"; };
+		2C027DAF2113362F00D111DC /* QIMHTTPRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QIMHTTPRequest.m; sourceTree = "<group>"; };
+		2C027DB62113368300D111DC /* QIMHTTPUploadComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QIMHTTPUploadComponent.h; sourceTree = "<group>"; };
+		2C027DB72113368300D111DC /* QIMHTTPUploadComponent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QIMHTTPUploadComponent.m; sourceTree = "<group>"; };
+		2C027DBE2113394A00D111DC /* QIMHTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QIMHTTPClient.h; sourceTree = "<group>"; };
+		2C027DBF2113394A00D111DC /* QIMHTTPClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QIMHTTPClient.m; sourceTree = "<group>"; };
+		2C027DC221133CBA00D111DC /* QIMHTTPResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QIMHTTPResponse.h; sourceTree = "<group>"; };
+		2C027DC321133CBA00D111DC /* QIMHTTPResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QIMHTTPResponse.m; sourceTree = "<group>"; };
+		2C027DCA21133F1A00D111DC /* QIMNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QIMNetwork.h; sourceTree = "<group>"; };
+		2C0E48A020908A1200E234E3 /* QIMKitVendor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QIMKitVendor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C0E48A320908A1200E234E3 /* QIMKitVendor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QIMKitVendor.h; sourceTree = "<group>"; };
+		2C0E48A420908A1200E234E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C21D2DE20C0377D00DEC74C /* QIMUUIDTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMUUIDTools.h; sourceTree = "<group>"; };
+		2C21D2DF20C0377D00DEC74C /* QIMUUIDTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMUUIDTools.m; sourceTree = "<group>"; };
+		2C21D2E120C0377D00DEC74C /* QIMHttpRequestMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMHttpRequestMonitor.m; sourceTree = "<group>"; };
+		2C21D2E220C0377D00DEC74C /* QIMHttpRequestMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMHttpRequestMonitor.h; sourceTree = "<group>"; };
+		2C21D2E420C0377D00DEC74C /* QIMDESHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMDESHelper.h; sourceTree = "<group>"; };
+		2C21D2E520C0377D00DEC74C /* QIMDESHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMDESHelper.m; sourceTree = "<group>"; };
+		2C21D2E720C0377D00DEC74C /* QIMJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMJSONSerializer.h; sourceTree = "<group>"; };
+		2C21D2E820C0377D00DEC74C /* QIMJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMJSONSerializer.m; sourceTree = "<group>"; };
+		2C21D2EA20C0377D00DEC74C /* QIMWatchDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMWatchDog.m; sourceTree = "<group>"; };
+		2C21D2EB20C0377D00DEC74C /* QIMWatchDog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMWatchDog.h; sourceTree = "<group>"; };
+		2C21D5EC20C6670B00DEC74C /* QIMBMChineseSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMBMChineseSort.h; sourceTree = "<group>"; };
+		2C21D5ED20C6670E00DEC74C /* QIMBMChineseSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMBMChineseSort.m; sourceTree = "<group>"; };
+		2C26886D214B950400EAC609 /* QIMGCDMulticastDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMGCDMulticastDelegate.h; sourceTree = "<group>"; };
+		2C26886E214B950400EAC609 /* QIMGCDMulticastDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMGCDMulticastDelegate.m; sourceTree = "<group>"; };
+		2C9E9430219AFFDC0047FC90 /* NSJSONSerialization+QIMRemovingNulls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSJSONSerialization+QIMRemovingNulls.m"; sourceTree = "<group>"; };
+		2C9E9431219AFFDC0047FC90 /* NSJSONSerialization+QIMRemovingNulls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSJSONSerialization+QIMRemovingNulls.h"; sourceTree = "<group>"; };
+		2C9E9434219B00940047FC90 /* NSJSONSerialization+SpecialCharacters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSJSONSerialization+SpecialCharacters.h"; sourceTree = "<group>"; };
+		2C9E9435219B00940047FC90 /* NSJSONSerialization+SpecialCharacters.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSJSONSerialization+SpecialCharacters.m"; sourceTree = "<group>"; };
+		2CB8DD33214A341200B57B8D /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
+		2CB8DD36214A341200B57B8D /* qrcode_scan_btn_scan_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qrcode_scan_btn_scan_off@2x.png"; sourceTree = "<group>"; };
+		2CB8DD37214A341200B57B8D /* qrcode_scan_btn_photo_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qrcode_scan_btn_photo_down@2x.png"; sourceTree = "<group>"; };
+		2CB8DD38214A341200B57B8D /* qrcode_scan_bg_Green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qrcode_scan_bg_Green@2x.png"; sourceTree = "<group>"; };
+		2CB8DD39214A341200B57B8D /* qrcode_scan_btn_myqrcode_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qrcode_scan_btn_myqrcode_nor@2x.png"; sourceTree = "<group>"; };
+		2CB8DD3A214A341200B57B8D /* qrcode_scan_btn_photo_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qrcode_scan_btn_photo_nor@2x.png"; sourceTree = "<group>"; };
+		2CB8DD3B214A341200B57B8D /* qrcode_scan_btn_myqrcode_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qrcode_scan_btn_myqrcode_down@2x.png"; sourceTree = "<group>"; };
+		2CB8DD3C214A341200B57B8D /* qrcode_scan_btn_flash_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qrcode_scan_btn_flash_down@2x.png"; sourceTree = "<group>"; };
+		2CB8DD3D214A341200B57B8D /* qrcode_scan_btn_flash_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qrcode_scan_btn_flash_nor@2x.png"; sourceTree = "<group>"; };
+		2CB8DD3E214A341200B57B8D /* qrcode_scan_titlebar_back_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qrcode_scan_titlebar_back_nor@2x.png"; sourceTree = "<group>"; };
+		2CB8DD3F214A341200B57B8D /* qrcode_scan_bg_Green_iphone5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qrcode_scan_bg_Green_iphone5@2x.png"; sourceTree = "<group>"; };
+		2CB8DD40214A341200B57B8D /* qrcode_scan_titlebar_back_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qrcode_scan_titlebar_back_pressed@2x.png"; sourceTree = "<group>"; };
+		2CB8DD41214A341200B57B8D /* qrcode_scan_light_green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qrcode_scan_light_green@2x.png"; sourceTree = "<group>"; };
+		2CB8DD42214A341200B57B8D /* qrcode_scan_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qrcode_scan_bar@2x.png"; sourceTree = "<group>"; };
+		2CB8DD45214A341200B57B8D /* ZBarCaptureReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarCaptureReader.h; sourceTree = "<group>"; };
+		2CB8DD46214A341200B57B8D /* ZBarImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarImage.h; sourceTree = "<group>"; };
+		2CB8DD48214A341200B57B8D /* Processor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processor.h; sourceTree = "<group>"; };
+		2CB8DD49214A341200B57B8D /* Symbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Symbol.h; sourceTree = "<group>"; };
+		2CB8DD4A214A341200B57B8D /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
+		2CB8DD4B214A341200B57B8D /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
+		2CB8DD4C214A341200B57B8D /* ImageScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScanner.h; sourceTree = "<group>"; };
+		2CB8DD4D214A341200B57B8D /* Scanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scanner.h; sourceTree = "<group>"; };
+		2CB8DD4E214A341200B57B8D /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
+		2CB8DD4F214A341200B57B8D /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
+		2CB8DD50214A341200B57B8D /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		2CB8DD51214A341200B57B8D /* ZBarReaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderController.h; sourceTree = "<group>"; };
+		2CB8DD52214A341200B57B8D /* ZBarReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderView.h; sourceTree = "<group>"; };
+		2CB8DD53214A341200B57B8D /* ZBarHelpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarHelpController.h; sourceTree = "<group>"; };
+		2CB8DD54214A341200B57B8D /* zbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zbar.h; sourceTree = "<group>"; };
+		2CB8DD55214A341200B57B8D /* ZBarCameraSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarCameraSimulator.h; sourceTree = "<group>"; };
+		2CB8DD56214A341200B57B8D /* ZBarSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarSymbol.h; sourceTree = "<group>"; };
+		2CB8DD57214A341200B57B8D /* ZBarImageScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarImageScanner.h; sourceTree = "<group>"; };
+		2CB8DD58214A341200B57B8D /* ZBarSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarSDK.h; sourceTree = "<group>"; };
+		2CB8DD59214A341200B57B8D /* ZBarReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderViewController.h; sourceTree = "<group>"; };
+		2CB8DD5B214A341200B57B8D /* mask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mask.h; sourceTree = "<group>"; };
+		2CB8DD5C214A341200B57B8D /* qrinput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrinput.h; sourceTree = "<group>"; };
+		2CB8DD5D214A341200B57B8D /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
+		2CB8DD5E214A341200B57B8D /* qrencode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrencode.c; sourceTree = "<group>"; };
+		2CB8DD5F214A341200B57B8D /* qrspec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrspec.h; sourceTree = "<group>"; };
+		2CB8DD60214A341200B57B8D /* split.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = split.c; sourceTree = "<group>"; };
+		2CB8DD61214A341200B57B8D /* rscode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rscode.h; sourceTree = "<group>"; };
+		2CB8DD62214A341200B57B8D /* QRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeGenerator.m; sourceTree = "<group>"; };
+		2CB8DD63214A341200B57B8D /* qrinput.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrinput.c; sourceTree = "<group>"; };
+		2CB8DD64214A341200B57B8D /* bitstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitstream.h; sourceTree = "<group>"; };
+		2CB8DD65214A341200B57B8D /* mask.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mask.c; sourceTree = "<group>"; };
+		2CB8DD66214A341200B57B8D /* qrspec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrspec.c; sourceTree = "<group>"; };
+		2CB8DD67214A341200B57B8D /* qrencode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrencode.h; sourceTree = "<group>"; };
+		2CB8DD68214A341200B57B8D /* QRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeGenerator.h; sourceTree = "<group>"; };
+		2CB8DD69214A341200B57B8D /* split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
+		2CB8DD6A214A341200B57B8D /* rscode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rscode.c; sourceTree = "<group>"; };
+		2CC52E2D21B0E80D0009EAB5 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		2CC52E2E21B0E80D0009EAB5 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
+		2CC52E3121B0E80D0009EAB5 /* pem2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pem2.h; sourceTree = "<group>"; };
+		2CC52E3221B0E80D0009EAB5 /* pem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pem.h; sourceTree = "<group>"; };
+		2CC52E3321B0E80D0009EAB5 /* ssl3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ssl3.h; sourceTree = "<group>"; };
+		2CC52E3421B0E80D0009EAB5 /* ossl_typ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ossl_typ.h; sourceTree = "<group>"; };
+		2CC52E3521B0E80D0009EAB5 /* dtls1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dtls1.h; sourceTree = "<group>"; };
+		2CC52E3621B0E80D0009EAB5 /* err.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = err.h; sourceTree = "<group>"; };
+		2CC52E3721B0E80D0009EAB5 /* bn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bn.h; sourceTree = "<group>"; };
+		2CC52E3821B0E80D0009EAB5 /* blowfish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blowfish.h; sourceTree = "<group>"; };
+		2CC52E3921B0E80D0009EAB5 /* cms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cms.h; sourceTree = "<group>"; };
+		2CC52E3A21B0E80D0009EAB5 /* engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = engine.h; sourceTree = "<group>"; };
+		2CC52E3B21B0E80D0009EAB5 /* conf_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = conf_api.h; sourceTree = "<group>"; };
+		2CC52E3C21B0E80D0009EAB5 /* x509.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509.h; sourceTree = "<group>"; };
+		2CC52E3D21B0E80D0009EAB5 /* asn1_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1_mac.h; sourceTree = "<group>"; };
+		2CC52E3E21B0E80D0009EAB5 /* ui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui.h; sourceTree = "<group>"; };
+		2CC52E3F21B0E80D0009EAB5 /* kssl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kssl.h; sourceTree = "<group>"; };
+		2CC52E4021B0E80D0009EAB5 /* sha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha.h; sourceTree = "<group>"; };
+		2CC52E4121B0E80D0009EAB5 /* symhacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = symhacks.h; sourceTree = "<group>"; };
+		2CC52E4221B0E80D0009EAB5 /* asn1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1.h; sourceTree = "<group>"; };
+		2CC52E4321B0E80D0009EAB5 /* opensslconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opensslconf.h; sourceTree = "<group>"; };
+		2CC52E4421B0E80D0009EAB5 /* bio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bio.h; sourceTree = "<group>"; };
+		2CC52E4521B0E80D0009EAB5 /* rc2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rc2.h; sourceTree = "<group>"; };
+		2CC52E4621B0E80D0009EAB5 /* dh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dh.h; sourceTree = "<group>"; };
+		2CC52E4721B0E80D0009EAB5 /* ui_compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_compat.h; sourceTree = "<group>"; };
+		2CC52E4821B0E80D0009EAB5 /* x509v3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
+		2CC52E4921B0E80D0009EAB5 /* ssl23.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ssl23.h; sourceTree = "<group>"; };
+		2CC52E4A21B0E80D0009EAB5 /* conf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = conf.h; sourceTree = "<group>"; };
+		2CC52E4B21B0E80D0009EAB5 /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
+		2CC52E4C21B0E80D0009EAB5 /* x509_vfy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509_vfy.h; sourceTree = "<group>"; };
+		2CC52E4D21B0E80D0009EAB5 /* txt_db.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = txt_db.h; sourceTree = "<group>"; };
+		2CC52E4E21B0E80D0009EAB5 /* safestack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = safestack.h; sourceTree = "<group>"; };
+		2CC52E4F21B0E80D0009EAB5 /* ecdsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecdsa.h; sourceTree = "<group>"; };
+		2CC52E5021B0E80D0009EAB5 /* objects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = objects.h; sourceTree = "<group>"; };
+		2CC52E5121B0E80D0009EAB5 /* pkcs12.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pkcs12.h; sourceTree = "<group>"; };
+		2CC52E5221B0E80D0009EAB5 /* crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypto.h; sourceTree = "<group>"; };
+		2CC52E5321B0E80D0009EAB5 /* opensslv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opensslv.h; sourceTree = "<group>"; };
+		2CC52E5421B0E80D0009EAB5 /* pkcs7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pkcs7.h; sourceTree = "<group>"; };
+		2CC52E5521B0E80D0009EAB5 /* obj_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = obj_mac.h; sourceTree = "<group>"; };
+		2CC52E5621B0E80D0009EAB5 /* buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffer.h; sourceTree = "<group>"; };
+		2CC52E5721B0E80D0009EAB5 /* ssl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ssl.h; sourceTree = "<group>"; };
+		2CC52E5821B0E80D0009EAB5 /* srp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = srp.h; sourceTree = "<group>"; };
+		2CC52E5921B0E80D0009EAB5 /* camellia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camellia.h; sourceTree = "<group>"; };
+		2CC52E5A21B0E80D0009EAB5 /* evp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = evp.h; sourceTree = "<group>"; };
+		2CC52E5B21B0E80D0009EAB5 /* e_os2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = e_os2.h; sourceTree = "<group>"; };
+		2CC52E5C21B0E80D0009EAB5 /* md4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md4.h; sourceTree = "<group>"; };
+		2CC52E5D21B0E80D0009EAB5 /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
+		2CC52E5E21B0E80D0009EAB5 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
+		2CC52E5F21B0E80D0009EAB5 /* comp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = comp.h; sourceTree = "<group>"; };
+		2CC52E6021B0E80D0009EAB5 /* cast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cast.h; sourceTree = "<group>"; };
+		2CC52E6121B0E80D0009EAB5 /* rc4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rc4.h; sourceTree = "<group>"; };
+		2CC52E6221B0E80D0009EAB5 /* stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
+		2CC52E6321B0E80D0009EAB5 /* des.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = des.h; sourceTree = "<group>"; };
+		2CC52E6421B0E80D0009EAB5 /* ocsp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ocsp.h; sourceTree = "<group>"; };
+		2CC52E6521B0E80D0009EAB5 /* ec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ec.h; sourceTree = "<group>"; };
+		2CC52E6621B0E80D0009EAB5 /* ecdh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecdh.h; sourceTree = "<group>"; };
+		2CC52E6721B0E80D0009EAB5 /* rand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rand.h; sourceTree = "<group>"; };
+		2CC52E6821B0E80D0009EAB5 /* ts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ts.h; sourceTree = "<group>"; };
+		2CC52E6921B0E80D0009EAB5 /* pqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pqueue.h; sourceTree = "<group>"; };
+		2CC52E6A21B0E80D0009EAB5 /* dso.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dso.h; sourceTree = "<group>"; };
+		2CC52E6B21B0E80D0009EAB5 /* seed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = seed.h; sourceTree = "<group>"; };
+		2CC52E6C21B0E80D0009EAB5 /* modes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = modes.h; sourceTree = "<group>"; };
+		2CC52E6D21B0E80D0009EAB5 /* ssl2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ssl2.h; sourceTree = "<group>"; };
+		2CC52E6E21B0E80D0009EAB5 /* rsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rsa.h; sourceTree = "<group>"; };
+		2CC52E6F21B0E80D0009EAB5 /* krb5_asn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = krb5_asn.h; sourceTree = "<group>"; };
+		2CC52E7021B0E80D0009EAB5 /* des_old.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = des_old.h; sourceTree = "<group>"; };
+		2CC52E7121B0E80D0009EAB5 /* ripemd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ripemd.h; sourceTree = "<group>"; };
+		2CC52E7221B0E80D0009EAB5 /* whrlpool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = whrlpool.h; sourceTree = "<group>"; };
+		2CC52E7321B0E80D0009EAB5 /* tls1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tls1.h; sourceTree = "<group>"; };
+		2CC52E7421B0E80D0009EAB5 /* mdc2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdc2.h; sourceTree = "<group>"; };
+		2CC52E7521B0E80D0009EAB5 /* dsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dsa.h; sourceTree = "<group>"; };
+		2CC52E7621B0E80D0009EAB5 /* srtp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = srtp.h; sourceTree = "<group>"; };
+		2CC52E7721B0E80D0009EAB5 /* asn1t.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1t.h; sourceTree = "<group>"; };
+		2CC52E7821B0E80D0009EAB5 /* cmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmac.h; sourceTree = "<group>"; };
+		2CC52E7921B0E80D0009EAB5 /* ebcdic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ebcdic.h; sourceTree = "<group>"; };
+		2CC52E7A21B0E80D0009EAB5 /* idea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = idea.h; sourceTree = "<group>"; };
+		2CC52E7B21B0E80D0009EAB5 /* lhash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lhash.h; sourceTree = "<group>"; };
+		2CE7B46520B6BD3B003FF88D /* QIMHanyuPinyinOutputFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMHanyuPinyinOutputFormat.h; sourceTree = "<group>"; };
+		2CE7B46620B6BD3B003FF88D /* QIMChineseInclude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMChineseInclude.m; sourceTree = "<group>"; };
+		2CE7B46720B6BD3B003FF88D /* QIMChineseToPinyinResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMChineseToPinyinResource.h; sourceTree = "<group>"; };
+		2CE7B46820B6BD3B003FF88D /* QIMPinyinHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMPinyinHelper.h; sourceTree = "<group>"; };
+		2CE7B46920B6BD3B003FF88D /* QIMPinyinFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMPinyinFormatter.m; sourceTree = "<group>"; };
+		2CE7B46A20B6BD3B003FF88D /* NSString+QIMPinYin4Cocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+QIMPinYin4Cocoa.m"; sourceTree = "<group>"; };
+		2CE7B46B20B6BD3B003FF88D /* QIMPinYinForObjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMPinYinForObjc.m; sourceTree = "<group>"; };
+		2CE7B46C20B6BD3B003FF88D /* unicode_to_hanyu_qim_pinyin.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = unicode_to_hanyu_qim_pinyin.txt; sourceTree = "<group>"; };
+		2CE7B46D20B6BD3B003FF88D /* QIMChineseInclude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMChineseInclude.h; sourceTree = "<group>"; };
+		2CE7B46E20B6BD3B003FF88D /* QIMHanyuPinyinOutputFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMHanyuPinyinOutputFormat.m; sourceTree = "<group>"; };
+		2CE7B46F20B6BD3B003FF88D /* QIMPinyinHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMPinyinHelper.m; sourceTree = "<group>"; };
+		2CE7B47020B6BD3B003FF88D /* QIMChineseToPinyinResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMChineseToPinyinResource.m; sourceTree = "<group>"; };
+		2CE7B47120B6BD3B003FF88D /* QIMPinYinForObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMPinYinForObjc.h; sourceTree = "<group>"; };
+		2CE7B47220B6BD3B003FF88D /* NSString+QIMPinYin4Cocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+QIMPinYin4Cocoa.h"; sourceTree = "<group>"; };
+		2CE7B47320B6BD3B003FF88D /* QIMPinyinFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMPinyinFormatter.h; sourceTree = "<group>"; };
+		2CE7B47520B6BD3B003FF88D /* IMAmrFileCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMAmrFileCodec.m; sourceTree = "<group>"; };
+		2CE7B47920B6BD3B003FF88D /* if_rom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = if_rom.h; sourceTree = "<group>"; };
+		2CE7B47A20B6BD3B003FF88D /* dec_if.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dec_if.h; sourceTree = "<group>"; };
+		2CE7B47C20B6BD3B003FF88D /* interf_dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_dec.h; sourceTree = "<group>"; };
+		2CE7B47D20B6BD3B003FF88D /* interf_enc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_enc.h; sourceTree = "<group>"; };
+		2CE7B47F20B6BD3B003FF88D /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
+		2CE7B48020B6BD3B003FF88D /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
+		2CE7B48120B6BD3B003FF88D /* IMAmrFileCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAmrFileCodec.h; sourceTree = "<group>"; };
+		2CE7B48320B6BD3B003FF88D /* QIMZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMZipArchive.m; sourceTree = "<group>"; };
+		2CE7B48420B6BD3B003FF88D /* QIMZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMZipArchive.h; sourceTree = "<group>"; };
+		9A10FCC32BDAEA91EBE0B3A2 /* Pods-QIMKitVendor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QIMKitVendor.release.xcconfig"; path = "Pods/Target Support Files/Pods-QIMKitVendor/Pods-QIMKitVendor.release.xcconfig"; sourceTree = "<group>"; };
+		A5A0BD8A77DAD62ED8B5BFEF /* Pods-QIMKitVendor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QIMKitVendor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QIMKitVendor/Pods-QIMKitVendor.debug.xcconfig"; sourceTree = "<group>"; };
+		A998C56C840F07E52F84B323 /* libPods-QIMKitVendor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QIMKitVendor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C0E489C20908A1200E234E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CE7B49B20B6BD3B003FF88D /* libopencore-amrwb.a in Frameworks */,
+				2CC52E7C21B0E80E0009EAB5 /* libcrypto.a in Frameworks */,
+				2CC52E7D21B0E80E0009EAB5 /* libssl.a in Frameworks */,
+				2CE7B49C20B6BD3B003FF88D /* libopencore-amrnb.a in Frameworks */,
+				2CB8DD6B214A341200B57B8D /* libzbar.a in Frameworks */,
+				B9922B4FFF72903ACBF7193A /* libPods-QIMKitVendor.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C0E489620908A1200E234E3 = {
+			isa = PBXGroup;
+			children = (
+				2C0E48A220908A1200E234E3 /* QIMKitVendor */,
+				2C0E48A120908A1200E234E3 /* Products */,
+				3343A807BC366D785C92F0D6 /* Pods */,
+				9C410DBC59AE78CA5D60CADF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2C0E48A120908A1200E234E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C0E48A020908A1200E234E3 /* QIMKitVendor.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C0E48A220908A1200E234E3 /* QIMKitVendor */ = {
+			isa = PBXGroup;
+			children = (
+				2C0E48A320908A1200E234E3 /* QIMKitVendor.h */,
+				2C0E48A420908A1200E234E3 /* Info.plist */,
+				2CC52E2B21B0E80D0009EAB5 /* QIMOpenSSL */,
+				2CE7B47420B6BD3B003FF88D /* Audio */,
+				2CE7B46120B6BD3B003FF88D /* GCD */,
+				2C21D2E320C0377D00DEC74C /* QIMDES */,
+				2C21D2E020C0377D00DEC74C /* QIMHTTP */,
+				2C21D2E620C0377D00DEC74C /* QIMJSON */,
+				2CE7B46420B6BD3B003FF88D /* QIMPinYin */,
+				2C21D2DD20C0377D00DEC74C /* QIMUUID */,
+				2C21D2E920C0377D00DEC74C /* QIMWatchDog */,
+				2CB8DD32214A341200B57B8D /* QIMZBarSDK */,
+				2CE7B48220B6BD3B003FF88D /* QIMZipArchive */,
+			);
+			path = QIMKitVendor;
+			sourceTree = "<group>";
+		};
+		2C21D2DD20C0377D00DEC74C /* QIMUUID */ = {
+			isa = PBXGroup;
+			children = (
+				2C21D2DE20C0377D00DEC74C /* QIMUUIDTools.h */,
+				2C21D2DF20C0377D00DEC74C /* QIMUUIDTools.m */,
+			);
+			path = QIMUUID;
+			sourceTree = "<group>";
+		};
+		2C21D2E020C0377D00DEC74C /* QIMHTTP */ = {
+			isa = PBXGroup;
+			children = (
+				2C027DBE2113394A00D111DC /* QIMHTTPClient.h */,
+				2C027DBF2113394A00D111DC /* QIMHTTPClient.m */,
+				2C027DAE2113362F00D111DC /* QIMHTTPRequest.h */,
+				2C027DAF2113362F00D111DC /* QIMHTTPRequest.m */,
+				2C21D2E220C0377D00DEC74C /* QIMHttpRequestMonitor.h */,
+				2C21D2E120C0377D00DEC74C /* QIMHttpRequestMonitor.m */,
+				2C027DC221133CBA00D111DC /* QIMHTTPResponse.h */,
+				2C027DC321133CBA00D111DC /* QIMHTTPResponse.m */,
+				2C027DB62113368300D111DC /* QIMHTTPUploadComponent.h */,
+				2C027DB72113368300D111DC /* QIMHTTPUploadComponent.m */,
+				2C027DCA21133F1A00D111DC /* QIMNetwork.h */,
+			);
+			path = QIMHTTP;
+			sourceTree = "<group>";
+		};
+		2C21D2E320C0377D00DEC74C /* QIMDES */ = {
+			isa = PBXGroup;
+			children = (
+				2C21D2E420C0377D00DEC74C /* QIMDESHelper.h */,
+				2C21D2E520C0377D00DEC74C /* QIMDESHelper.m */,
+			);
+			path = QIMDES;
+			sourceTree = "<group>";
+		};
+		2C21D2E620C0377D00DEC74C /* QIMJSON */ = {
+			isa = PBXGroup;
+			children = (
+				2C21D2E720C0377D00DEC74C /* QIMJSONSerializer.h */,
+				2C21D2E820C0377D00DEC74C /* QIMJSONSerializer.m */,
+				2C9E9431219AFFDC0047FC90 /* NSJSONSerialization+QIMRemovingNulls.h */,
+				2C9E9430219AFFDC0047FC90 /* NSJSONSerialization+QIMRemovingNulls.m */,
+				2C9E9434219B00940047FC90 /* NSJSONSerialization+SpecialCharacters.h */,
+				2C9E9435219B00940047FC90 /* NSJSONSerialization+SpecialCharacters.m */,
+			);
+			path = QIMJSON;
+			sourceTree = "<group>";
+		};
+		2C21D2E920C0377D00DEC74C /* QIMWatchDog */ = {
+			isa = PBXGroup;
+			children = (
+				2C21D2EB20C0377D00DEC74C /* QIMWatchDog.h */,
+				2C21D2EA20C0377D00DEC74C /* QIMWatchDog.m */,
+			);
+			path = QIMWatchDog;
+			sourceTree = "<group>";
+		};
+		2CB8DD32214A341200B57B8D /* QIMZBarSDK */ = {
+			isa = PBXGroup;
+			children = (
+				2CB8DD43214A341200B57B8D /* Headers */,
+				2CB8DD5A214A341200B57B8D /* libqrencode */,
+				2CB8DD33214A341200B57B8D /* libzbar.a */,
+				2CB8DD34214A341200B57B8D /* Resources */,
+			);
+			path = QIMZBarSDK;
+			sourceTree = "<group>";
+		};
+		2CB8DD34214A341200B57B8D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2CB8DD35214A341200B57B8D /* ZbarImage */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2CB8DD35214A341200B57B8D /* ZbarImage */ = {
+			isa = PBXGroup;
+			children = (
+				2CB8DD42214A341200B57B8D /* qrcode_scan_bar@2x.png */,
+				2CB8DD3F214A341200B57B8D /* qrcode_scan_bg_Green_iphone5@2x.png */,
+				2CB8DD38214A341200B57B8D /* qrcode_scan_bg_Green@2x.png */,
+				2CB8DD3C214A341200B57B8D /* qrcode_scan_btn_flash_down@2x.png */,
+				2CB8DD3D214A341200B57B8D /* qrcode_scan_btn_flash_nor@2x.png */,
+				2CB8DD3B214A341200B57B8D /* qrcode_scan_btn_myqrcode_down@2x.png */,
+				2CB8DD39214A341200B57B8D /* qrcode_scan_btn_myqrcode_nor@2x.png */,
+				2CB8DD37214A341200B57B8D /* qrcode_scan_btn_photo_down@2x.png */,
+				2CB8DD3A214A341200B57B8D /* qrcode_scan_btn_photo_nor@2x.png */,
+				2CB8DD36214A341200B57B8D /* qrcode_scan_btn_scan_off@2x.png */,
+				2CB8DD41214A341200B57B8D /* qrcode_scan_light_green@2x.png */,
+				2CB8DD3E214A341200B57B8D /* qrcode_scan_titlebar_back_nor@2x.png */,
+				2CB8DD40214A341200B57B8D /* qrcode_scan_titlebar_back_pressed@2x.png */,
+			);
+			path = ZbarImage;
+			sourceTree = "<group>";
+		};
+		2CB8DD43214A341200B57B8D /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				2CB8DD44214A341200B57B8D /* ZBarSDK */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		2CB8DD44214A341200B57B8D /* ZBarSDK */ = {
+			isa = PBXGroup;
+			children = (
+				2CB8DD47214A341200B57B8D /* zbar */,
+				2CB8DD54214A341200B57B8D /* zbar.h */,
+				2CB8DD55214A341200B57B8D /* ZBarCameraSimulator.h */,
+				2CB8DD45214A341200B57B8D /* ZBarCaptureReader.h */,
+				2CB8DD53214A341200B57B8D /* ZBarHelpController.h */,
+				2CB8DD46214A341200B57B8D /* ZBarImage.h */,
+				2CB8DD57214A341200B57B8D /* ZBarImageScanner.h */,
+				2CB8DD51214A341200B57B8D /* ZBarReaderController.h */,
+				2CB8DD52214A341200B57B8D /* ZBarReaderView.h */,
+				2CB8DD59214A341200B57B8D /* ZBarReaderViewController.h */,
+				2CB8DD58214A341200B57B8D /* ZBarSDK.h */,
+				2CB8DD56214A341200B57B8D /* ZBarSymbol.h */,
+			);
+			path = ZBarSDK;
+			sourceTree = "<group>";
+		};
+		2CB8DD47214A341200B57B8D /* zbar */ = {
+			isa = PBXGroup;
+			children = (
+				2CB8DD4A214A341200B57B8D /* Decoder.h */,
+				2CB8DD4F214A341200B57B8D /* Exception.h */,
+				2CB8DD50214A341200B57B8D /* Image.h */,
+				2CB8DD4C214A341200B57B8D /* ImageScanner.h */,
+				2CB8DD48214A341200B57B8D /* Processor.h */,
+				2CB8DD4D214A341200B57B8D /* Scanner.h */,
+				2CB8DD49214A341200B57B8D /* Symbol.h */,
+				2CB8DD4E214A341200B57B8D /* Video.h */,
+				2CB8DD4B214A341200B57B8D /* Window.h */,
+			);
+			path = zbar;
+			sourceTree = "<group>";
+		};
+		2CB8DD5A214A341200B57B8D /* libqrencode */ = {
+			isa = PBXGroup;
+			children = (
+				2CB8DD5D214A341200B57B8D /* bitstream.c */,
+				2CB8DD64214A341200B57B8D /* bitstream.h */,
+				2CB8DD65214A341200B57B8D /* mask.c */,
+				2CB8DD5B214A341200B57B8D /* mask.h */,
+				2CB8DD68214A341200B57B8D /* QRCodeGenerator.h */,
+				2CB8DD62214A341200B57B8D /* QRCodeGenerator.m */,
+				2CB8DD5E214A341200B57B8D /* qrencode.c */,
+				2CB8DD67214A341200B57B8D /* qrencode.h */,
+				2CB8DD63214A341200B57B8D /* qrinput.c */,
+				2CB8DD5C214A341200B57B8D /* qrinput.h */,
+				2CB8DD66214A341200B57B8D /* qrspec.c */,
+				2CB8DD5F214A341200B57B8D /* qrspec.h */,
+				2CB8DD6A214A341200B57B8D /* rscode.c */,
+				2CB8DD61214A341200B57B8D /* rscode.h */,
+				2CB8DD60214A341200B57B8D /* split.c */,
+				2CB8DD69214A341200B57B8D /* split.h */,
+			);
+			path = libqrencode;
+			sourceTree = "<group>";
+		};
+		2CC52E2B21B0E80D0009EAB5 /* QIMOpenSSL */ = {
+			isa = PBXGroup;
+			children = (
+				2CC52E2C21B0E80D0009EAB5 /* lib-ios */,
+				2CC52E2F21B0E80D0009EAB5 /* include-ios */,
+			);
+			path = QIMOpenSSL;
+			sourceTree = "<group>";
+		};
+		2CC52E2C21B0E80D0009EAB5 /* lib-ios */ = {
+			isa = PBXGroup;
+			children = (
+				2CC52E2D21B0E80D0009EAB5 /* libcrypto.a */,
+				2CC52E2E21B0E80D0009EAB5 /* libssl.a */,
+			);
+			path = "lib-ios";
+			sourceTree = "<group>";
+		};
+		2CC52E2F21B0E80D0009EAB5 /* include-ios */ = {
+			isa = PBXGroup;
+			children = (
+				2CC52E3021B0E80D0009EAB5 /* openssl */,
+			);
+			path = "include-ios";
+			sourceTree = "<group>";
+		};
+		2CC52E3021B0E80D0009EAB5 /* openssl */ = {
+			isa = PBXGroup;
+			children = (
+				2CC52E5E21B0E80D0009EAB5 /* aes.h */,
+				2CC52E3D21B0E80D0009EAB5 /* asn1_mac.h */,
+				2CC52E4221B0E80D0009EAB5 /* asn1.h */,
+				2CC52E7721B0E80D0009EAB5 /* asn1t.h */,
+				2CC52E4421B0E80D0009EAB5 /* bio.h */,
+				2CC52E3821B0E80D0009EAB5 /* blowfish.h */,
+				2CC52E3721B0E80D0009EAB5 /* bn.h */,
+				2CC52E5621B0E80D0009EAB5 /* buffer.h */,
+				2CC52E5921B0E80D0009EAB5 /* camellia.h */,
+				2CC52E6021B0E80D0009EAB5 /* cast.h */,
+				2CC52E7821B0E80D0009EAB5 /* cmac.h */,
+				2CC52E3921B0E80D0009EAB5 /* cms.h */,
+				2CC52E5F21B0E80D0009EAB5 /* comp.h */,
+				2CC52E3B21B0E80D0009EAB5 /* conf_api.h */,
+				2CC52E4A21B0E80D0009EAB5 /* conf.h */,
+				2CC52E5221B0E80D0009EAB5 /* crypto.h */,
+				2CC52E7021B0E80D0009EAB5 /* des_old.h */,
+				2CC52E6321B0E80D0009EAB5 /* des.h */,
+				2CC52E4621B0E80D0009EAB5 /* dh.h */,
+				2CC52E7521B0E80D0009EAB5 /* dsa.h */,
+				2CC52E6A21B0E80D0009EAB5 /* dso.h */,
+				2CC52E3521B0E80D0009EAB5 /* dtls1.h */,
+				2CC52E5B21B0E80D0009EAB5 /* e_os2.h */,
+				2CC52E7921B0E80D0009EAB5 /* ebcdic.h */,
+				2CC52E6521B0E80D0009EAB5 /* ec.h */,
+				2CC52E6621B0E80D0009EAB5 /* ecdh.h */,
+				2CC52E4F21B0E80D0009EAB5 /* ecdsa.h */,
+				2CC52E3A21B0E80D0009EAB5 /* engine.h */,
+				2CC52E3621B0E80D0009EAB5 /* err.h */,
+				2CC52E5A21B0E80D0009EAB5 /* evp.h */,
+				2CC52E5D21B0E80D0009EAB5 /* hmac.h */,
+				2CC52E7A21B0E80D0009EAB5 /* idea.h */,
+				2CC52E6F21B0E80D0009EAB5 /* krb5_asn.h */,
+				2CC52E3F21B0E80D0009EAB5 /* kssl.h */,
+				2CC52E7B21B0E80D0009EAB5 /* lhash.h */,
+				2CC52E5C21B0E80D0009EAB5 /* md4.h */,
+				2CC52E4B21B0E80D0009EAB5 /* md5.h */,
+				2CC52E7421B0E80D0009EAB5 /* mdc2.h */,
+				2CC52E6C21B0E80D0009EAB5 /* modes.h */,
+				2CC52E5521B0E80D0009EAB5 /* obj_mac.h */,
+				2CC52E5021B0E80D0009EAB5 /* objects.h */,
+				2CC52E6421B0E80D0009EAB5 /* ocsp.h */,
+				2CC52E4321B0E80D0009EAB5 /* opensslconf.h */,
+				2CC52E5321B0E80D0009EAB5 /* opensslv.h */,
+				2CC52E3421B0E80D0009EAB5 /* ossl_typ.h */,
+				2CC52E3221B0E80D0009EAB5 /* pem.h */,
+				2CC52E3121B0E80D0009EAB5 /* pem2.h */,
+				2CC52E5421B0E80D0009EAB5 /* pkcs7.h */,
+				2CC52E5121B0E80D0009EAB5 /* pkcs12.h */,
+				2CC52E6921B0E80D0009EAB5 /* pqueue.h */,
+				2CC52E6721B0E80D0009EAB5 /* rand.h */,
+				2CC52E4521B0E80D0009EAB5 /* rc2.h */,
+				2CC52E6121B0E80D0009EAB5 /* rc4.h */,
+				2CC52E7121B0E80D0009EAB5 /* ripemd.h */,
+				2CC52E6E21B0E80D0009EAB5 /* rsa.h */,
+				2CC52E4E21B0E80D0009EAB5 /* safestack.h */,
+				2CC52E6B21B0E80D0009EAB5 /* seed.h */,
+				2CC52E4021B0E80D0009EAB5 /* sha.h */,
+				2CC52E5821B0E80D0009EAB5 /* srp.h */,
+				2CC52E7621B0E80D0009EAB5 /* srtp.h */,
+				2CC52E5721B0E80D0009EAB5 /* ssl.h */,
+				2CC52E6D21B0E80D0009EAB5 /* ssl2.h */,
+				2CC52E3321B0E80D0009EAB5 /* ssl3.h */,
+				2CC52E4921B0E80D0009EAB5 /* ssl23.h */,
+				2CC52E6221B0E80D0009EAB5 /* stack.h */,
+				2CC52E4121B0E80D0009EAB5 /* symhacks.h */,
+				2CC52E7321B0E80D0009EAB5 /* tls1.h */,
+				2CC52E6821B0E80D0009EAB5 /* ts.h */,
+				2CC52E4D21B0E80D0009EAB5 /* txt_db.h */,
+				2CC52E4721B0E80D0009EAB5 /* ui_compat.h */,
+				2CC52E3E21B0E80D0009EAB5 /* ui.h */,
+				2CC52E7221B0E80D0009EAB5 /* whrlpool.h */,
+				2CC52E4C21B0E80D0009EAB5 /* x509_vfy.h */,
+				2CC52E3C21B0E80D0009EAB5 /* x509.h */,
+				2CC52E4821B0E80D0009EAB5 /* x509v3.h */,
+			);
+			path = openssl;
+			sourceTree = "<group>";
+		};
+		2CE7B46120B6BD3B003FF88D /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				2C26886D214B950400EAC609 /* QIMGCDMulticastDelegate.h */,
+				2C26886E214B950400EAC609 /* QIMGCDMulticastDelegate.m */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		2CE7B46420B6BD3B003FF88D /* QIMPinYin */ = {
+			isa = PBXGroup;
+			children = (
+				2C21D5EC20C6670B00DEC74C /* QIMBMChineseSort.h */,
+				2C21D5ED20C6670E00DEC74C /* QIMBMChineseSort.m */,
+				2CE7B47220B6BD3B003FF88D /* NSString+QIMPinYin4Cocoa.h */,
+				2CE7B46A20B6BD3B003FF88D /* NSString+QIMPinYin4Cocoa.m */,
+				2CE7B46D20B6BD3B003FF88D /* QIMChineseInclude.h */,
+				2CE7B46620B6BD3B003FF88D /* QIMChineseInclude.m */,
+				2CE7B46720B6BD3B003FF88D /* QIMChineseToPinyinResource.h */,
+				2CE7B47020B6BD3B003FF88D /* QIMChineseToPinyinResource.m */,
+				2CE7B46520B6BD3B003FF88D /* QIMHanyuPinyinOutputFormat.h */,
+				2CE7B46E20B6BD3B003FF88D /* QIMHanyuPinyinOutputFormat.m */,
+				2CE7B47320B6BD3B003FF88D /* QIMPinyinFormatter.h */,
+				2CE7B46920B6BD3B003FF88D /* QIMPinyinFormatter.m */,
+				2CE7B47120B6BD3B003FF88D /* QIMPinYinForObjc.h */,
+				2CE7B46B20B6BD3B003FF88D /* QIMPinYinForObjc.m */,
+				2CE7B46820B6BD3B003FF88D /* QIMPinyinHelper.h */,
+				2CE7B46F20B6BD3B003FF88D /* QIMPinyinHelper.m */,
+				2CE7B46C20B6BD3B003FF88D /* unicode_to_hanyu_qim_pinyin.txt */,
+			);
+			path = QIMPinYin;
+			sourceTree = "<group>";
+		};
+		2CE7B47420B6BD3B003FF88D /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				2CE7B48120B6BD3B003FF88D /* IMAmrFileCodec.h */,
+				2CE7B47520B6BD3B003FF88D /* IMAmrFileCodec.m */,
+				2CE7B47620B6BD3B003FF88D /* opencore-amr */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		2CE7B47620B6BD3B003FF88D /* opencore-amr */ = {
+			isa = PBXGroup;
+			children = (
+				2CE7B47720B6BD3B003FF88D /* include */,
+				2CE7B47E20B6BD3B003FF88D /* lib */,
+			);
+			path = "opencore-amr";
+			sourceTree = "<group>";
+		};
+		2CE7B47720B6BD3B003FF88D /* include */ = {
+			isa = PBXGroup;
+			children = (
+				2CE7B47820B6BD3B003FF88D /* opencore-amrwb */,
+				2CE7B47B20B6BD3B003FF88D /* opencore-amrnb */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		2CE7B47820B6BD3B003FF88D /* opencore-amrwb */ = {
+			isa = PBXGroup;
+			children = (
+				2CE7B47920B6BD3B003FF88D /* if_rom.h */,
+				2CE7B47A20B6BD3B003FF88D /* dec_if.h */,
+			);
+			path = "opencore-amrwb";
+			sourceTree = "<group>";
+		};
+		2CE7B47B20B6BD3B003FF88D /* opencore-amrnb */ = {
+			isa = PBXGroup;
+			children = (
+				2CE7B47C20B6BD3B003FF88D /* interf_dec.h */,
+				2CE7B47D20B6BD3B003FF88D /* interf_enc.h */,
+			);
+			path = "opencore-amrnb";
+			sourceTree = "<group>";
+		};
+		2CE7B47E20B6BD3B003FF88D /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				2CE7B47F20B6BD3B003FF88D /* libopencore-amrwb.a */,
+				2CE7B48020B6BD3B003FF88D /* libopencore-amrnb.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		2CE7B48220B6BD3B003FF88D /* QIMZipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				2CE7B48420B6BD3B003FF88D /* QIMZipArchive.h */,
+				2CE7B48320B6BD3B003FF88D /* QIMZipArchive.m */,
+			);
+			path = QIMZipArchive;
+			sourceTree = "<group>";
+		};
+		3343A807BC366D785C92F0D6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A5A0BD8A77DAD62ED8B5BFEF /* Pods-QIMKitVendor.debug.xcconfig */,
+				9A10FCC32BDAEA91EBE0B3A2 /* Pods-QIMKitVendor.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9C410DBC59AE78CA5D60CADF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A998C56C840F07E52F84B323 /* libPods-QIMKitVendor.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2C0E489D20908A1200E234E3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CC52EC221B0E80E0009EAB5 /* dsa.h in Headers */,
+				2CC52E8321B0E80E0009EAB5 /* err.h in Headers */,
+				2CB8DD83214A341200B57B8D /* Image.h in Headers */,
+				2CC52EC121B0E80E0009EAB5 /* mdc2.h in Headers */,
+				2CC52E9921B0E80E0009EAB5 /* x509_vfy.h in Headers */,
+				2CC52EB021B0E80E0009EAB5 /* des.h in Headers */,
+				2CC52EAD21B0E80E0009EAB5 /* cast.h in Headers */,
+				2CE7B49820B6BD3B003FF88D /* dec_if.h in Headers */,
+				2CC52E8621B0E80E0009EAB5 /* cms.h in Headers */,
+				2CE7B49F20B6BD3B003FF88D /* QIMZipArchive.h in Headers */,
+				2CB8DD88214A341200B57B8D /* ZBarCameraSimulator.h in Headers */,
+				2CB8DD7F214A341200B57B8D /* ImageScanner.h in Headers */,
+				2CE7B49820B6BD3B003FF88D /* dec_if.h in Headers */,
+				2C21D2EC20C0377D00DEC74C /* QIMUUIDTools.h in Headers */,
+				2CC52EC621B0E80E0009EAB5 /* ebcdic.h in Headers */,
+				2CC52E9C21B0E80E0009EAB5 /* ecdsa.h in Headers */,
+				2CE7B48A20B6BD3B003FF88D /* QIMPinyinHelper.h in Headers */,
+				2CC52EA721B0E80E0009EAB5 /* evp.h in Headers */,
+				2CC52EC421B0E80E0009EAB5 /* asn1t.h in Headers */,
+				2C21D2F220C0377E00DEC74C /* QIMJSONSerializer.h in Headers */,
+				2CE7B49420B6BD3B003FF88D /* NSString+QIMPinYin4Cocoa.h in Headers */,
+				2CB8DD86214A341200B57B8D /* ZBarHelpController.h in Headers */,
+				2C027DB82113368300D111DC /* QIMHTTPUploadComponent.h in Headers */,
+				2CB8DD91214A341200B57B8D /* qrspec.h in Headers */,
+				2CC52E8221B0E80E0009EAB5 /* dtls1.h in Headers */,
+				2CC52EA321B0E80E0009EAB5 /* buffer.h in Headers */,
+				2CB8DD93214A341200B57B8D /* rscode.h in Headers */,
+				2CC52EC721B0E80E0009EAB5 /* idea.h in Headers */,
+				2C027DC421133CBA00D111DC /* QIMHTTPResponse.h in Headers */,
+				2CB8DD8E214A341200B57B8D /* qrinput.h in Headers */,
+				2CC52E8A21B0E80E0009EAB5 /* asn1_mac.h in Headers */,
+				2CC52EAF21B0E80E0009EAB5 /* stack.h in Headers */,
+				2CB8DD81214A341200B57B8D /* Video.h in Headers */,
+				2CC52EAA21B0E80E0009EAB5 /* hmac.h in Headers */,
+				2CC52EBD21B0E80E0009EAB5 /* des_old.h in Headers */,
+				2CC52E8021B0E80E0009EAB5 /* ssl3.h in Headers */,
+				2CC52E9621B0E80E0009EAB5 /* ssl23.h in Headers */,
+				2CB8DD8B214A341200B57B8D /* ZBarSDK.h in Headers */,
+				2CB8DD87214A341200B57B8D /* zbar.h in Headers */,
+				2CC52EAE21B0E80E0009EAB5 /* rc4.h in Headers */,
+				2CC52E8E21B0E80E0009EAB5 /* symhacks.h in Headers */,
+				2CC52E9521B0E80E0009EAB5 /* x509v3.h in Headers */,
+				2CC52E9821B0E80E0009EAB5 /* md5.h in Headers */,
+				2CE7B49D20B6BD3B003FF88D /* IMAmrFileCodec.h in Headers */,
+				2CB8DD84214A341200B57B8D /* ZBarReaderController.h in Headers */,
+				2CC52EA421B0E80E0009EAB5 /* ssl.h in Headers */,
+				2CB8DD85214A341200B57B8D /* ZBarReaderView.h in Headers */,
+				2CE7B49520B6BD3B003FF88D /* QIMPinyinFormatter.h in Headers */,
+				2C027DB02113362F00D111DC /* QIMHTTPRequest.h in Headers */,
+				2CC52E9E21B0E80E0009EAB5 /* pkcs12.h in Headers */,
+				2C26886F214B950500EAC609 /* QIMGCDMulticastDelegate.h in Headers */,
+				2C21D5EE20C6670E00DEC74C /* QIMBMChineseSort.h in Headers */,
+				2C21D2F020C0377E00DEC74C /* QIMDESHelper.h in Headers */,
+				2CC52EA221B0E80E0009EAB5 /* obj_mac.h in Headers */,
+				2CE7B48720B6BD3B003FF88D /* QIMHanyuPinyinOutputFormat.h in Headers */,
+				2CC52E8121B0E80E0009EAB5 /* ossl_typ.h in Headers */,
+				2C21D2F520C0377E00DEC74C /* QIMWatchDog.h in Headers */,
+				2CC52EBA21B0E80E0009EAB5 /* ssl2.h in Headers */,
+				2CC52EBC21B0E80E0009EAB5 /* krb5_asn.h in Headers */,
+				2CC52EBE21B0E80E0009EAB5 /* ripemd.h in Headers */,
+				2CC52EA821B0E80E0009EAB5 /* e_os2.h in Headers */,
+				2CC52E9B21B0E80E0009EAB5 /* safestack.h in Headers */,
+				2CC52EC021B0E80E0009EAB5 /* tls1.h in Headers */,
+				2C027DCB21133F1A00D111DC /* QIMNetwork.h in Headers */,
+				2CC52E8B21B0E80E0009EAB5 /* ui.h in Headers */,
+				2CC52EA521B0E80E0009EAB5 /* srp.h in Headers */,
+				2CE7B49320B6BD3B003FF88D /* QIMPinYinForObjc.h in Headers */,
+				2CC52E8F21B0E80E0009EAB5 /* asn1.h in Headers */,
+				2CC52EC321B0E80E0009EAB5 /* srtp.h in Headers */,
+				2CB8DD9A214A341200B57B8D /* QRCodeGenerator.h in Headers */,
+				2CC52EAC21B0E80E0009EAB5 /* comp.h in Headers */,
+				2CE7B48920B6BD3B003FF88D /* QIMChineseToPinyinResource.h in Headers */,
+				2CB8DD9B214A341200B57B8D /* split.h in Headers */,
+				2C027DC02113394A00D111DC /* QIMHTTPClient.h in Headers */,
+				2C21D2EF20C0377E00DEC74C /* QIMHttpRequestMonitor.h in Headers */,
+				2CB8DD7E214A341200B57B8D /* Window.h in Headers */,
+				2CC52E8921B0E80E0009EAB5 /* x509.h in Headers */,
+				2CC52E8821B0E80E0009EAB5 /* conf_api.h in Headers */,
+				2CC52EA621B0E80E0009EAB5 /* camellia.h in Headers */,
+				2C21D2F520C0377E00DEC74C /* QIMWatchDog.h in Headers */,
+				2CB8DD80214A341200B57B8D /* Scanner.h in Headers */,
+				2CC52EB421B0E80E0009EAB5 /* rand.h in Headers */,
+				2CC52E7F21B0E80E0009EAB5 /* pem.h in Headers */,
+				2CE7B48F20B6BD3B003FF88D /* QIMChineseInclude.h in Headers */,
+				2CB8DD79214A341200B57B8D /* ZBarCaptureReader.h in Headers */,
+				2CB8DD7A214A341200B57B8D /* ZBarImage.h in Headers */,
+				2CC52EB721B0E80E0009EAB5 /* dso.h in Headers */,
+				2CC52E9F21B0E80E0009EAB5 /* crypto.h in Headers */,
+				2CC52EB221B0E80E0009EAB5 /* ec.h in Headers */,
+				2CC52E8721B0E80E0009EAB5 /* engine.h in Headers */,
+				2CC52EBF21B0E80E0009EAB5 /* whrlpool.h in Headers */,
+				2CB8DD7B214A341200B57B8D /* Processor.h in Headers */,
+				2CC52EB621B0E80E0009EAB5 /* pqueue.h in Headers */,
+				2CE7B49920B6BD3B003FF88D /* interf_dec.h in Headers */,
+				2CC52E9A21B0E80E0009EAB5 /* txt_db.h in Headers */,
+				2CC52E9021B0E80E0009EAB5 /* opensslconf.h in Headers */,
+				2CC52E8C21B0E80E0009EAB5 /* kssl.h in Headers */,
+				2CC52EB121B0E80E0009EAB5 /* ocsp.h in Headers */,
+				2CB8DD8A214A341200B57B8D /* ZBarImageScanner.h in Headers */,
+				2CC52EB821B0E80E0009EAB5 /* seed.h in Headers */,
+				2CC52EA121B0E80E0009EAB5 /* pkcs7.h in Headers */,
+				2CB8DD89214A341200B57B8D /* ZBarSymbol.h in Headers */,
+				2CC52EA021B0E80E0009EAB5 /* opensslv.h in Headers */,
+				2C9E9433219AFFDC0047FC90 /* NSJSONSerialization+QIMRemovingNulls.h in Headers */,
+				2CB8DD8C214A341200B57B8D /* ZBarReaderViewController.h in Headers */,
+				2CC52EB921B0E80E0009EAB5 /* modes.h in Headers */,
+				2CC52EC521B0E80E0009EAB5 /* cmac.h in Headers */,
+				2CC52E9221B0E80E0009EAB5 /* rc2.h in Headers */,
+				2CC52E9421B0E80E0009EAB5 /* ui_compat.h in Headers */,
+				2CB8DD99214A341200B57B8D /* qrencode.h in Headers */,
+				2CB8DD7C214A341200B57B8D /* Symbol.h in Headers */,
+				2CC52EC821B0E80E0009EAB5 /* lhash.h in Headers */,
+				2CC52EAB21B0E80E0009EAB5 /* aes.h in Headers */,
+				2C21D2F220C0377E00DEC74C /* QIMJSONSerializer.h in Headers */,
+				2CB8DD8D214A341200B57B8D /* mask.h in Headers */,
+				2C0E48A520908A1200E234E3 /* QIMKitVendor.h in Headers */,
+				2CC52E9721B0E80E0009EAB5 /* conf.h in Headers */,
+				2CE7B49720B6BD3B003FF88D /* if_rom.h in Headers */,
+				2CC52E9121B0E80E0009EAB5 /* bio.h in Headers */,
+				2CC52EB521B0E80E0009EAB5 /* ts.h in Headers */,
+				2C9E9436219B00940047FC90 /* NSJSONSerialization+SpecialCharacters.h in Headers */,
+				2CC52E9D21B0E80E0009EAB5 /* objects.h in Headers */,
+				2CC52EB321B0E80E0009EAB5 /* ecdh.h in Headers */,
+				2CC52E9321B0E80E0009EAB5 /* dh.h in Headers */,
+				2C21D2EC20C0377D00DEC74C /* QIMUUIDTools.h in Headers */,
+				2CC52E7E21B0E80E0009EAB5 /* pem2.h in Headers */,
+				2CC52EBB21B0E80E0009EAB5 /* rsa.h in Headers */,
+				2CC52EA921B0E80E0009EAB5 /* md4.h in Headers */,
+				2CC52E8521B0E80E0009EAB5 /* blowfish.h in Headers */,
+				2CB8DD7D214A341200B57B8D /* Decoder.h in Headers */,
+				2CB8DD82214A341200B57B8D /* Exception.h in Headers */,
+				2CB8DD96214A341200B57B8D /* bitstream.h in Headers */,
+				2CE7B49A20B6BD3B003FF88D /* interf_enc.h in Headers */,
+				2CC52E8421B0E80E0009EAB5 /* bn.h in Headers */,
+				2CC52E8D21B0E80E0009EAB5 /* sha.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2C0E489F20908A1200E234E3 /* QIMKitVendor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C0E48A820908A1200E234E3 /* Build configuration list for PBXNativeTarget "QIMKitVendor" */;
+			buildPhases = (
+				1AF828CD398BEE5DFAD2F924 /* [CP] Check Pods Manifest.lock */,
+				2C0E489B20908A1200E234E3 /* Sources */,
+				2C0E489C20908A1200E234E3 /* Frameworks */,
+				2C0E489D20908A1200E234E3 /* Headers */,
+				2C0E489E20908A1200E234E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QIMKitVendor;
+			productName = QIMKitVendor;
+			productReference = 2C0E48A020908A1200E234E3 /* QIMKitVendor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C0E489720908A1200E234E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = QIM;
+				TargetAttributes = {
+					2C0E489F20908A1200E234E3 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					2CCB1D5A2160B00100707A81 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 2C0E489A20908A1200E234E3 /* Build configuration list for PBXProject "QIMKitVendor" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2C0E489620908A1200E234E3;
+			productRefGroup = 2C0E48A120908A1200E234E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C0E489F20908A1200E234E3 /* QIMKitVendor */,
+				2CCB1D5A2160B00100707A81 /* QIMKitVendorBuild */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C0E489E20908A1200E234E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CB8DD73214A341200B57B8D /* qrcode_scan_btn_flash_nor@2x.png in Resources */,
+				2CE7B48E20B6BD3B003FF88D /* unicode_to_hanyu_qim_pinyin.txt in Resources */,
+				2CB8DD6D214A341200B57B8D /* qrcode_scan_btn_photo_down@2x.png in Resources */,
+				2CB8DD78214A341200B57B8D /* qrcode_scan_bar@2x.png in Resources */,
+				2CB8DD6E214A341200B57B8D /* qrcode_scan_bg_Green@2x.png in Resources */,
+				2CB8DD75214A341200B57B8D /* qrcode_scan_bg_Green_iphone5@2x.png in Resources */,
+				2CB8DD6C214A341200B57B8D /* qrcode_scan_btn_scan_off@2x.png in Resources */,
+				2CB8DD74214A341200B57B8D /* qrcode_scan_titlebar_back_nor@2x.png in Resources */,
+				2CB8DD71214A341200B57B8D /* qrcode_scan_btn_myqrcode_down@2x.png in Resources */,
+				2CB8DD72214A341200B57B8D /* qrcode_scan_btn_flash_down@2x.png in Resources */,
+				2CB8DD70214A341200B57B8D /* qrcode_scan_btn_photo_nor@2x.png in Resources */,
+				2CB8DD76214A341200B57B8D /* qrcode_scan_titlebar_back_pressed@2x.png in Resources */,
+				2CB8DD6F214A341200B57B8D /* qrcode_scan_btn_myqrcode_nor@2x.png in Resources */,
+				2CB8DD77214A341200B57B8D /* qrcode_scan_light_green@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1AF828CD398BEE5DFAD2F924 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QIMKitVendor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2CCB1D5E2160B00600707A81 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../autoBuildScript/buildComponent.sh",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\nbash $SCRIPT_INPUT_FILE_0\n\n#echo $SCRIPT_OUTPUT_FILE_0\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C0E489B20908A1200E234E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C027DC12113394A00D111DC /* QIMHTTPClient.m in Sources */,
+				2CB8DD98214A341200B57B8D /* qrspec.c in Sources */,
+				2C21D5EF20C6670E00DEC74C /* QIMBMChineseSort.m in Sources */,
+				2C21D2F120C0377E00DEC74C /* QIMDESHelper.m in Sources */,
+				2CE7B48B20B6BD3B003FF88D /* QIMPinyinFormatter.m in Sources */,
+				2CE7B48820B6BD3B003FF88D /* QIMChineseInclude.m in Sources */,
+				2C268870214B950500EAC609 /* QIMGCDMulticastDelegate.m in Sources */,
+				2C21D2ED20C0377E00DEC74C /* QIMUUIDTools.m in Sources */,
+				2C21D2F420C0377E00DEC74C /* QIMWatchDog.m in Sources */,
+				2C9E9437219B00940047FC90 /* NSJSONSerialization+SpecialCharacters.m in Sources */,
+				2C027DB92113368300D111DC /* QIMHTTPUploadComponent.m in Sources */,
+				2CE7B49620B6BD3B003FF88D /* IMAmrFileCodec.m in Sources */,
+				2CE7B49020B6BD3B003FF88D /* QIMHanyuPinyinOutputFormat.m in Sources */,
+				2CB8DD8F214A341200B57B8D /* bitstream.c in Sources */,
+				2CB8DD92214A341200B57B8D /* split.c in Sources */,
+				2CE7B49120B6BD3B003FF88D /* QIMPinyinHelper.m in Sources */,
+				2CB8DD97214A341200B57B8D /* mask.c in Sources */,
+				2CE7B48D20B6BD3B003FF88D /* QIMPinYinForObjc.m in Sources */,
+				2CB8DD9C214A341200B57B8D /* rscode.c in Sources */,
+				2C21D2F320C0377E00DEC74C /* QIMJSONSerializer.m in Sources */,
+				2C027DB12113362F00D111DC /* QIMHTTPRequest.m in Sources */,
+				2CB8DD94214A341200B57B8D /* QRCodeGenerator.m in Sources */,
+				2CE7B48C20B6BD3B003FF88D /* NSString+QIMPinYin4Cocoa.m in Sources */,
+				2CE7B49E20B6BD3B003FF88D /* QIMZipArchive.m in Sources */,
+				2C21D2EE20C0377E00DEC74C /* QIMHttpRequestMonitor.m in Sources */,
+				2C027DC521133CBA00D111DC /* QIMHTTPResponse.m in Sources */,
+				2C9E9432219AFFDC0047FC90 /* NSJSONSerialization+QIMRemovingNulls.m in Sources */,
+				2CB8DD95214A341200B57B8D /* qrinput.c in Sources */,
+				2CB8DD90214A341200B57B8D /* qrencode.c in Sources */,
+				2CE7B49220B6BD3B003FF88D /* QIMChineseToPinyinResource.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2C0E48A620908A1200E234E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2C0E48A720908A1200E234E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2C0E48A920908A1200E234E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5A0BD8A77DAD62ED8B5BFEF /* Pods-QIMKitVendor.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = B6CPF58V3M;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMCrashlytics\\ ",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMCrashlytics\\ ",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMCrashlytics/Crashlytics",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMCrashlytics/Crashlytics/iOS",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMCrashlytics/Fabric",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMCrashlytics/Fabric/iOS",
+				);
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = QIMKitVendor/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QIMKitVendor/Audio/opencore-amr/lib",
+					"$(PROJECT_DIR)/QIMKitVendor/ZBarSDK",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMCrashlytics\\ ",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMFabric",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMCrashlytics\\ /Crashlytics",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMCrashlytics\\ /Fabric",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMZBarSDK",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMOpenSSL/lib-ios",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qunar.qtalkDevelop.QIMKitVendor;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C0E48AA20908A1200E234E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A10FCC32BDAEA91EBE0B3A2 /* Pods-QIMKitVendor.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = B6CPF58V3M;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMCrashlytics\\ ",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMCrashlytics\\ ",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMCrashlytics/Crashlytics",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMCrashlytics/Crashlytics/iOS",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMCrashlytics/Fabric",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMCrashlytics/Fabric/iOS",
+				);
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = QIMKitVendor/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QIMKitVendor/Audio/opencore-amr/lib",
+					"$(PROJECT_DIR)/QIMKitVendor/ZBarSDK",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMCrashlytics\\ ",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMFabric",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMCrashlytics\\ /Crashlytics",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMCrashlytics\\ /Fabric",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMZBarSDK",
+					"$(PROJECT_DIR)/QIMKitVendor/QIMOpenSSL/lib-ios",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qunar.qtalkDevelop.QIMKitVendor;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2CCB1D5B2160B00100707A81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6CPF58V3M;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2CCB1D5C2160B00100707A81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6CPF58V3M;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C0E489A20908A1200E234E3 /* Build configuration list for PBXProject "QIMKitVendor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C0E48A620908A1200E234E3 /* Debug */,
+				2C0E48A720908A1200E234E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C0E48A820908A1200E234E3 /* Build configuration list for PBXNativeTarget "QIMKitVendor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C0E48A920908A1200E234E3 /* Debug */,
+				2C0E48AA20908A1200E234E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CCB1D5D2160B00100707A81 /* Build configuration list for PBXAggregateTarget "QIMKitVendorBuild" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CCB1D5B2160B00100707A81 /* Debug */,
+				2CCB1D5C2160B00100707A81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C0E489720908A1200E234E3 /* Project object */;
+}

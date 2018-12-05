@@ -1,0 +1,706 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		2C55CA6E216E081300DD156A /* QIMUIVendorKitBuild */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2C55CA71216E081300DD156A /* Build configuration list for PBXAggregateTarget "QIMUIVendorKitBuild" */;
+			buildPhases = (
+				2C55CA72216E081E00DD156A /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = QIMUIVendorKitBuild;
+			productName = QIMUIVendorKitBuild;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		2C09E4FA21906B790083154F /* QIMCustomPresentationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C09E4F821906B790083154F /* QIMCustomPresentationController.h */; };
+		2C09E4FB21906B790083154F /* QIMCustomPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C09E4F921906B790083154F /* QIMCustomPresentationController.m */; };
+		2C09E5042192A2BE0083154F /* QIMCustomPopManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C09E5022192A2BE0083154F /* QIMCustomPopManager.h */; };
+		2C09E5052192A2BE0083154F /* QIMCustomPopManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C09E5032192A2BE0083154F /* QIMCustomPopManager.m */; };
+		2C21D44920C57D4000DEC74C /* QIMUIVendorKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D44720C57D4000DEC74C /* QIMUIVendorKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C21D54F20C582D700DEC74C /* QIMUIVendorKit.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D54E20C582D700DEC74C /* QIMUIVendorKit.pch */; };
+		2C21D5A020C5870800DEC74C /* QIMArrowView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D55120C5870700DEC74C /* QIMArrowView.h */; };
+		2C21D5A120C5870800DEC74C /* QIMArrowTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D55220C5870700DEC74C /* QIMArrowTableView.h */; };
+		2C21D5A220C5870800DEC74C /* QIMArrowCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D55320C5870700DEC74C /* QIMArrowCellTableViewCell.m */; };
+		2C21D5A320C5870800DEC74C /* QIMArrowCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C21D55420C5870700DEC74C /* QIMArrowCellTableViewCell.xib */; };
+		2C21D5A420C5870800DEC74C /* QIMArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D55520C5870700DEC74C /* QIMArrowView.m */; };
+		2C21D5A520C5870800DEC74C /* QIMArrowCellTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D55620C5870700DEC74C /* QIMArrowCellTableViewCell.h */; };
+		2C21D5A620C5870800DEC74C /* QIMArrowTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D55720C5870700DEC74C /* QIMArrowTableView.m */; };
+		2C21D5C620C5870800DEC74C /* QIMXMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D57B20C5870700DEC74C /* QIMXMenu.h */; };
+		2C21D5C720C5870800DEC74C /* QIMXMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D57C20C5870700DEC74C /* QIMXMenuItem.m */; };
+		2C21D5C820C5870800DEC74C /* QIMXMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D57D20C5870700DEC74C /* QIMXMenu.m */; };
+		2C21D5C920C5870800DEC74C /* QIMXMenuItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D57E20C5870700DEC74C /* QIMXMenuItem.h */; };
+		2C21D5CA20C5870800DEC74C /* QIMGDPerformanceView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D58020C5870700DEC74C /* QIMGDPerformanceView.h */; };
+		2C21D5CB20C5870800DEC74C /* QIMGDMarginLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D58120C5870700DEC74C /* QIMGDMarginLabel.h */; };
+		2C21D5CC20C5870800DEC74C /* QIMGDPerformanceMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D58220C5870700DEC74C /* QIMGDPerformanceMonitor.h */; };
+		2C21D5CD20C5870800DEC74C /* QIMGDWindowViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D58320C5870700DEC74C /* QIMGDWindowViewController.h */; };
+		2C21D5CE20C5870800DEC74C /* QIMGDPerformanceMonitorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D58420C5870700DEC74C /* QIMGDPerformanceMonitorProtocol.h */; };
+		2C21D5CF20C5870800DEC74C /* QIMGDPerformanceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D58520C5870700DEC74C /* QIMGDPerformanceView.m */; };
+		2C21D5D020C5870800DEC74C /* QIMGDPerformanceMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D58620C5870700DEC74C /* QIMGDPerformanceMonitor.m */; };
+		2C21D5D120C5870800DEC74C /* QIMGDMarginLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D58720C5870700DEC74C /* QIMGDMarginLabel.m */; };
+		2C21D5D220C5870800DEC74C /* QIMGDWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D58820C5870700DEC74C /* QIMGDWindowViewController.m */; };
+		2C21D5D320C5870800DEC74C /* NSDate+Extension.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D58A20C5870700DEC74C /* NSDate+Extension.h */; };
+		2C21D5D420C5870800DEC74C /* QIMWSDatePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D58B20C5870700DEC74C /* QIMWSDatePickerView.h */; };
+		2C21D5D520C5870800DEC74C /* QIMWSDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C21D58C20C5870700DEC74C /* QIMWSDatePickerView.xib */; };
+		2C21D5D620C5870800DEC74C /* QIMWSDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D58D20C5870700DEC74C /* QIMWSDatePickerView.m */; };
+		2C21D5D720C5870800DEC74C /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D58E20C5870700DEC74C /* NSDate+Extension.m */; };
+		2C21D5D820C5870800DEC74C /* KZColorPickerSwatchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D59020C5870800DEC74C /* KZColorPickerSwatchView.h */; };
+		2C21D5D920C5870800DEC74C /* KZColorPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D59120C5870800DEC74C /* KZColorPicker.h */; };
+		2C21D5DA20C5870800DEC74C /* KZColorCompareView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D59220C5870800DEC74C /* KZColorCompareView.h */; };
+		2C21D5DB20C5870800DEC74C /* HSV.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D59320C5870800DEC74C /* HSV.c */; };
+		2C21D5DC20C5870800DEC74C /* KZColorPickerBrightnessSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D59420C5870800DEC74C /* KZColorPickerBrightnessSlider.h */; };
+		2C21D5DD20C5870800DEC74C /* KZColorPickerAlphaSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D59520C5870800DEC74C /* KZColorPickerAlphaSlider.h */; };
+		2C21D5DE20C5870800DEC74C /* KZColorPickerHSWheel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D59620C5870800DEC74C /* KZColorPickerHSWheel.h */; };
+		2C21D5DF20C5870800DEC74C /* KZUnitSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D59720C5870800DEC74C /* KZUnitSlider.h */; };
+		2C21D5E020C5870800DEC74C /* KZColorPickerSwatchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D59820C5870800DEC74C /* KZColorPickerSwatchView.m */; };
+		2C21D5E120C5870800DEC74C /* KZColorCompareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D59920C5870800DEC74C /* KZColorCompareView.m */; };
+		2C21D5E220C5870800DEC74C /* KZColorPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D59A20C5870800DEC74C /* KZColorPicker.m */; };
+		2C21D5E320C5870800DEC74C /* KZColorPickerAlphaSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D59B20C5870800DEC74C /* KZColorPickerAlphaSlider.m */; };
+		2C21D5E420C5870800DEC74C /* KZColorPickerBrightnessSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D59C20C5870800DEC74C /* KZColorPickerBrightnessSlider.m */; };
+		2C21D5E520C5870800DEC74C /* HSV.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C21D59D20C5870800DEC74C /* HSV.h */; };
+		2C21D5E620C5870800DEC74C /* KZUnitSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D59E20C5870800DEC74C /* KZUnitSlider.m */; };
+		2C21D5E720C5870800DEC74C /* KZColorPickerHSWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21D59F20C5870800DEC74C /* KZColorPickerHSWheel.m */; };
+		2CBCE3A2219577340047D3CD /* QIMButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CBCE3A0219577340047D3CD /* QIMButton.h */; };
+		2CBCE3A3219577340047D3CD /* QIMButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBCE3A1219577340047D3CD /* QIMButton.m */; };
+		E932E22EF5A6DB99C42974CB /* libPods-QIMUIVendorKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF8559877D8EE20EDAC4C33 /* libPods-QIMUIVendorKit.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C09E4F821906B790083154F /* QIMCustomPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QIMCustomPresentationController.h; sourceTree = "<group>"; };
+		2C09E4F921906B790083154F /* QIMCustomPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QIMCustomPresentationController.m; sourceTree = "<group>"; };
+		2C09E5022192A2BE0083154F /* QIMCustomPopManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QIMCustomPopManager.h; sourceTree = "<group>"; };
+		2C09E5032192A2BE0083154F /* QIMCustomPopManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QIMCustomPopManager.m; sourceTree = "<group>"; };
+		2C21D44420C57D4000DEC74C /* QIMUIVendorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QIMUIVendorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C21D44720C57D4000DEC74C /* QIMUIVendorKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QIMUIVendorKit.h; sourceTree = "<group>"; };
+		2C21D44820C57D4000DEC74C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C21D54E20C582D700DEC74C /* QIMUIVendorKit.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QIMUIVendorKit.pch; sourceTree = "<group>"; };
+		2C21D55120C5870700DEC74C /* QIMArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMArrowView.h; sourceTree = "<group>"; };
+		2C21D55220C5870700DEC74C /* QIMArrowTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMArrowTableView.h; sourceTree = "<group>"; };
+		2C21D55320C5870700DEC74C /* QIMArrowCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMArrowCellTableViewCell.m; sourceTree = "<group>"; };
+		2C21D55420C5870700DEC74C /* QIMArrowCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QIMArrowCellTableViewCell.xib; sourceTree = "<group>"; };
+		2C21D55520C5870700DEC74C /* QIMArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMArrowView.m; sourceTree = "<group>"; };
+		2C21D55620C5870700DEC74C /* QIMArrowCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMArrowCellTableViewCell.h; sourceTree = "<group>"; };
+		2C21D55720C5870700DEC74C /* QIMArrowTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMArrowTableView.m; sourceTree = "<group>"; };
+		2C21D57B20C5870700DEC74C /* QIMXMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMXMenu.h; sourceTree = "<group>"; };
+		2C21D57C20C5870700DEC74C /* QIMXMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMXMenuItem.m; sourceTree = "<group>"; };
+		2C21D57D20C5870700DEC74C /* QIMXMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMXMenu.m; sourceTree = "<group>"; };
+		2C21D57E20C5870700DEC74C /* QIMXMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMXMenuItem.h; sourceTree = "<group>"; };
+		2C21D58020C5870700DEC74C /* QIMGDPerformanceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMGDPerformanceView.h; sourceTree = "<group>"; };
+		2C21D58120C5870700DEC74C /* QIMGDMarginLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMGDMarginLabel.h; sourceTree = "<group>"; };
+		2C21D58220C5870700DEC74C /* QIMGDPerformanceMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMGDPerformanceMonitor.h; sourceTree = "<group>"; };
+		2C21D58320C5870700DEC74C /* QIMGDWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMGDWindowViewController.h; sourceTree = "<group>"; };
+		2C21D58420C5870700DEC74C /* QIMGDPerformanceMonitorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMGDPerformanceMonitorProtocol.h; sourceTree = "<group>"; };
+		2C21D58520C5870700DEC74C /* QIMGDPerformanceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMGDPerformanceView.m; sourceTree = "<group>"; };
+		2C21D58620C5870700DEC74C /* QIMGDPerformanceMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMGDPerformanceMonitor.m; sourceTree = "<group>"; };
+		2C21D58720C5870700DEC74C /* QIMGDMarginLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMGDMarginLabel.m; sourceTree = "<group>"; };
+		2C21D58820C5870700DEC74C /* QIMGDWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMGDWindowViewController.m; sourceTree = "<group>"; };
+		2C21D58A20C5870700DEC74C /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		2C21D58B20C5870700DEC74C /* QIMWSDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QIMWSDatePickerView.h; sourceTree = "<group>"; };
+		2C21D58C20C5870700DEC74C /* QIMWSDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QIMWSDatePickerView.xib; sourceTree = "<group>"; };
+		2C21D58D20C5870700DEC74C /* QIMWSDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QIMWSDatePickerView.m; sourceTree = "<group>"; };
+		2C21D58E20C5870700DEC74C /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		2C21D59020C5870800DEC74C /* KZColorPickerSwatchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZColorPickerSwatchView.h; sourceTree = "<group>"; };
+		2C21D59120C5870800DEC74C /* KZColorPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZColorPicker.h; sourceTree = "<group>"; };
+		2C21D59220C5870800DEC74C /* KZColorCompareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZColorCompareView.h; sourceTree = "<group>"; };
+		2C21D59320C5870800DEC74C /* HSV.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = HSV.c; sourceTree = "<group>"; };
+		2C21D59420C5870800DEC74C /* KZColorPickerBrightnessSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZColorPickerBrightnessSlider.h; sourceTree = "<group>"; };
+		2C21D59520C5870800DEC74C /* KZColorPickerAlphaSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZColorPickerAlphaSlider.h; sourceTree = "<group>"; };
+		2C21D59620C5870800DEC74C /* KZColorPickerHSWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZColorPickerHSWheel.h; sourceTree = "<group>"; };
+		2C21D59720C5870800DEC74C /* KZUnitSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZUnitSlider.h; sourceTree = "<group>"; };
+		2C21D59820C5870800DEC74C /* KZColorPickerSwatchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZColorPickerSwatchView.m; sourceTree = "<group>"; };
+		2C21D59920C5870800DEC74C /* KZColorCompareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZColorCompareView.m; sourceTree = "<group>"; };
+		2C21D59A20C5870800DEC74C /* KZColorPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZColorPicker.m; sourceTree = "<group>"; };
+		2C21D59B20C5870800DEC74C /* KZColorPickerAlphaSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZColorPickerAlphaSlider.m; sourceTree = "<group>"; };
+		2C21D59C20C5870800DEC74C /* KZColorPickerBrightnessSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZColorPickerBrightnessSlider.m; sourceTree = "<group>"; };
+		2C21D59D20C5870800DEC74C /* HSV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSV.h; sourceTree = "<group>"; };
+		2C21D59E20C5870800DEC74C /* KZUnitSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZUnitSlider.m; sourceTree = "<group>"; };
+		2C21D59F20C5870800DEC74C /* KZColorPickerHSWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZColorPickerHSWheel.m; sourceTree = "<group>"; };
+		2CBCE3A0219577340047D3CD /* QIMButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QIMButton.h; sourceTree = "<group>"; };
+		2CBCE3A1219577340047D3CD /* QIMButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QIMButton.m; sourceTree = "<group>"; };
+		3FF8559877D8EE20EDAC4C33 /* libPods-QIMUIVendorKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QIMUIVendorKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		998886AA18B69BDA04D56E15 /* Pods-QIMUIVendorKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QIMUIVendorKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-QIMUIVendorKit/Pods-QIMUIVendorKit.release.xcconfig"; sourceTree = "<group>"; };
+		AC4EA252E323BF50ED931283 /* Pods-QIMUIVendorKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QIMUIVendorKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QIMUIVendorKit/Pods-QIMUIVendorKit.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C21D44020C57D4000DEC74C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E932E22EF5A6DB99C42974CB /* libPods-QIMUIVendorKit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C09E4F721906B710083154F /* QIMPopVC */ = {
+			isa = PBXGroup;
+			children = (
+				2C09E5022192A2BE0083154F /* QIMCustomPopManager.h */,
+				2C09E5032192A2BE0083154F /* QIMCustomPopManager.m */,
+				2C09E4F821906B790083154F /* QIMCustomPresentationController.h */,
+				2C09E4F921906B790083154F /* QIMCustomPresentationController.m */,
+			);
+			path = QIMPopVC;
+			sourceTree = "<group>";
+		};
+		2C21D43A20C57D4000DEC74C = {
+			isa = PBXGroup;
+			children = (
+				2C21D44620C57D4000DEC74C /* QIMUIVendorKit */,
+				2C21D44520C57D4000DEC74C /* Products */,
+				A9DDC95D2EBCBAA77A90AD7D /* Pods */,
+				5E5020B8309A320BB3E3D6DF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2C21D44520C57D4000DEC74C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C21D44420C57D4000DEC74C /* QIMUIVendorKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C21D44620C57D4000DEC74C /* QIMUIVendorKit */ = {
+			isa = PBXGroup;
+			children = (
+				2CBCE39F219577220047D3CD /* QIMButton */,
+				2C09E4F721906B710083154F /* QIMPopVC */,
+				2C21D55020C5870700DEC74C /* QIMArrowView */,
+				2C21D58F20C5870800DEC74C /* QIMColorPicker */,
+				2C21D58920C5870700DEC74C /* QIMDaePickerView */,
+				2C21D57F20C5870700DEC74C /* QIMGDPerformanceView */,
+				2C21D57A20C5870700DEC74C /* QIMXMenu */,
+				2C21D44720C57D4000DEC74C /* QIMUIVendorKit.h */,
+				2C21D54E20C582D700DEC74C /* QIMUIVendorKit.pch */,
+				2C21D44820C57D4000DEC74C /* Info.plist */,
+			);
+			path = QIMUIVendorKit;
+			sourceTree = "<group>";
+		};
+		2C21D55020C5870700DEC74C /* QIMArrowView */ = {
+			isa = PBXGroup;
+			children = (
+				2C21D55620C5870700DEC74C /* QIMArrowCellTableViewCell.h */,
+				2C21D55320C5870700DEC74C /* QIMArrowCellTableViewCell.m */,
+				2C21D55420C5870700DEC74C /* QIMArrowCellTableViewCell.xib */,
+				2C21D55220C5870700DEC74C /* QIMArrowTableView.h */,
+				2C21D55720C5870700DEC74C /* QIMArrowTableView.m */,
+				2C21D55120C5870700DEC74C /* QIMArrowView.h */,
+				2C21D55520C5870700DEC74C /* QIMArrowView.m */,
+			);
+			path = QIMArrowView;
+			sourceTree = "<group>";
+		};
+		2C21D57A20C5870700DEC74C /* QIMXMenu */ = {
+			isa = PBXGroup;
+			children = (
+				2C21D57B20C5870700DEC74C /* QIMXMenu.h */,
+				2C21D57D20C5870700DEC74C /* QIMXMenu.m */,
+				2C21D57E20C5870700DEC74C /* QIMXMenuItem.h */,
+				2C21D57C20C5870700DEC74C /* QIMXMenuItem.m */,
+			);
+			path = QIMXMenu;
+			sourceTree = "<group>";
+		};
+		2C21D57F20C5870700DEC74C /* QIMGDPerformanceView */ = {
+			isa = PBXGroup;
+			children = (
+				2C21D58120C5870700DEC74C /* QIMGDMarginLabel.h */,
+				2C21D58720C5870700DEC74C /* QIMGDMarginLabel.m */,
+				2C21D58220C5870700DEC74C /* QIMGDPerformanceMonitor.h */,
+				2C21D58620C5870700DEC74C /* QIMGDPerformanceMonitor.m */,
+				2C21D58420C5870700DEC74C /* QIMGDPerformanceMonitorProtocol.h */,
+				2C21D58020C5870700DEC74C /* QIMGDPerformanceView.h */,
+				2C21D58520C5870700DEC74C /* QIMGDPerformanceView.m */,
+				2C21D58320C5870700DEC74C /* QIMGDWindowViewController.h */,
+				2C21D58820C5870700DEC74C /* QIMGDWindowViewController.m */,
+			);
+			path = QIMGDPerformanceView;
+			sourceTree = "<group>";
+		};
+		2C21D58920C5870700DEC74C /* QIMDaePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				2C21D58A20C5870700DEC74C /* NSDate+Extension.h */,
+				2C21D58E20C5870700DEC74C /* NSDate+Extension.m */,
+				2C21D58B20C5870700DEC74C /* QIMWSDatePickerView.h */,
+				2C21D58D20C5870700DEC74C /* QIMWSDatePickerView.m */,
+				2C21D58C20C5870700DEC74C /* QIMWSDatePickerView.xib */,
+			);
+			path = QIMDaePickerView;
+			sourceTree = "<group>";
+		};
+		2C21D58F20C5870800DEC74C /* QIMColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				2C21D59320C5870800DEC74C /* HSV.c */,
+				2C21D59D20C5870800DEC74C /* HSV.h */,
+				2C21D59220C5870800DEC74C /* KZColorCompareView.h */,
+				2C21D59920C5870800DEC74C /* KZColorCompareView.m */,
+				2C21D59120C5870800DEC74C /* KZColorPicker.h */,
+				2C21D59A20C5870800DEC74C /* KZColorPicker.m */,
+				2C21D59520C5870800DEC74C /* KZColorPickerAlphaSlider.h */,
+				2C21D59B20C5870800DEC74C /* KZColorPickerAlphaSlider.m */,
+				2C21D59420C5870800DEC74C /* KZColorPickerBrightnessSlider.h */,
+				2C21D59C20C5870800DEC74C /* KZColorPickerBrightnessSlider.m */,
+				2C21D59620C5870800DEC74C /* KZColorPickerHSWheel.h */,
+				2C21D59F20C5870800DEC74C /* KZColorPickerHSWheel.m */,
+				2C21D59020C5870800DEC74C /* KZColorPickerSwatchView.h */,
+				2C21D59820C5870800DEC74C /* KZColorPickerSwatchView.m */,
+				2C21D59720C5870800DEC74C /* KZUnitSlider.h */,
+				2C21D59E20C5870800DEC74C /* KZUnitSlider.m */,
+			);
+			path = QIMColorPicker;
+			sourceTree = "<group>";
+		};
+		2CBCE39F219577220047D3CD /* QIMButton */ = {
+			isa = PBXGroup;
+			children = (
+				2CBCE3A0219577340047D3CD /* QIMButton.h */,
+				2CBCE3A1219577340047D3CD /* QIMButton.m */,
+			);
+			path = QIMButton;
+			sourceTree = "<group>";
+		};
+		5E5020B8309A320BB3E3D6DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FF8559877D8EE20EDAC4C33 /* libPods-QIMUIVendorKit.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9DDC95D2EBCBAA77A90AD7D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC4EA252E323BF50ED931283 /* Pods-QIMUIVendorKit.debug.xcconfig */,
+				998886AA18B69BDA04D56E15 /* Pods-QIMUIVendorKit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2C21D44120C57D4000DEC74C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C21D5C620C5870800DEC74C /* QIMXMenu.h in Headers */,
+				2C21D5D820C5870800DEC74C /* KZColorPickerSwatchView.h in Headers */,
+				2CBCE3A2219577340047D3CD /* QIMButton.h in Headers */,
+				2C21D5DC20C5870800DEC74C /* KZColorPickerBrightnessSlider.h in Headers */,
+				2C21D5A120C5870800DEC74C /* QIMArrowTableView.h in Headers */,
+				2C21D5A020C5870800DEC74C /* QIMArrowView.h in Headers */,
+				2C21D5D920C5870800DEC74C /* KZColorPicker.h in Headers */,
+				2C21D5C920C5870800DEC74C /* QIMXMenuItem.h in Headers */,
+				2C09E5042192A2BE0083154F /* QIMCustomPopManager.h in Headers */,
+				2C09E4FA21906B790083154F /* QIMCustomPresentationController.h in Headers */,
+				2C21D5D420C5870800DEC74C /* QIMWSDatePickerView.h in Headers */,
+				2C21D5CC20C5870800DEC74C /* QIMGDPerformanceMonitor.h in Headers */,
+				2C21D5CB20C5870800DEC74C /* QIMGDMarginLabel.h in Headers */,
+				2C21D5DF20C5870800DEC74C /* KZUnitSlider.h in Headers */,
+				2C21D5CD20C5870800DEC74C /* QIMGDWindowViewController.h in Headers */,
+				2C21D5A520C5870800DEC74C /* QIMArrowCellTableViewCell.h in Headers */,
+				2C21D5D320C5870800DEC74C /* NSDate+Extension.h in Headers */,
+				2C21D54F20C582D700DEC74C /* QIMUIVendorKit.pch in Headers */,
+				2C21D5E520C5870800DEC74C /* HSV.h in Headers */,
+				2C21D5DE20C5870800DEC74C /* KZColorPickerHSWheel.h in Headers */,
+				2C21D5CA20C5870800DEC74C /* QIMGDPerformanceView.h in Headers */,
+				2C21D5DA20C5870800DEC74C /* KZColorCompareView.h in Headers */,
+				2C21D5CE20C5870800DEC74C /* QIMGDPerformanceMonitorProtocol.h in Headers */,
+				2C21D5DD20C5870800DEC74C /* KZColorPickerAlphaSlider.h in Headers */,
+				2C21D44920C57D4000DEC74C /* QIMUIVendorKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2C21D44320C57D4000DEC74C /* QIMUIVendorKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C21D44C20C57D4000DEC74C /* Build configuration list for PBXNativeTarget "QIMUIVendorKit" */;
+			buildPhases = (
+				5AA2307F391F6F71983C0B4A /* [CP] Check Pods Manifest.lock */,
+				2C21D43F20C57D4000DEC74C /* Sources */,
+				2C21D44020C57D4000DEC74C /* Frameworks */,
+				2C21D44120C57D4000DEC74C /* Headers */,
+				2C21D44220C57D4000DEC74C /* Resources */,
+				87AAD1F62E484BA15F6D9985 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QIMUIVendorKit;
+			productName = QIMUIVendorKit;
+			productReference = 2C21D44420C57D4000DEC74C /* QIMUIVendorKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C21D43B20C57D4000DEC74C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = QIM;
+				TargetAttributes = {
+					2C21D44320C57D4000DEC74C = {
+						CreatedOnToolsVersion = 9.4;
+					};
+					2C55CA6E216E081300DD156A = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 2C21D43E20C57D4000DEC74C /* Build configuration list for PBXProject "QIMUIVendorKit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2C21D43A20C57D4000DEC74C;
+			productRefGroup = 2C21D44520C57D4000DEC74C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C21D44320C57D4000DEC74C /* QIMUIVendorKit */,
+				2C55CA6E216E081300DD156A /* QIMUIVendorKitBuild */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C21D44220C57D4000DEC74C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C21D5A320C5870800DEC74C /* QIMArrowCellTableViewCell.xib in Resources */,
+				2C21D5D520C5870800DEC74C /* QIMWSDatePickerView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C55CA72216E081E00DD156A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../autoBuildScript/buildComponent.sh",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbash $SCRIPT_INPUT_FILE_0\n";
+		};
+		5AA2307F391F6F71983C0B4A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QIMUIVendorKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87AAD1F62E484BA15F6D9985 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QIMUIVendorKit/Pods-QIMUIVendorKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C21D43F20C57D4000DEC74C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C21D5DB20C5870800DEC74C /* HSV.c in Sources */,
+				2C21D5E320C5870800DEC74C /* KZColorPickerAlphaSlider.m in Sources */,
+				2C21D5E420C5870800DEC74C /* KZColorPickerBrightnessSlider.m in Sources */,
+				2C21D5D020C5870800DEC74C /* QIMGDPerformanceMonitor.m in Sources */,
+				2C21D5E220C5870800DEC74C /* KZColorPicker.m in Sources */,
+				2C21D5E720C5870800DEC74C /* KZColorPickerHSWheel.m in Sources */,
+				2C09E5052192A2BE0083154F /* QIMCustomPopManager.m in Sources */,
+				2C09E4FB21906B790083154F /* QIMCustomPresentationController.m in Sources */,
+				2C21D5A620C5870800DEC74C /* QIMArrowTableView.m in Sources */,
+				2CBCE3A3219577340047D3CD /* QIMButton.m in Sources */,
+				2C21D5D620C5870800DEC74C /* QIMWSDatePickerView.m in Sources */,
+				2C21D5D220C5870800DEC74C /* QIMGDWindowViewController.m in Sources */,
+				2C21D5D120C5870800DEC74C /* QIMGDMarginLabel.m in Sources */,
+				2C21D5C820C5870800DEC74C /* QIMXMenu.m in Sources */,
+				2C21D5E620C5870800DEC74C /* KZUnitSlider.m in Sources */,
+				2C21D5E020C5870800DEC74C /* KZColorPickerSwatchView.m in Sources */,
+				2C21D5CF20C5870800DEC74C /* QIMGDPerformanceView.m in Sources */,
+				2C21D5E120C5870800DEC74C /* KZColorCompareView.m in Sources */,
+				2C21D5C720C5870800DEC74C /* QIMXMenuItem.m in Sources */,
+				2C21D5A220C5870800DEC74C /* QIMArrowCellTableViewCell.m in Sources */,
+				2C21D5D720C5870800DEC74C /* NSDate+Extension.m in Sources */,
+				2C21D5A420C5870800DEC74C /* QIMArrowView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2C21D44A20C57D4000DEC74C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2C21D44B20C57D4000DEC74C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2C21D44D20C57D4000DEC74C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC4EA252E323BF50ED931283 /* Pods-QIMUIVendorKit.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = B6CPF58V3M;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/QIMUIVendorKit/QIMUIVendorKit.pch";
+				INFOPLIST_FILE = QIMUIVendorKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qunar.qtalkDevelop.QIMUIVendorKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C21D44E20C57D4000DEC74C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 998886AA18B69BDA04D56E15 /* Pods-QIMUIVendorKit.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = B6CPF58V3M;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/QIMUIVendorKit/QIMUIVendorKit.pch";
+				INFOPLIST_FILE = QIMUIVendorKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qunar.qtalkDevelop.QIMUIVendorKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2C55CA6F216E081300DD156A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6CPF58V3M;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2C55CA70216E081300DD156A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6CPF58V3M;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C21D43E20C57D4000DEC74C /* Build configuration list for PBXProject "QIMUIVendorKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C21D44A20C57D4000DEC74C /* Debug */,
+				2C21D44B20C57D4000DEC74C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C21D44C20C57D4000DEC74C /* Build configuration list for PBXNativeTarget "QIMUIVendorKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C21D44D20C57D4000DEC74C /* Debug */,
+				2C21D44E20C57D4000DEC74C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C55CA71216E081300DD156A /* Build configuration list for PBXAggregateTarget "QIMUIVendorKitBuild" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C55CA6F216E081300DD156A /* Debug */,
+				2C55CA70216E081300DD156A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C21D43B20C57D4000DEC74C /* Project object */;
+}

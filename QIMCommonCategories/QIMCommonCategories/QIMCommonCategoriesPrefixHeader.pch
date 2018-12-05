@@ -1,0 +1,17 @@
+//
+//  QIMCommonCategoriesPrefixHeader.pch
+//  QIMCommonCategories
+//
+//  Created by 李露 on 2018/4/28.
+//  Copyright © 2018年 QIM. All rights reserved.
+//
+
+#ifndef QIMCommonCategoriesPrefixHeader_pch
+#define QIMCommonCategoriesPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* QIMCommonCategoriesPrefixHeader_pch */

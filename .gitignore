@@ -1,0 +1,103 @@
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+*.xcbkptlist
+*.xcuserstate
+xcuserdata  
+UserInterfaceState.xcuserstate  
+Untitled.xcworkspace/  
+xcuserdata/  
+UserInterface.xcuserstate 
+QIMUIVendorKit/QIMUIVendorKit.xcworkspace/
+QIMDataBase/QIMDataBase.xcworkspace/
+
+
+QIMCommon/Podfile.lock
+QIMCommonCategories/Podfile.lock
+QIMDataBase/Podfile.lock
+QIMGeneralModule/Podfile.lock
+QIMIPadKit/Podfile.lock
+QIMKitVendor/Podfile.lock
+QIMNoteUI/Podfile.lock
+QIMSDK/Podfile.lock
+QIMUIKit/Podfile.lock
+QIMUIVendorKit/Podfile.lock
+
+QIMPublicRedefineHeader/QIMPublicRedefineHeader.xcodeproj
+*/.idea/
+.idea/
+ 
+# old skool
+.svn
+ 
+# Exclude the build directory
+SRC/build/
+build/
+app/
+beta/
+ 
+# Exclude temp nibs and swap files
+*~.nib
+*.swp
+
+## Build generated
+build/
+DerivedData/
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+## Obj-C/Swift specific
+.hmap
+.ipa
+.dSYM.zip
+.dSYM
+
+# osx noise
+.DS_Store
+*.swp
+profile
+/xcodePack/pack
+/xcodePack/build
+/xcodePack/resources
+
+# ignore node_modules  
+/node_modules
+npm-debug.log
+
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. However
+# you should judge for yourself, the pros and cons are mentioned at:
+# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+#
+Pods/*
+QIMGeneralModule/Pods/*
+QIMKitVendor/Pods/*
+QIMCommonCategories/Pods/*
+QIMCommon/Pods/*
+QIMUIKit/Pods/*
+QIMIPadKit/Pods/
+QIMRNKit/Pods/*
+QIMRNTest/Pods/*
+QIMUIVendorKit/Pods/*
+QIMSDK/Pods/*
+QIMDataBase/Pods/*
+QIMNoteUI/Pods/*
+QIMPublicRedefineHeader/Pods/*
+ios_libs/*
+*/**/ios_libs/*

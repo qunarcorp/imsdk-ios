@@ -1,0 +1,27 @@
+//
+//  QIMUIVendorKit.pch
+//  QIMUIVendorKit
+//
+//  Created by 李露 on 2018/6/4.
+//  Copyright © 2018年 QIM. All rights reserved.
+//
+
+#ifndef QIMUIVendorKit_pch
+#define QIMUIVendorKit_pch
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+// Include any system framework and library headers here that should be included in all compilation units.
+#pragma mark - System Framework
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
+
+#endif /* QIMUIVendorKit_pch */

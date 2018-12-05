@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		2CDF25F4216C7B0400B88324 /* QIMDataBaseBuild */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2CDF25F7216C7B0500B88324 /* Build configuration list for PBXAggregateTarget "QIMDataBaseBuild" */;
+			buildPhases = (
+				2CDF25F8216C7B0800B88324 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = QIMDataBaseBuild;
+			productName = QIMDataBaseBuild;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		2C41169420E23D5B00E517DB /* QIMDataBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C41169220E23D5B00E517DB /* QIMDataBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C4116A220E23D8600E517DB /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4116A020E23D8600E517DB /* Database.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C4116A320E23D8600E517DB /* Database.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C4116A120E23D8600E517DB /* Database.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C4116A520E23DAF00E517DB /* QIMDataBase.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2C4116A420E23DAF00E517DB /* QIMDataBase.pch */; };
+		A3D99509EDB5454540924C64 /* libPods-QIMDataBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6843130FB149F42A1C18EFC9 /* libPods-QIMDataBase.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C41168F20E23D5B00E517DB /* QIMDataBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QIMDataBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C41169220E23D5B00E517DB /* QIMDataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QIMDataBase.h; sourceTree = "<group>"; };
+		2C41169320E23D5B00E517DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C4116A020E23D8600E517DB /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
+		2C4116A120E23D8600E517DB /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
+		2C4116A420E23DAF00E517DB /* QIMDataBase.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QIMDataBase.pch; sourceTree = "<group>"; };
+		6843130FB149F42A1C18EFC9 /* libPods-QIMDataBase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QIMDataBase.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		82BCA6B54CEF53069D72BF47 /* Pods-QIMDataBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QIMDataBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-QIMDataBase/Pods-QIMDataBase.release.xcconfig"; sourceTree = "<group>"; };
+		B0ED2A1FB3DC82C49301AE79 /* Pods-QIMDataBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QIMDataBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QIMDataBase/Pods-QIMDataBase.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C41168B20E23D5B00E517DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3D99509EDB5454540924C64 /* libPods-QIMDataBase.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		031C5A66CF94C8F3A90CA586 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B0ED2A1FB3DC82C49301AE79 /* Pods-QIMDataBase.debug.xcconfig */,
+				82BCA6B54CEF53069D72BF47 /* Pods-QIMDataBase.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2C41168520E23D5B00E517DB = {
+			isa = PBXGroup;
+			children = (
+				2C41169120E23D5B00E517DB /* QIMDataBase */,
+				2C41169020E23D5B00E517DB /* Products */,
+				031C5A66CF94C8F3A90CA586 /* Pods */,
+				7788FD32F68263F6008CE264 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2C41169020E23D5B00E517DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C41168F20E23D5B00E517DB /* QIMDataBase.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C41169120E23D5B00E517DB /* QIMDataBase */ = {
+			isa = PBXGroup;
+			children = (
+				2C4116A120E23D8600E517DB /* Database.h */,
+				2C4116A020E23D8600E517DB /* Database.m */,
+				2C41169320E23D5B00E517DB /* Info.plist */,
+				2C41169220E23D5B00E517DB /* QIMDataBase.h */,
+				2C4116A420E23DAF00E517DB /* QIMDataBase.pch */,
+			);
+			path = QIMDataBase;
+			sourceTree = "<group>";
+		};
+		7788FD32F68263F6008CE264 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6843130FB149F42A1C18EFC9 /* libPods-QIMDataBase.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2C41168C20E23D5B00E517DB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C4116A520E23DAF00E517DB /* QIMDataBase.pch in Headers */,
+				2C4116A320E23D8600E517DB /* Database.h in Headers */,
+				2C41169420E23D5B00E517DB /* QIMDataBase.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2C41168E20E23D5B00E517DB /* QIMDataBase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C41169720E23D5B00E517DB /* Build configuration list for PBXNativeTarget "QIMDataBase" */;
+			buildPhases = (
+				549DAC6CE7C203B8109D0C90 /* [CP] Check Pods Manifest.lock */,
+				2C41168A20E23D5B00E517DB /* Sources */,
+				2C41168B20E23D5B00E517DB /* Frameworks */,
+				2C41168C20E23D5B00E517DB /* Headers */,
+				2C41168D20E23D5B00E517DB /* Resources */,
+				D6C3E69A6257B032A952148C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QIMDataBase;
+			productName = QIMDataBase;
+			productReference = 2C41168F20E23D5B00E517DB /* QIMDataBase.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C41168620E23D5B00E517DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = QIM;
+				TargetAttributes = {
+					2C41168E20E23D5B00E517DB = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					2CDF25F4216C7B0400B88324 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 2C41168920E23D5B00E517DB /* Build configuration list for PBXProject "QIMDataBase" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2C41168520E23D5B00E517DB;
+			productRefGroup = 2C41169020E23D5B00E517DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C41168E20E23D5B00E517DB /* QIMDataBase */,
+				2CDF25F4216C7B0400B88324 /* QIMDataBaseBuild */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C41168D20E23D5B00E517DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2CDF25F8216C7B0800B88324 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../autoBuildScript/buildComponent.sh",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash $SCRIPT_INPUT_FILE_0\n";
+		};
+		549DAC6CE7C203B8109D0C90 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QIMDataBase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6C3E69A6257B032A952148C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QIMDataBase/Pods-QIMDataBase-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C41168A20E23D5B00E517DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C4116A220E23D8600E517DB /* Database.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2C41169520E23D5B00E517DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2C41169620E23D5B00E517DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2C41169820E23D5B00E517DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0ED2A1FB3DC82C49301AE79 /* Pods-QIMDataBase.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = B6CPF58V3M;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/QIMDataBase/QIMDataBase.pch";
+				INFOPLIST_FILE = QIMDataBase/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qunar.qtalkDevelop.QIMDataBase;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C41169920E23D5B00E517DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82BCA6B54CEF53069D72BF47 /* Pods-QIMDataBase.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = B6CPF58V3M;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/QIMDataBase/QIMDataBase.pch";
+				INFOPLIST_FILE = QIMDataBase/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qunar.qtalkDevelop.QIMDataBase;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2CDF25F5216C7B0500B88324 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6CPF58V3M;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2CDF25F6216C7B0500B88324 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6CPF58V3M;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C41168920E23D5B00E517DB /* Build configuration list for PBXProject "QIMDataBase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C41169520E23D5B00E517DB /* Debug */,
+				2C41169620E23D5B00E517DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C41169720E23D5B00E517DB /* Build configuration list for PBXNativeTarget "QIMDataBase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C41169820E23D5B00E517DB /* Debug */,
+				2C41169920E23D5B00E517DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CDF25F7216C7B0500B88324 /* Build configuration list for PBXAggregateTarget "QIMDataBaseBuild" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CDF25F5216C7B0500B88324 /* Debug */,
+				2CDF25F6216C7B0500B88324 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C41168620E23D5B00E517DB /* Project object */;
+}

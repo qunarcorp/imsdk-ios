@@ -1,0 +1,357 @@
+/*
+  Localizable.strings
+  qunarChatIphone
+
+  Created by admin on 16/1/21.
+
+*/
+
+"ok" = "OK";
+"cancel" = "Cancel";
+"not ask me again" = "Don't ask me again";
+"send" = "Send";
+
+"baiduMap" = "Navigate by Baidu Maps";
+"tencentMap" = "Navigate by Tencent Maps";
+"iosamap" = "Navigate by AutoNavi Maps";
+"appleMap" = "Navigate by Apple Maps";
+
+"login_userNameInputView_placeholder" = "e.g. : wu.wang";
+
+// Tab bar Title
+"tab_title_chat" = "Chat";
+"tab_title_travel" = "Travel";
+"tab_title_contact" = "Contact";
+"tab_title_discover" = "Discover";
+"tab_title_scheme" = "Scheme";
+"tab_title_explore" = "Explore";
+"tab_title_myself" = "Me";
+
+//Navigation server
+"nav_title_configManager" = "Navigation Server Management";
+"nav_title_debug_configManager" = "Debug Navigation Server";
+"nav_server_nickName" = "Navigation server nickName";
+"nav_server_address" = "Navigation server address";
+"nav_server_port" = "Navigation server port";
+"nav_server_domain" = "Navigation server domain";
+"nav_server_httpHost" = "Http server address";
+"nav_server_file" = "File server address";
+
+// Text Bar Button Title
+"textbar_button_album" = "Album";
+"textbar_button_camera" = "Camera";
+"textbar_button_videoCall" = "Video Call";
+"textbar_button_voiceCall" = "Voice Call";
+"textbar_button_position" = "Position";
+"textbar_button_burn_after_reading" = "ARBurn";
+"textbar_button_file" = "My File";
+"textbar_button_shake" = "Shake";
+"textbar_button_quick_reply" = "Quick Reply";
+"textbar_button_move_chat" = "Move Chat";
+"textbar_button_send_product" = "Send Product";
+"textbar_button_share_card" = "Share Card";
+"textbar_button_red_package" = "Red Pack";
+"textbar_button_aa" = "AA Pay";
+"textbar_button_activity" = "Activity";
+"textbar_button_send" = "Send";
+"textbar_button_hold_talk" = "Hold Talk";
+"textbar_button_release_audition" = "Release Audition";
+"textbar_button_release_cancel" = "Release Cancel Send";
+"textbar_input_tips" = "Enter what you have to say.";
+"textbar_refer_input_tips" = "Reference input to reply";
+
+//Contact Tab
+"contact_tab_friend" = "Friend";
+"contact_tab_group" = "Group";
+"contact_tab_not_read" = "No Read";
+"contact_tab_public_number" = "Pub NO.";
+"contact_tab_organization" = "Organization";
+"contact_tab_tips" = "Please goto the \"search\" channel -> \"luotuobang\" function for your classmate searching";
+
+//explore tab
+"explore_tab_lvtu" = "Lvtu";
+"explore_tab_luotuobang" = "luotuo bang";
+"explore_tab_qrcode" = "QRCode Sweep";
+"explore_tab_personality_dress_up" = "Personality Dress";
+"explore_tab_my_file" = "My File";
+"explore_tab_account_information" = "Account Information";
+"explore_tab_sign_in_check" = "Sign In Check";
+"send_custom_pruduct" = "Send Product";
+"explore_tab_history" = "History Message Search";
+"explore_tab_onekeyread" = "One key read";
+"explore_tab_clear_message_list" = "Clear message list";
+"explore_tab_notes" = "Carry note";
+
+//Setting tab
+"Setting_nav_back" = "Back";
+"Setting_tab_account" = "My Account";
+"Seeting_tab_notication" = "Notifications";
+"Setting_tab_privacy" = "Privacy";
+"Setting_tab_general" = "General";
+"Setting_tab_Help" = "Help & Feedback";
+"Setting_tab_aboutQTalk" = "About QTalk";
+"Setting_tab_aboutQChat" = "About QChat";
+"Setting_tab_Logout" = "Logout";
+
+//About Tab
+
+"About_nav_title_QTalk" = "About QTalk";
+"About_nav_title_QChat" = "About QChat";
+"About_nav_back" = "Back";
+"About_tab_rate" = "Rate";
+"About_tab_function" = "功能介绍";
+"About_tab_features" = "Features";
+"About_tab_sendLog" = "Send Log";
+"About_tab_feedBack" = "FeedBack";
+"About_tab_JoinUs" = "Join In QTalk Family";
+"About_tab_recordLog" = "Record Local Log";
+"About_tab_instruments" = "Instruments";
+
+//myself tab
+"myself_tab_id" = "ID";
+"myself_tab_department" = "Department";
+"myself_tab_red_package" = "My Red Package";
+"myself_tab_max_count" = "Max Count";
+"myself_tab_balance" = "Balance";
+"myself_tab_qrcode" = "My QRCode";
+"myself_tab_privacy_settings" = "Privacy Setting";
+"myself_tab_notify_tone" = "Notification Tone";
+"myself_tab_myPush" = "Online also accepted notice";
+"myself_tab_notify_tone" = "In-App Alert Sound";
+"myself_tab_notify_shock" = "Vibrate";
+"myself_tab_notify_switch" = "Notifications";
+"myself_tab_notify_content" = "Show Preview Text";
+"myself_tab_resetPwd" = "Reset Password";
+"myself_tab_mconfig" = "Accounts Manager";
+"myself_tab_about" = "About Us";
+"myself_tab_show_favorite" = "My Favorite";
+"myself_tab_show_mood" = "Show mood";
+"myself_tab_service" = "Service mode";
+"myself_tab_clear_cache" = "Clear User Cache";
+"myself_tab_clear_image" = "Clear Image Cache";
+"myself_tab_check_update" = "Check Update";
+"myself_tab_update_config" = "Update Config";
+"myself_tab_setting" = "Settings";
+"myself_tab_quit_log" = "Logout";
+"myself_tab_edit_signature" = "Click Edit Signature";
+"user_tab_default_signature" = "He/she is very lazy,nothing left...";
+"myself_update_max_count" = "Update Max User Count";
+"myself_max_count" = "Max User Count";
+
+//Group
+"group_name" = "Group Name";
+"group_id" = "ID";
+"group_setting" = "Group Setting";
+"group_msg_setting" = "Group Message Setting";
+"group_topic" = "Group Topic";
+"group_member" = "Group Members";
+"group_qr_code" = "Group QRCode";
+"group_push" = "Group Push Remind";
+"group_quit" = "Quit Group";
+"group_join" = "Join Group";
+"group_message_reply" = "Group Message Reply";
+"group_owner" = "Owner";
+"group_admin" = "Admin";
+"group_update_name" = "Update Group Name";
+"group_update_topic" = "Update Group Topic";
+"group_update_pwd" = "Update Group Password";
+"group_setting_rcevRmd" = "Receive And Remind";
+"group_setting_rcevNoRmd" = "Receive Not Remind";
+
+//User
+"user_name" = "UserName";
+"user_remark" = "Remark";
+"user_id" = "ID";
+"user_department" = "Department";
+"user_introduce" = "Signature";
+"user_leader" = "TL";
+"user_mobile_no" = "Mobile NO.";
+"user_web_name" = "Web Name";
+"user_comment" = "Comment";
+"user_send_mail" = "Send Mail";
+"user_push" = "Push Remind";
+"user_send_msg" = "Send Message";
+"user_add_friend" = "Add Friend";
+"user_delete_friend" = "Delete Friend";
+"user_camera" = "Camera";
+"user_from_album" = "From Album Select";
+"user_selected" = "Select";
+
+// Search Bar
+"search_bar_placeholder" = "Search";
+"search_bar_tab" = "";
+
+// QRCode
+"qrcode_tips_group" = "Sweep, quickly open the group name card";
+"qrcode_tips_user" = "Sweep, quickly open the name card";
+"qrcode_tips_public_number" = "Sweep, the number of public concern";
+"qrcode_tips_client_nav" = "Sweep, quickly add the client nav";
+"qrcode_@_qrcode" = "%@ QRCode";
+
+// Common
+"common_send_friend" = "Send To Friend";
+"common_back" = "Back";
+"common_close" = "Close";
+"common_cancel" = "Cancel";
+"common_delete" = "Delete";
+"common_all" = "ALL";
+"common_unselect_all" = "Unselect all";
+"common_send" = "Send";
+"common_resume" = "Resume";
+"common_ok" = "ok";
+"common_group_card" = "Group Card";
+"check_product_please_input_name" = "please input your product id...";
+"check_product" = "search";
+"common_save" = "Save";
+"common_small_video" = "Small Video";
+"common_prompt" = "Prompt";
+"common_got_it" = "Got It";
+"common_refresh" = "Refresh";
+"common_open_in_safari" = "Open in Safari";
+"common_add" = "Add";
+"common_black_list" = "Black List";
+"common_input_username" = "Input User Name.";
+"common_today" = "Today";
+"common_yesterday" = "Yesterday";
+"common_not_download" = "Not Download";
+"common_sent" = "Sent";
+"common_already_download" = "Already Download";
+"common_from" = "From";
+"common_issue" = "Issue";
+"common_old_file" = "Before the file can not be viewed. ~! -.-";
+"common_my_group" = "My Group";
+"common_all_group" = "All Group";
+"common_search_tips" = "Please enter search keywords";
+"common_search_public_number" = "Search Pub No.";
+"common_more" = "More";
+"common_search_pn_tips" = "Enter the name, Pinyin, ID search";
+"common_cancel" = "Cancel";
+"common_error" = "Error";
+"common_camera_faild" = "When you get a camera, please check if you are allowed to access the camera!";
+
+"common_roaming_tips" = "You have not roam there are local collection of expression, may be lost in the upgrade/install.Immediately roaming?";
+"common_done_roaming" = "Roaming";
+
+// Login
+"login" = "Login";
+"login_faild" = "Login Faild.";
+"login_get_code" = "Get Code";
+"login_code" = "Verification code";
+"Login_name" = "User Name";
+"login_agree" = "Read & Agreed";
+"login_privacy_policy" = "Terms and privacy policy";
+"login_input_code" = "Please enter the verification code";
+"login_waiting" = "Please wait patiently, login...";
+"login_get_code_tips" = "Verification code to succeed, please enter the verification code received by the phone message to log on.";
+"relogin_checkNetWork" = "Loading login page failed, make sure you have Wi-Fi or mobile data turned on, and reload the login page";
+
+// User Privacy Settings
+"privacy_settings" = "Privacy Setting.";
+"pms_all_refuse" = "Reject any person's message.";
+"pms_only_friend" = "Only receive messages from friends.";
+"pms_all_allow" = "Receive messages from anyone.";
+"ps_all_refuse" = "Reject anyone.";
+"ps_question_answer" = "Need to answer the question correctly.";
+"ps_validation" = "Need to verify information.";
+"ps_all_allow" = "Allow any person.";
+"privacy_setting_faild" = "Privacy Setting Faild.";
+"privacy_setting_faild" = "修改设置失败。";
+"NSCameraUsageDescription" = "QTalk Would Like to Access the Camera";
+"NSLocationWhenInUseUsageDescription" = "Allow QTalk to access your location while you use the app";
+"NSLocationAlwaysUsageDescription" = "Allow QTalk to access your location while you use the app";
+"NSPhotoLibraryUsageDescription" = "QTalk Would Like to Access Your Photos";
+"NSMicrophoneUsageDescription" = "QTalk Would Like to Access the Microphone";
+
+
+// QR Code
+"qrcode_title" = "Sweep QRCode";
+"qrcode_tips" = "Frame alignment of the two-dimensional code will automatically scan the viewfinder.";
+"bar_code_title" = "Sweep Bar Code";
+"qrcode_album" = "Album";
+"qrcode_lights" = "Turn On";
+
+// Personality dress up
+"personality_change_bgimage" = "Change Chat BgImage";
+"personality_chat_bgimage" = "Chat BGImage";
+"personality_chat_bubblecolor" = "Font Size";
+"personality_select_bgimage" = "Select a background map";
+"personality_album" = "Select from the phone album";
+"personality_camera" = "Take a picture";
+"personality_selected_current" = "The picture as current chat bgImage";
+"personality_selected_normal" = "The picture as general chat bgImage";
+"personality_selected_all" = "The picture as all chat bgImage";
+"personality_default" = "Default BgImage";
+
+
+//自定义颜色
+"qtalk_team" = "QTalk Team";
+"thanks" = "Ok, thank you very much";
+
+"custom_bubble_entrance" = "Bubble / Text Color";
+"custom_color_title" = "Custom Color";
+"custom_bubble_preview" = "Bubble / Text Color";
+"Custom_Color_Choose_Btn" = "Click the corresponding button, you can set the corresponding color value";
+"Custom_Color_FeedBack" = "Bubble background color, text Color will also change after setting. For any qustions or suggestions, feedback to QTalk Team";
+"custom_target_bubble_color" = "his bubble color";
+"custom_target_font_color" = "his font color";
+"custom_myself_font_color" = "my font color";
+"custom_myself_bubble_color" = "my bubble color";
+"custom_back_to_normal" = "back to normal";
+
+// 自定义字体大小
+
+"custom_font_size_entrance" = "Text Size";
+"Preview_text_size" = "Preview text size";
+"Drag_Change_Text_Size" = "Drag the block to change text size";
+"Text_Size_FeedBack" = "Text size in chats, menus and Moments will also change after setting. For any qustions or suggestions, feedback to QTalk Team";
+"font_size_small" = "A";
+"font_size_standard" = "Standard";
+"font_size_big" = "A";
+
+//聊天记录转发
+"Combine and Forward" = "Combine and Forward";
+"One-by-One Forward" = "One-by-One Forward";
+
+
+
+//密码
+"account" = "Account";
+"password" = "Password";
+"explore_title_passwords" = "Password Box";
+"password_tab_show" = "Reveal Password";
+"password_tab_textPlaceholder" = "Password name";
+"password_tab_new" = "Generate New Password";
+"password_tab_reset" = "ReGenerate Password";
+"password_tab_history" = "Password Change History";
+"password_tab_favorite" = "Add to Favorites";
+"password_tab_removeFavorite" = "Remove from Favorites";
+"password_tab_copy" = "Copy";
+"password_tab_share" = "Share";
+"password_tab_export" = "Export";
+"password_menu_reveal" = "Reveal";
+"password_menu_conceal" = "Conceal";
+"password_menu_large" = "Large Type";
+"password_slider_characters" = "Characters";
+"password_slider_length" = "Length";
+"password_slider_digits" = "Digits";
+"password_slider_symbols" = "Symbols";
+"password_slider_upper" = "Uppercase";
+"password_box_moveToBasket" = "Remove to Trash";
+"password_box_security" = "Security";
+"password_box_securityIntro" = "  Your Master Password will be required after some minutes.";
+"Password_tab_trash" = "Trash";
+"password_share_title" = "Be Aware When You Share ";
+"password_share_message" = "Sharing your items outside of QTalk sends them in plain text. Please be confident in the security of the apps you use when sharing.";
+"password_share_undestand" = "I Understand";
+
+//TODOList
+"TodoList" = "TodoList";
+"todolist_pull_add" = "Pull to Add Task";
+"todolist_think" = "I think...";
+
+"everNote" = "QTNote";
+
+//权限提示
+"QTalk Privacy Location Message" = "Unable to get your location data. Please enable location service in [Setting]->[Privacy]->[Location Service] and allow QTalk to get your location data.";
+"QChat Privacy Location Message" = "Unable to get your location data. Please enable location service in [Setting]->[Privacy]->[Location Service] and allow QTalk to get your location data.";
+

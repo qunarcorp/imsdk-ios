@@ -20,10 +20,10 @@
 ### 手动集成
 你可以通过[历史版本下载地址](https://github.com/qunarcorp/imsdk-ios/releases)下载最新版本，解压之后添加到工程中，具体步骤参考[集成文档](https://github.com/qunarcorp/imsdk-ios/wiki/QIMSDK-iOS%E6%8E%A5%E5%85%A5%E6%96%87%E6%A1%A3)
 
-# 历史版本:
+## 历史版本:
 你可以在当前仓库的 [Release](https://github.com/qunarcorp/imsdk-ios/releases) 进行历史版本下载。
 
-# Demo运行
+## Demo运行
 
 1. 初始化项目:  
    在项目根目录执行 `npm install & pod install`

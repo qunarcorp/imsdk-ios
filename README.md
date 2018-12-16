@@ -29,3 +29,6 @@
    在项目根目录执行 `npm install & pod install`
 2. 使用XCode打开IMSDK-iOS.xcworkspace并运行;
 
+## 问题反馈
+
+-   qchat@qunar.com（邮件）

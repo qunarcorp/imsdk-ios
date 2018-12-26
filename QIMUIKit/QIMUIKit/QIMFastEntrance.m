@@ -7,7 +7,7 @@
 //
 
 #import "QIMFastEntrance.h"
-#import "QIMCommonCategoriesPublicHeader.h"
+#import "QIMCommonCategories.h"
 #import "QIMCommonUIFramework.h"
 #import "UIApplication+QIMApplication.h"
 #import "QIMGroupCardVC.h"

@@ -17,7 +17,7 @@ FOUNDATION_EXPORT const unsigned char QIMSDKVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <QIMSDK/PublicHeader.h>
 //#import "QIMKitPublicHeader.h"
 #import "QIMKitPublicHeader.h"
-#import "QIMCommonCategoriesPublicHeader.h"
+#import "QIMCommonCategories.h"
 #import "QIMSDKUIHelper.h"
 #import "QIMSDKUIHelper+BaseUI.h"
 #import "QIMSDKUIHelper+CustomConfig.h"

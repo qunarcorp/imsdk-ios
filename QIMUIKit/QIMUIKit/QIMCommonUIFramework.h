@@ -37,7 +37,7 @@
 #endif
 
 #import "QIMKitPublicHeader.h"
-#import "QIMCommonCategoriesPublicHeader.h"
+#import "QIMCommonCategories.h"
 #import "QIMPublicRedefineHeader.h"
 
 #import "QIMJSONSerializer.h"

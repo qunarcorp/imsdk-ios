@@ -12,7 +12,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "QIMKitPublicHeader.h"
-#import "QIMCommonCategoriesPublicHeader.h"
+#import "QIMCommonCategories.h"
 #import "QIMJSONSerializer.h"
 #import "QIMPublicRedefineHeader.h"
 

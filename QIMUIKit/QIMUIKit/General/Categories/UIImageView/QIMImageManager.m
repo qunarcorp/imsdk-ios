@@ -10,7 +10,7 @@
 #import "NSBundle+QIMLibrary.h"
 #import "SDImageCache.h"
 #import "QIMKitPublicHeader.h"
-#import "QIMCommonCategoriesPublicHeader.h"
+#import "QIMCommonCategories.h"
 
 @implementation QIMImageManager
 

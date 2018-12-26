@@ -14,6 +14,6 @@
 #import <UIKit/UIKit.h>
 
 #import "QIMNetwork.h"
-#import "QIMCommonCategoriesPublicHeader.h"
+#import "QIMCommonCategories.h"
 
 #endif /* QIMGeneralModuleFramework_h */

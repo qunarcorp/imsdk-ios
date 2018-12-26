@@ -404,10 +404,6 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row <= 2) {
-        
-        return NO;
-    }
     return YES;
 }
 

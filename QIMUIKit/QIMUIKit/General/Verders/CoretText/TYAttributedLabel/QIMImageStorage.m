@@ -305,6 +305,8 @@
         return byRect;
     }
     CGRect scaleRect = byRect;
+    CGFloat originTargetWidth = size.width;
+    CGFloat originTargetHeight = size.height;
     CGFloat targetWidth = byRect.size.width <= 0 ? size.width : byRect.size.width;
     CGFloat targetHeight = byRect.size.height <= 0 ? size.height : byRect.size.height;
     CGFloat widthFactor = targetWidth / size.width;
@@ -312,19 +314,24 @@
     CGFloat scaleFactor = MIN(widthFactor, heightFactor);
     CGFloat scaledWidth  = size.width * scaleFactor;
     CGFloat scaledHeight = size.height * scaleFactor;
-    scaleRect.size = CGSizeMake(scaledWidth, scaledHeight);
     // center the image
-    if (widthFactor < heightFactor) {
-        scaleRect.origin.y += (targetHeight - scaledHeight) * 0.5;
-    } else if (widthFactor > heightFactor) {
-        switch (_imageAlignment) {
-            case QCImageAlignmentCenter:
-                scaleRect.origin.x += (targetWidth - scaledWidth) * 0.5;
-                break;
-            case QCImageAlignmentRight:
-                scaleRect.origin.x += (targetWidth - scaledWidth);
-            default:
-                break;
+    if (originTargetHeight > SCREEN_HEIGHT * 3) {
+        scaleRect.size = CGSizeMake(50, 100);
+        scaleRect.origin = CGPointMake(0, 0);
+    } else {
+        scaleRect.size = CGSizeMake(scaledWidth, scaledHeight);
+        if (widthFactor < heightFactor) {
+            scaleRect.origin.y += (targetHeight - scaledHeight) * 0.5;
+        } else if (widthFactor > heightFactor) {
+            switch (_imageAlignment) {
+                case QCImageAlignmentCenter:
+                    scaleRect.origin.x += (targetWidth - scaledWidth) * 0.5;
+                    break;
+                case QCImageAlignmentRight:
+                    scaleRect.origin.x += (targetWidth - scaledWidth);
+                default:
+                    break;
+            }
         }
     }
     return scaleRect;

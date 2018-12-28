@@ -181,7 +181,14 @@ static NSString *__default_ua = nil;
 - (void)onMoreClick{
     
     NSURL * tempUrl = _requestUrl;
-
+    {
+        //
+        // 给appstore帐号审核用
+        if (tempUrl == nil) {
+            tempUrl = [NSURL URLWithString:@"https://dujia.qunar.com"];
+        }
+    }
+    
     // Show activity view controller
     NSMutableArray *items = [NSMutableArray arrayWithObject:tempUrl];
     
@@ -288,7 +295,8 @@ static NSString *__default_ua = nil;
     [_webView setScalesPageToFit:YES];
     [_webView setMultipleTouchEnabled:YES];
     [self.view addSubview:_webView];
-
+//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"CKEditor5Edit" ofType:@"html"];
+//    self.htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     if (self.htmlString) {
         NSString *path = [[NSBundle mainBundle] bundlePath];
         NSURL *baseURL = [NSURL fileURLWithPath:path];
@@ -298,9 +306,6 @@ static NSString *__default_ua = nil;
             self.url = [self.url stringByAppendingFormat:@"&q_d=%@", [[QIMKit sharedInstance] getDomain]];
         }
         _requestUrl = [NSURL URLWithString:self.url];
-        if (_requestUrl == nil) {
-            _requestUrl = [NSURL URLWithString:[self.url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        }
         NSDictionary *queryDic = [[_requestUrl query] qim_dictionaryFromQueryComponents];
         if ([[queryDic objectForKey:@"navBarHidden"] isEqualToString:@"true"]) {
             [self setNavBarHidden:YES];
@@ -470,9 +475,29 @@ static NSString *__default_ua = nil;
                 
                 NSHTTPCookie *tcookie = [NSHTTPCookie cookieWithProperties:tcookieProperties];
                 [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:tcookie];
+                
+                NSMutableDictionary *dcookieProperties = [NSMutableDictionary dictionary];
+                NSString *domain = [[QIMKit sharedInstance] getDomain];
+                
+                [dcookieProperties setObject:domain forKey:NSHTTPCookieValue];
+                [dcookieProperties setObject:@"q_d" forKey:NSHTTPCookieName];
+                [dcookieProperties setValue:@".qunar.com" forKey:NSHTTPCookieDomain];
+                [dcookieProperties setValue:@"/" forKey:NSHTTPCookiePath];
+                [dcookieProperties setObject:@"0" forKey:NSHTTPCookieVersion];
+                NSHTTPCookie *dcookie = [NSHTTPCookie cookieWithProperties:dcookieProperties];
+                [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:dcookie];
             } else {
                 
                 //QTalk 默认q_ckey
+                NSMutableDictionary *dcookieProperties = [NSMutableDictionary dictionary];
+                NSString *domain = [[QIMKit sharedInstance] getDomain];
+                
+                [dcookieProperties setObject:domain forKey:NSHTTPCookieValue];
+                [dcookieProperties setObject:@"q_d" forKey:NSHTTPCookieName];
+                [dcookieProperties setValue:@".qunar.com" forKey:NSHTTPCookieDomain];
+                [dcookieProperties setValue:@"/" forKey:NSHTTPCookiePath];
+                [dcookieProperties setObject:@"0" forKey:NSHTTPCookieVersion];
+                
                 NSMutableDictionary *qckeyCookieProperties = [NSMutableDictionary dictionary];
                 NSString *qckey = [[QIMKit sharedInstance] thirdpartKeywithValue];
                 [qckeyCookieProperties setObject:qckey forKey:NSHTTPCookieValue];
@@ -483,6 +508,8 @@ static NSString *__default_ua = nil;
                 
                 NSHTTPCookie *qckeyCookie = [NSHTTPCookie cookieWithProperties:qckeyCookieProperties];
                 [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:qckeyCookie];
+                NSHTTPCookie *dCookie = [NSHTTPCookie cookieWithProperties:dcookieProperties];
+                [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:dCookie];
             }
         }
         NSHTTPCookieStorage *cook = [NSHTTPCookieStorage sharedHTTPCookieStorage];
@@ -588,6 +615,9 @@ static NSString *__default_ua = nil;
 - (void)setUrl:(NSString *) theUrl {
 
     QIMVerboseLog(@"webView setUrl : %@", theUrl);
+    if (!theUrl) {
+        theUrl = @"https://dujia.qunar.com";
+    }
     if (![theUrl qim_hasPrefixHttpHeader]) {
         theUrl = [NSString stringWithFormat:@"https://%@", theUrl];
     }
@@ -687,6 +717,8 @@ static NSString *__default_ua = nil;
         NSString *xmppId = [userInfoDic objectForKey:@"XmppId"];
         NSString *name = [userInfoDic objectForKey:@"Name"];
         [[QIMKit sharedInstance] clearNotReadMsgByJid:xmppId];
+        [QIMFastEntrance openSingleChatVCByUserId:xmppId];
+        /*
         QIMChatVC * chatVC  = [[QIMChatVC alloc] init];
         [chatVC setStype:kSessionType_Chat];
         [chatVC setChatId:xmppId];
@@ -694,6 +726,7 @@ static NSString *__default_ua = nil;
         [chatVC setChatType:ChatType_SingleChat];
         [chatVC setTitle:name];
         [self.navigationController popToRootVCThenPush:chatVC animated:YES];
+         */
     }
 }
 
@@ -701,12 +734,15 @@ static NSString *__default_ua = nil;
     NSDictionary *groupDic = [[QIMKit sharedInstance] getGroupCardByGroupId:jid];
     if (groupDic) {
         NSString *jid = [groupDic objectForKey:@"GroupId"];
-        NSString *name = [groupDic objectForKey:@"Name"];
+//        NSString *name = [groupDic objectForKey:@"Name"];
         [[QIMKit sharedInstance] clearNotReadMsgByGroupId:jid];
+        [QIMFastEntrance openGroupChatVCByGroupId:jid];
+        /*
         QIMGroupChatVC * chatGroupVC  =  [[QIMGroupChatVC alloc] init];
         [chatGroupVC setTitle:name];
         [chatGroupVC setChatId:jid];
         [self.navigationController popToRootVCThenPush:chatGroupVC animated:YES];
+         */
     }
 }
 

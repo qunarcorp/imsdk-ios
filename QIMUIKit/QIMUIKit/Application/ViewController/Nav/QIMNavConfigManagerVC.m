@@ -203,6 +203,15 @@
     if (!clientNavServerConfigs.count) {
         
         clientNavServerConfigs = [NSMutableArray arrayWithCapacity:5];
+        NSDictionary *qtalkNav = @{QIMNavNameKey:@"QTalk导航", QIMNavUrlKey:@"https://qt.qunar.com/package/static/qtalk/nav"};
+        NSDictionary *publicQTalkNav = @{QIMNavNameKey:@"Qunar公共域导航", QIMNavUrlKey:@"https://qt.qunar.com/package/static/qtalk/publicnav?c=qunar.com"};
+        NSDictionary *qchatNav = @{QIMNavNameKey:@"QChat导航", QIMNavUrlKey:@"https://qt.qunar.com/package/static/qchat/nav"};
+        if ([QIMKit getQIMProjectType] == QIMProjectTypeQTalk) {
+            [clientNavServerConfigs addObject:qtalkNav];
+            [clientNavServerConfigs addObject:publicQTalkNav];
+        } else {
+            [clientNavServerConfigs addObject:qchatNav];
+        }
     }
     return clientNavServerConfigs;
 }
@@ -404,6 +413,10 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    if (indexPath.row <= 1) {
+
+        return NO;
+    }
     return YES;
 }
 

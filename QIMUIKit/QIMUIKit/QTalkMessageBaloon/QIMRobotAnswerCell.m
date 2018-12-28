@@ -2,7 +2,7 @@
 //  QIMRobotAnswerCell.m
 //  QIMUIKit
 //
-//  Created by QIM on 11/9/18.
+//  Created by 李露 on 11/9/18.
 //  Copyright © 2018 QIM. All rights reserved.
 //
 
@@ -245,7 +245,7 @@
     NSData *bodydata = [[QIMJSONSerializer sharedInstance] serializeObject:tempPostBodyDic error:nil];
     __block NSInteger btnTag = btn.tag;
     __weak __typeof(self) weakSelf = self;
-    [[QIMKit sharedInstance] sendTPRequestWithUrl:requestUrl withRequestBodyData:bodydata withSuccessCallBack:^(NSData *responseData) {
+    [[QIMKit sharedInstance] sendTPPOSTRequestWithUrl:requestUrl withRequestBodyData:bodydata withSuccessCallBack:^(NSData *responseData) {
         __typeof(self) strongSelf = weakSelf;
         if (!strongSelf) {
             return;

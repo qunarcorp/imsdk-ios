@@ -476,55 +476,6 @@
 }
 
 static CGPoint tableOffsetPoint;
-- (void)displayImage:(UIGestureRecognizer *)gesture
-{
-    if (_photos == nil) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您所查看的图片不存在"
-                                                        message:nil
-                                                       delegate:nil
-                                              cancelButtonTitle:@"确定"
-                                              otherButtonTitles:nil];
-        [alert show];
-        return;
-    }
-    NSInteger index = gesture.view.tag;
-    CGPoint location = [gesture locationInView:[gesture.view viewWithTag:kTextLabelTag]];
-    NSUInteger imageIndex = [(QIMGroupChatCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]] indexForCellImagesAtLocation:location];
-    
-    NSArray * images = [_photos objectForKey:@(index)];
-    if (imageIndex < images.count) {
-        QIMDisplayImage *image = [images objectAtIndex:imageIndex];
-        //初始化图片
-        if (image) {
-            //纪录当前的浏览位置
-            tableOffsetPoint = self.tableView.contentOffset;
-            
-            //初始化图片浏览控件
-            QIMMWPhotoBrowser *browser = [[QIMMWPhotoBrowser alloc] initWithDelegate:self];
-            browser.displayActionButton = NO;
-            browser.zoomPhotosToFill = YES;
-            browser.enableSwipeToDismiss = NO;
-            [browser setCurrentPhotoIndex:image.imageIndex];
-            
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
-            browser.wantsFullScreenLayout = YES;
-#endif
-            
-            //初始化navigation
-            QIMPhotoBrowserNavController *nc = [[QIMPhotoBrowserNavController alloc] initWithRootViewController:browser];
-            nc.modalTransitionStyle    = UIModalTransitionStyleCrossDissolve;
-            [self presentViewController:nc animated:YES completion:nil];
-            return;
-        }
-    }
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您所查看的图片不存在"
-                                                    message:nil
-                                                   delegate:nil
-                                          cancelButtonTitle:@"确定"
-                                          otherButtonTitles:nil];
-    [alert show];
-    return ;
-}
 
 - (void)processEvent:(int)event withMessage:(id)message {
     

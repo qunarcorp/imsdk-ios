@@ -182,11 +182,28 @@
     NSString *httpUrl = [QIMKit updateLoadFile:[NSData dataWithContentsOfFile:zipFilePath] WithMsgId:nil WithMsgType:QIMMessageType_File WihtPathExtension:zipFilePath.pathExtension];
     if (httpUrl.length) {
         if (![httpUrl qim_hasPrefixHttpHeader]) {
-            httpUrl = [NSString stringWithFormat:@"%@/%@", [[QIMKit sharedInstance] qimNav_Simpleapiurl], httpUrl];
+            httpUrl = [NSString stringWithFormat:@"%@/%@", @"https://qt.qunar.com", httpUrl];
         }
         [self submitLogWithFileUrl:httpUrl];
     }
 #endif
+//    [self sendMailWithFile:[NSData dataWithContentsOfFile:zipFilePath] WithFileName:zipFileName];
+    
+    /*
+    __block UIAlertController *sendLogAlertVc = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入App故障时间及详细Case，并确认将日志文件以文件消息形式发送给lilulucas.li?" preferredStyle:UIAlertControllerStyleAlert];
+    [sendLogAlertVc addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(alertTextFieldDidChange:) name:UITextFieldTextDidChangeNotification object:textField];
+        textField.placeholder = @"00:00App出现未登录情况";
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:[NSBundle qim_localizedStringForKey:@"cancel"] style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:[NSBundle qim_localizedStringForKey:@"ok"] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
+        [self sendLogWithDetail:sendLogAlertVc.textFields.firstObject.text];
+    }];
+    okAction.enabled = NO;
+    [sendLogAlertVc addAction:cancelAction];
+    [sendLogAlertVc addAction:okAction];
+    [self presentViewController:sendLogAlertVc animated:YES completion:nil]; */
 }
 
 - (void)submitLogWithFileUrl:(NSString *)fileUrl {

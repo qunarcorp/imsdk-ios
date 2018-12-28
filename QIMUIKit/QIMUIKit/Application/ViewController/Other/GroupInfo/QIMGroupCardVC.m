@@ -405,11 +405,14 @@
     [self registerNotify:NO];
     if ([_groupId isEqualToString:notify.object]) { 
         [[QIMKit sharedInstance] openGroupSessionByGroupId:self.groupId ByName:self.groupName];
+        [QIMFastEntrance openGroupChatVCByGroupId:self.groupId];
+        /*
         QIMGroupChatVC * chatGroupVC  =  [[QIMGroupChatVC alloc] init];
         [chatGroupVC setTitle:self.groupName];
         [chatGroupVC setChatId:self.groupId];
         [[NSNotificationCenter defaultCenter] postNotificationName:kNotifySelectTab object:@(0)];
         [self.navigationController popToRootVCThenPush:chatGroupVC animated:YES];
+         */
     }
 }
 

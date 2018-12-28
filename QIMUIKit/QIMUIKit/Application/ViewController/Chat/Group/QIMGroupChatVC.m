@@ -20,9 +20,7 @@
 #import "QIMCollectionFaceManager.h"
 #import "MBProgressHUD.h"
 #import "NSBundle+QIMLibrary.h"
-#if defined (QIMRNEnable) && QIMRNEnable == 1
-    #import "QimRNBModule.h"
-#endif
+#import "QIMRedMindView.h"
 #import "QIMTapGestureRecognizer.h"
 #import "QIMOriginMessageParser.h"
 
@@ -97,6 +95,7 @@
     #import "QIMWebRTCMeetingClient.h"
 #endif
 #import "QIMAuthorizationManager.h"
+#import "QIMSearchRemindView.h"
 #define kPageCount 20
 
 #define kReSendMsgAlertViewTag 10000
@@ -201,6 +200,14 @@ static NSMutableDictionary *__checkGroupMembersCardDic = nil;
 @property(nonatomic, strong) QIMRemoteAudioPlayer *remoteAudioPlayer;
 
 @property(nonatomic, assign) NSInteger currentMsgIndexs;
+
+@property(nonatomic, assign) NSInteger loadCount;
+
+@property(nonatomic, assign) BOOL reloadSearchRemindView;
+
+@property(nonatomic, strong) QIMSearchRemindView *searchRemindView;
+
+@property(nonatomic, strong) NSMutableArray *fixedImageArray;
 
 @end
 
@@ -426,9 +433,7 @@ static NSMutableDictionary *__checkGroupMembersCardDic = nil;
     return _remoteAudioPlayer;
 }
 
-- (void)initUI {
-    
-    self.view.backgroundColor = [UIColor qtalkChatBgColor];
+- (void)setupNav {
     [self setBackBtn];
     NSDictionary *groupCardDic = [[QIMKit sharedInstance] getGroupCardByGroupId:self.chatId];
     NSString *titleName = [groupCardDic objectForKey:@"Name"];
@@ -460,12 +465,21 @@ static NSMutableDictionary *__checkGroupMembersCardDic = nil;
     }
     if (self.chatType == ChatType_GroupChat) {
         UIView *rightBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 70, 44)];
-        //    [rightBarView addSubview:self.friendsterButton];
         [rightBarView addSubview:self.addGroupMember];
+        if (![[[QIMKit sharedInstance] userObjectForKey:kRightCardRemindNotification] boolValue]) {
+            QIMRedMindView *redMindView = [[QIMRedMindView alloc] initWithBroView:self.addGroupMember withRemindNotificationName:kRightCardRemindNotification];
+            [rightBarView addSubview:redMindView];
+        }
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBarView];
     } else {
         
     }
+}
+
+- (void)initUI {
+    
+    self.view.backgroundColor = [UIColor qtalkChatBgColor];
+  
     [[QIMEmotionSpirits sharedInstance] setTableView:_tableView];
     [self loadData];
     if (self.chatType == ChatType_GroupChat) {
@@ -636,6 +650,8 @@ static NSMutableDictionary *__checkGroupMembersCardDic = nil;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupNav];
+    self.loadCount = 0;
     if (self.bindId) {
         self.chatType = ChatType_CollectionChat;
     } else {
@@ -653,7 +669,7 @@ static NSMutableDictionary *__checkGroupMembersCardDic = nil;
         
         [self updateGroupMemberCards];
     }
-    [self initUI];
+//    [self initUI];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         [self synchronizeChatSession];
@@ -670,6 +686,7 @@ static NSMutableDictionary *__checkGroupMembersCardDic = nil;
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [[QIMKit sharedInstance] setCurrentSessionUserId:self.chatId];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    [self initUI];
     /*
     if (self.chatType == ChatType_GroupChat) {
         BOOL containTextBar = NO;
@@ -876,21 +893,6 @@ static NSMutableDictionary *__checkGroupMembersCardDic = nil;
         [self closeHUD];
         QIMVerboseLog(@"重新Reload 群组聊天会话框结束");
     }
-}
-
-//lilu 9.22 3DTouch
-- (NSArray<id <UIPreviewActionItem>> *)previewActionItems {
-    BOOL isStick = [[QIMKit sharedInstance] isStickWithCombineJid:self.chatId];
-    NSString *title = isStick ? @"取消置顶" : @"置顶";
-    
-    UIPreviewAction *p1 = [UIPreviewAction actionWithTitle:title style:UIPreviewActionStyleDefault handler:^(UIPreviewAction *_Nonnull action, UIViewController *_Nonnull previewViewController) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kChatSessionStick object:self.chatInfoDict];
-    }];
-    UIPreviewAction *p3 = [UIPreviewAction actionWithTitle:@"删除" style:UIPreviewActionStyleDestructive handler:^(UIPreviewAction *_Nonnull action, UIViewController *_Nonnull previewViewController) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kChatSessionDelete object:self.chatInfoDict];
-    }];
-    
-    return @[p1, p3];
 }
 
 //lilu 9.19表情收藏成功通知
@@ -1195,11 +1197,9 @@ static NSMutableDictionary *__checkGroupMembersCardDic = nil;
     
     [super selfPopedViewController];
     [[QIMKit sharedInstance] setNotSendText:[self.textBar getSendAttributedText]
-                                       inputItems:[self.textBar getAttributedTextItems]
-                                           ForJid:self.chatId];
+                                 inputItems:[self.textBar getAttributedTextItems]
+                                     ForJid:self.chatId];
     [[QIMKit sharedInstance] setCurrentSessionUserId:nil];
-    [NSObject cancelPreviousPerformRequestsWithTarget:self];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)goBack:(id)sender {
@@ -1376,10 +1376,10 @@ static NSMutableDictionary *__checkGroupMembersCardDic = nil;
         }];
     } else if ([trId isEqualToString:QIMTextBarExpandViewItem_RedPack]) {
         
-        QIMVerboseLog(@"我是 红包，点我 干哈？");
+        QIMVerboseLog(@"我是 群红包，点我 干哈？");
         if ([[QIMKit sharedInstance] redPackageUrlHost]) {
             QIMWebView *webView = [[QIMWebView alloc] init];
-            webView.url = [NSString stringWithFormat:@"%@?username=%@&sign=%@&company=qunar&group_id=%@&rk=%@", [[QIMKit sharedInstance] redPackageUrlHost], [QIMKit getLastUserName], [[NSString stringWithFormat:@"%@00d8c4642c688fd6bfa9a41b523bdb6b", [QIMKit getLastUserName]] qim_getMD5], self.chatId, [[QIMKit sharedInstance] myRemotelogginKey]];
+            webView.url = [NSString stringWithFormat:@"%@?username=%@&sign=%@&company=qunar&group_id=%@&rk=%@", [[QIMKit sharedInstance] redPackageUrlHost], [QIMKit getLastUserName], [[NSString stringWithFormat:@"%@00d8c4642c688fd6bfa9a41b523bdb6b", [QIMKit getLastUserName]] qim_getMD5], [self.chatId stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [[QIMKit sharedInstance] myRemotelogginKey]];
             //        webView.navBarHidden = YES;
             [webView setFromRegPackage:YES];
             [self.navigationController pushViewController:webView animated:YES];
@@ -1390,7 +1390,7 @@ static NSMutableDictionary *__checkGroupMembersCardDic = nil;
         
         if ([[QIMKit sharedInstance] aaCollectionUrlHost]) {
             QIMWebView *webView = [[QIMWebView alloc] init];
-            webView.url = [NSString stringWithFormat:@"%@?username=%@&sign=%@&company=qunar&group_id=%@&rk=%@", [[QIMKit sharedInstance] aaCollectionUrlHost], [QIMKit getLastUserName], [[NSString stringWithFormat:@"%@00d8c4642c688fd6bfa9a41b523bdb6b", [QIMKit getLastUserName]] qim_getMD5], self.chatId, [[QIMKit sharedInstance] myRemotelogginKey]];
+            webView.url = [NSString stringWithFormat:@"%@?username=%@&sign=%@&company=qunar&group_id=%@&rk=%@", [[QIMKit sharedInstance] aaCollectionUrlHost], [QIMKit getLastUserName], [[NSString stringWithFormat:@"%@00d8c4642c688fd6bfa9a41b523bdb6b", [QIMKit getLastUserName]] qim_getMD5], [self.chatId stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [[QIMKit sharedInstance] myRemotelogginKey]];
             webView.navBarHidden = YES;
             [webView setFromRegPackage:YES];
             [self.navigationController pushViewController:webView animated:YES];
@@ -1401,7 +1401,7 @@ static NSMutableDictionary *__checkGroupMembersCardDic = nil;
         if ([[QIMKit sharedInstance] redPackageUrlHost]) {
             //发活动
             QIMWebView *webView = [[QIMWebView alloc] init];
-            webView.url = [NSString stringWithFormat:@"%@?username=%@&sign=%@&company=qunar&group_id=%@&rk=%@&action="@"event", [[QIMKit sharedInstance] redPackageUrlHost], [QIMKit getLastUserName], [[NSString stringWithFormat:@"%@00d8c4642c688fd6bfa9a41b523bdb6b", [QIMKit getLastUserName]] qim_getMD5], self.chatId, [[QIMKit sharedInstance] myRemotelogginKey]];
+            webView.url = [NSString stringWithFormat:@"%@?username=%@&sign=%@&company=qunar&group_id=%@&rk=%@&action="@"event", [[QIMKit sharedInstance] redPackageUrlHost], [QIMKit getLastUserName], [[NSString stringWithFormat:@"%@00d8c4642c688fd6bfa9a41b523bdb6b", [QIMKit getLastUserName]] qim_getMD5], [self.chatId stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [[QIMKit sharedInstance] myRemotelogginKey]];
             [webView setFromRegPackage:YES];
             webView.navBarHidden = YES;
             [self.navigationController pushViewController:webView animated:YES];
@@ -1420,6 +1420,28 @@ static NSMutableDictionary *__checkGroupMembersCardDic = nil;
             [self.navigationController presentViewController:userLct animated:YES completion:nil];
         };
         [[QIMAuthorizationManager sharedManager] requestAuthorizationWithType:ENUM_QAM_AuthorizationTypeLocation];
+    } else if ([trId isEqualToString:QIMTextBarExpandViewItem_TouPiao]) {
+        NSDictionary *trdExtendDic = [[QIMKit sharedInstance] getExpandItemsForTrdextendId:trId];
+        NSString *linkUrl = [trdExtendDic objectForKey:@"linkurl"];
+        if (linkUrl.length > 0) {
+            if ([linkUrl rangeOfString:@"qunar.com"].location != NSNotFound) {
+                linkUrl = [linkUrl stringByAppendingFormat:@"%@username=%@&company=qunar&group_id=%@&rk=%@", [linkUrl rangeOfString:@"?"].location != NSNotFound ? @"&" : @"?", [QIMKit getLastUserName], [self.chatId stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [[QIMKit sharedInstance] remoteKey]];
+            } else {
+                linkUrl = [linkUrl stringByAppendingFormat:@"%@from=%@&to=%@&chatType=%lld", [linkUrl rangeOfString:@"?"].location != NSNotFound ? @"&" : @"?", [[QIMKit sharedInstance] getLastJid],  [self.chatId stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], self.chatType];
+            }
+            [QIMFastEntrance openWebViewForUrl:linkUrl showNavBar:YES];
+        }
+    } else if ([trId isEqualToString:QIMTextBarExpandViewItem_Task_list]) {
+        NSDictionary *trdExtendDic = [[QIMKit sharedInstance] getExpandItemsForTrdextendId:trId];
+        NSString *linkUrl = [trdExtendDic objectForKey:@"linkurl"];
+        if (linkUrl.length > 0) {
+            if ([linkUrl rangeOfString:@"qunar.com"].location != NSNotFound) {
+                linkUrl = [linkUrl stringByAppendingFormat:@"%@username=%@&company=qunar&group_id=%@&rk=%@", [linkUrl rangeOfString:@"?"].location != NSNotFound ? @"&" : @"?", [QIMKit getLastUserName], [self.chatId stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [[QIMKit sharedInstance] remoteKey]];
+            } else {
+                linkUrl = [linkUrl stringByAppendingFormat:@"%@from=%@&to=%@&chatType=%lld", [linkUrl rangeOfString:@"?"].location != NSNotFound ? @"&" : @"?", [[QIMKit sharedInstance] getLastJid], [self.chatId stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], self.chatType];
+            }
+            [QIMFastEntrance openWebViewForUrl:linkUrl showNavBar:YES];
+        }
     } else {
         NSDictionary *trdExtendDic = [[QIMKit sharedInstance] getExpandItemsForTrdextendId:trId];
         int linkType = [[trdExtendDic objectForKey:@"linkType"] intValue];
@@ -1430,13 +1452,13 @@ static NSMutableDictionary *__checkGroupMembersCardDic = nil;
         if (openQIMRN) {
             [QIMFastEntrance openQIMRNWithScheme:linkUrl withChatId:self.chatId withRealJid:nil withChatType:self.chatType];
         } else if (openRequeset) {
-            [[QIMKit sharedInstance] sendTPRequestWithUrl:linkUrl withChatId:self.chatId withRealJid:nil withChatType:self.chatType];
+            [[QIMKit sharedInstance] sendTPPOSTRequestWithUrl:linkUrl withChatId:self.chatId withRealJid:nil withChatType:self.chatType];
         } else {
             if (linkUrl.length > 0) {
                 if ([linkUrl rangeOfString:@"qunar.com"].location != NSNotFound) {
-                    linkUrl = [linkUrl stringByAppendingFormat:@"%@from=%@&to=%@&chatType=%lld", [linkUrl rangeOfString:@"?"].location != NSNotFound ? @"&" : @"?", [[QIMKit sharedInstance] getLastJid], self.chatId, self.chatType];
+                    linkUrl = [linkUrl stringByAppendingFormat:@"%@from=%@&to=%@&chatType=%lld", [linkUrl rangeOfString:@"?"].location != NSNotFound ? @"&" : @"?", [[QIMKit sharedInstance] getLastJid], [self.chatId stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], self.chatType];
                 } else {
-                    linkUrl = [linkUrl stringByAppendingFormat:@"%@from=%@&to=%@&chatType=%lld", ([linkUrl rangeOfString:@"?"].location != NSNotFound ? @"&" : @"?"), [[QIMKit sharedInstance] getLastJid], self.chatId, self.chatType];
+                    linkUrl = [linkUrl stringByAppendingFormat:@"%@from=%@&to=%@&chatType=%lld", ([linkUrl rangeOfString:@"?"].location != NSNotFound ? @"&" : @"?"), [[QIMKit sharedInstance] getLastJid], [self.chatId stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], self.chatType];
                 }
                 [QIMFastEntrance openWebViewForUrl:linkUrl showNavBar:YES];
             }
@@ -2022,59 +2044,6 @@ static NSMutableDictionary *__checkGroupMembersCardDic = nil;
 
 static CGPoint tableOffsetPoint;
 
-- (void)displayImage:(UIGestureRecognizer *)gesture {
-    
-    if (_photos == nil) {
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您所查看的图片不存在"
-                                                        message:nil
-                                                       delegate:nil
-                                              cancelButtonTitle:@"确定"
-                                              otherButtonTitles:nil];
-        [alert show];
-        return;
-    }
-    
-    NSInteger index = gesture.view.tag;
-    CGPoint location = [gesture locationInView:[gesture.view viewWithTag:kTextLabelTag]];
-    NSUInteger imageIndex = [(QIMGroupChatCell *) [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]] indexForCellImagesAtLocation:location];
-    NSArray *images = [_photos objectForKey:@(index)];
-    if (imageIndex < images.count) {
-        
-        QIMDisplayImage *image = [images objectAtIndex:imageIndex];
-        if (image) {
-            
-            //纪录当前的浏览位置
-            tableOffsetPoint = self.tableView.contentOffset;
-            //初始化图片浏览控件
-            QIMMWPhotoBrowser *browser = [[QIMMWPhotoBrowser alloc] initWithDelegate:self];
-            browser.displayActionButton = NO;
-            browser.zoomPhotosToFill = YES;
-            browser.enableSwipeToDismiss = NO;
-            [browser setCurrentPhotoIndex:image.imageIndex];
-            
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
-            browser.wantsFullScreenLayout = YES;
-#endif
-            
-            //初始化navigation
-            QIMPhotoBrowserNavController *nc = [[QIMPhotoBrowserNavController alloc] initWithRootViewController:browser];
-            nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-            [self presentViewController:nc animated:YES completion:nil];
-            return;
-        }
-    }
-    
-    //初始化图片
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您所查看的图片不存在"
-                                                    message:nil
-                                                   delegate:nil
-                                          cancelButtonTitle:@"确定"
-                                          otherButtonTitles:nil];
-    [alert show];
-    return;
-}
-
 #pragma mark - QIMAttributedLabelDelegate
 
 - (void)attributedLabel:(QIMAttributedLabel *)attributedLabel textStorageClicked:(id <QIMTextStorageProtocol>)textStorage atPoint:(CGPoint)point {
@@ -2122,11 +2091,16 @@ static CGPoint tableOffsetPoint;
                     break;
                 }
             }
-            if (index == -1) {
-                [_imagesArr addObject:textStorage];
-                index = _imagesArr.count;
+            if (index == -1 && storage.imageURL.absoluteString.length > 0) {
+                if (!self.fixedImageArray) {
+                    self.fixedImageArray = [NSMutableArray arrayWithCapacity:2];
+                }
+                [self.fixedImageArray addObject:storage.imageURL];
+                index = 0;
                 //                browser.imageUrl = storage.imageURL;
                 return;
+            } else {
+                
             }
             [browser setCurrentPhotoIndex:index];
             
@@ -2149,10 +2123,19 @@ static CGPoint tableOffsetPoint;
 #pragma mark - QIMMWPhotoBrowserDelegate
 
 - (NSUInteger)numberOfPhotosInPhotoBrowser:(QIMMWPhotoBrowser *)photoBrowser {
+    if (self.fixedImageArray.count > 0) {
+        return self.fixedImageArray.count;
+    }
     return _imagesArr.count;
 }
 
 - (id <QIMMWPhoto>)photoBrowser:(QIMMWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
+    
+    if (self.fixedImageArray.count > 0) {
+        NSString *imageUrl = [self.fixedImageArray[0] absoluteString];
+        NSURL *url = [NSURL URLWithString:[imageUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        return url ? [[QIMMWPhoto alloc] initWithURL:url] : nil;
+    }
     
     if (index > _imagesArr.count) {
         return nil;
@@ -2180,6 +2163,7 @@ static CGPoint tableOffsetPoint;
     [photoBrowser dismissViewControllerAnimated:YES completion:^{
         // tableView 回滚到上次浏览的位置
         [_tableView setContentOffset:tableOffsetPoint animated:YES];
+        [self.fixedImageArray removeAllObjects];
     }];
 }
 
@@ -2894,53 +2878,43 @@ static CGPoint tableOffsetPoint;
 
 - (void)loadNewGroupMsgList {
     __weak typeof(self) weakSelf = self;
-    if (self.fastMsgTimeStamp > 0) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [[QIMKit sharedInstance] getMsgListByUserId:weakSelf.chatId WithRealJid:nil FromTimeStamp:self.fastMsgTimeStamp WihtComplete:^(NSArray *list) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    CGFloat offsetY = weakSelf.tableView.contentSize.height - weakSelf.tableView.contentOffset.y;
-                    NSRange range = NSMakeRange(0, [list count]);
-                    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
-                    
-                    //标记已读
-                    [weakSelf markReadedForChatRoom];
-                    
-                    [weakSelf.messageManager.dataSource insertObjects:list atIndexes:indexSet];
-                    [weakSelf updateGroupUsersHeadImgForMsgs:list];
-//                    [weakSelf.tableView reloadData];
-                    weakSelf.tableView.contentOffset = CGPointMake(0, weakSelf.tableView.contentSize.height - offsetY - 30);
-                    //重新获取一次大图展示的数组
-                    [weakSelf addImageToImageList];
-                    [weakSelf.tableView.mj_header endRefreshing];
-                });
-            }];
-        });
-    } else {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [[QIMKit sharedInstance] getMsgListByUserId:weakSelf.chatId
-                                            WithRealJid:nil
-                                              WihtLimit:kPageCount
-                                             WithOffset:(int) weakSelf.messageManager.dataSource.count
-                                           WihtComplete:^(NSArray *list) {
-                                               dispatch_async(dispatch_get_main_queue(), ^{
-                                                   CGFloat offsetY = weakSelf.tableView.contentSize.height - weakSelf.tableView.contentOffset.y;
-                                                   NSRange range = NSMakeRange(0, [list count]);
-                                                   NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
-                                                   
-                                                   //标记已读
-                                                   [weakSelf markReadedForChatRoom];
-                                                   
-                                                   [weakSelf.messageManager.dataSource insertObjects:list atIndexes:indexSet];
-                                                   [weakSelf updateGroupUsersHeadImgForMsgs:list];
-                                                   [weakSelf.tableView reloadData];
-                                                   weakSelf.tableView.contentOffset = CGPointMake(0, weakSelf.tableView.contentSize.height - offsetY - 30);
-                                                   //重新获取一次大图展示的数组
-                                                   [weakSelf addImageToImageList];
-                                                   [weakSelf.tableView.mj_header endRefreshing];
-                                               });
-                                           }];
-        });
+    self.loadCount += 1;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[QIMKit sharedInstance] getMsgListByUserId:weakSelf.chatId
+                                        WithRealJid:nil
+                                          WihtLimit:kPageCount
+                                         WithOffset:(int) weakSelf.messageManager.dataSource.count
+                                       WihtComplete:^(NSArray *list) {
+                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                               CGFloat offsetY = weakSelf.tableView.contentSize.height - weakSelf.tableView.contentOffset.y;
+                                               NSRange range = NSMakeRange(0, [list count]);
+                                               NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
+                                               
+                                               //标记已读
+                                               [weakSelf markReadedForChatRoom];
+                                               
+                                               [weakSelf.messageManager.dataSource insertObjects:list atIndexes:indexSet];
+                                               [weakSelf updateGroupUsersHeadImgForMsgs:list];
+                                               [weakSelf.tableView reloadData];
+                                               weakSelf.tableView.contentOffset = CGPointMake(0, weakSelf.tableView.contentSize.height - offsetY - 30);
+                                               //重新获取一次大图展示的数组
+                                               [weakSelf addImageToImageList];
+                                               [weakSelf.tableView.mj_header endRefreshing];
+                                           });
+                                       }];
+    });
+    if (self.loadCount >= 3 && !self.reloadSearchRemindView) {
+        self.searchRemindView = [[QIMSearchRemindView alloc] initWithChatId:self.chatId withRealJid:nil withChatType:self.chatType];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToConverstaionSearch)];
+        [self.searchRemindView addGestureRecognizer:tap];
+        [self.view addSubview:self.searchRemindView];
     }
+}
+
+- (void)jumpToConverstaionSearch {
+    self.reloadSearchRemindView = YES;
+    [self.searchRemindView removeFromSuperview];
+    [[QIMFastEntrance sharedInstance] openLocalSearchWithXmppId:self.chatId withRealJid:nil withChatType:self.chatType];
 }
 
 - (void)gotoFriendter:(id)sender {
@@ -2951,6 +2925,10 @@ static CGPoint tableOffsetPoint;
 }
 
 - (void)addPersonToPgrup:(id)sender {
+    if (![[[QIMKit sharedInstance] userObjectForKey:@"kRightCardRemindNotification"] boolValue]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kRightCardRemindNotification object:nil];
+        [[QIMKit sharedInstance] setUserObject:@(YES) forKey:kRightCardRemindNotification];
+    }
     [QIMFastEntrance openQIMGroupCardVCByGroupId:self.chatId];
 }
 

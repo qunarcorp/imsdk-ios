@@ -22,6 +22,8 @@
 @property (nonatomic, strong) NSURL *photoURL;
 @property (nonatomic) BOOL emptyImage;
 @property (nonatomic) BOOL isVideo;
+@property (nonatomic, strong) NSDictionary *extendInfo;
+@property (nonatomic, strong) id photoMsg;
 
 + (QIMMWPhoto *)photoWithImage:(UIImage *)image;
 + (QIMMWPhoto *)photoWithURL:(NSURL *)url;

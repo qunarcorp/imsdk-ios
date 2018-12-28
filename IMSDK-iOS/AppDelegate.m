@@ -639,7 +639,7 @@ void InitCrashReport()
     //最近联系人
     if ([shortcutItem.type isEqualToString:@"lastestSingleChat"]) {
         NSDictionary *resultInfo = shortcutItem.userInfo;
-        [[QIMKit sharedInstance] openChatSessionByUserId:[resultInfo objectForKey:@"XmppId"] ByName:[resultInfo objectForKey:@"Name"]];
+        [[QIMKit sharedInstance] openChatSessionByUserId:[resultInfo objectForKey:@"XmppId"]];
         NSString *jid = [resultInfo objectForKey:@"XmppId"];
         [QIMSDKUIHelper openSingleChatVCByUserId:jid];
     }

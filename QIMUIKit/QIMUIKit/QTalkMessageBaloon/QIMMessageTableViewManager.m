@@ -2,7 +2,7 @@
 //  QIMMessageTableViewManager.m
 //  qunarChatIphone
 //
-//  Created by QIM on 2018/2/5.
+//  Created by 李露 on 2018/2/5.
 //
 
 #import "QIMMessageTableViewManager.h"
@@ -277,18 +277,27 @@
             if (infoStr.length > 0) {
                 
                 NSDictionary *infoDic = [[QIMJSONSerializer sharedInstance] deserializeObject:infoStr error:nil];
-                if (self.chatType == ChatType_GroupChat) {
-#pragma mark 00d8c4642c688fd6bfa9a41b523bdb6b PHP那边加的key
-                    if (msg.messageType == QIMMessageType_RedPack || msg.messageType == QIMMessageType_AA) {
-                        [QIMRedPackageView showRedPackagerViewByUrl:[NSString stringWithFormat:@"%@&username=%@&sign=%@&company=qunar&group_"@"id=%@&rk=%@", infoDic[@"url"], [QIMKit getLastUserName], [[NSString stringWithFormat:@"%@00d8c4642c688fd6bfa9a41b523bdb6b", [QIMKit getLastUserName]] qim_getMD5], self.chatId, [[QIMKit sharedInstance] myRemotelogginKey]]];
-                    } else if (msg.messageType == QIMMessageType_RedPackInfo || msg.messageType == QIMMessageType_AAInfo) {
-                        [QIMRedPackageView showRedPackagerViewByUrl:[NSString stringWithFormat:@"%@&username=%@&sign=%@&company=qunar&group_"@"id=%@&rk=%@", infoDic[@"Url"], [QIMKit getLastUserName], [[NSString stringWithFormat:@"%@00d8c4642c688fd6bfa9a41b523bdb6b",                                                                                                                    [QIMKit getLastUserName]] qim_getMD5], self.chatId, [[QIMKit sharedInstance] myRemotelogginKey]]];
-                    }
+                if ([[[QIMKit getLastUserName] lowercaseString] isEqualToString:@"appstore"] || [[[QIMKit getLastUserName] lowercaseString] isEqualToString:@"ctrip"]) {
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
+                                                                        message:@"该消息已过期。"
+                                                                       delegate:nil
+                                                              cancelButtonTitle:@"确定"
+                                                              otherButtonTitles:nil];
+                    [alertView show];
                 } else {
-                    if (msg.messageType == QIMMessageType_RedPack || msg.messageType == QIMMessageType_AA) {
-                        [QIMRedPackageView showRedPackagerViewByUrl:[NSString stringWithFormat:@"%@&username=%@&sign=%@&company=qunar&user_id=%@&rk=%@", infoDic[@"url"], [QIMKit getLastUserName], [[NSString stringWithFormat:@"%@00d8c4642c688fd6bfa9a41b523bdb6b", [QIMKit getLastUserName]] qim_getMD5], self.chatId, [[QIMKit sharedInstance] myRemotelogginKey]]];
+                    if (self.chatType == ChatType_GroupChat) {
+#pragma mark 00d8c4642c688fd6bfa9a41b523bdb6b PHP那边加的key
+                        if (msg.messageType == QIMMessageType_RedPack || msg.messageType == QIMMessageType_AA) {
+                            [QIMRedPackageView showRedPackagerViewByUrl:[NSString stringWithFormat:@"%@&username=%@&sign=%@&company=qunar&group_"@"id=%@&rk=%@", infoDic[@"url"], [QIMKit getLastUserName], [[NSString stringWithFormat:@"%@00d8c4642c688fd6bfa9a41b523bdb6b", [QIMKit getLastUserName]] qim_getMD5], [self.chatId stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [[QIMKit sharedInstance] myRemotelogginKey]]];
+                        } else if (msg.messageType == QIMMessageType_RedPackInfo || msg.messageType == QIMMessageType_AAInfo) {
+                            [QIMRedPackageView showRedPackagerViewByUrl:[NSString stringWithFormat:@"%@&username=%@&sign=%@&company=qunar&group_"@"id=%@&rk=%@", infoDic[@"Url"], [QIMKit getLastUserName], [[NSString stringWithFormat:@"%@00d8c4642c688fd6bfa9a41b523bdb6b",                                                                                                                    [QIMKit getLastUserName]] qim_getMD5], [self.chatId stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [[QIMKit sharedInstance] myRemotelogginKey]]];
+                        }
                     } else {
-                        [QIMRedPackageView showRedPackagerViewByUrl:[NSString stringWithFormat:@"%@&username=%@&sign=%@&company=qunar&user_id=%@&rk=%@", infoDic[@"Url"], [QIMKit getLastUserName], [[NSString stringWithFormat:@"%@00d8c4642c688fd6bfa9a41b523bdb6b", [QIMKit getLastUserName]] qim_getMD5], self.chatId, [[QIMKit sharedInstance] myRemotelogginKey]]];
+                        if (msg.messageType == QIMMessageType_RedPack || msg.messageType == QIMMessageType_AA) {
+                            [QIMRedPackageView showRedPackagerViewByUrl:[NSString stringWithFormat:@"%@&username=%@&sign=%@&company=qunar&user_id=%@&rk=%@", infoDic[@"url"], [QIMKit getLastUserName], [[NSString stringWithFormat:@"%@00d8c4642c688fd6bfa9a41b523bdb6b", [QIMKit getLastUserName]] qim_getMD5], [self.chatId stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [[QIMKit sharedInstance] myRemotelogginKey]]];
+                        } else {
+                            [QIMRedPackageView showRedPackagerViewByUrl:[NSString stringWithFormat:@"%@&username=%@&sign=%@&company=qunar&user_id=%@&rk=%@", infoDic[@"Url"], [QIMKit getLastUserName], [[NSString stringWithFormat:@"%@00d8c4642c688fd6bfa9a41b523bdb6b", [QIMKit getLastUserName]] qim_getMD5], [self.chatId stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [[QIMKit sharedInstance] myRemotelogginKey]]];
+                        }
                     }
                 }
             }
@@ -366,6 +375,7 @@
                 NSString *infoStr = msg.extendInformation.length <= 0 ? msg.message : msg.extendInformation;
                 if (infoStr.length > 0) {
                     NSDictionary *infoDic = [[QIMJSONSerializer sharedInstance] deserializeObject:infoStr error:nil];
+                    if ([QIMFastEntrance handleOpsasppSchema:infoDic] == NO) {
                         QIMWebView *webView = [[QIMWebView alloc] init];
                         if ([infoDic objectForKey:@"showbar"]) {
                             webView.navBarHidden = [[infoDic objectForKey:@"showbar"] boolValue] == NO;
@@ -378,14 +388,15 @@
                             
                             if ([url rangeOfString:@"qunar.com"].location != NSNotFound) {
                                 if (self.chatType == ChatType_GroupChat) {
-                                    url = [url stringByAppendingFormat:@"%@username=%@&company=qunar&group_id=%@&rk=%@", ([url rangeOfString:@"?"].location != NSNotFound ? @"&" : @"?"), [[QIMKit getLastUserName] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], self.chatId, [[QIMKit sharedInstance] myRemotelogginKey]];
+                                    url = [url stringByAppendingFormat:@"%@username=%@&company=qunar&group_id=%@&rk=%@", ([url rangeOfString:@"?"].location != NSNotFound ? @"&" : @"?"), [[QIMKit getLastUserName] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [self.chatId stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [[QIMKit sharedInstance] myRemotelogginKey]];
                                 } else {
-                                    url = [url stringByAppendingFormat:@"%@username=%@&company=qunar&user_id=%@&rk=%@", ([url rangeOfString:@"?"].location != NSNotFound ? @"&" : @"?"), [[QIMKit getLastUserName] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], self.chatId, [[QIMKit sharedInstance] myRemotelogginKey]];
+                                    url = [url stringByAppendingFormat:@"%@username=%@&company=qunar&user_id=%@&rk=%@", ([url rangeOfString:@"?"].location != NSNotFound ? @"&" : @"?"), [[QIMKit getLastUserName] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [self.chatId stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [[QIMKit sharedInstance] myRemotelogginKey]];
                                 }
                             }
                         }
                         webView.url = url;
                         [self.ownerVc.navigationController pushViewController:webView animated:YES];
+                    }
                 }
             }
             break;
@@ -404,9 +415,9 @@
                     infoDic = [[QIMJSONSerializer sharedInstance] deserializeObject:infoStr error:nil];
                 } else {
                     NSTimeInterval date = [[NSDate date] timeIntervalSince1970];
-                    infoDic = @{@"navServ":@"wss://im.qunar.com/room",
+                    infoDic = @{@"navServ":@"wss://l-wxapp2.vc.beta.cn0.qunar.com:8443/room",
                                 @"roomName":@"test",
-                                @"server":@"https://im.qunar.com",
+                                @"server":@"https://l-wxapp2.vc.beta.cn0.qunar.com:8443",
                                 @"startTime":@(date * 1000),
                                 @"topic":@"test视频会议",
                                 @"ttl":@(600)};

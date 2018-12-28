@@ -2,7 +2,7 @@
 //  QIMCustomPopViewController.h
 //  QIMUIVendorKit
 //
-//  Created by QIM on 11/5/18.
+//  Created by 李露 on 11/5/18.
 //  Copyright © 2018 QIM. All rights reserved.
 //
 

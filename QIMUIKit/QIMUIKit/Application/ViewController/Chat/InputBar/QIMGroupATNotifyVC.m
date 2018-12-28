@@ -266,7 +266,24 @@
     }
     return [self.dataSource count];
 }
-
+/*
+{
+    affiliation = none;
+    jid = "qtalk\U5ba2\U6237\U7aef\U5f00\U53d1\U7fa4@conference.ejabhost1/\U674e\U9732";
+    name = "\U674e\U9732lucas";
+    xmppjid = "lilulucas.li@ejabhost1";
+}
+*/
+/*
+ 第一次未拉下群成员的时候
+{
+    affiliation = none;
+    domain = ejabhost2;
+    jid = "ucvg8633@ejabhost2";
+    name = ucvg8633;
+    "real_jid" = ucvg8633;
+}
+*/
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"Cell";
     SessionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];

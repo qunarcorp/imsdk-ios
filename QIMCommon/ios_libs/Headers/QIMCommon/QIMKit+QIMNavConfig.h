@@ -11,7 +11,6 @@
 @interface QIMKit (QIMNavConfig)
 
 - (NSString *)qimNav_HttpHost;
-- (NSString *)qimNav_Simpleapiurl;
 - (NSString *)qimNav_TakeSmsUrl;
 - (NSString *)qimNav_CheckSmsUrl;
 - (NSString *)qimNav_NewHttpUrl;
@@ -113,9 +112,14 @@
 - (BOOL)qimNav_RNGroupListView;   //展示RN 群组列表
 - (BOOL)qimNav_RNPublicNumberListView;    //展示RN 公众号列表
 
-- (NSArray *)qimNav_getLocalNavServerConfigs;
-
-- (void)qimNav_addLocalNavServerConfig:(NSDictionary *)navConfigInfo;
+- (void)qimNav_setRNMineView:(BOOL)showFlag;      //设置展示RNMineView
+- (void)qimNav_setRNAboutView:(BOOL)showFlag;     //设置展示RNAboutView
+- (void)qimNav_setRNGroupCardView:(BOOL)showFlag; //设置展示RNGroupCardView
+- (void)qimNav_setRNContactView:(BOOL)showFlag;   //设置展示RNContactView
+- (void)qimNav_setRNSettingView:(BOOL)showFlag;   //设置展示RNSettingView
+- (void)qimNav_setRNUserCardView:(BOOL)showFlag;  //设置展示RNUserCardView
+- (void)qimNav_setRNGroupListView:(BOOL)showFlag;   //设置展示RN 群组列表
+- (void)qimNav_setRNPublicNumberListView:(BOOL)showFlag;    //设置展示RN 公众号列表
 
 //OPS
 - (NSString *)qimNav_OpsHost;

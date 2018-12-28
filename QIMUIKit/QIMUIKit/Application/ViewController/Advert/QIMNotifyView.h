@@ -2,7 +2,7 @@
 //  QIMNotifyView.h
 //  qunarChatIphone
 //
-//  Created by QIM on 2018/2/24.
+//  Created by 李露 on 2018/2/24.
 //
 
 #import "QIMCommonUIFramework.h"

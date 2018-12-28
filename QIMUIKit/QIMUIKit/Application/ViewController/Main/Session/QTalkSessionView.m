@@ -841,10 +841,12 @@
         switch (chatType) {
                 
             case ChatType_GroupChat: {
+                QIMGroupChatVC *chatGroupVC = (QIMGroupChatVC *)[[QIMFastEntrance sharedInstance] getGroupChatVCByGroupId:jid];
+                /*
                 QIMGroupChatVC *chatGroupVC = [[QIMGroupChatVC alloc] init];
                 [chatGroupVC setTitle:name];
                 [chatGroupVC setChatId:jid];
-                [chatGroupVC setChatInfoDict:infoDic];
+                 */
                 [chatGroupVC setNeedShowNewMsgTagCell:notReadCount > 10];
                 [chatGroupVC setNotReadCount:notReadCount];
                 [chatGroupVC setReadedMsgTimeStamp:-1];
@@ -908,13 +910,15 @@
             }
                 break;
             case ChatType_SingleChat: {
+                QIMChatVC *chatSingleVC = (QIMChatVC *)[[QIMFastEntrance sharedInstance] getSingleChatVCByUserId:jid];
+                /*
                 QIMChatVC *chatSingleVC = [[QIMChatVC alloc] init];
                 [chatSingleVC setStype:kSessionType_Chat];
                 [chatSingleVC setChatId:jid];
                 [chatSingleVC setName:name];
                 [chatSingleVC setChatInfoDict:infoDic];
                 [chatSingleVC setChatType:chatType];
-                
+                */
                 NSString *remarkName = [[QIMKit sharedInstance] getUserMarkupNameWithUserId:jid];
                 [chatSingleVC setTitle:remarkName ? remarkName : name];
                 [chatSingleVC setNeedShowNewMsgTagCell:notReadCount > 10];
@@ -930,6 +934,7 @@
             case ChatType_Consult:
             {
                 NSString *xmppId = [infoDic objectForKey:@"XmppId"];
+                /*
                 NSString *uId = [xmppId componentsSeparatedByString:@"@"].firstObject;
                 NSString *realJid = [infoDic objectForKey:@"RealJid"];
                 if ([QIMKit getQIMProjectType] == QIMProjectTypeQChat) {
@@ -949,13 +954,17 @@
                         realJid = xmppId;
                     }
                 }
+                */
+                QIMChatVC *chatSingleVC = (QIMChatVC *)[[QIMFastEntrance sharedInstance] getSingleChatVCByUserId:jid];
+                /*
                 QIMChatVC *chatSingleVC = [[QIMChatVC alloc] init];
                 [chatSingleVC setStype:kSessionType_Chat];
-                [chatSingleVC setChatId:realJid];
+                [chatSingleVC setChatId:xmppId];
                 [chatSingleVC setVirtualJid:xmppId];
                 [chatSingleVC setName:name];
                 [chatSingleVC setChatInfoDict:infoDic];
                 [chatSingleVC setChatType:chatType];
+                */
                 //备注
                 NSString *remarkName = [[QIMKit sharedInstance] getUserMarkupNameWithUserId:jid];
                 [chatSingleVC setTitle:remarkName ? remarkName : name];
@@ -1132,6 +1141,15 @@
     [[QIMKit sharedInstance] updateRemoteClientConfigWithType:QIMClientConfigTypeKStickJidDic WithSubKey:combineJid WithConfigValue:value WithDel:[[QIMKit sharedInstance] isStickWithCombineJid:combineJid]];
 }
 
+- (void)deleteStick:(NSIndexPath *)indexPath {
+    QTalkSessionCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    ChatType chatType = cell.chatType;
+    NSString *combineJid = cell.combineJid;
+    NSDictionary *dict = @{@"topType":@(NO), @"chatType":@(cell.chatType)};
+    NSString *value = [[QIMJSONSerializer sharedInstance] serializeObject:dict];
+    [[QIMKit sharedInstance] updateRemoteClientConfigWithType:QIMClientConfigTypeKStickJidDic WithSubKey:combineJid WithConfigValue:value WithDel:YES];
+}
+
 //删除会话
 - (void)deleteSession:(NSIndexPath *)indexPath {
     
@@ -1142,7 +1160,7 @@
         ChatType chatType = [[infoDic objectForKey:@"ChatType"] longValue];
         if (sid && (chatType != ChatType_Consult && chatType != ChatType_ConsultServer)) {
             _willRefreshTableView = NO;
-            [self stickySession:indexPath];
+            [self deleteStick:indexPath];
             [[QIMKit sharedInstance] removeSessionById:sid];
             if (![sid isEqualToString:@"FriendNotify"]) {
                 _willRefreshTableView = YES;

@@ -1046,12 +1046,15 @@
 }
 
 - (void)openSingleChatVC:(NSString *)userId WithName:(NSString *)name{
+    [QIMFastEntrance openSingleChatVCByUserId:userId];
+    /*
     QIMChatVC *chatVC = [[QIMChatVC alloc] init];
     [chatVC setChatId:userId];
     [chatVC setName:name];
     [chatVC setTitle:name];
     [chatVC setChatType:ChatType_SingleChat];
     [self.navigationController popToRootVCThenPush:chatVC animated:YES];
+     */
 }
 
 - (void)scrollToBottomWithCheck:(BOOL)flag{
@@ -1592,52 +1595,6 @@
 }
 
 static CGPoint tableOffsetPoint;
-- (void)displayImage:(UIGestureRecognizer *)gesture
-{
-    if (_photos == nil) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您所查看的图片不存在"
-                                                        message:nil
-                                                       delegate:nil
-                                              cancelButtonTitle:@"确定"
-                                              otherButtonTitles:nil];
-        [alert show];
-        return;
-    }
-    
-    NSInteger index = gesture.view.tag;
-    QIMDisplayImage *image = [_photos objectForKey:@(index)];
-    
-    //初始化图片
-    if (image == nil) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您所查看的图片不存在"
-                                                        message:nil
-                                                       delegate:nil
-                                              cancelButtonTitle:@"确定"
-                                              otherButtonTitles:nil];
-        [alert show];
-        return ;
-    }
-    
-    //纪录当前的浏览位置
-    tableOffsetPoint = _tableView.contentOffset;
-    
-    //初始化图片浏览控件
-    QIMMWPhotoBrowser *browser = [[QIMMWPhotoBrowser alloc] initWithDelegate:self];
-    browser.displayActionButton = YES;
-    browser.zoomPhotosToFill = YES;
-    browser.enableSwipeToDismiss = NO;
-    [browser setCurrentPhotoIndex:image.imageIndex];
-    
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
-    browser.wantsFullScreenLayout = YES;
-#endif
-    
-    //初始化navigation
-    QIMPhotoBrowserNavController *nc = [[QIMPhotoBrowserNavController alloc] initWithRootViewController:browser];
-    nc.modalTransitionStyle    = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:nc animated:YES completion:nil];
-    
-}
 
 #pragma mark - QIMMWPhotoBrowserDelegate
 

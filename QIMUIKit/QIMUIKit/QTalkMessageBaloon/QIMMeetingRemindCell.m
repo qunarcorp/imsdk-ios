@@ -2,7 +2,7 @@
 //  QIMMeetingRemindCell.m
 //  QIMUIKit
 //
-//  Created by QIM on 2018/7/17.
+//  Created by 李露 on 2018/7/17.
 //  Copyright © 2018年 QIM. All rights reserved.
 //
 

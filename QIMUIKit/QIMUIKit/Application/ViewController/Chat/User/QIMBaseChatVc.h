@@ -2,7 +2,7 @@
 //  QIMBaseChatVc.h
 //  QIMUIKit
 //
-//  Created by QIM on 10/15/18.
+//  Created by 李露 on 10/15/18.
 //  Copyright © 2018 QIM. All rights reserved.
 //
 

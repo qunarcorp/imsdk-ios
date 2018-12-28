@@ -2,7 +2,7 @@
 //  QIMFileTransMiddleVC.m
 //  QIMUIKit
 //
-//  Created by QIM on 10/30/18.
+//  Created by 李露 on 10/30/18.
 //  Copyright © 2018 QIM. All rights reserved.
 //
 

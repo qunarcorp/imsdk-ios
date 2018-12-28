@@ -2,7 +2,7 @@
 //  QIMQRCodeLoginManager.h
 //  qunarChatIphone
 //
-//  Created by QIM on 2017/10/30.
+//  Created by 李露 on 2017/10/30.
 //
 
 #import "QIMCommonUIFramework.h"

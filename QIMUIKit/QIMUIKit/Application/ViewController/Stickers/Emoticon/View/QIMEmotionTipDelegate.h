@@ -2,7 +2,7 @@
 //  QIMEmotionTipDelegate.h
 //  qunarChatIphone
 //
-//  Created by QIM on 2018/2/8.
+//  Created by 李露 on 2018/2/8.
 //
 
 #ifndef QIMEmotionTipDelegate_h

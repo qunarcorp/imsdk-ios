@@ -126,12 +126,16 @@
  */
 + (NSData *)defaultUserHeaderImage;
 
++ (NSString *)defaultUserHeaderImagePath;
+
 /**
  第三方Cell默认头像
  
  @return 用户头像
  */
 + (UIImage *)defaultCommonTrdInfoImage ;
+
++ (NSString *)defaultCommonTrdInfoImagePath;
 
 /**
  根据用户Id获取用户名片信息

@@ -2,7 +2,7 @@
 //  QIMEncryptChatCell.h
 //  qunarChatIphone
 //
-//  Created by QIM on 2017/9/7.
+//  Created by 李露 on 2017/9/7.
 //
 //
 

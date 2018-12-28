@@ -16,6 +16,7 @@
 #import "QIMKit+QIMAppInfo.h"
 #import "QIMKit+QIMAppSetting.h"
 #import "QIMKit+QIMCalendar.h"
+#import "QIMKit+QIMUserMedal.h"
 #import "QIMKit+QIMTPRequest.h"
 #import "QIMKit+QIMMiddleVirtualAccountManager.h"
 #import "QIMKit+QIMClientConfig.h"
@@ -47,9 +48,5 @@
 #import "QIMKit+QIMUserVcard.h"
 #import "QIMKit+QIMUserCacheManager.h"
 #import "QIMMessage.h"
-
-#import "QIMAdvertItem.h"
-#import "QIMDataController.h"
-#import "QIMVoiceNoReadStateManager.h"
 
 #endif /* QIMKitPublicHeader_h */

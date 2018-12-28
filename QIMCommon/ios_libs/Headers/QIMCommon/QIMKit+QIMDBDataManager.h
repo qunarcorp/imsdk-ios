@@ -217,7 +217,6 @@
  */
 - (NSArray *)bulkInsertIphoneHistoryGroupJSONMsg:(NSArray *)list
                                   WihtMyNickName:(NSString *)myNickName
-                             WihtSupportMsgTypes:(NSArray *)supportMsgTypeList
                                    WithReadMarkT:(long long)readMarkT
                                 WithDidReadState:(int)didReadState
                                      WihtMyRtxId:(NSString *)rtxId;
@@ -225,14 +224,14 @@
 /**
  插入群聊JSON翻页消息
  */
-- (NSArray *)bulkInsertIphoneMucJSONMsg:(NSArray *)list WihtMyNickName:(NSString *)myNickName WihtSupportMsgTypes:(NSArray *)supportMsgTypeList WithReadMarkT:(long long)readMarkT WithDidReadState:(int)didReadState WihtMyRtxId:(NSString *)rtxId;
+- (NSArray *)bulkInsertIphoneMucJSONMsg:(NSArray *)list WihtMyNickName:(NSString *)myNickName WithReadMarkT:(long long)readMarkT WithDidReadState:(int)didReadState WihtMyRtxId:(NSString *)rtxId;
 
 /**
  插入群聊离线XML消息
  */
-- (NSArray *)bulkInsertIphoneHistoryGroupMsg:(NSArray *)list WithXmppId:(NSString *)xmppId WihtMyNickName:(NSString *)myNickName WihtSupportMsgTypes:(NSArray *)supportMsgTypeList WithReadMarkT:(long long)readMarkT WithDidReadState:(int)didReadState WihtMyRtxId:(NSString *)rtxId;
+- (NSArray *)bulkInsertIphoneHistoryGroupMsg:(NSArray *)list WithXmppId:(NSString *)xmppId WihtMyNickName:(NSString *)myNickName WithReadMarkT:(long long)readMarkT WithDidReadState:(int)didReadState WihtMyRtxId:(NSString *)rtxId;
 
-- (NSArray *)bulkInsertHistoryGroupMsg:(NSArray *)list WithXmppId:(NSString *)xmppId WihtMyNickName:(NSString *)myNickName WihtSupportMsgTypes:(NSArray *)supportMsgTypeList WithReadMarkT:(long long)readMarkT WithDidReadState:(int)didReadState;
+- (NSArray *)bulkInsertHistoryGroupMsg:(NSArray *)list WithXmppId:(NSString *)xmppId WihtMyNickName:(NSString *)myNickName WithReadMarkT:(long long)readMarkT WithDidReadState:(int)didReadState;
 
 - (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString;
 
@@ -263,7 +262,6 @@
 #pragma mark - 插入下拉翻页消息
 - (NSArray *)bulkInsertHistoryChatJSONMsg:(NSArray *)list
                                WithXmppId:(NSString *)xmppId
-                      WihtSupportMsgTypes:(NSArray *)supportMsgTypeList
                          WithDidReadState:(int)didReadState;
 
 // msg Key
@@ -322,9 +320,6 @@
 
 // 更新消息内容 比如下载文件后的本地文件名
 - (void)updateMsgsContent:(NSString *)content ByMsgId:(NSString *)msgId;
-// 通过消息类型 获取消息
-- (NSArray *)getMsgsByMsgType:(int)msgType;
-- (NSArray *)getMsgsByMsgType:(int)msgType ByXmppId:(NSString *)xmppId;
 
 // 通过UserId 获取会话信息
 - (NSDictionary *)getChatSessionWithUserId:(NSString *)userId;

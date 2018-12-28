@@ -55,6 +55,7 @@
  */
 - (void)removeConsultSessionById:(NSString *)sid RealId:(NSString *)realJid;
 
+- (ChatType)getChatSessionTypeByXmppId:(NSString *)xmppId;
 
 /**
  根据用户Id & 名称打开一个单人会话
@@ -62,7 +63,7 @@
  @param userId 用户Id
  @param name 用户名称
  */
-- (ChatType)openChatSessionByUserId:(NSString *)userId ByName:(NSString *)name;
+- (ChatType)openChatSessionByUserId:(NSString *)userId;
 
 /**
  根据群Id & 群名称打开一个群会话

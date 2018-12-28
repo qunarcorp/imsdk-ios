@@ -1,10 +1,3 @@
-//
-//  QIMEmojiTextAttachment.m
-//  qunarChatIphone
-//
-//  Created by chenjie on 16/3/4.
-//
-//
 
 #import "QIMEmojiTextAttachment.h"
 

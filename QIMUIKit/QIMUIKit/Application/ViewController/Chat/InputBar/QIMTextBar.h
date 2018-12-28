@@ -92,6 +92,11 @@ typedef enum {
  */
 @property (nonatomic, strong) UIView *emotionPanel;
 
+/**
+ 遮罩蒙板
+ */
+@property (nonatomic, strong) UIView *maskView;
+
 //快捷回复
 @property (nonatomic, strong) QIMQuickReplyExpandView *quickReplyExpandView;
 

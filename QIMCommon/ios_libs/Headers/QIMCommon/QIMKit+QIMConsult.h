@@ -12,24 +12,37 @@
 /**
  虚拟账号的RealJid列表
  */
-@property (nonatomic, strong) NSMutableDictionary *virtualRealJidDic;
+//@property (nonatomic, strong) NSMutableDictionary *virtualRealJidDic;
 
 /**
  虚拟账号列表
  */
-@property (nonatomic, strong) NSArray *virtualList;
+//@property (nonatomic, strong) NSArray *virtualList;
 
 /**
  获取虚拟账号列表
  */
-- (NSArray *)getVirtualList;
+//- (NSArray *)getVirtualList;
+
+
+/**
+ 获取虚拟帐号列表
+ */
+- (NSDictionary *)getVirtualDic;
+
+/**
+ 获取我服务的虚拟帐号列表
+ */
+- (NSArray *)getMyhotLinelist;
+
+- (void)getHotlineShopList;
 
 /**
  根据虚拟Id获取真实RealJid
 
  @param virtualJid 虚拟Id
  */
-- (NSString *)getRealJidForVirtual:(NSString *)virtualJid;
+//- (NSString *)getRealJidForVirtual:(NSString *)virtualJid;
 
 /**
  发送Consult消息

@@ -430,7 +430,7 @@
         NSString * afterClickSendMsg = [eventDic objectForKey:@"msgText"];
         if ([[clickType lowercaseString] isEqualToString:@"interface"]) {
             if (url.length > 0) {
-                [[QIMKit sharedInstance] sendTPRequestWithUrl:url withSuccessCallBack:^(NSData *responseData) {
+                [[QIMKit sharedInstance] sendTPPOSTRequestWithUrl:url withSuccessCallBack:^(NSData *responseData) {
                     
                 } withFailedCallBack:^(NSError *error) {
                     

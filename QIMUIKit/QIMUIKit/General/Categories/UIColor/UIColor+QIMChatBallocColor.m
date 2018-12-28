@@ -2,7 +2,7 @@
 //  UIColor+QIMChatBallocColor.m
 //  QIMUIKit
 //
-//  Created by QIM on 2018/5/21.
+//  Created by 李露 on 2018/5/21.
 //  Copyright © 2018年 QIM. All rights reserved.
 //
 

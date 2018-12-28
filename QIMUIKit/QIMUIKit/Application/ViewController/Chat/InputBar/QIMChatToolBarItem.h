@@ -1,14 +1,3 @@
-//
-//  ToolBarItem.h
-//  KeyboardForChat
-
-//  Company：     SunEee
-//  Blog:        devcai.com
-//  Communicate: 2581502433@qq.com
-
-//  Created by caipeng on 16/4/1.
-//  Copyright © 2016年 ruofei. All rights reserved.
-//
 
 #import "QIMCommonUIFramework.h"
 

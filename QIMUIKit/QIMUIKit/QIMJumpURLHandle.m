@@ -106,6 +106,20 @@
                 [[QIMQRCodeLoginManager shareQIMQRCodeLoginManagerWithKey:loginKey WithType:loginType] confirmQRCodeAction];
             }
         }
+    } else if ([url.scheme.lowercaseString isEqualToString:@"qpr"]) {
+#if defined (QIMOPSRNEnable) && QIMOPSRNEnable == 1
+        UIViewController *reactVC = nil;
+        Class RunC = NSClassFromString(@"RNSchemaParse");
+        SEL sel = NSSelectorFromString(@"handleOpsasppSchema:");
+        UIViewController *vc = nil;
+        if ([RunC respondsToSelector:sel]) {
+            reactVC = [RunC performSelector:sel withObject:url];
+        }
+        if (reactVC != nil) {
+            id nav = [[UIApplication sharedApplication] visibleNavigationController];
+            [nav pushViewController:reactVC animated:YES];
+        }
+#endif
     }
     return YES;
 }

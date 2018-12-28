@@ -7,6 +7,7 @@
   * QIMCommon (IM模块)
      * ios_libs(静态库文件)
   * QIMUIKit (UI模块，扩展UI模块，密码箱，笔记本UI模块 )
+  * QIMRNKit (ReactNative实现的UI模块,可选择性依赖，默认依赖0.54.1版本)
   * QIMGeneralModule (日历，日志，笔记本，全局通知，音视频模块)
   * QIMKitVendor (音频，ZBar，Zip，Pinyin，JSON解析，HTTP等组件)
 

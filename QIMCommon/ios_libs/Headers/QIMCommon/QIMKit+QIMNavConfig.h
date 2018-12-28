@@ -80,6 +80,11 @@
 - (long long)qimNav_AdInterval;   //两次广告的间隔之间
 
 /**
+ 获取本地已经缓存的导航配置
+ */
+- (NSArray *)qimNav_getLocalNavServerConfigs;
+
+/**
  跳过提示
  
  @return 返回跳过提示语

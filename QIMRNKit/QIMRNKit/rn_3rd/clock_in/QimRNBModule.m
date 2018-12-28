@@ -31,8 +31,6 @@
 #import "QIMGroupListVC.h"
 #import "QIMPublicNumberVC.h"
 #import "QIMRNExternalAppManager.h"
-#import "ModuleEventHandler.h"
-#import "QTalkSearchViewManager.h"
 #import "QIMDressUpController.h"
 #import "QIMFileManagerViewController.h"
 #import "QIMQNValidationFriendVC.h"

@@ -6,13 +6,9 @@
 * QIMSDK
   * QIMCommon (IM模块)
      * ios_libs(静态库文件)
-  * QIMUIKit (UI模块)
-  * QIMCommonCategories（Categories）
-  * QIMDataBase (数据库组件)
+  * QIMUIKit (UI模块，扩展UI模块，密码箱，笔记本UI模块 )
   * QIMGeneralModule (日历，日志，笔记本，全局通知，音视频模块)
   * QIMKitVendor (音频，ZBar，Zip，Pinyin，JSON解析，HTTP等组件)
-  * QIMNoteUI（密码箱，笔记本UI模块）
-  * QIMUIVendorKit（扩展UI模块）
 
 ## 集成
 `imsdk-ios ` 目前仅提供手动集成的方式

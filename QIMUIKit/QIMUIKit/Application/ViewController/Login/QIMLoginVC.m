@@ -458,21 +458,21 @@
 
 - (void)becomeFirstResponderForView:(UITextField *)inputView {
     if (![inputView isFirstResponder]) {
-//        [inputView becomeFirstResponder];
-//        if (inputView.text.length == 0) {
-            UILabel * placeholderView = _userNamePlaceholder;
-            if (inputView == _validCodeInputView) {
-                placeholderView = _validCodePlaceholder;
+        //        [inputView becomeFirstResponder];
+        //        if (inputView.text.length == 0) {
+        UILabel * placeholderView = _userNamePlaceholder;
+        if (inputView == _validCodeInputView) {
+            placeholderView = _validCodePlaceholder;
+        }
+        [UIView animateWithDuration:0.3 animations:^{
+            placeholderView.frame = CGRectMake(inputView.left, inputView.top - kPlaceholderHeight, inputView.width, kPlaceholderHeight);
+            placeholderView.font = [UIFont systemFontOfSize:kPlaceholderFontSize];
+        } completion:^(BOOL finished) {
+            if (inputView == _userNameInputView) {
+                inputView.placeholder = [NSBundle qim_localizedStringForKey:@"login_userNameInputView_placeholder"];
             }
-            [UIView animateWithDuration:0.3 animations:^{
-                placeholderView.frame = CGRectMake(inputView.left, inputView.top - kPlaceholderHeight, inputView.width, kPlaceholderHeight);
-                placeholderView.font = [UIFont systemFontOfSize:kPlaceholderFontSize];
-            } completion:^(BOOL finished) {
-                if (inputView == _userNameInputView) {
-                    inputView.placeholder = [NSBundle qim_localizedStringForKey:@"login_userNameInputView_placeholder"];
-                }
-            }];
-//        }
+        }];
+        //        }
         UIView * sepLine = _userNameSepline;
         if (inputView == _validCodeInputView) {
             sepLine = _validCodeSepline;
@@ -495,7 +495,7 @@
 
 - (void)resignFirstResponderForView:(UITextField *)inputView {
     if ([inputView isFirstResponder]) {
-//        [inputView resignFirstResponder];
+        //        [inputView resignFirstResponder];
         if (inputView.text.length == 0) {
             inputView.placeholder = nil;
             UILabel * placeholderView = _userNamePlaceholder;
@@ -729,14 +729,14 @@
 #warning 报错即将登陆的用户名 并请求导航
     [[QIMKit sharedInstance] setUserObject:userName forKey:@"currentLoginUserName"];
     [[QIMKit sharedInstance] qimNav_updateNavigationConfigWithCheck:YES];
-
+    
     __weak id weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         if (self.loginType != QTLoginTypePwd) {
             NSString *token = [[QIMKit sharedInstance] userObjectForKey:@"userToken"];
             if (token.length <= 0) {
                 NSDictionary *tokenDic = [QIMKit getUserTokenWithUserName:userName
-                                                              WihtVerifyCode:validCode];
+                                                           WihtVerifyCode:validCode];
                 int statusId = (tokenDic && [[tokenDic allKeys] containsObject:@"status_id"]) ?
                 [[tokenDic objectForKey:@"status_id"] intValue] : -1;
                 
@@ -822,12 +822,12 @@
         QIMVerboseLog(@"登录用户名：%@，验证Dict：%@", userName, dic);
         if (!dic) {
             dispatch_async(dispatch_get_main_queue(), ^{
-//                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
-//                                                                    message:@"发生未知错误"
-//                                                                   delegate:nil
-//                                                          cancelButtonTitle:@"确定"
-//                                                          otherButtonTitles:nil];
-//                [alertView show];
+                //                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
+                //                                                                    message:@"发生未知错误"
+                //                                                                   delegate:nil
+                //                                                          cancelButtonTitle:@"确定"
+                //                                                          otherButtonTitles:nil];
+                //                [alertView show];
                 [weakSelf showNetWorkUnableAlert];
                 [_getValidCodeBtn setUserInteractionEnabled:YES];
                 [_getValidCodeBtn setText:kValidCodeDisplayString];
@@ -1015,7 +1015,7 @@
     }
     NSString *userFullJid = [accountDict objectForKey:@"userFullJid"];
     NSString *userId = [[userFullJid componentsSeparatedByString:@"@"] firstObject];
-//    [cell.imageView setImage:[[QIMKit sharedInstance] getUserHeaderImageByUserId:userFullJid]];
+    //    [cell.imageView setImage:[[QIMKit sharedInstance] getUserHeaderImageByUserId:userFullJid]];
     [cell.imageView qim_setImageWithJid:userFullJid];
     cell.contentView.backgroundColor = [UIColor whiteColor];
     cell.textLabel.text = userId;

@@ -2,7 +2,7 @@
 //  QIMCollectionChatViewController.m
 //  qunarChatIphone
 //
-//  Created by QIM on 2017/9/21.
+//  Created by 李露 on 2017/9/21.
 //
 
 #import "QIMCollectionChatViewController.h"
@@ -210,11 +210,14 @@
                 
             case ChatType_GroupChat: {
                 [[QIMKit sharedInstance] clearNotReadCollectionMsgByBindId:bindId WithUserId:jid];
-                QIMGroupChatVC *chatGroupVC = [[QIMGroupChatVC alloc] init];
+                QIMGroupChatVC *chatGroupVC = (QIMGroupChatVC *)[[QIMFastEntrance sharedInstance] getGroupChatVCByGroupId:jid];
                 [chatGroupVC setBindId:bindId];
-                [chatGroupVC setTitle:name];
-                [chatGroupVC setChatId:jid];
-                [chatGroupVC setChatInfoDict:infoDic];
+
+                
+//                QIMGroupChatVC *chatGroupVC = [[QIMGroupChatVC alloc] init];
+//                [chatGroupVC setBindId:bindId];
+//                [chatGroupVC setTitle:name];
+//                [chatGroupVC setChatId:jid];
                 [chatGroupVC setNeedShowNewMsgTagCell:notReadCount > 10];
                 [chatGroupVC setNotReadCount:notReadCount];
                 [chatGroupVC setReadedMsgTimeStamp:-1];
@@ -228,6 +231,9 @@
                 break;
             case ChatType_SingleChat: {
                 [[QIMKit sharedInstance] clearNotReadCollectionMsgByBindId:bindId WithUserId:jid];
+                QIMChatVC *chatSingleVC = [[QIMFastEntrance sharedInstance] getSingleChatVCByUserId:jid];
+                [chatSingleVC setBindId:bindId];
+                /*
                 QIMChatVC *chatSingleVC = [[QIMChatVC alloc] init];
                 [chatSingleVC setBindId:bindId];
                 [chatSingleVC setStype:kSessionType_Chat];
@@ -245,6 +251,7 @@
                     
                     chatSingleVC.readedMsgTimeStamp = [[QIMKit sharedInstance] getReadedTimeStampForUserId:jid WihtMsgDirection:MessageDirection_Received WithReadedState:MessageState_didRead];
                 }
+                */
                 return chatSingleVC;
             }
                 break;

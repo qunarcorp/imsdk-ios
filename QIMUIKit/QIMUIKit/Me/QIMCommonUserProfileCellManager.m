@@ -2,7 +2,7 @@
 //  QIMCommonUserProfileCellManager.m
 //  qunarChatIphone
 //
-//  Created by QIM on 2017/12/25.
+//  Created by 李露 on 2017/12/25.
 //
 
 #import "QIMCommonUserProfileCellManager.h"
@@ -52,8 +52,13 @@
         }
             break;
         case QCUserProfileRNView: {
-#if defined (QIMNoteEnable) && QIMNoteEnable == 1
-            cellRowHeight = self.rnViewHeight;
+            
+#if defined (QIMOPSRNEnable) && QIMOPSRNEnable == 1
+            Class RunC = NSClassFromString(@"QTalkCardRNView");
+            SEL sel = NSSelectorFromString(@"getQtalkCardRNViewHeight");
+            if ([RunC respondsToSelector:sel]) {
+                cellRowHeight = [[RunC performSelector:sel] floatValue];
+            }
 #endif
         }
             break;
@@ -386,6 +391,23 @@
             if (cell == nil) {
                 cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
                 [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+            #if defined (QIMOPSRNEnable) && QIMOPSRNEnable == 1
+                Class RunC = NSClassFromString(@"QTalkCardRNView");
+                SEL sel = NSSelectorFromString(@"getQTalkCardRNViewWithFrameStr:withParam:");
+                SEL selH = NSSelectorFromString(@"getQtalkCardRNViewHeight");
+                CGFloat height = 0;
+                if ([RunC respondsToSelector:selH]) {
+                    height = [[RunC performSelector:selH] floatValue];
+                }
+                UIView *rnCardView = nil;
+                if ([RunC respondsToSelector:sel]) {
+                    CGRect rect = CGRectMake(0, 0, tableView.width, height);
+                    NSString *frameStr = NSStringFromCGRect(rect);
+                    rnCardView = [RunC performSelector:sel withObject:frameStr withObject:@{}];
+                }
+
+                [cell.contentView addSubview:rnCardView];
+            #endif
             }
             return cell;
         }

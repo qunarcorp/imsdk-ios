@@ -431,11 +431,14 @@
 - (void)selectContactWithJid:(NSString *)jid{
     [[QIMKit sharedInstance] clearNotReadMsgByJid:jid];
     NSDictionary *infoDic = [[QIMKit sharedInstance] getUserInfoByUserId:jid];
+    QIMChatVC *chatVC = (QIMChatVC *)[[QIMFastEntrance sharedInstance] getSingleChatVCByUserId:jid];
+    /*
     QIMChatVC * chatVC  = [[QIMChatVC alloc] init];
     [chatVC setStype:kSessionType_Chat];
     [chatVC setChatId:jid];
     [chatVC setName:[infoDic objectForKey:@"Name"]];
     [chatVC setTitle:[infoDic objectForKey:@"Name"]];
+    */
     _selectInfoDic = @{@"userId":jid,@"isGroup":@(NO)};
     if (self.ExternalForward) {
         Message *newMsg = [[QIMKit sharedInstance] createMessageWithMsg:self.message.message extenddInfo:self.message.extendInformation userId:jid userType:ChatType_SingleChat msgType:self.message.messageType backinfo:nil];
@@ -495,9 +498,12 @@
 #warning 转发消息 可能出现丢字段的情况，需要从本地数据库取出原始消息拼接
     [[QIMKit sharedInstance] clearNotReadMsgByGroupId:jid];
     NSDictionary *infoDic = [[QIMKit sharedInstance] getGroupCardByGroupId:jid];
+    QIMGroupChatVC *chatGroupVC = [[QIMFastEntrance sharedInstance] getGroupChatVCByGroupId:jid];
+    /*
     QIMGroupChatVC * chatGroupVC  =  [[QIMGroupChatVC alloc] init];
     [chatGroupVC setTitle:[infoDic objectForKey:@"Name"]];
     [chatGroupVC setChatId:jid];
+     */
     _selectInfoDic = @{@"userId":jid,@"isGroup":@(YES)};
     if (self.ExternalForward) {
         Message *newMsg = [[QIMKit sharedInstance] createMessageWithMsg:self.message.message extenddInfo:self.message.extendInformation userId:jid userType:ChatType_GroupChat msgType:self.message.messageType backinfo:nil];

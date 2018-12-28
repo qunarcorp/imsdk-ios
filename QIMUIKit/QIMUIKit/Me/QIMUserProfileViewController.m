@@ -2,7 +2,7 @@
 //  QIMUserProfileViewController.m
 //  qunarChatIphone
 //
-//  Created by QIM on 2017/12/25.
+//  Created by 李露 on 2017/12/25.
 //
 
 #import "QIMUserProfileViewController.h"
@@ -225,6 +225,12 @@
     [super viewDidAppear:animated];
 }
 
+- (void)registerNSNotifications {
+#if defined (QIMOPSRNEnable) && QIMOPSRNEnable == 1
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeRNCardViewHeight:) name:@"kNotify_RN_QTALK_CARD_ViewHeight_UPDATE" object:nil];
+#endif
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerObserver];
@@ -263,14 +269,8 @@
 
 #pragma mark - QTalkCardRNViewDelegate
 
-- (void)changeHeight:(CGFloat)height {
-    if (self.reactViewCellHeight != height) {
-        self.reactViewCellHeight = height;
-#if defined (QIMRNEnable) && QIMRNEnable == 1
-        self.manager.rnViewHeight = height;
-#endif
-        [self.tableView reloadData];
-    }
+- (void)changeRNCardViewHeight:(NSNotification *)notify {
+    [self.tableView reloadData];
 }
 
 #pragma mark - Actions
@@ -334,23 +334,30 @@
 }
 
 - (void)openChatSession {
-    ChatType chatType = [[QIMKit sharedInstance] openChatSessionByUserId:self.userId ByName:self.model.name];
+    [QIMFastEntrance openSingleChatVCByUserId:self.userId];
+    /*
+    ChatType chatType = [[QIMKit sharedInstance] openChatSessionByUserId:self.userId];
     
     QIMChatVC *chatVC  = [[QIMChatVC alloc] init];
     [chatVC setStype:kSessionType_Chat];
     [chatVC setChatId:self.userId];
     [chatVC setName:self.model.name];
+    */
+    /*
     if (chatType == ChatType_Consult || chatType == ChatType_ConsultServer) {
         NSString *realJid = [[QIMKit sharedInstance] getRealJidForVirtual:[self.userId componentsSeparatedByString:@"@"].firstObject];
         realJid = [realJid stringByAppendingString:[NSString stringWithFormat:@"@%@", [[QIMKit sharedInstance] qimNav_Domain]]];
         [chatVC setVirtualJid:self.userId];
         [chatVC setChatId:realJid];
     }
+    */
+    /*
     [chatVC setChatType:chatType];
     NSString * remarkName = [[QIMKit sharedInstance] getUserMarkupNameWithUserId:self.userId];
     [chatVC setTitle:remarkName?remarkName:self.model.name];
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotifySelectTab object:@(0)];
     [self.navigationController popToRootVCThenPush:chatVC animated:YES];
+    */
 }
 
 #pragma mark - NSNotification

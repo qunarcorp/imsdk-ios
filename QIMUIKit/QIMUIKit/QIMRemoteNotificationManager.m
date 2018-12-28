@@ -25,40 +25,35 @@
 //前往回话列表
 + (void)openChatSessionWithInfoDic:(NSDictionary *)userInfo
 {
-    NSDictionary * userInfoDic = userInfo[@"aps"];
-    if (userInfoDic) {
-        NSString * userId = userInfoDic[@"userid"];
+    if (userInfo.count) {
+        NSString * userId = userInfo[@"userid"];
         if (userId.length) {
             UINavigationController * navC = (UINavigationController *)[[[[UIApplication sharedApplication] delegate] window] rootViewController];
             if ([[[QIMKit sharedInstance] getCurrentSessionUserId] isEqualToString:userId]) {
                 return;
             }
-            BOOL isGroup = [userId rangeOfString:@"@conference."].location != NSNotFound;
-            if (isGroup) {
-                NSDictionary * groupInfoDic = [[QIMKit sharedInstance] getGroupCardByGroupId:userId];
-                [[QIMKit sharedInstance] openGroupSessionByGroupId:userId ByName:[groupInfoDic objectForKey:@"Name"]];
-                QIMGroupChatVC * chatGroupVC  =  [[QIMGroupChatVC alloc] init];
-                [chatGroupVC setTitle:[groupInfoDic objectForKey:@"Name"]];
-                [chatGroupVC setChatId:userId];
-                if ([navC respondsToSelector:@selector(popToRootVCThenPush:animated:)]) {
-                    
-                    [navC popToRootVCThenPush:chatGroupVC animated:YES];
+            NSInteger chatType = [[userInfo objectForKey:@"chattype"] integerValue];
+            switch (chatType) {
+                case 6: {
+                    [QIMFastEntrance openSingleChatVCByUserId:userId];
                 }
-            } else{
-                NSDictionary * uInfoDic = [[QIMKit sharedInstance] getUserInfoByUserId:userId];
-                [[QIMKit sharedInstance] openChatSessionByUserId:userId ByName:[uInfoDic objectForKey:@"Name"]];
-                
-                QIMChatVC * chatVC  = [[QIMChatVC alloc] init];
-                [chatVC setStype:kSessionType_Chat];
-                [chatVC setChatId:userId];
-                [chatVC setName:[uInfoDic objectForKey:@"Name"]]; 
-                [chatVC setChatType:ChatType_SingleChat];
-                NSString *remarkName = [[QIMKit sharedInstance] getUserMarkupNameWithUserId:userId];
-                [chatVC setTitle:remarkName?remarkName:[uInfoDic objectForKey:@"Name"]];
-                if ([navC respondsToSelector:@selector(popToRootVCThenPush:animated:)]) {
-                    
-                    [navC popToRootVCThenPush:chatVC animated:YES];
+                    break;
+                case 7: {
+                    [QIMFastEntrance openGroupChatVCByGroupId:userId];
                 }
+                    break;
+                case 132: {
+                    NSInteger qchatId = [[userInfo objectForKey:@"chatid"] integerValue];
+                    NSString *realJid = [userInfo objectForKey:@"realjid"];
+                    if (qchatId == 4) {
+                        [QIMFastEntrance openConsultServerChatByChatType:ChatType_ConsultServer WithVirtualId:userId WithRealJid:realJid];
+                    } else {
+                        [QIMFastEntrance openConsultChatByChatType:ChatType_Consult UserId:realJid WithVirtualId:userId];
+                    }
+                }
+                    break;
+                default:
+                    break;
             }
             [[NSNotificationCenter defaultCenter] postNotificationName:kNotifySelectTab object:@(0)];
         }

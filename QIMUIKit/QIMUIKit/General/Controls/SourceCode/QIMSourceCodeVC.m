@@ -34,9 +34,9 @@
     [_webView setMultipleTouchEnabled:YES];
     [self.view addSubview:_webView];
     
-    NSString *htmlPath = [NSBundle qim_myLibraryResourcePathWithClassName:@"QIMRNKit" BundleName:@"QIMSourceCode" pathForResource:@"applicationCode" ofType:@"html"];
-    NSString *cssFile = [NSBundle qim_myLibraryResourcePathWithClassName:@"QIMRNKit" BundleName:@"QIMSourceCode" pathForResource:@"application" ofType:@"css"];
-    NSString *jsFile = [NSBundle qim_myLibraryResourcePathWithClassName:@"QIMRNKit" BundleName:@"QIMSourceCode" pathForResource:@"application" ofType:@"js"];
+    NSString *htmlPath = [NSBundle qim_myLibraryResourcePathWithClassName:@"QIMSourceCode" BundleName:@"QIMSourceCode" pathForResource:@"applicationCode" ofType:@"html"];
+    NSString *cssFile = [NSBundle qim_myLibraryResourcePathWithClassName:@"QIMSourceCode" BundleName:@"QIMSourceCode" pathForResource:@"application" ofType:@"css"];
+    NSString *jsFile = [NSBundle qim_myLibraryResourcePathWithClassName:@"QIMSourceCode" BundleName:@"QIMSourceCode" pathForResource:@"application" ofType:@"js"];
 
     NSString *htmlContent =  [[NSString alloc] initWithData:[NSData dataWithContentsOfFile:htmlPath] encoding:NSUTF8StringEncoding];
     htmlContent = [htmlContent stringByReplacingOccurrencesOfString:@"[CSSFILE]" withString:[NSString stringWithFormat:@"file://%@",cssFile]];

@@ -153,6 +153,10 @@
 #define kGroupCardChanged                   @"kGroupCardChanged"
 #define kUpdateUserCard                     @"kUpdateUserCard"
 
+#define kUpdateUserMedal                    @"kUpdateUserMedal"
+
+#define kRightCardRemindNotification        @"kRightCardRemindNotification"
+
 #define kUpdateMyPersonalSignature          @"kUpdateMyPersonalSignature"
 
 #define kChatColorInfo          @"kChatColorInfo"

@@ -2,7 +2,7 @@
 //  QIMQRCodeLoginManager.m
 //  qunarChatIphone
 //
-//  Created by QIM on 2017/10/30.
+//  Created by 李露 on 2017/10/30.
 //
 
 #import "QIMQRCodeLoginManager.h"
@@ -89,6 +89,7 @@ static QIMQRCodeLoginManager *__qrcodeLoginManager = nil;
 }
 
 - (void)confirmQRCodeLogin {
+//    https://qt.qunar.com/package/qtapi/common/qrcode/auth.qunar
     NSString *confirmURL = [NSString stringWithFormat:@"%@/qtapi/common/qrcode/auth.qunar", [[QIMKit sharedInstance] qimNav_Javaurl]];
     ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:confirmURL]];
     NSString * qCookie = [[[QIMKit sharedInstance] userObjectForKey:@"QChatCookie"] objectForKey:@"q"];

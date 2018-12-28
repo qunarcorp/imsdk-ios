@@ -2,7 +2,7 @@
 //  QIMCommonUserInfoHeaderCell.h
 //  qunarChatIphone
 //
-//  Created by QIM on 2017/12/26.
+//  Created by 李露 on 2017/12/26.
 //
 
 #import "QIMCommonUIFramework.h"

@@ -2,7 +2,7 @@
 //  QIMMessageTableViewManager.h
 //  qunarChatIphone
 //
-//  Created by QIM on 2018/2/5.
+//  Created by 李露 on 2018/2/5.
 //
 
 #import "QIMCommonUIFramework.h"

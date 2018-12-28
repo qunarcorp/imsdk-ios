@@ -417,7 +417,7 @@ static void * QIMMWVideoPlayerObservation = &QIMMWVideoPlayerObservation;
             }
         }
     }
-    
+
     _viewHasAppearedInitially = YES;
         
 }
@@ -1097,7 +1097,9 @@ static void * QIMMWVideoPlayerObservation = &QIMMWVideoPlayerObservation;
 	if (_currentPageIndex != previousCurrentPage) {
         [self didStartViewingPageAtIndex:index];
     }
-	
+    if (_delegate && [_delegate respondsToSelector:@selector(photoBrowser:currentDisplayPhotoAtIndex:)]) {
+        [_delegate photoBrowser:self currentDisplayPhotoAtIndex:_currentPageIndex];
+    }
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {

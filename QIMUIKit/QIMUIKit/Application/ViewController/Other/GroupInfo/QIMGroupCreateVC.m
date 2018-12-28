@@ -256,6 +256,8 @@
                 [groupNameTextField resignFirstResponder];
             }
             [[QIMKit sharedInstance] clearNotReadMsgByGroupId:groupId];
+            [QIMFastEntrance openGroupChatVCByGroupId:groupId];
+            /*
             QIMGroupChatVC * chatGroupVC  =  [[QIMGroupChatVC alloc] init];
             [chatGroupVC setTitle:groupName];
             [chatGroupVC setChatId:groupId];
@@ -263,6 +265,7 @@
             [self.navigationController popToRootVCThenPush:chatGroupVC animated:YES];
             
             [[NSNotificationCenter defaultCenter] postNotificationName:kGroupNickNameChanged object:@[groupId]];
+            */
         } else {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"创建失败" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
             [alertView show];

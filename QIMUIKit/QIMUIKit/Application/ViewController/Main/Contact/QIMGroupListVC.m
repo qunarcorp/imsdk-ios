@@ -316,19 +316,22 @@
     _actionMenuView.alpha = 0;
 }
 
--(void)openGroupChatVC:(QIMGroupViewCell *)groupViewCell bAddGroupSession:(BOOL)bAddGroupSession
-{
+-(void)openGroupChatVC:(QIMGroupViewCell *)groupViewCell bAddGroupSession:(BOOL)bAddGroupSession {
+    
     if ([self.delegate respondsToSelector:@selector(selectGroupWithJid:)]) {
         [self.delegate selectGroupWithJid:groupViewCell.groupID];
     } else {
         if (bAddGroupSession == YES) {
             [[QIMKit sharedInstance] openGroupSessionByGroupId:groupViewCell.groupID ByName:groupViewCell.userName];
         }
+        [QIMFastEntrance openGroupChatVCByGroupId:groupViewCell.groupID];
+        /*
         QIMGroupChatVC * chatGroupVC = [[QIMGroupChatVC alloc] init];
         [chatGroupVC setTitle:groupViewCell.userName];
         [chatGroupVC setChatId:groupViewCell.groupID];
         [[NSNotificationCenter defaultCenter] postNotificationName:kNotifySelectTab object:@(0)];
         [self.navigationController popToRootVCThenPush:chatGroupVC animated:YES];
+        */
     }
 }
 

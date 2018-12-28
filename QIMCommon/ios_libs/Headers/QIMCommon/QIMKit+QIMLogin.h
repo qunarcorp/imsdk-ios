@@ -111,6 +111,8 @@
 - (void)cancelLogin;
 
 
+- (void)sendHeartBeat;
+
 /**
  是否为自动登录
  */

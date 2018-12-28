@@ -2,7 +2,7 @@
 //  QIMAppWindowManager.h
 //  QIMUIKit
 //
-//  Created by QIM on 2018/6/13.
+//  Created by 李露 on 2018/6/13.
 //  Copyright © 2018年 QIM. All rights reserved.
 //
 

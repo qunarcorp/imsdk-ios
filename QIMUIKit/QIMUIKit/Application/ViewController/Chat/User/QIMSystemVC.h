@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString *chatId;
 @property (nonatomic, assign) ChatType chatType;
 @property (nonatomic, strong) NSDictionary *chatInfoDict;
+@property (nonatomic, assign) long long fastMsgTimeStamp;   //搜索时候快速点击跳转的消息时间戳
 @property (nonatomic, strong) NSString *stype;
 @property (nonatomic, strong) NSString *name;
 

@@ -98,17 +98,15 @@
 }
 
 - (void)loadEmptyNotReadMsgList {
-    self.emptyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 125)];
+    self.emptyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 150, 130)];
     self.emptyView.backgroundColor = [UIColor whiteColor];
     self.emptyView.center = self.view.center;
-    UIImageView *emptyIconView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 60)];
+    UIImageView *emptyIconView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150, 100)];
     emptyIconView.backgroundColor = [UIColor whiteColor];
     emptyIconView.image = [UIImage imageNamed:@"EmptyNotReadList"];
     [self.emptyView addSubview:emptyIconView];
-    UILabel *emptyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, emptyIconView.bottom + 25, 100, 20)];
+    UILabel *emptyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, emptyIconView.bottom + 5, 150, 25)];
     [emptyLabel setText:@"当前无未读消息"];
-    emptyLabel.textColor = [UIColor qim_colorWithHex:0x999999];
-    emptyLabel.font = [UIFont systemFontOfSize:14];
     emptyLabel.textAlignment = NSTextAlignmentCenter;
     [self.emptyView addSubview:emptyLabel];
     [self.view addSubview:self.emptyView];
@@ -158,7 +156,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSMutableDictionary * dict =  [_recentContactArray objectAtIndex:indexPath.row];
     ChatType chatType = [[dict objectForKey:@"ChatType"] intValue];
-    NSString *cellIdentifier = [NSString stringWithFormat:@"Cell ChatType(%d)",chatType];
+//    NSString *cellIdentifier = [NSString stringWithFormat:@"Cell ChatType(%d)",chatType];
+    NSString *chatId = [dict objectForKey:@"XmppId"];
+    NSString *realJid = [dict objectForKey:@"RealJid"];
+    NSString *cellIdentifier = [NSString stringWithFormat:@"Cell ChatId(%@) RealJid(%@) %d", chatId, realJid, indexPath.row];
     QTalkSessionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[QTalkSessionCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
@@ -166,7 +167,6 @@
     }
     cell.sessionScrollDelegate = self;
     [cell setInfoDic:dict];
-    //[cell refreshUI];
     return cell;
 }
 
@@ -187,15 +187,20 @@
         case ChatType_GroupChat:
         {
             [[QIMKit sharedInstance] clearNotReadMsgByGroupId:jid];
+            [QIMFastEntrance openGroupChatVCByGroupId:jid];
+            /*
             QIMGroupChatVC * chatGroupVC  =  [[QIMGroupChatVC alloc] init];
             [chatGroupVC setTitle:name];
             [chatGroupVC setChatId:jid];
             [self.navigationController pushViewController:chatGroupVC animated:YES];
+             */
         }
             break;
         case ChatType_SingleChat:
         {
             [[QIMKit sharedInstance] clearNotReadMsgByJid:jid];
+            [QIMFastEntrance openSingleChatVCByUserId:jid];
+            /*
             QIMChatVC * chatVC  = [[QIMChatVC alloc] init];
             [chatVC setStype:kSessionType_Chat];
             [chatVC setChatId:jid];
@@ -203,6 +208,7 @@
             [chatVC setTitle:name];
             [chatVC setChatType:ChatType_SingleChat];
             [self.navigationController pushViewController:chatVC animated:YES];
+             */
         }
             break;
         case ChatType_ConsultServer:
@@ -214,7 +220,8 @@
                 [[QIMKit sharedInstance] clearNotReadMsgByJid:xmppId ByRealJid:xmppId];
             } else if (chatType == ChatType_ConsultServer) {
                 [[QIMKit sharedInstance] clearNotReadMsgByJid:xmppId ByRealJid:realJid];
-            } 
+            }
+            [QIMFastEntrance openGroupChatVCByGroupId:nil];
             QIMChatVC * chatVC  = [[QIMChatVC alloc] init];
             [chatVC setStype:kSessionType_Chat];
             [chatVC setChatId:realJid];
@@ -228,11 +235,14 @@
         case ChatType_System:
         {
             [[QIMKit sharedInstance] clearNotReadMsgByJid:jid];
+            [QIMFastEntrance openHeaderLineVCByJid:jid];
+            /*
             QIMSystemVC * chatVC  = [[QIMSystemVC alloc] init];
             [chatVC setChatId:jid];
             [chatVC setName:@"系统消息"];
             [chatVC setTitle:@"系统消息"];
             [self.navigationController pushViewController:chatVC animated:YES];
+             */
         }
             break;
         case ChatType_PublicNumber:

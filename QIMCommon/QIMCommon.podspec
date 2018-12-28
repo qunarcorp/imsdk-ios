@@ -1,4 +1,3 @@
-
 Pod::Spec.new do |s|
 
   s.name         = "QIMCommon"
@@ -6,7 +5,6 @@ Pod::Spec.new do |s|
   s.summary      = "Qunar chat App 6.0+ version QIMCommon"
   s.description  = <<-DESC
                    Qunar QIMCommon解决方案
-
                    DESC
 
   s.homepage     = "https://im.qunar.com"

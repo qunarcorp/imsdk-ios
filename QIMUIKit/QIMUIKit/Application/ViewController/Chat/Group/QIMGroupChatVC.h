@@ -13,7 +13,6 @@
 @property (nonatomic, strong) NSString *chatId;
 @property (nonatomic, strong) NSString *bindId;
 @property (nonatomic, assign) ChatType chatType;
-@property (nonatomic, strong) NSDictionary *chatInfoDict;
 @property (nonatomic, assign) BOOL needShowNewMsgTagCell;
 @property (nonatomic, assign) long long readedMsgTimeStamp;
 @property (nonatomic, assign) long long fastMsgTimeStamp;   //搜索时候快速点击跳转的消息时间戳

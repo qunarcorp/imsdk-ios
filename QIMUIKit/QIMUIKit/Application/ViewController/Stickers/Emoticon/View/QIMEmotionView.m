@@ -2,7 +2,7 @@
 //  QIMEmotionView.m
 //  qunarChatIphone
 //
-//  Created by QIM on 2018/2/6.
+//  Created by 李露 on 2018/2/6.
 //
 
 #import "QIMEmotionView.h"

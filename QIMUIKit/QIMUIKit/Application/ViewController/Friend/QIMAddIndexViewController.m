@@ -136,7 +136,7 @@ static NSInteger limitCount = 15;
     self.stringsArray = [NSMutableArray arrayWithCapacity:5];
     [[QIMHttpRequestMonitor sharedInstance] syncRunBlock:^{
         
-        NSString *urlStr = [NSString stringWithFormat:@"%@/%@", [[QIMKit sharedInstance] qimNav_Simpleapiurl], @"s/qtalk/domainlist.php?t=qtalk"];
+        NSString *urlStr = @"https://qt.qunar.com/s/qtalk/domainlist.php?t=qtalk";
         if ([QIMKit getQIMProjectType] == QIMProjectTypeQChat) {
            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"qtalk" withString:@"qchat"];
         }
@@ -156,7 +156,7 @@ static NSInteger limitCount = 15;
             self.objectsArray = responseDict[@"data"][@"domains"];
         }
         
-    } url:[NSString stringWithFormat:@"%@/%@", [[QIMKit sharedInstance] qimNav_Simpleapiurl], @"s/qtalk/domainlist.php"]];
+    } url:@"https://qt.qunar.com/s/qtalk/domainlist.php"];
     for (NSDictionary *dict in self.objectsArray) {
         if (dict) {
             if (dict[@"name"]) {
@@ -344,8 +344,9 @@ static NSInteger limitCount = 15;
 //前往回话列表
 - (void)openChatSession
 {
-    [[QIMKit sharedInstance] openChatSessionByUserId:_infoDic[@"XmppId"] ByName:_infoDic[@"Name"]];
-    
+    [[QIMKit sharedInstance] openChatSessionByUserId:_infoDic[@"XmppId"]];
+    [QIMFastEntrance openSingleChatVCByUserId:_infoDic[@"XmppId"]];
+    /*
     QIMChatVC * chatVC  = [[QIMChatVC alloc] init];
     [chatVC setStype:kSessionType_Chat];
     [chatVC setChatId:_infoDic[@"XmppId"]];
@@ -353,6 +354,7 @@ static NSInteger limitCount = 15;
     [chatVC setTitle:_infoDic[@"Name"]];
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotifySelectTab object:@(0)];
     [self.navigationController popToRootVCThenPush:chatVC animated:YES];
+     */
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

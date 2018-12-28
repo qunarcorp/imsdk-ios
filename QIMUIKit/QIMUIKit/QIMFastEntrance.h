@@ -45,6 +45,9 @@
 - (UIViewController *)getConsultChatByChatType:(ChatType)chatType UserId:(NSString *)userId WithVirtualId:(NSString *)virtualId;
 + (void)openConsultChatByChatType:(NSInteger)chatType UserId:(NSString *)userId WithVirtualId:(NSString *)virtualId;
 
+- (UIViewController *)getConsultServerChatByChatType:(ChatType)chatType WithVirtualId:(NSString *)virtualId WithRealJid:(NSString *)realjid;
++ (void)openConsultServerChatByChatType:(ChatType)chatType WithVirtualId:(NSString *)virtualId WithRealJid:(NSString *)realjid;
+
 - (UIViewController *)getSingleChatVCByUserId:(NSString *)userId;
 + (void)openSingleChatVCByUserId:(NSString *)userId;
 
@@ -65,6 +68,8 @@
 
 + (void)openWebViewWithHtmlStr:(NSString *)htmlStr showNavBar:(BOOL)showNavBar;
 + (void)openWebViewForUrl:(NSString *)url showNavBar:(BOOL)showNavBar;
+
++ (BOOL)handleOpsasppSchema:(NSDictionary *)reactInfoDic;
 
 + (void)openWebViewForUrl:(NSString *)url showNavBar:(BOOL)showNavBar FromRedPack:(BOOL)fromRedPack;
 
@@ -97,6 +102,8 @@
 - (UIViewController *)getQTalkNotesVC;
 + (void)openQTalkNotesVC;
 
++ (void)openLocalMediaWithXmppId:(NSString *)xmppId withRealJid:(NSString *)realJid withChatType:(ChatType)chatType;
+
 - (UIViewController *)getMyRedPack;
 
 - (UIViewController *)getMyRedPackageBalance;
@@ -127,5 +134,7 @@
 - (void)browseBigHeader:(NSDictionary *)param;
 
 - (void)openQIMFilePreviewVCWithParam:(NSDictionary *)param;
+
+- (void)openLocalSearchWithXmppId:(NSString *)xmppId withRealJid:(NSString *)realJid withChatType:(NSInteger)chatType;
 
 @end

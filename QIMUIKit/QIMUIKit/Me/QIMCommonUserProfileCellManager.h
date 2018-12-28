@@ -2,7 +2,7 @@
 //  QIMCommonUserProfileCellManager.h
 //  qunarChatIphone
 //
-//  Created by QIM on 2017/12/25.
+//  Created by 李露 on 2017/12/25.
 //
 
 #import "QIMCommonUIFramework.h"
@@ -33,10 +33,6 @@ typedef enum {
 @property (nonatomic, strong) QIMUserInfoModel *model;
 @property (nonatomic, strong) NSDictionary *userInfo;
 
-#if defined (QIMRNEnable) && QIMRNEnable == 1
-
-@property (nonatomic, assign) CGFloat rnViewHeight;
-#endif
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController WithUserId:(NSString *)userId;
 
 @end

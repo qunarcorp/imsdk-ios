@@ -95,7 +95,7 @@ static QIMWebRTCClient *instance = nil;
 }
 
 - (void)updateICEServers{
-    NSString *httpUrl = [NSString stringWithFormat:@"%@/rtc/index.php?username=%@",[[QIMKit sharedInstance] qimNav_Simpleapiurl], [[[QIMKit sharedInstance] thirdpartKeywithValue] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSString *httpUrl = [NSString stringWithFormat:@"https://qt.qunar.com/rtc/index.php?username=%@", [[[QIMKit sharedInstance] thirdpartKeywithValue] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURL *url = [NSURL URLWithString:httpUrl];
     ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:url];
     [request startSynchronous];

@@ -48,10 +48,4 @@
  */
 - (void)updateAppWorkState:(AppWorkState)appWorkState;
 
-
-/**
- 更新当前网络状态为“未登录”
- */
-- (void)onDisconnect;
-
 @end

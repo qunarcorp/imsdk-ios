@@ -2,7 +2,7 @@
 //  QIMSwitchAccountView.h
 //  qunarChatIphone
 //
-//  Created by QIM on 2017/9/8.
+//  Created by 李露 on 2017/9/8.
 //
 //
 

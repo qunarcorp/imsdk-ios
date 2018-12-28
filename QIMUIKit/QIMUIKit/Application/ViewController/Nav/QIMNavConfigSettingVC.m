@@ -30,7 +30,11 @@
 
 - (NSMutableArray *)navConfigUrls {
     if (!_navConfigUrls) {
-        _navConfigUrls = [NSMutableArray arrayWithArray:[[QIMKit sharedInstance] userObjectForKey:@"QC_NavAllDicts"]];  
+        _navConfigUrls = [NSMutableArray arrayWithArray:[[QIMKit sharedInstance] userObjectForKey:@"QC_NavAllDicts"]];
+        if (!_navConfigUrls.count) {
+
+            _navConfigUrls = [NSMutableArray arrayWithCapacity:2];
+        }  
     }
     return _navConfigUrls;
 }

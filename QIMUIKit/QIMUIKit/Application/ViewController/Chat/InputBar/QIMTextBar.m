@@ -307,6 +307,7 @@ static QIMTextBar *__publicNumberTextBar = nil;
                 __groupTextBar.frame = frame;
             }
             __groupTextBar.expandViewType = expandType;
+            [__groupTextBar.expandPanel addItems];
             return __groupTextBar;
         }
             break;
@@ -321,6 +322,7 @@ static QIMTextBar *__publicNumberTextBar = nil;
                 __consultTextBar.frame = frame;
             }
             __consultTextBar.expandViewType = expandType;
+            [__consultTextBar.expandPanel addItems];
             return __consultTextBar;
         }
             break;
@@ -335,6 +337,7 @@ static QIMTextBar *__publicNumberTextBar = nil;
                 __consultServerTextBar.frame = frame;
             }
             __consultServerTextBar.expandViewType = expandType;
+            [__consultServerTextBar.expandPanel addItems];
             return __consultServerTextBar;
         }
             break;
@@ -421,6 +424,7 @@ static QIMTextBar *__publicNumberTextBar = nil;
 - (void)resgisterNSNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     [self addObserver:self forKeyPath:@"self.chatToolBar.frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+    [self addObserver:self forKeyPath:@"self.maskView.frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(atSomeOneNotifacationHandle:) name:@"ATSomeOneNotifacation" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emotionListUpdate:) name:kEmotionListUpdateNotification object:nil];
@@ -469,6 +473,7 @@ static QIMTextBar *__publicNumberTextBar = nil;
         
         self.lastChatKeyboardY = self.frame.origin.y;
         self.frame = CGRectMake(0, self.frame.origin.y - changeHeight, self.frame.size.width, self.frame.size.height + changeHeight);
+        self.maskView.frame = CGRectMake(0, self.chatToolBar.bottom, CGRectGetWidth(self.frame), kFacePanelHeight);
         self.emotionPanel.frame = CGRectMake(0, CGRectGetHeight(self.frame)-kFacePanelHeight, CGRectGetWidth(self.frame), kFacePanelHeight);
         self.expandPanel.frame = CGRectMake(0, CGRectGetHeight(self.frame)-kMorePanelHeight, CGRectGetWidth(self.frame), kMorePanelHeight);
         self.robotActionToolBar.frame = CGRectMake(0, CGRectGetMaxY(self.frame), CGRectGetWidth(self.frame), kQIMChatToolBarHeight);
@@ -476,6 +481,8 @@ static QIMTextBar *__publicNumberTextBar = nil;
         [self updateAssociateTableViewFrame];
     } else if ([keyPath isEqualToString:@"frame"]) {
         NSLog(@"change : %@", change);
+    } else if ([keyPath isEqualToString:@"self.maskView.frame"]) {
+        NSLog(@"self.maskView.frame Change : %@", change);
     }
 }
 
@@ -497,13 +504,14 @@ static QIMTextBar *__publicNumberTextBar = nil;
             [self.expandPanel sendSubviewToBack:_quickReplyExpandView];
             self.emotionPanel.hidden = NO;
             self.voiceView.hidden = YES;
+            self.maskView.hidden = YES;
             self.robotActionToolBar.hidden = YES;
             self.lastChatKeyboardY = self.frame.origin.y;
             self.frame = CGRectMake(0, [self getSuperViewH]-CGRectGetHeight(self.frame), self.width, CGRectGetHeight(self.frame));
             self.emotionPanel.frame = CGRectMake(0, CGRectGetHeight(self.frame)-kFacePanelHeight, CGRectGetWidth(self.frame), kFacePanelHeight);
             self.expandPanel.frame = CGRectMake(0, CGRectGetHeight(self.frame), CGRectGetWidth(self.frame), kFacePanelHeight);
             self.voiceView.frame = CGRectMake(0, CGRectGetHeight(self.frame), CGRectGetWidth(self.frame), kFacePanelHeight);
-            
+            self.maskView.frame = CGRectMake(0, self.chatToolBar.bottom, CGRectGetWidth(self.frame), kFacePanelHeight);
             [self updateAssociateTableViewFrame];
             
         } completion:^(BOOL finished) {
@@ -517,6 +525,7 @@ static QIMTextBar *__publicNumberTextBar = nil;
             
             self.expandPanel.hidden = NO;
             self.emotionPanel.hidden = YES;
+            self.maskView.hidden = YES;
             self.voiceView.hidden = YES;
             _quickReplyExpandView.hidden = YES;
             [self.expandPanel sendSubviewToBack:_quickReplyExpandView];
@@ -526,7 +535,7 @@ static QIMTextBar *__publicNumberTextBar = nil;
             self.expandPanel.frame = CGRectMake(0, CGRectGetHeight(self.frame)-kFacePanelHeight, CGRectGetWidth(self.frame), kFacePanelHeight);
             self.emotionPanel.frame = CGRectMake(0, CGRectGetHeight(self.frame), CGRectGetWidth(self.frame), kFacePanelHeight);
             self.voiceView.frame = CGRectMake(0, CGRectGetHeight(self.frame), CGRectGetWidth(self.frame), kFacePanelHeight);
-            
+            self.maskView.frame = CGRectMake(0, self.chatToolBar.bottom, CGRectGetWidth(self.frame), kFacePanelHeight);
             [self.expandPanel displayItems];
             
             [self updateAssociateTableViewFrame];
@@ -538,6 +547,7 @@ static QIMTextBar *__publicNumberTextBar = nil;
         [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
             self.voiceView.hidden = NO;
             self.expandPanel.hidden = YES;
+            self.maskView.hidden = YES;
             self.emotionPanel.hidden = YES;
             _quickReplyExpandView.hidden = YES;
             [self.expandPanel sendSubviewToBack:_quickReplyExpandView];
@@ -548,7 +558,7 @@ static QIMTextBar *__publicNumberTextBar = nil;
             self.voiceView.frame = CGRectMake(0, CGRectGetHeight(self.frame)-kFacePanelHeight, CGRectGetWidth(self.frame), kFacePanelHeight);
             self.emotionPanel.frame = CGRectMake(0, CGRectGetHeight(self.frame), CGRectGetWidth(self.frame), kFacePanelHeight);
             self.expandPanel.frame = CGRectMake(0, CGRectGetHeight(self.frame), CGRectGetWidth(self.frame), kFacePanelHeight);
-
+            self.maskView.frame = CGRectMake(0, self.chatToolBar.bottom, CGRectGetWidth(self.frame), kFacePanelHeight);
             [self updateAssociateTableViewFrame];
         } completion:^(BOOL finisher) {
             [[NSNotificationCenter defaultCenter] postNotificationName:kQIMTextBarIsFirstResponder object:nil];
@@ -565,18 +575,26 @@ static QIMTextBar *__publicNumberTextBar = nil;
             
             CGFloat chatToolBarHeight = CGRectGetHeight(self.frame) - kMorePanelHeight;
             
-            CGFloat targetY = end.origin.y - chatToolBarHeight - (SCREEN_HEIGHT - [self getSuperViewH]);
+            CGFloat targetY = end.origin.y - chatToolBarHeight - (SCREEN_HEIGHT - [self getSuperViewH] - [[QIMDeviceManager sharedInstance] getHOME_INDICATOR_HEIGHT]);
             
             if((begin.origin.y-end.origin.y>=0))
             {
                 // 键盘弹起 (包括，第三方键盘回调三次问题，监听仅执行最后一次)
 //                QIMVerboseLog(@" 键盘弹起 (包括，第三方键盘回调三次问题，监听仅执行最后一次)");
+                self.voiceView.hidden = NO;
+                self.expandPanel.hidden = YES;
+                self.maskView.hidden = NO;
+                self.emotionPanel.hidden = YES;
+                _quickReplyExpandView.hidden = YES;
+                [self.expandPanel sendSubviewToBack:_quickReplyExpandView];
+                self.robotActionToolBar.hidden = YES;
                 self.lastChatKeyboardY = self.frame.origin.y;
                 self.frame = CGRectMake(0, targetY, CGRectGetWidth(self.frame), self.frame.size.height);
                 self.voiceView.frame = CGRectMake(0, CGRectGetHeight(self.frame), CGRectGetWidth(self.frame), kFacePanelHeight);
                 self.expandPanel.frame = CGRectMake(0, CGRectGetHeight(self.frame), CGRectGetWidth(self.frame), kFacePanelHeight);
                 self.emotionPanel.frame = CGRectMake(0, CGRectGetHeight(self.frame), CGRectGetWidth(self.frame), kFacePanelHeight);
                 self.robotActionToolBar.frame = CGRectMake(0, CGRectGetHeight(self.frame), CGRectGetWidth(self.frame), kQIMChatToolBarHeight);
+                self.maskView.frame = CGRectMake(0, self.chatToolBar.bottom, CGRectGetWidth(self.frame), kFacePanelHeight);
                 [self updateAssociateTableViewFrame];
                 [[NSNotificationCenter defaultCenter] postNotificationName:kQIMTextBarIsFirstResponder object:nil];
             }
@@ -1074,6 +1092,14 @@ static QIMTextBar *__publicNumberTextBar = nil;
     return _chatToolBar;
 }
 
+- (UIView *)maskView {
+    if (!_maskView) {
+        _maskView = [[UIView alloc] initWithFrame:CGRectMake(0, self.chatToolBar.bottom, self.width, kFacePanelHeight)];
+        _maskView.backgroundColor = [UIColor qtalkChatBgColor];
+        [self addSubview:_maskView];
+    }
+    return _maskView;
+}
 
 - (UIView *)emotionPanel {
     if (!_emotionPanel) {
@@ -1093,6 +1119,7 @@ static QIMTextBar *__publicNumberTextBar = nil;
         _expandPanel.parentVC = (UIViewController *)self.delegate;
         [self addSubview:_expandPanel];
         [_expandPanel addItems];
+        [_expandPanel addSubview:self.expandPageControl];
     }
     return _expandPanel;
 }
@@ -1256,7 +1283,8 @@ static QIMTextBar *__publicNumberTextBar = nil;
         NSInteger pages = ceilf(items.count / 8.0f);
         CGSize pagesize = [_expandPageControl sizeForNumberOfPages:pages];
         _expandPageControl.size = pagesize;
-        _expandPageControl.centerY = CGRectGetMaxY(self.expandPanel.frame) - 25;
+        _expandPageControl.y = 185;
+//        _expandPageControl.centerY = CGRectGetMaxY(self.expandPanel.frame) - 35 - HOME_INDICATOR_HEIGHT;
         _expandPageControl.centerX = self.centerX;
         _expandPageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
         _expandPageControl.currentPageIndicatorTintColor = [UIColor redColor];

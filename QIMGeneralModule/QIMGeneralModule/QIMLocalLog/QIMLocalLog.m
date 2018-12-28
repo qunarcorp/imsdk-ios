@@ -249,7 +249,7 @@ static NSString *LocalZipLogsPath = @"ZipLogs";
     NSString *logFileUrl = [QIMKit updateLoadFile:[[QIMLocalLog sharedInstance] allLogData] WithMsgId:[QIMUUIDTools UUID] WithMsgType:QIMMessageType_File WihtPathExtension:@"zip"];
     if (logFileUrl.length) {
         if (![logFileUrl qim_hasPrefixHttpHeader]) {
-            logFileUrl = [NSString stringWithFormat:@"%@/%@", [[QIMKit sharedInstance] qimNav_Simpleapiurl], logFileUrl];
+            logFileUrl = [NSString stringWithFormat:@"%@/%@", [[QIMKit sharedInstance] qimNav_InnerFileHttpHost], logFileUrl];
         }
         [self sendFeedBackWithLogFileUrl:logFileUrl WithContent:content withUserInitiative:initiative];
     }

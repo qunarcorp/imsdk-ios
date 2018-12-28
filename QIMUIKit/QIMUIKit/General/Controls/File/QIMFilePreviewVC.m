@@ -244,41 +244,49 @@
 }
 
 - (void)request:(ASIHTTPRequest *)request didReceiveData:(NSData *)data{
-    if (_writeDataQueue == nil) {
-        _writeDataQueue = dispatch_queue_create("Write File Queue", 0);
-    }
-    dispatch_async(_writeDataQueue, ^{ 
-        if (_fileHandle == nil) {
-            [[NSFileManager defaultManager] createFileAtPath:_filePath contents:nil attributes:nil];
-            _fileHandle = [NSFileHandle fileHandleForWritingAtPath:_filePath];
+    if (request.responseStatusCode == 200) {
+        if (_writeDataQueue == nil) {
+            _writeDataQueue = dispatch_queue_create("Write File Queue", 0);
         }
-        [_fileHandle truncateFileAtOffset:_fileOffset];
-        [_fileHandle writeData:data];
-        _fileOffset += data.length;
-    });
-    float value = _fileOffset * 1.0 / request.contentLength;
-    [_progressView setProgress:value animated:YES];
+        dispatch_async(_writeDataQueue, ^{
+            if (_fileHandle == nil) {
+                [[NSFileManager defaultManager] createFileAtPath:_filePath contents:nil attributes:nil];
+                _fileHandle = [NSFileHandle fileHandleForWritingAtPath:_filePath];
+            }
+            [_fileHandle truncateFileAtOffset:_fileOffset];
+            [_fileHandle writeData:data];
+            _fileOffset += data.length;
+        });
+        float value = _fileOffset * 1.0 / request.contentLength;
+        [_progressView setProgress:value animated:YES];
+    } else {
+        QIMVerboseLog(@"FilePreViewVc didReceiveData : %@, StatusCode : %d", request, request.responseStatusCode);
+    }
 }
 
 - (void)requestFinished:(ASIHTTPRequest *)request{
-    QIMVerboseLog(@"finished");
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [_fileHandle synchronizeFile];
-        _downloadComplate = YES;
-        [_deleteButton setHidden:NO];
-        [_downLoadButton setHidden:YES];
-        [_downloadView setHidden:YES];
-        [_progressBgView setHidden:YES];
-        [_bottomView setHidden:NO];
-        [self showFile];
-        [[NSNotificationCenter defaultCenter] postNotificationName:kNotifyDownloadFileComplete
-                                                            object:self.message.messageId];
-        [_downloadRequest setDelegate:nil];
-        [_downloadRequest setDownloadProgressDelegate:nil];
-        _downloadRequest = nil;
-        [_fileHandle closeFile];
-        _fileHandle = nil;
-    });
+    if (request.responseStatusCode == 200) {
+        QIMVerboseLog(@"finished");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_fileHandle synchronizeFile];
+            _downloadComplate = YES;
+            [_deleteButton setHidden:NO];
+            [_downLoadButton setHidden:YES];
+            [_downloadView setHidden:YES];
+            [_progressBgView setHidden:YES];
+            [_bottomView setHidden:NO];
+            [self showFile];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNotifyDownloadFileComplete
+                                                                object:self.message.messageId];
+            [_downloadRequest setDelegate:nil];
+            [_downloadRequest setDownloadProgressDelegate:nil];
+            _downloadRequest = nil;
+            [_fileHandle closeFile];
+            _fileHandle = nil;
+        });
+    } else {
+        QIMVerboseLog(@"FilePreViewVc requestFinished : %@, StatusCode : %d", request, request.responseStatusCode);
+    }
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request{
@@ -353,8 +361,7 @@
     if (![fileUrl qim_hasPrefixHttpHeader]) {
         fileUrl =  [[QIMKit sharedInstance].qimNav_InnerFileHttpHost stringByAppendingFormat:@"/%@", fileUrl];
     }
-    NSString* webStringURL = [fileUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSURL *url = [NSURL URLWithString:webStringURL];
+    NSURL *url = [NSURL URLWithString:fileUrl];
     
     _downloadRequest = [[ASIHTTPRequest alloc] initWithURL:url];
     _downloadRequest.showAccurateProgress = YES;

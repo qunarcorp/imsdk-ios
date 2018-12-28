@@ -744,6 +744,13 @@
         if (response.code == 200) {
             NSError *errol = nil;
             NSArray *result = [[QIMJSONSerializer sharedInstance] deserializeObject:response.data error:&errol];
+//            "name": "牛驼表情",
+//            "file": "https://qt.qunar.com/resources/niutuoEmotions.emt",
+//            "desc": "扩展表情包,下载后可显示牛驼表情",
+//            "thumb": "https://qt.qunar.com/resources/niutuoThumb.gif",
+//            "file_size": 881251,
+//            "md5": "1a3e842bb7aa04dba56249c889758bc5"
+//
             if (_httpEmotions == nil) {
                 _httpEmotions = [NSMutableArray arrayWithCapacity:1];
             } else{

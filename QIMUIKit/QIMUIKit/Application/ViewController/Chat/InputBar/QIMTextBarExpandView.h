@@ -33,6 +33,8 @@ typedef enum {
 #define QIMTextBarExpandViewItem_SendProduct      @"SendProduct"
 #define QIMTextBarExpandViewItem_SendActivity     @"SendActivity"
 #define QIMTextBarExpandViewItem_Shock            @"Shock"
+#define QIMTextBarExpandViewItem_TouPiao          @"toupiao"
+#define QIMTextBarExpandViewItem_Task_list        @"Task_list"
 
 @class QIMTextBarExpandView;
 @protocol QIMTextBarExpandViewDelegate <NSObject>

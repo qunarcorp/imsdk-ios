@@ -91,8 +91,9 @@
 //前往回话列表
 - (void)openChatSession
 {
-    [[QIMKit sharedInstance] openChatSessionByUserId:_infoDic[@"XmppId"] ByName:_infoDic[@"Name"]];
-    
+    [[QIMKit sharedInstance] openChatSessionByUserId:_infoDic[@"XmppId"]];
+    [QIMFastEntrance openSingleChatVCByUserId:_infoDic[@"XmppId"]];
+    /*
     QIMChatVC * chatVC  = [[QIMChatVC alloc] init];
     [chatVC setStype:kSessionType_Chat];
     [chatVC setChatId:_infoDic[@"XmppId"]];
@@ -100,6 +101,7 @@
     [chatVC setTitle:_infoDic[@"Name"]];
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotifySelectTab object:@(0)];
     [self.navigationController popToRootVCThenPush:chatVC animated:YES];
+     */
 }
 
 #pragma mark - init UI

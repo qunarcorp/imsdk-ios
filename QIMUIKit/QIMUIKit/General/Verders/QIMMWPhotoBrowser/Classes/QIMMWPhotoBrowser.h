@@ -31,6 +31,7 @@
 - (QIMMWCaptionView *)photoBrowser:(QIMMWPhotoBrowser *)photoBrowser captionViewForPhotoAtIndex:(NSUInteger)index;
 - (NSString *)photoBrowser:(QIMMWPhotoBrowser *)photoBrowser titleForPhotoAtIndex:(NSUInteger)index;
 - (void)photoBrowser:(QIMMWPhotoBrowser *)photoBrowser didDisplayPhotoAtIndex:(NSUInteger)index;
+- (void)photoBrowser:(QIMMWPhotoBrowser *)photoBrowser currentDisplayPhotoAtIndex:(NSUInteger)index;
 - (void)photoBrowser:(QIMMWPhotoBrowser *)photoBrowser actionButtonPressedForPhotoAtIndex:(NSUInteger)index;
 - (BOOL)photoBrowser:(QIMMWPhotoBrowser *)photoBrowser isPhotoSelectedAtIndex:(NSUInteger)index;
 - (void)photoBrowser:(QIMMWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index selectedChanged:(BOOL)selected;

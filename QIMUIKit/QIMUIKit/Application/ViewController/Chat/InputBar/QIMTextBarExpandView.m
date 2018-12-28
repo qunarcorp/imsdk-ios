@@ -43,52 +43,54 @@ static NSMutableDictionary *__trdExtendInfoDic = nil;
     if ([[QIMKit sharedInstance] getMsgTextBarButtonInfoList].count) {
         [[QIMKit sharedInstance] removeAllExpandItems];
     }
-    if (__trdExtendInfoDic == nil) {
-        __trdExtendInfoDic = [[NSMutableDictionary alloc] init];
-    }
-//        扩展键盘新设计见wiki : http://wiki.corp.qunar.com/confluence/pages/viewpage.action?pageId=218952957
-    for (NSDictionary *trdEntendInfo in [[QIMKit sharedInstance] trdExtendInfo]) {
-        NSString *trdEntendId = [trdEntendInfo objectForKey:@"trdextendId"];
-        
-        int client = [[trdEntendInfo objectForKey:@"client"] intValue];
-        int support = [[trdEntendInfo objectForKey:@"support"] intValue];
-        int scope = [[trdEntendInfo objectForKey:@"scope"] intValue];
-        BOOL hasQchat = client & 1,hasQtalk = client & 2, hasSingle = support & 1,hasGroup = support & 2, hasVirtual = support & 4, hasConsult = support & 8, hasConsultServer = support & 16, hasPublicNumber = support & 32, hasNoMerchant = scope & 1,hasMerchant = scope & 2;
-        int type = [[trdEntendInfo objectForKey:@"type"] intValue];
-        NSString *title = [trdEntendInfo objectForKey:@"title"];
-        [__trdExtendInfoDic setObject:trdEntendInfo forKey:trdEntendId];
-        if ([QIMKit getQIMProjectType] == QIMProjectTypeQChat) {
-            BOOL needShowForMerchant = ((hasNoMerchant &&![[QIMKit sharedInstance] isMerchant])||(hasMerchant &&[[QIMKit sharedInstance] isMerchant]));
-            if (hasSingle && QIMTextBarExpandViewTypeSingle & self.type) {
-                [[QIMKit sharedInstance] addMsgTextBarWithTrdInfo:trdEntendInfo];
-            }
-            if (hasGroup && QIMTextBarExpandViewTypeGroup & self.type) {
-                [[QIMKit sharedInstance] addMsgTextBarWithTrdInfo:trdEntendInfo];
-            }
-            if (hasConsult && QIMTextBarExpandViewTypeConsult & self.type) {
-                [[QIMKit sharedInstance] addMsgTextBarWithTrdInfo:trdEntendInfo];
-            }
-            
-            if (needShowForMerchant && hasConsultServer && QIMTextBarExpandViewTypeConsultServer & self.type) {
-                [[QIMKit sharedInstance] addMsgTextBarWithTrdInfo:trdEntendInfo];
-            }
-            if (hasVirtual && QIMTextBarExpandViewTypeRobot & self.type) {
-                [[QIMKit sharedInstance] addMsgTextBarWithTrdInfo:trdEntendInfo];
-            }
+    if ([[QIMKit getLastUserName].lowercaseString isEqualToString:@"appstore"] == NO) {
+        if (__trdExtendInfoDic == nil) {
+            __trdExtendInfoDic = [[NSMutableDictionary alloc] init];
         }
-        if ([QIMKit getQIMProjectType] == QIMProjectTypeQTalk) {
-            if (hasSingle && QIMTextBarExpandViewTypeSingle & self.type) {
-                [[QIMKit sharedInstance] addMsgTextBarWithTrdInfo:trdEntendInfo];
-            }
-            if (hasGroup && QIMTextBarExpandViewTypeGroup & self.type) {
-                [[QIMKit sharedInstance] addMsgTextBarWithTrdInfo:trdEntendInfo];
-            }
-            if (hasVirtual && QIMTextBarExpandViewTypeRobot & self.type) {
-                [[QIMKit sharedInstance] addMsgTextBarWithTrdInfo:trdEntendInfo];
-            }
+//        扩展键盘新设计见wiki : http://wiki.corp.qunar.com/confluence/pages/viewpage.action?pageId=218952957
+        for (NSDictionary *trdEntendInfo in [[QIMKit sharedInstance] trdExtendInfo]) {
+            NSString *trdEntendId = [trdEntendInfo objectForKey:@"trdextendId"];
             
-            if (hasPublicNumber && QIMTextBarExpandViewTypePublicNumber & self.type) {
-                [[QIMKit sharedInstance] addMsgTextBarWithTrdInfo:trdEntendInfo];
+            int client = [[trdEntendInfo objectForKey:@"client"] intValue];
+            int support = [[trdEntendInfo objectForKey:@"support"] intValue];
+            int scope = [[trdEntendInfo objectForKey:@"scope"] intValue];
+            BOOL hasQchat = client & 1,hasQtalk = client & 2, hasSingle = support & 1,hasGroup = support & 2, hasVirtual = support & 4, hasConsult = support & 8, hasConsultServer = support & 16, hasPublicNumber = support & 32, hasNoMerchant = scope & 1,hasMerchant = scope & 2;
+            int type = [[trdEntendInfo objectForKey:@"type"] intValue];
+            NSString *title = [trdEntendInfo objectForKey:@"title"];
+            [__trdExtendInfoDic setObject:trdEntendInfo forKey:trdEntendId];
+            if ([QIMKit getQIMProjectType] == QIMProjectTypeQChat) {
+                BOOL needShowForMerchant = ((hasNoMerchant &&![[QIMKit sharedInstance] isMerchant])||(hasMerchant &&[[QIMKit sharedInstance] isMerchant]));
+                if (hasSingle && QIMTextBarExpandViewTypeSingle & self.type) {
+                    [[QIMKit sharedInstance] addMsgTextBarWithTrdInfo:trdEntendInfo];
+                }
+                if (hasGroup && QIMTextBarExpandViewTypeGroup & self.type) {
+                    [[QIMKit sharedInstance] addMsgTextBarWithTrdInfo:trdEntendInfo];
+                }
+                if (hasConsult && QIMTextBarExpandViewTypeConsult & self.type) {
+                    [[QIMKit sharedInstance] addMsgTextBarWithTrdInfo:trdEntendInfo];
+                }
+                
+                if (needShowForMerchant && hasConsultServer && QIMTextBarExpandViewTypeConsultServer & self.type) {
+                    [[QIMKit sharedInstance] addMsgTextBarWithTrdInfo:trdEntendInfo];
+                }
+                if (hasVirtual && QIMTextBarExpandViewTypeRobot & self.type) {
+                    [[QIMKit sharedInstance] addMsgTextBarWithTrdInfo:trdEntendInfo];
+                }
+            }
+            if ([QIMKit getQIMProjectType] == QIMProjectTypeQTalk) {
+                if (hasSingle && QIMTextBarExpandViewTypeSingle & self.type) {
+                    [[QIMKit sharedInstance] addMsgTextBarWithTrdInfo:trdEntendInfo];
+                }
+                if (hasGroup && QIMTextBarExpandViewTypeGroup & self.type) {
+                    [[QIMKit sharedInstance] addMsgTextBarWithTrdInfo:trdEntendInfo];
+                }
+                if (hasVirtual && QIMTextBarExpandViewTypeRobot & self.type) {
+                    [[QIMKit sharedInstance] addMsgTextBarWithTrdInfo:trdEntendInfo];
+                }
+                
+                if (hasPublicNumber && QIMTextBarExpandViewTypePublicNumber & self.type) {
+                    [[QIMKit sharedInstance] addMsgTextBarWithTrdInfo:trdEntendInfo];
+                }
             }
         }
     }
@@ -212,8 +214,9 @@ static NSMutableDictionary *__trdExtendInfoDic = nil;
         //这里由TextBar打开
         [self.delegate didClickExpandItemForTrdextendId:trdId];
     } else {
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:kExpandViewItemHandleNotification object:trdId];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[NSNotificationCenter defaultCenter] postNotificationName:kExpandViewItemHandleNotification object:trdId];
+        });
     }
 }
 

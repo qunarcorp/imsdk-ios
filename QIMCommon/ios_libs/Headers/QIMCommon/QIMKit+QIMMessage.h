@@ -548,4 +548,14 @@
                                          XmppId:(NSString *)xmppid
                                         RealJid:(NSString *)realJid;
 
+#pragma mark - 本地消息搜索
+
+- (NSArray *)getLocalMediasByXmppId:(NSString *)xmppId ByRealJid:(NSString *)realJid;
+
+- (NSArray *)getMsgsForMsgType:(NSArray *)msgTypes ByXmppId:(NSString *)xmppId ByReadJid:(NSString *)realJid;
+
+- (NSArray *)getMsgsByKeyWord:(NSString *)keyWork ByXmppId:(NSString *)xmppId ByReadJid:(NSString *)realJid;
+
+- (NSArray *)getMsgsForMsgType:(NSArray *)msgTypes ByXmppId:(NSString *)xmppId;
+
 @end

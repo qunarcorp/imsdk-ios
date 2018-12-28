@@ -83,9 +83,10 @@
 
 - (void)openChatSession{
     NSString *xmppid = [_currentAgreeDic objectForKey:@"XmppId"];
-    NSString *name = [_currentAgreeDic objectForKey:@"Name"];
-    [[QIMKit sharedInstance] openChatSessionByUserId:xmppid ByName:name];
-    
+//    NSString *name = [_currentAgreeDic objectForKey:@"Name"];
+    [[QIMKit sharedInstance] openChatSessionByUserId:xmppid];
+    [QIMFastEntrance openSingleChatVCByUserId:xmppid];
+    /*
     QIMChatVC * chatVC  = [[QIMChatVC alloc] init];
     [chatVC setStype:kSessionType_Chat];
     [chatVC setChatId:xmppid];
@@ -93,6 +94,7 @@
     [chatVC setTitle:name];
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotifySelectTab object:@(0)];
     [self.navigationController popToRootVCThenPush:chatVC animated:YES];
+     */
 }
 
 - (MBProgressHUD *)progressHUD {

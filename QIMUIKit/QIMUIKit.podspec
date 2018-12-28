@@ -13,17 +13,18 @@ Pod::Spec.new do |s|
   s.license      = "Copyright 2018 im.qunar.com"
   s.author       = { "Qunar IM" => "qtalk@qunar.com" }
 
-  s.source       = { :git => "https://im.qunar.com", :branch=> 'qimsdk'}
+  s.source       = { :git => "http://gitlab.corp.qunar.com/qchat/qunarchat-oc.git", :branch=> 'qimsdk_newV2'}
 
   s.ios.deployment_target   = '9.0'
 
   s.platform     = :ios, "9.0"
 
   s.public_header_files = "QIMUIKit/**/*"
+# s.prefix_header_file = "QIMUIKit/QIMUIKit.pch"
 
-  s.source_files = "QIMUIKit/Application/**/*.{h,m,c}", "QIMUIKit/General/**/*.{h,m,c}", "QIMUIKit/Me/**/*.{h,m,c}", "QIMUIKit/QIMNotificationManager.*", "QIMUIKit/QIMJumpURLHandle.*", "QIMUIKit/QIMFastEntrance.*", "QIMUIKit/QIMAppWindowManager.*", "QIMUIKit/QIMCommonUIFramework.h", "QIMUIKit/QIMRemoteNotificationManager.*"
+  s.source_files = "QIMUIKit/Application/**/*.{h,m,c}", "QIMUIKit/General/**/*.{h,m,c}", "QIMUIKit/Me/**/*.{h,m,c}", "QIMUIKit/QIMNotificationManager.*", "QIMUIKit/QIMJumpURLHandle.*", "QIMUIKit/QIMFastEntrance.*", "QIMUIKit/QIMAppWindowManager.*", "QIMUIKit/QIMCommonUIFramework.h", "QIMUIKit/QIMRemoteNotificationManager.*", "QIMUIKit/QIMMWPhotoTableViewController.*"
   s.vendored_libraries = "QIMCommon/QIMSDKUI/opencore-amr/lib/*.a"
-  s.resources = "QIMUIKit/QIMUIKitResources/片段/*", "QIMUIKit/QIMUIKitResources/Audio/*", "QIMUIKit/QIMUIKitResources/Certificate/*", "QIMUIKit/QIMUIKitResources/Fonts/*", "QIMUIKit/QIMUIKitResources/Stickers/*", "QIMUIKit/QIMUIKitResources/QIMUIKit.xcassets", "QIMUIKit/QIMUIKitResources/QIMI18N.bundle"
+  s.resources = "QIMUIKit/QIMUIKitResources/片段/*", "QIMUIKit/Application/ViewController/Login/QIMLoginViewController.xib", "QIMUIKit/QIMUIKitResources/Audio/*", "QIMUIKit/QIMUIKitResources/Certificate/*", "QIMUIKit/QIMUIKitResources/Fonts/*", "QIMUIKit/QIMUIKitResources/Stickers/*", "QIMUIKit/QIMUIKitResources/QIMUIKit.xcassets", "QIMUIKit/QIMUIKitResources/QIMI18N.bundle"
   s.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'DEBUGLOG=1'}
   s.pod_target_xcconfig = {"HEADER_SEARCH_PATHS" => "\"${PODS_ROOT}/Headers/Private/**\" \"${PODS_ROOT}/Headers/Private/QIMUIKit/**\" \"${PODS_ROOT}/Headers/Public/**\""}
 
@@ -39,18 +40,7 @@ Pod::Spec.new do |s|
         mrc.public_header_files = non_arc_files
         mrc.source_files = non_arc_files
     end
-
-    bundlefiles = 'QIMUIKit/QIMRNKit/React/assets'
-    s.subspec 'RN' do |rn|
-
-        rn.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'QIMRNEnable=1', "HEADER_SEARCH_PATHS" => "$(PROJECT_DIR)/node_modules/react-native"}
-        rn.pod_target_xcconfig = {'OTHER_LDFLAGS' => '$(inherited)'}
-        rn.source_files = ['QIMUIKit/QIMRNKit/React/**/*{h,m,c,jsbundle,meta}', 'QIMUIKit/QIMRNKit/rn_3rd/**/*{h,m,c,jsbundle,meta}']
-        rn.exclude_files = bundlefiles
-        rn.pod_target_xcconfig = {"HEADER_SEARCH_PATHS" => "\"${PODS_ROOT}/Headers/Private/**\" \"${PODS_ROOT}/Headers/Public/QIMRNKit/**\" \"$(PODS_ROOT)/boost-for-react-native\" \"$(PODS_ROOT)/DoubleConversion\" \"$(PODS_ROOT)/../node_modules\" \"$(PODS_ROOT)/../node_modules/react-native/ReactCommon/yoga\""}
-        rn.resource = 'QIMUIKit/QIMRNKit/QIMRNKit.bundle'
-    end
-
+    
     s.subspec 'QIMCells' do |cells|
         cells.public_header_files = "QIMUIKit/QTalkMessageBaloon/**/*.{h,m,c}"
         cells.source_files = "QIMUIKit/QTalkMessageBaloon/**/*.{h,m,c}"
@@ -77,6 +67,19 @@ Pod::Spec.new do |s|
         photoBrowser.resource = ['QIMUIKit/General/Verders/QIMMWPhotoBrowser/Assets']
     end
 
+    s.subspec 'QIMNot' do |note|
+      note.public_header_files = "QIMNoteUI/QTalkTodoList/**/*.{h}", "QIMNoteUI/QTEvernotes/**/*.{h}", "QIMNoteUI/QTPassword/**/*.{h}"
+      note.source_files = "QIMNoteUI/**/*.{h,m,c}"
+      note.resource = ["QIMNoteUI/CKEditor5.bundle", "QIMNoteUI/QTPassword/EditPasswordView.xib"]
+
+    end
+
+
+    s.subspec 'QIMUIVendorKit' do |vendorkit|
+      vendorkit.source_files = ['QIMUIVendorKit/QIMButton/**/*{h,m}', 'QIMUIVendorKit/QIMArrowView/**/*{h,m}', 'QIMUIVendorKit/QIMColorPicker/**/*{h,m,c}', 'QIMUIVendorKit/QIMDaePickerView/**/*{h,m}', 'QIMUIVendorKit/QIMGDPerformanceView/**/*{h,m}', 'QIMUIVendorKit/QIMXMenu/**/*{h,m}', 'QIMUIVendorKit/QIMPopVC/**/*{h,m}']
+      vendorkit.resource = ['QIMUIVendorKit/QIMArrowView/QIMArrowCellTableViewCell.xib', 'QIMUIVendorKit/QIMDaePickerView/QIMWSDatePickerView.xib']
+    end
+    
     s.dependency 'MJRefresh'
     s.dependency 'YLGIFImage'
     s.dependency 'FDFullscreenPopGesture'

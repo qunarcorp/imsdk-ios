@@ -2,7 +2,7 @@
 //  QIMQuickReplySubTableView.m
 //  QIMUIKit
 //
-//  Created by QIM on 2018/8/8.
+//  Created by 李露 on 2018/8/8.
 //  Copyright © 2018年 QIM. All rights reserved.
 //
 

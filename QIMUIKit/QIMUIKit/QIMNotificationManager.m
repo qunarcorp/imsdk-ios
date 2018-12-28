@@ -2,7 +2,7 @@
 //  QIMNotificationManager.m
 //  qunarChatIphone
 //
-//  Created by QIM on 2018/5/17.
+//  Created by 李露 on 2018/5/17.
 //
 
 #import "QIMNotificationManager.h"
@@ -23,8 +23,8 @@
     #import "QIMLocalLog.h"
 #endif
 
-#if defined (QIMRNEnable) && QIMRNEnable == 1
-    #import "QimRNBModule.h"
+#if defined (QIMOPSRNEnable) && QIMOPSRNEnable == 1
+    #import "QTalkSuggestRNJumpManager.h"
 #endif
 
 #import "QIMZBarViewController.h"
@@ -58,7 +58,7 @@ static QIMNotificationManager *_notificationManager = nil;
     //打开群会话
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openGroupChatVCByGroupId:) name:kNotifyOpenGroupChatVc object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hhhh:) name:@"QIMSchemaNotification" object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hhhh:) name:@"QIMSchemaNotification" object:nil];
 }
 
 //单人音视频

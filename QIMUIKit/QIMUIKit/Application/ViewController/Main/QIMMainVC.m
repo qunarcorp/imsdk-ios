@@ -23,11 +23,10 @@
 #import "QIMZBarViewController.h"
 #import "QIMJumpURLHandle.h"
 #import "QIMMineTableView.h"
-#import "QIMWebView.h"
 #import "QIMNavBackBtn.h"
 #import "NSBundle+QIMLibrary.h"
-#if defined (QIMRNEnable) && QIMRNEnable == 1
-#import "QimRNBModule.h"
+#if defined (QIMOPSRNEnable) && QIMOPSRNEnable == 1
+#import "QTalkSuggestRNJumpManager.h"
 #endif
 #import "Toast.h"
 
@@ -147,10 +146,17 @@
      }
      }
      */
+    //    if (self.skipLogin) {
+    //        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(autoLogin) object:nil];
+    //        [self peQTalkSuggestRNJumpManagerrformSelector:@selector(autoLogin) withObject:nil afterDelay:0.3];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginNotify:) name:kNotificationLoginState object:nil];
+    //    }
     if ([QIMKit getQIMProjectType] == QIMProjectTypeQTalk && self.skipLogin) {
         [self autoLogin];
     }
+#if defined (QIMOPSRNEnable) && QIMOPSRNEnable == 1
+    [[QTalkSuggestRNJumpManager sharedInstance] setOwnerVC:self];
+#endif
 }
 
 - (void)registerNSNotifications {
@@ -404,8 +410,8 @@
         case 1:
             break;
         case 2:
-#if defined (QIMRNEnable) && QIMRNEnable == 1
-//            [[NSNotificationCenter defaultCenter] postNotificationName:QTalkSuggestRNViewWillAppear object:nil];
+#if defined (QIMOPSRNEnable) && QIMOPSRNEnable == 1
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"QTalkSuggestRNViewWillAppear" object:nil];
 #endif
             break;
         case 3:
@@ -449,8 +455,9 @@
     [self.totalTabBarArray addObject:@{@"title":[NSBundle qim_localizedStringForKey:@"tab_title_contact"], @"normalImage":[UIImage qimIconWithInfo:[QIMIconInfo iconInfoWithText:@"\U0000f3e3" size:28 color:[UIColor qim_colorWithHex:0x616161 alpha:1.0]]], @"selectImage":[UIImage qimIconWithInfo:[QIMIconInfo iconInfoWithText:@"\U0000f4d8" size:28 color:[UIColor qtalkIconSelectColor]]]}];
     
 //    [self.totalTabBarArray addObject:@{@"title":[NSBundle qim_localizedStringForKey:@"tab_title_discover"], @"normalImage":[UIImage qimIconWithInfo:[QIMIconInfo iconInfoWithText:@"\U0000f4be" size:28 color:[UIColor qim_colorWithHex:0x616161 alpha:1.0]]], @"selectImage":[UIImage qimIconWithInfo:[QIMIconInfo iconInfoWithText:@"\U0000f4bd" size:28 color:[UIColor qtalkIconSelectColor]]]}];
+    
     [self.totalTabBarArray addObject:@{@"title":[NSBundle qim_localizedStringForKey:@"tab_title_scheme"], @"normalImage":[UIImage qimIconWithInfo:[QIMIconInfo iconInfoWithText:@"\U0000f4be" size:28 color:[UIColor qim_colorWithHex:0x616161 alpha:1.0]]], @"selectImage":[UIImage qimIconWithInfo:[QIMIconInfo iconInfoWithText:@"\U0000f4bd" size:28 color:[UIColor qtalkIconSelectColor]]]}];
-
+    
     [self.totalTabBarArray addObject:@{@"title":[NSBundle qim_localizedStringForKey:@"tab_title_myself"], @"normalImage":[UIImage qimIconWithInfo:[QIMIconInfo iconInfoWithText:@"\U0000e29b" size:28 color:[UIColor qim_colorWithHex:0x616161 alpha:1.0]]], @"selectImage":[UIImage qimIconWithInfo:[QIMIconInfo iconInfoWithText:@"\U0000e29c" size:28 color:[UIColor qtalkIconSelectColor]]]}];
 
     _tabBar = [[QIMCustomTabBar alloc] initWithItemCount:self.totalTabBarArray.count WihtFrame:CGRectMake(0, _rootView.height - [[QIMDeviceManager sharedInstance] getTAB_BAR_HEIGHT] - 3.5, _rootView.width, kTabBarHeight)];
@@ -490,7 +497,14 @@
     if (!_travelView) {
 #if defined (QIMRNEnable) && QIMRNEnable == 1
         QIMVerboseLog(@"打开QIM RN 行程页面");
-        _travelView = [[QimRNBModule createQIMRNVCWithBundleName:[QimRNBModule getInnerBundleName] WithModule:@"TravelCalendar" WithProperties:nil] view];
+        Class RunC = NSClassFromString(@"QimRNBModule");
+        SEL sel = NSSelectorFromString(@"createQIMRNVCWithParam:");
+        UIViewController *vc = nil;
+        if ([RunC respondsToSelector:sel]) {
+            NSDictionary *param = @{@"module":@"TravelCalendar"};
+            vc = [RunC performSelector:sel withObject:param];
+        }
+        _travelView = [vc view];
         [_travelView setFrame:CGRectMake(0, 0, _contentView.width, _contentView.height)];
 #endif
     }
@@ -499,6 +513,7 @@
 
 - (UIView *)userListView {
     if (!_userListView) {
+#if defined (QIMRNEnable) && QIMRNEnable == 1
         //导航中返回RNContactView == NO，展示Native界面
         QIMVerboseLog(@"RNContactView : %d", [[QIMKit sharedInstance] qimNav_RNContactView]);
         if ([[QIMKit sharedInstance] qimNav_RNContactView] == NO) {
@@ -510,12 +525,24 @@
             _userListView = userlistView;
         } else {
             QIMVerboseLog(@"打开QIM RN 通讯录页");
-#if defined (QIMRNEnable) && QIMRNEnable == 1
-
-            _userListView = [[QimRNBModule createQIMRNVCWithBundleName:[QimRNBModule getInnerBundleName] WithModule:@"Contacts" WithProperties:nil] view];
+            Class RunC = NSClassFromString(@"QimRNBModule");
+            SEL sel = NSSelectorFromString(@"createQIMRNVCWithParam:");
+            UIViewController *vc = nil;
+            if ([RunC respondsToSelector:sel]) {
+                NSDictionary *param = @{@"module":@"Contacts"};
+                vc = [RunC performSelector:sel withObject:param];
+            }
+            _userListView = [vc view];
             [_userListView setFrame:CGRectMake(0, 0, _contentView.width, _contentView.height)];
-#endif
         }
+#else
+        QIMVerboseLog(@"打开Native 通讯录页");
+        QIMUserListView *userlistView = [[QIMUserListView alloc] initWithFrame:CGRectMake(0, 0, _contentView.width, _contentView.height)];
+        [userlistView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
+        [userlistView setRootViewController:self];
+        [userlistView setBackgroundColor:[UIColor spectralColorWhiteColor]];
+        _userListView = userlistView;
+#endif
     }
     return _userListView;
 }
@@ -526,12 +553,34 @@
         //导航中返回showOA == YES / QChat，展示OPS OA界面
         QIMVerboseLog(@"showOA : %d", [[QIMKit sharedInstance] qimNav_ShowOA]);
         QIMVerboseLog(@"Domain : %@", [[QIMKit sharedInstance] qimNav_Domain]);
-        QIMVerboseLog(@"打开QIM RN 发现页");
+        if ([[QIMKit sharedInstance] qimNav_ShowOA] == YES || [[[QIMKit sharedInstance] qimNav_Domain] isEqualToString:@"ejabhost2"] || [[[QIMKit sharedInstance] qimNav_Domain] isEqualToString:@"ejabhost1"]) {
+            QIMVerboseLog(@"打开OPS 发现页");
+#if defined (QIMOPSRNEnable) && QIMOPSRNEnable == 1
+
+            Class RunC = NSClassFromString(@"QTalkSuggestRNView");
+            SEL sel = NSSelectorFromString(@"initWithFrame:WithOwnnerVC:");
+            UIView *suggestRNView = nil;
+            if ([RunC respondsToSelector:sel]) {
+                NSString *frame = NSStringFromCGRect(CGRectMake(0, 0, _contentView.width, _contentView.height));
+                suggestRNView = [RunC performSelector:sel withObject:frame withObject:self];
+            }
+            _rnSuggestView = suggestRNView;
+#endif
+        } else {
+            QIMVerboseLog(@"打开QIM RN 发现页");
 #if defined (QIMRNEnable) && QIMRNEnable == 1
 
-        _rnSuggestView = [[QimRNBModule createQIMRNVCWithBundleName:[QimRNBModule getInnerBundleName] WithModule:@"FoundPage" WithProperties:@{@"domain":[[QIMKit sharedInstance] getDomain]}] view];
-        [_rnSuggestView setFrame:CGRectMake(0, 0, _contentView.width, _contentView.height)];
+            Class RunC = NSClassFromString(@"QimRNBModule");
+            SEL sel = NSSelectorFromString(@"createQIMRNVCWithParam:");
+            UIViewController *vc = nil;
+            if ([RunC respondsToSelector:sel]) {
+                NSDictionary *param = @{@"module":@"FoundPage", @"properties":@{@"domain":[[QIMKit sharedInstance] getDomain]}};
+                vc = [RunC performSelector:sel withObject:param];
+            }
+            _rnSuggestView = [vc view];
+            [_rnSuggestView setFrame:CGRectMake(0, 0, _contentView.width, _contentView.height)];
 #endif
+        }
     }
     return _rnSuggestView;
 }
@@ -548,6 +597,9 @@
 
 - (UIView *)mineView {
     if (!_mineView) {
+        
+#if defined (QIMRNEnable) && QIMRNEnable == 1
+
         //导航中返回RNMineView == NO，展示Native界面
         QIMVerboseLog(@"RNMineView : %d", [[QIMKit sharedInstance] qimNav_RNMineView]);
         if ([[QIMKit sharedInstance] qimNav_RNMineView] == NO) {
@@ -558,12 +610,26 @@
             _mineView = mineNativeView;
         } else {
             QIMVerboseLog(@"打开QIM RN 我的页面");
-#if defined (QIMRNEnable) && QIMRNEnable == 1
-            _mineView = [[QimRNBModule createQIMRNVCWithBundleName:[QimRNBModule getInnerBundleName] WithModule:@"MySetting" WithProperties:nil] view];
+            
+            Class RunC = NSClassFromString(@"QimRNBModule");
+            SEL sel = NSSelectorFromString(@"createQIMRNVCWithParam:");
+            UIViewController *vc = nil;
+            if ([RunC respondsToSelector:sel]) {
+                NSDictionary *param = @{@"module":@"MySetting"};
+                vc = [RunC performSelector:sel withObject:param];
+            }
+            _mineView = [vc view];
             [_mineView setFrame:CGRectMake(0, 0, _contentView.width, _contentView.height)];
             [_mineView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
-#endif
         }
+        
+#else
+        QIMVerboseLog(@"打开Native 我的页面");
+        QIMMineTableView *mineNativeView = [[QIMMineTableView alloc] initWithFrame:CGRectMake(0, 0, _contentView.width, _contentView.height)];
+        [mineNativeView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
+        [mineNativeView setRootViewController:self];
+        _mineView = mineNativeView;
+#endif
     }
     return _mineView;
 }
@@ -610,7 +676,8 @@
     [_sessionView setHidden:YES];
     [_travelView setHidden:YES];
     [_userListView setHidden:YES];
-//    [_rnSuggestView setHidden:YES];
+    [_rnSuggestView setHidden:YES];
+    [_schemeView setHidden:YES];
     [_mineView setHidden:YES];
     [self updateNavigationWithSelectIndex:index];
     
@@ -630,8 +697,11 @@
         [self.userListView setHidden:NO];
     } else if ([tabBarId isEqualToString:[NSBundle qim_localizedStringForKey:@"tab_title_discover"]]) {
         
-//        [_contentView addSubview:self.rnSuggestView];
-//        [self.rnSuggestView setHidden:NO];
+        [_contentView addSubview:self.rnSuggestView];
+        [self.rnSuggestView setHidden:NO];
+#if defined (QIMOPSRNEnable) && QIMOPSRNEnable == 1
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"QTalkSuggestRNViewWillAppear" object:nil];
+#endif
     } else if ([tabBarId isEqualToString:[NSBundle qim_localizedStringForKey:@"tab_title_myself"]]) {
         
         [_contentView addSubview:self.mineView];
@@ -658,7 +728,7 @@
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
     
-#if defined (QIMRNEnable) && QIMRNEnable == 1
+#if defined (QIMOPSRNEnable) && QIMOPSRNEnable == 1
 
     [QIMFastEntrance openRNSearchVC];
     return NO;
@@ -737,7 +807,7 @@
 #pragma mark - NSNotification
 
 - (void)loginNotify:(NSNotification *)notify {
-
+    /*
     dispatch_async(dispatch_get_main_queue(), ^{
         if ([notify.object boolValue]) {
             NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
@@ -745,6 +815,7 @@
             [QIMRemoteNotificationManager checkUpNotifacationHandle];
         }
     });
+    */
 }
 
 - (void)alertOutOfDateMsg {

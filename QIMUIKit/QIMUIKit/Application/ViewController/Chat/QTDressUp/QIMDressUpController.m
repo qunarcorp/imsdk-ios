@@ -7,6 +7,7 @@
 //
 
 #import "QIMDressUpController.h"
+#import "QIMDataController.h"
 #import "QIMChatBGImageSelectController.h"
 #import "QIMColorfulBubblesController.h"
 #import "QIMChatBubbleFontChangeViewController.h"
@@ -157,6 +158,9 @@
     }else if([text isEqualToString:@"chatBG"]){
         NSMutableDictionary * chatBGImageDic = [[QIMKit sharedInstance] userObjectForKey:@"chatBGImageDic"];
         UIImage * image = nil;
+        if (chatBGImageDic) {
+            image = [UIImage imageWithContentsOfFile:[[QIMDataController getInstance] getSourcePath:@"chatBGImageFor_Common"]];
+        }
         
         QIMChatBGImageSelectController * chatBGImageSelectVC = [[QIMChatBGImageSelectController alloc] initWithCurrentBGImage:image];
         chatBGImageSelectVC.userID = @"Common";

@@ -2,7 +2,7 @@
 //  QIMCommonTableViewCellManager.m
 //  qunarChatIphone
 //
-//  Created by QIM on 2017/12/21.
+//  Created by 李露 on 2017/12/21.
 //
 
 #import "QIMCommonTableViewCellManager.h"
@@ -27,10 +27,6 @@
 #import "QIMMenuView.h"
 #import "QIMFriendListViewController.h"
 #import "QIMServiceStatusViewController.h"
-
-#if defined (QIMRNEnable) && QIMRNEnable == 1
-    #import "QimRNBModule.h"
-#endif
 
 @interface QIMCommonTableViewCellManager ()
 
@@ -88,21 +84,6 @@
     return QCMineMinSectionHeight;
 }
 
-/*
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *headView = [[UIView alloc] init];
-    headView.backgroundColor = [UIColor orangeColor];
-    return headView;
-}
--(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    UIView *headView = [[UIView alloc] init];
-    headView.backgroundColor = [UIColor blueColor];
-    return headView;
-}
- */
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     QIMCommonTableViewCellData *itemData = self.dataSource[indexPath.section][indexPath.row];
@@ -130,23 +111,25 @@
             break;
         case QIMCommonTableViewCellDataTypeAttendance:{
 #if defined (QIMRNEnable) && QIMRNEnable == 1
-
-            [self.rootVC presentViewController:[QimRNBModule clockOnVC] animated:YES completion:nil];
+            Class RunC = NSClassFromString(@"QimRNBModule");
+            SEL sel = NSSelectorFromString(@"clockOnVC");
+            UIViewController *vc = nil;
+            if ([RunC respondsToSelector:sel]) {
+                vc = [RunC performSelector:sel withObject:nil];
+            }
+            [self.rootVC presentViewController:vc animated:YES completion:nil];
 #endif
         }
             break;
         case QIMCommonTableViewCellDataTypeTotpToken:{
 #if defined (QIMRNEnable) && QIMRNEnable == 1
-            [QimRNBModule openVCWithNavigation:self.rootVC.navigationController
-                                 WithHiddenNav:YES
-                                WithBundleName:[QimRNBModule getInnerBundleName]
-                                    WithModule:@"TOTP"];
+            [QIMFastEntrance openQIMRNVCWithModuleName:@"TOTP" WithProperties:@{}];
 #endif
         }
             break;
         case QIMCommonTableViewCellDataTypeAccountInformation: {
             dispatch_async(dispatch_get_main_queue(), ^{
-#if defined (QIMRNEnable) && QIMRNEnable == 1
+#if defined (QIMOPSRNEnable) && QIMOPSRNEnable == 1
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"kNotify_QtalkSuggest_handle_opsapp_event" object:nil userInfo:@{@"module":@"user-info", @"initParam":@[]}];
 #endif
             });
@@ -200,6 +183,7 @@
         case QIMCommonTableViewCellDataTypeSearchHistory: {
             QIMWebView *webView = [[QIMWebView alloc] init];
             [webView setUrl:[NSString stringWithFormat:@"%@/lookback/main_controller.php", [[QIMKit sharedInstance] qimNav_InnerFileHttpHost]]];
+            //@"https://qt.qunar.com/lookback/main_controller.php"];
             [self.rootVC.navigationController pushViewController:webView animated:YES];
         }
             break;
@@ -259,7 +243,7 @@
         }
             break;
         case QIMCommonTableViewCellDataTypeClearCache: {
-            
+            [[QIMDataController getInstance] removeAllImage];
         }
             break;
         case QIMCommonTableViewCellDataTypeMconfig: {

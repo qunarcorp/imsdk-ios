@@ -127,21 +127,8 @@
 
 - (void)openEngineerSessionWithEngineerUserinfo:(NSDictionary *)dict {
     
-    NSString *name = [dict objectForKey:@"Name"];
     NSString *jid = [dict objectForKey:@"XmppId"];
-    QIMChatVC * chatSingleVC  = [[QIMChatVC alloc] init];
-    [chatSingleVC setStype:kSessionType_Chat];
-    [chatSingleVC setChatId:jid];
-    [chatSingleVC setName:name];
-    [chatSingleVC setChatType:ChatType_SingleChat];
-    //备注
-    NSString *remarkName = [[QIMKit sharedInstance] getUserMarkupNameWithUserId:jid];
-    [chatSingleVC setTitle:remarkName?remarkName:name];
-    [chatSingleVC setReadedMsgTimeStamp:-1];
-    
-    [self.navigationController popToRootVCThenPush:chatSingleVC animated:YES];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:kNotifySelectTab object:@(0)];
+    [QIMFastEntrance openSingleChatVCByUserId:jid];
 }
 
 #pragma mark - UITableViewDataSource

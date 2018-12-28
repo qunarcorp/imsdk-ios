@@ -3,7 +3,7 @@
 //  QIMUserTableViewCell.m
 //  qunarChatIphone
 //
-//  Created by QIM on 2018/1/17.
+//  Created by 李露 on 2018/1/17.
 //
 
 #import "QIMUserTableViewCell.h"

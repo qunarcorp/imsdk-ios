@@ -172,16 +172,21 @@ typedef void (^QCParseCompleteBlock)(NSDictionary * info);
                 height = image.size.height;
             }
             */
-            if (width > kThumbMaxWidth || height > kThumbMaxHeight) {
-                float scale = MIN(kThumbMaxWidth/width, kThumbMaxHeight/height);
-                width = width * scale;
-                height = height * scale;
-            }
-            if (width <= 0) {
-                width = 100;
-            }
-            if (height <= 0) {
+            if (height > SCREEN_HEIGHT * 3) {
+                width = 50;
                 height = 100;
+            } else {
+                if (width > kThumbMaxWidth || height > kThumbMaxHeight) {
+                    float scale = MIN(kThumbMaxWidth/width, kThumbMaxHeight/height);
+                    width = width * scale;
+                    height = height * scale;
+                }
+                if (width <= 0) {
+                    width = 100;
+                }
+                if (height <= 0) {
+                    height = 100;
+                }
             }
             
             [storages addObject:[self parseImageRunFromDictinary:@{@"httpUrl":httpUrl?httpUrl:@"",@"width":@(width),@"height":@(height),@"range":NSStringFromRange(match.range)}]];

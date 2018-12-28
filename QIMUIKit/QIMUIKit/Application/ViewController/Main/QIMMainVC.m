@@ -788,32 +788,15 @@
     QIMVerboseLog(@"autoLogin lastUserName : %@, userFullJid : %@, userToken : %@", lastUserName, userFullJid, userToken);
     QIMVerboseLog(@"autoLogin UserDict : %@", [[QIMKit sharedInstance] userObjectForKey:@"Users"]);
     if ([lastUserName length] > 0 && [userToken length] > 0) {
-        if ([lastUserName isEqualToString:@"appstore"]) {
-            [[QIMKit sharedInstance] setUserObject:@"appstore" forKey:@"kTempUserToken"];
-            [[QIMKit sharedInstance] loginWithUserName:@"appstore" WithPassWord:@"appstore"];
-        } else if ([lastUserName isEqualToString:@"ctrip"]) {
-            [[QIMKit sharedInstance] setUserObject:@"ctrip" forKey:@"kTempUserToken"];
-            [[QIMKit sharedInstance] loginWithUserName:@"ctrip" WithPassWord:@"ctrip"];
-        } else if ([lastUserName isEqualToString:@"qtalktest"]) {
-            [[QIMKit sharedInstance] setUserObject:@"qtalktest123" forKey:@"kTempUserToken"];
-            [[QIMKit sharedInstance] loginWithUserName:@"qtalktest" WithPassWord:@"qtalktest123"];
-        } else if ([lastUserName isEqualToString:@"androidtest"]) {
-            [[QIMKit sharedInstance] setUserObject:@"androidtest" forKey:@"kTempUserToken"];
-            [[QIMKit sharedInstance] loginWithUserName:@"androidtest" WithPassWord:@"androidtest"];
-        } else if ([lastUserName isEqualToString:@"bixj123"] || [lastUserName isEqualToString:@"liuhuajun"] ) {
-            [[QIMKit sharedInstance] setUserObject:lastUserName forKey:@"kTempUserToken"];
-            [[QIMKit sharedInstance] loginWithUserName:lastUserName WithPassWord:lastUserName];
-        } else {
-            if ([[QIMKit sharedInstance] qimNav_LoginType] == QTLoginTypeSms) {
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    NSString *pwd = [NSString stringWithFormat:@"%@@%@", [QIMUUIDTools deviceUUID], userToken];
-                    [[QIMKit sharedInstance] setUserObject:userToken forKey:@"kTempUserToken"];
-                    [[QIMKit sharedInstance] loginWithUserName:lastUserName WithPassWord:pwd];
-                });
-            } else {
+        if ([[QIMKit sharedInstance] qimNav_LoginType] == QTLoginTypeSms) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSString *pwd = [NSString stringWithFormat:@"%@@%@", [QIMUUIDTools deviceUUID], userToken];
                 [[QIMKit sharedInstance] setUserObject:userToken forKey:@"kTempUserToken"];
-                [[QIMKit sharedInstance] loginWithUserName:lastUserName WithPassWord:userToken];
-            }
+                [[QIMKit sharedInstance] loginWithUserName:lastUserName WithPassWord:pwd];
+            });
+        } else {
+            [[QIMKit sharedInstance] setUserObject:userToken forKey:@"kTempUserToken"];
+            [[QIMKit sharedInstance] loginWithUserName:lastUserName WithPassWord:userToken];
         }
     } else {
         QIMVerboseLog(@"lastUserName或userToken为空,回到登录页面");

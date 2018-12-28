@@ -33,15 +33,7 @@
         _navConfigUrls = [NSMutableArray arrayWithArray:[[QIMKit sharedInstance] userObjectForKey:@"QC_NavAllDicts"]];
         if (!_navConfigUrls.count) {
 
-            NSDictionary *qtalkNav = @{QIMNavNameKey:@"QTalk导航", QIMNavUrlKey:@"https://qt.qunar.com/package/static/qtalk/nav"};
-            NSDictionary *publicQTalkNav = @{QIMNavNameKey:@"Qunar公共域导航", QIMNavUrlKey:@"https://qt.qunar.com/package/static/qtalk/publicnav?c=qunar.com"};
-            NSDictionary *qchatNav = @{QIMNavNameKey:@"QChat导航", QIMNavUrlKey:@"https://qt.qunar.com/package/static/qchat/nav"};
-            if ([QIMKit getQIMProjectType] == QIMProjectTypeQTalk) {
-                [_navConfigUrls addObject:qtalkNav];
-                [_navConfigUrls addObject:publicQTalkNav];
-            } else {
-                [_navConfigUrls addObject:qchatNav];
-            }
+            _navConfigUrls = [NSMutableArray arrayWithCapacity:2];
         }  
     }
     return _navConfigUrls;

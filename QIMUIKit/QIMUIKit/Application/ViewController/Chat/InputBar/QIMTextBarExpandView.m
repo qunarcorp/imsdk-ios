@@ -47,7 +47,6 @@ static NSMutableDictionary *__trdExtendInfoDic = nil;
         if (__trdExtendInfoDic == nil) {
             __trdExtendInfoDic = [[NSMutableDictionary alloc] init];
         }
-//        扩展键盘新设计见wiki : http://wiki.corp.qunar.com/confluence/pages/viewpage.action?pageId=218952957
         for (NSDictionary *trdEntendInfo in [[QIMKit sharedInstance] trdExtendInfo]) {
             NSString *trdEntendId = [trdEntendInfo objectForKey:@"trdextendId"];
             
@@ -225,8 +224,6 @@ static NSMutableDictionary *__trdExtendInfoDic = nil;
 -(void)sendMessage:(NSString *)message WithInfo:(NSString *)info ForMsgType:(int)msgType
 {
     
-    //Comment by lilulucas.li 10.18
-//    [(QIMChatVC *)self.parentVC sendMessage:message WithInfo:info ForMsgType:msgType];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

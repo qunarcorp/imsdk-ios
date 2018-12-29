@@ -74,22 +74,9 @@ static QIMQRCodeLoginManager *__qrcodeLoginManager = nil;
     } failure:^(NSError *error) {
         
     }];
-    
-    /*
-    ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:confirmURL]];
-    [request setRequestMethod:@"POST"];
-    [request setPostBody:postData];
-    [request setUseCookiePersistence:NO];
-
-    [request setRequestHeaders:cookieProperties];
-    [request startSynchronous];
-    if ([request responseStatusCode] == 200 && ![request error]) {
-        QIMVerboseLog(@"确认扫码操作 : %@", request.responseString);
-    } */
 }
 
 - (void)confirmQRCodeLogin {
-//    https://qt.qunar.com/package/qtapi/common/qrcode/auth.qunar
     NSString *confirmURL = [NSString stringWithFormat:@"%@/qtapi/common/qrcode/auth.qunar", [[QIMKit sharedInstance] qimNav_Javaurl]];
     ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:confirmURL]];
     NSString * qCookie = [[[QIMKit sharedInstance] userObjectForKey:@"QChatCookie"] objectForKey:@"q"];

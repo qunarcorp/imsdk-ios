@@ -410,18 +410,7 @@
             NSString *infoStr = msg.extendInformation.length <= 0 ? msg.message : msg.extendInformation;
             if (infoStr.length > 0) {
                 BOOL test = NO;
-                NSDictionary *infoDic = nil;
-                if (!test) {
-                    infoDic = [[QIMJSONSerializer sharedInstance] deserializeObject:infoStr error:nil];
-                } else {
-                    NSTimeInterval date = [[NSDate date] timeIntervalSince1970];
-                    infoDic = @{@"navServ":@"wss://l-wxapp2.vc.beta.cn0.qunar.com:8443/room",
-                                @"roomName":@"test",
-                                @"server":@"https://l-wxapp2.vc.beta.cn0.qunar.com:8443",
-                                @"startTime":@(date * 1000),
-                                @"topic":@"test视频会议",
-                                @"ttl":@(600)};
-                }
+                NSDictionary *infoDic = [[QIMJSONSerializer sharedInstance] deserializeObject:infoStr error:nil];
                 if (infoDic.count) {
                     [[QIMWebRTCMeetingClient sharedInstance] joinRoomByMessage:infoDic];
                 }

@@ -100,5 +100,3 @@ QIMSDK/Pods/*
 QIMDataBase/Pods/*
 QIMNoteUI/Pods/*
 QIMPublicRedefineHeader/Pods/*
-ios_libs/*
-*/**/ios_libs/*

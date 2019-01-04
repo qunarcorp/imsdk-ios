@@ -129,13 +129,14 @@
             [_progressHUD setHidden:YES];
         } else {
             //      切换成Token登录模式
-            NSDictionary *qchatToken = [[QIMKit sharedInstance] getQChatToken];
+            NSString *buName = @"app";
+            NSDictionary *qchatToken = [[QIMKit sharedInstance] getQChatTokenWithBusinessLineName:buName];
             if (qchatToken.count) {
                 NSString *userNameToken = [qchatToken objectForKey:@"username"];
                 NSString *pwdToken = [qchatToken objectForKey:@"token"];
                 //        {"token":{"plat":"app", "macCode":"xxxxxxxxxxxx", "token":"xxxxxxxxxx"}}
                 NSMutableDictionary *tokenDic = [NSMutableDictionary dictionary];
-                [tokenDic setObject:@"app" forKey:@"plat"];
+                [tokenDic setObject:buName forKey:@"plat"];
                 [tokenDic setObject:[[QIMKit sharedInstance] macAddress] forKey:@"macCode"];
                 [tokenDic setObject:pwdToken forKey:@"token"];
                 NSString *password = [[QIMJSONSerializer sharedInstance] serializeObject:@{@"token":tokenDic}];

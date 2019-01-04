@@ -242,7 +242,7 @@
  
  @return 返回token
  */
-- (NSDictionary *)getQChatToken;
+- (NSDictionary *)getQChatTokenWithBusinessLineName:(NSString *)businessLineName;
 
 - (NSDictionary *)getQVTForQChat;
 

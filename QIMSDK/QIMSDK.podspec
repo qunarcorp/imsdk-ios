@@ -16,21 +16,9 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://im.qunar.com", :branch=> 'qimsdk'}
 
   s.ios.deployment_target   = '9.0'
-  
-  $lib = ENV['use_lib']
-  if $lib
-      puts '---------二进制静态库22-------'
 
-      s.public_header_files = "QIMSDK/**/*.{h}"
-      s.source_files = "QIMSDK/*.{h,m}"
-      s.frameworks = 'Foundation', 'UIKit'
-
-  else
-      puts '.......源码222.......'
-      s.public_header_files = "QIMSDK/**/*.{h}"
-      s.source_files = "QIMSDK/*.{h,m}"
-      s.frameworks = 'Foundation', 'UIKit'
-
-  end
+  s.public_header_files = "QIMSDK/**/*.{h}"
+  s.source_files = "QIMSDK/*.{h,m}"
+  s.frameworks = 'Foundation', 'UIKit'
 
 end

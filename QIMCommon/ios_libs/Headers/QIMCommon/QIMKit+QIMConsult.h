@@ -135,6 +135,6 @@
  @param visitorId 客人Id
  @return 关闭之后的提示语
  */
-- (NSString *)closeSessionWithShopId:(NSString *)shopId WithVisitorId:(NSString *)visitorId;
+- (void)closeSessionWithShopId:(NSString *)shopId WithVisitorId:(NSString *)visitorId withBlock:(QIMCloseSessionBlock)block;
 
 @end

@@ -445,15 +445,16 @@
         
     }];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        NSString *promot = [[QIMKit sharedInstance] closeSessionWithShopId:self.virtualJid WithVisitorId:self.userId];
-        if (promot) {
-            [[QIMProgressHUD sharedInstance] showProgressHUDWithTest:promot];
-            [[QIMProgressHUD sharedInstance] closeHUD];
-            [self.navigationController popViewControllerAnimated:YES];
-        } else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"结束本地会话失败" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
-            [alert show];
-        }
+        [[QIMKit sharedInstance] closeSessionWithShopId:self.virtualJid WithVisitorId:self.chatId withBlock:^(NSString *closeMsg) {
+            if (closeMsg.length > 0) {
+                [[QIMProgressHUD sharedInstance] showProgressHUDWithTest:closeMsg];
+                [[QIMProgressHUD sharedInstance] closeHUD];
+//                [self leftBarBtnClicked:nil];
+            } else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"结束本地会话失败" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+                [alert show];
+            }
+        }];
     }];
     [endChatSessionAlertVc addAction:cancelAction];
     [endChatSessionAlertVc addAction:okAction];

@@ -320,5 +320,6 @@ typedef void(^QIMKitSendTPRequesFailedBlock)(NSError *error);
 typedef void(^QIMKitGetTripAreaAvailableRoomBlock)(NSArray *availableRooms);
 typedef void(^QIMKitGetTripMemberCheckBlock)(BOOL isConform);   //isConform 冲突
 typedef void(^QIMKitCreateTripBlock)(BOOL success);
+typedef void(^QIMCloseSessionBlock)(NSString *closeMsg);
 
 #endif /* QIMCommonEnum_h */

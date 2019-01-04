@@ -36,6 +36,11 @@
 - (NSArray *)getSessionList;
 
 /**
+ 获取最近有未读消息的会话列表
+ */
+- (NSArray *)getNotReadSessionList;
+
+/**
  *  清除会话列表
  */
 - (void)deleteSessionList;

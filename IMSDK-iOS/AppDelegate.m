@@ -9,9 +9,6 @@
 #import "AppDelegate.h"
 #import <EventKit/EventKit.h>
 #import <React/RCTLog.h>
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Answers.h>
-#import <Crashlytics/Crashlytics.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <AVFoundation/AVFoundation.h>
 #include <sys/socket.h> // Per msqr

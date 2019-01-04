@@ -137,6 +137,8 @@
 
 #define kGetSingleHistoryMsgError           @"kGetSingleHistoryMsgError"
 
+#define kGetSingleReadFlagError             @"kGetSingleReadFlagError"
+
 #define kGetGroupHistoryMsgError            @"kGetGroupHistoryMsgError"
 
 #define kGetSystemHistoryMsgError           @"kGetSystemHistoryMsgError"

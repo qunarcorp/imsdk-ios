@@ -14,9 +14,10 @@ RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(update:(NSDictionary *)param :(RCTResponseSenderBlock)callback) {
     QIMVerboseLog(@"更新QIM RN Param : %@", param);
-    NSDictionary *resp = @{@"is_ok": @YES, @"errorMsg": @""};
+    NSDictionary *resp2 = @{@"is_ok": @NO, @"errorMsg": @""};
+    QIMVerboseLog(@"更新QIM RN 失败 结果 : %@", resp2);
+    callback(@[resp2]);
 
-    callback(@[resp]);
 }
 
 @end

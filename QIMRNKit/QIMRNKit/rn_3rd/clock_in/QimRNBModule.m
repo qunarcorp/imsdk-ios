@@ -129,7 +129,8 @@ RCT_EXPORT_METHOD(appConfig:(RCTResponseSenderBlock)success) {
     NSString *ip = [[QIMKit sharedInstance] getClientIp];
     NSString *userId = [QIMKit getLastUserName];
     NSString *httpHost = [[QIMKit sharedInstance] qimNav_Javaurl];
-    NSArray *appConfig = @[@{@"projectType" : @(projectType), @"isQtalk" : @(!projectType), @"ckey" : ckey,@"clientIp" : ip,@"userId" : userId,@"domain" : [[QIMKit sharedInstance] qimNav_Domain], @"httpHost" : httpHost, @"RNAboutView" : @(0), @"RNMineView": @([[QIMKit sharedInstance] qimNav_RNMineView]), @"RNGroupCardView": @([[QIMKit sharedInstance] qimNav_RNGroupCardView]), @"RNContactView": @([[QIMKit sharedInstance] qimNav_RNContactView]), @"RNSettingView" : @([[QIMKit sharedInstance] qimNav_RNSettingView]), @"RNUserCardView" : @([[QIMKit sharedInstance] qimNav_RNUserCardView]), @"RNGroupListView": @([[QIMKit sharedInstance] qimNav_RNGroupListView]), @"RNPublicNumberListView" : @([[QIMKit sharedInstance] qimNav_RNPublicNumberListView]), @"showOrganizational" : @([[QIMKit sharedInstance] qimNav_ShowOrganizational]), @"showOA" : @([[QIMKit sharedInstance] qimNav_ShowOA]), @"qcAdminHost": [[QIMKit sharedInstance] qimNav_QCHost], @"showServiceState":@(projectType) /*@([[QIMKit sharedInstance] isMerchant]) */, @"fileUrl":[[QIMKit sharedInstance] qimNav_InnerFileHttpHost]}];
+    BOOL WorkFeedEntrance = [[[QIMKit sharedInstance] userObjectForKey:@"kUserWorkFeedEntrance"] boolValue];
+    NSArray *appConfig = @[@{@"projectType" : @(projectType), @"isQtalk" : @(!projectType), @"ckey" : ckey,@"clientIp" : ip,@"userId" : userId,@"domain" : [[QIMKit sharedInstance] qimNav_Domain], @"httpHost" : httpHost, @"RNAboutView" : @(0), @"RNMineView": @([[QIMKit sharedInstance] qimNav_RNMineView]), @"RNGroupCardView": @([[QIMKit sharedInstance] qimNav_RNGroupCardView]), @"RNContactView": @([[QIMKit sharedInstance] qimNav_RNContactView]), @"RNSettingView" : @([[QIMKit sharedInstance] qimNav_RNSettingView]), @"RNUserCardView" : @([[QIMKit sharedInstance] qimNav_RNUserCardView]), @"RNGroupListView": @([[QIMKit sharedInstance] qimNav_RNGroupListView]), @"RNPublicNumberListView" : @([[QIMKit sharedInstance] qimNav_RNPublicNumberListView]), @"showOrganizational" : @([[QIMKit sharedInstance] qimNav_ShowOrganizational]), @"showOA" : @([[QIMKit sharedInstance] qimNav_ShowOA]), @"qcAdminHost": [[QIMKit sharedInstance] qimNav_QCHost], @"showServiceState":@(projectType) /*@([[QIMKit sharedInstance] isMerchant]) */, @"fileUrl":[[QIMKit sharedInstance] qimNav_InnerFileHttpHost], @"isShowWorkWorld":@(WorkFeedEntrance)}];
     QIMVerboseLog(@"AppConfig : %@", appConfig);
     success(appConfig);
 }
@@ -331,7 +332,6 @@ RCT_EXPORT_METHOD(exitApp:(NSString *)rnName) {
  */
 + (NSURL *)getJsCodeLocation {
 
-//    return [NSURL URLWithString:@"http://100.80.128.252:8081/index.ios.bundle?platform=ios&dev=true"];
     NSString *innerJsCodeLocation = [NSBundle qim_myLibraryResourcePathWithClassName:@"QIMRNKit" BundleName:@"QIMRNKit" pathForResource:[QimRNBModule getInnerBundleName] ofType:@"jsbundle"];
     NSString *localJSCodeFileStr = [[UserCachesPath stringByAppendingPathComponent: [QimRNBModule getCachePath]] stringByAppendingPathComponent: [QimRNBModule getAssetBundleName]];
     if (localJSCodeFileStr && [[NSFileManager defaultManager] fileExistsAtPath:localJSCodeFileStr]) {
@@ -412,7 +412,7 @@ RCT_EXPORT_METHOD(exitApp:(NSString *)rnName) {
 
 + (void)openQIMRNVCWithParam:(NSDictionary *)param {
     UINavigationController *navVC = [param objectForKey:@"navVC"];
-    BOOL hiddenNav = [param objectForKey:@"hiddenNav"];
+    BOOL hiddenNav = [[param objectForKey:@"hiddenNav"] boolValue];
     NSString *bundleName = [param objectForKey:@"bundleName"];
     if (bundleName.length < 0 || !bundleName) {
         bundleName = [QimRNBModule getInnerBundleName];
@@ -429,6 +429,10 @@ RCT_EXPORT_METHOD(exitApp:(NSString *)rnName) {
               WithProperties:(NSDictionary *)properties{
     UIViewController *vc = [QimRNBModule getVCWithNavigation:navVC WithHiddenNav:hiddenNav WithBundleName:bundleName WithModule:module WithProperties:properties];
     [navVC pushViewController:vc animated:YES];
+}
+
++ (void)sendQIMRNWillShow {
+    [[QimRNBModule getStaticCacheBridge].eventDispatcher sendAppEventWithName:@"QIM_RN_Will_Show" body:@{@"name": @"aaa"}];
 }
 
 + (id)createQIMRNVCWithParam:(NSDictionary *)param {
@@ -592,26 +596,11 @@ RCT_EXPORT_METHOD(getUserMedal:(NSString *)userId :(RCTResponseSenderBlock)callb
 RCT_EXPORT_METHOD(getUserLead:(NSString *)userId :(RCTResponseSenderBlock)callback) {
     NSDictionary *userWorkInfo = nil;
     if (userId.length > 0) {
-        if ([QIMKit getQIMProjectType] == QIMProjectTypeQTalk) {
-            userWorkInfo = [[QIMKit sharedInstance] getUserWorkInfoByUserId:userId];
-        } else {
-            userWorkInfo = nil;
-        }
-        NSString *empno = [userWorkInfo objectForKey:@"sn"];
-        NSString *leaderName = [userWorkInfo objectForKey:@"leader"];
-        NSString *leaderId = [userWorkInfo objectForKey:@"qtalk_id"];
-        NSString *leader = nil;
-        if (leaderName > 0 && leaderId.length > 0) {
-            leader = [NSString stringWithFormat:@"%@(%@)", leaderName, leaderId];
-        }
-        if (leaderId.length > 0 && ![leaderId containsString:@"@"]) {
-            leaderId = [leaderId stringByAppendingFormat:@"@%@", [[QIMKit sharedInstance] getDomain]];
-        }
-        NSMutableDictionary *properties = [NSMutableDictionary dictionary];
-        [properties setObject:empno ? empno : @"未知" forKey:@"Empno"];
-        [properties setObject:leader ? leader : @"未知" forKey:@"Leader"];
-        [properties setObject:leaderId ? leaderId : @"" forKey:@"LeaderId"];
+        NSDictionary *properties = [QimRNBModule qimrn_getUserLeaderInfoByUserId:userId];
         callback(@[@{@"UserInfo":properties ? properties : @{}}]);
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [[QIMKit sharedInstance] getRemoteUserWorkInfoWithUserId:userId];
+        });
     }
 }
 
@@ -1581,11 +1570,13 @@ RCT_EXPORT_METHOD(openSwitchAccount) {
                 [[self waitingAlert] showWaiting:[[[[UIApplication sharedApplication] delegate] window] rootViewController] title:@"Waiting..." subTitle:@"账号切换中" closeButtonTitle:nil duration:20.0f];
             } else if (userId && !pwd) {
                 [[QIMKit sharedInstance] quitLogin];
+                [[QIMKit sharedInstance] clearLogginUser];
                 [[QIMKit sharedInstance] setCacheName:userFullJid];
                 [self reloginAccount];
             }
         } else {
             [[QIMKit sharedInstance] quitLogin];
+            [[QIMKit sharedInstance] clearLogginUser];
             [[QIMKit sharedInstance] setCacheName:@""];
             [self reloginAccount];
         }
@@ -1898,6 +1889,14 @@ RCT_EXPORT_METHOD(selectFriendsNotInStarContacts:(RCTResponseSenderBlock)callbac
 RCT_EXPORT_METHOD(selectUserNotInStartContacts:(NSString *)key :(RCTResponseSenderBlock)callback){
     NSMutableArray *contacts = [[QIMKit sharedInstance] selectUserNotInStartContacts:key];
     callback(@[@{@"users" : contacts ? contacts : @[]}]);
+}
+
+@end
+
+@implementation QimRNBModule (WorkFeed)
+
+RCT_EXPORT_METHOD(openUserWorkWorld:(NSDictionary *)param) {
+    [[QIMFastEntrance sharedInstance] openUserWorkWorldWithParam:param];
 }
 
 @end

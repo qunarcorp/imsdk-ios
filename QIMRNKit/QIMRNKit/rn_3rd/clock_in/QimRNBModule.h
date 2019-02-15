@@ -41,6 +41,8 @@ static RCTBridge *__innerCacheBridge = nil;
 
 + (id)TOTPVC;
 
++ (void)sendQIMRNWillShow;
+
 + (id)createQIMRNVCWithParam:(NSDictionary *)param;
 + (id)createQIMRNVCWithBundleName:(NSString *)bundleName
                        WithModule:(NSString *)module

@@ -94,6 +94,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(delMuc:) name:kChatRoomLeave object:nil];
     //更新用户勋章列表
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUserMedal:) name:kUpdateUserMedal object:nil];
+    
+    //更新用户Leader
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUserLeaderCard:) name:kUpdateUserLeaderCard object:nil];
 }
 
 - (void)updateBundle:(NSNotification *)notify {
@@ -165,6 +168,17 @@
     NSString *userId = [notifyDic objectForKey:@"UserId"];
     if (userId.length > 0 && notifyDic.count > 0) {
         [[QimRNBModule getStaticCacheBridge].eventDispatcher sendAppEventWithName:@"updateMedal" body:notifyDic];
+    }
+}
+
+- (void)updateUserLeaderCard:(NSNotification *)notify {
+    QIMVerboseLog(@"updateUserLeaderCard : %@", notify);
+    NSDictionary *notifyDic = notify.object;
+    NSString *userId = [notifyDic objectForKey:@"UserId"];
+    NSDictionary *userLeaderInfo = [QimRNBModule qimrn_getUserLeaderInfoByUserId:userId];
+    if (userId.length > 0 && userLeaderInfo.count > 0) {
+        QIMVerboseLog(@"updateLeaderInfo : %@", userLeaderInfo);
+        [[QimRNBModule getStaticCacheBridge].eventDispatcher sendAppEventWithName:@"updateLeader" body:@{@"LeaderInfo":userLeaderInfo ? userLeaderInfo : @{}}];
     }
 }
 

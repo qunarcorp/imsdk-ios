@@ -9,11 +9,11 @@ UserInterfaceState.xcuserstate
 Untitled.xcworkspace/  
 xcuserdata/  
 UserInterface.xcuserstate 
+IMSDK-iOS.xcworkspace/xcuserdata/
 
 package-lock.json
 QIMSDK/Podfile.lock
 
-QIMPublicRedefineHeader/QIMPublicRedefineHeader.xcodeproj
 */.idea/
 .idea/
  
@@ -76,16 +76,5 @@ npm-debug.log
 #
 Pods/*
 Podfile.lock
-QIMGeneralModule/Pods/*
-QIMKitVendor/Pods/*
-QIMCommonCategories/Pods/*
-QIMCommon/Pods/*
-QIMUIKit/Pods/*
-QIMIPadKit/Pods/
 QIMRNKit/Pods/*
-QIMRNTest/Pods/*
-QIMUIVendorKit/Pods/*
 QIMSDK/Pods/*
-QIMDataBase/Pods/*
-QIMNoteUI/Pods/*
-QIMPublicRedefineHeader/Pods/*

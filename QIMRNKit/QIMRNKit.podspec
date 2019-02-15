@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.license      = "Copyright 2018 im.qunar.com"
   s.author       = { "Qunar IM" => "qtalk@qunar.com" }
 
-  s.source       = { :git => "http://gitlab.corp.qunar.com/qchat/qunarchat-oc.git", :branch=> 'qimsdk_newV2'}
+  s.source       = { :git => "", :branch=> 'qimsdk_newV2'}
 
   s.ios.deployment_target   = '9.0'
 

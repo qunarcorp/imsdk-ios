@@ -6,9 +6,12 @@
 *.xcuserstate
 xcuserdata  
 UserInterfaceState.xcuserstate  
+package-lock.json
+yarn.lock
 Untitled.xcworkspace/  
 xcuserdata/  
 UserInterface.xcuserstate 
+IMSDK-iOS.xcworkspace/xcuserdata/
 QIMUIVendorKit/QIMUIVendorKit.xcworkspace/
 QIMDataBase/QIMDataBase.xcworkspace/
 

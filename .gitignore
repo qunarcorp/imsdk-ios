@@ -11,6 +11,7 @@ xcuserdata/
 UserInterface.xcuserstate 
 IMSDK-iOS.xcworkspace/xcuserdata/
 
+yarn.lock
 package-lock.json
 QIMSDK/Podfile.lock
 

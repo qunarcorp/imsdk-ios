@@ -38,4 +38,17 @@ RCT_EXPORT_METHOD(openNativeWebView:(NSDictionary *)param) {
     }
 }
 
+RCT_EXPORT_METHOD(getWorkWorldItem:(NSDictionary *)param :(RCTResponseSenderBlock)callback) {
+    NSDictionary *momentDic = [[QIMKit sharedInstance] getLastWorkMoment];
+    NSLog(@"getWorkWorldItem : %@", momentDic);
+    callback(@[momentDic ? momentDic : @{}]);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        [[QIMKit sharedInstance] getRemoteLastWorkMoment];
+    });
+}
+
+RCT_EXPORT_METHOD(openWorkWorld:(NSDictionary *)param) {
+    [[QIMFastEntrance sharedInstance] openWorkFeedViewController];
+}
+
 @end

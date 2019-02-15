@@ -17,4 +17,6 @@
 
 + (NSArray *)qimrn_getUserMedalByUserId:(NSString *)xmppId;
 
++ (NSDictionary *)qimrn_getUserLeaderInfoByUserId:(NSString *)userId;
+
 @end

@@ -48,4 +48,28 @@
     return localUserMedals;
 }
 
++ (NSDictionary *)qimrn_getUserLeaderInfoByUserId:(NSString *)userId {
+    NSDictionary *userWorkInfo = nil;
+    if ([QIMKit getQIMProjectType] == QIMProjectTypeQTalk) {
+        userWorkInfo = [[QIMKit sharedInstance] getUserWorkInfoByUserId:userId];
+    } else {
+        userWorkInfo = nil;
+    }
+    NSString *empno = [userWorkInfo objectForKey:@"sn"];
+    NSString *leaderName = [userWorkInfo objectForKey:@"leader"];
+    NSString *leaderId = [userWorkInfo objectForKey:@"qtalk_id"];
+    NSString *leader = nil;
+    if (leaderName > 0 && leaderId.length > 0) {
+        leader = [NSString stringWithFormat:@"%@(%@)", leaderName, leaderId];
+    }
+    if (leaderId.length > 0 && ![leaderId containsString:@"@"]) {
+        leaderId = [leaderId stringByAppendingFormat:@"@%@", [[QIMKit sharedInstance] getDomain]];
+    }
+    NSMutableDictionary *properties = [NSMutableDictionary dictionary];
+    [properties setObject:empno ? empno : @"未知" forKey:@"Empno"];
+    [properties setObject:leader ? leader : @"未知" forKey:@"Leader"];
+    [properties setObject:leaderId ? leaderId : @"" forKey:@"LeaderId"];
+    return properties;
+}
+
 @end

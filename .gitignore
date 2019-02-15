@@ -9,20 +9,9 @@ UserInterfaceState.xcuserstate
 Untitled.xcworkspace/  
 xcuserdata/  
 UserInterface.xcuserstate 
-QIMUIVendorKit/QIMUIVendorKit.xcworkspace/
-QIMDataBase/QIMDataBase.xcworkspace/
 
-
-QIMCommon/Podfile.lock
-QIMCommonCategories/Podfile.lock
-QIMDataBase/Podfile.lock
-QIMGeneralModule/Podfile.lock
-QIMIPadKit/Podfile.lock
-QIMKitVendor/Podfile.lock
-QIMNoteUI/Podfile.lock
+package-lock.json
 QIMSDK/Podfile.lock
-QIMUIKit/Podfile.lock
-QIMUIVendorKit/Podfile.lock
 
 QIMPublicRedefineHeader/QIMPublicRedefineHeader.xcodeproj
 */.idea/

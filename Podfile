@@ -13,17 +13,13 @@ target 'IMSDK-iOS' do
 
   # Pods for IMSDK-iOS
     pod 'QIMSDK', path: './QIMSDK'
-    pod 'QIMUIKit', path: './QIMUIKit'
-    pod 'QIMRNKit', path: './QIMRNKit'
-    pod 'QIMPublicRedefineHeader', path: './QIMPublicRedefineHeader'
 
-    pod 'QIMKitVendor', path: './QIMKitVendor'
-    pod 'QIMGeneralModule', path: './QIMGeneralModule'
-    pod 'QIMCommon', path: './QIMCommon'
+    pod 'QIMUIKit', '~> 2.0'
+    pod 'QIMRNKit', path: './QIMRNKit'
+    pod 'QIMKitVendor'
+    pod 'QIMGeneralModule'
     pod 'QIMCommonCategories'
-    pod 'QIMDataBase'
-  
-  
+
     project 'IMSDK-iOS.project'
     # 取决于你的工程如何组织，你的node_modules文件夹可能会在别的地方。
     # 请将:path后面的内容修改为正确的路径。

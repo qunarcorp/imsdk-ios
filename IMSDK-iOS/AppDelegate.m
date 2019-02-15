@@ -289,7 +289,6 @@ void InitCrashReport()
     NSLog(@"Supported background:%@", [UIDevice currentDevice].multitaskingSupported ? @"YES" : @"NO");
     [[QIMKit sharedInstance] setWillCancelLogin:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        [[QIMWatchDog sharedInstance] start];
         [[QIMKit sharedInstance] saveUserDefault];
         [QIMKit updateSessionListToKeyChain];
         [QIMKit updateGroupListToKeyChain];

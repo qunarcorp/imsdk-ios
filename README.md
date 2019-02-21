@@ -107,6 +107,7 @@ post_install do |installer_representation|
     
 2. 拷贝IMSDK-iOS根目录下的package.json文件到你项目根目录
 3. 在项目根目录执行 `npm install && pod install`
+4. 注意：IMSDK默认会依赖React-Native0.54版本，如果你不想依赖，可以在Podfile中移除 `pod QIMRNKit`, 并且在pod_install中移除`QIMRNEnable=1 `
 
 ## 历史版本:
 你可以在当前仓库的 [Release](https://github.com/qunarcorp/imsdk-ios/releases) 进行历史版本下载。

@@ -25,22 +25,89 @@ Startalk私有云是一种去中心化的部署方式，
 * QIMRNKit (RN模块)
 
 ## 集成
-`imsdk-ios` 目前提供手动集成与Cocoapods集成的方式
+`imsdk-ios` 目前提供手动集成与Cocoapods集成的方式(IMSDK默认会依赖React-Native0.54版本)
 
 ### 手动集成
 你可以通过[历史版本下载地址](https://github.com/qunarcorp/imsdk-ios/releases)下载最新版本，解压之后添加到工程中，具体步骤参考[集成文档](https://github.com/qunarcorp/imsdk-ios/wiki/QIMSDK-iOS%E6%8E%A5%E5%85%A5%E6%96%87%E6%A1%A3)
 
 ### Cocoapods集成
-我们建议你通过 Cocoapods 来进行 QIMSDK 的集成,
-1. 在 Podfile 中加入以下内容:
- `
-    source 'https://github.com/qunarcorp/libqimkit-ios-cook.git'
-    
-    pod 'QIMUIKit'
-  `
+我们建议你通过 Cocoapods 来进行 QIMSDK 的集成
+
+1. 先下载IMSDK中的QIMSDK文件夹及QIMRNKit文件夹到项目根目录下
+2. 在 Podfile 中加入以下内容:
+
+	```	
+	source 'https://github.com/qunarcorp/libqimkit-ios-cook.git'
+    pod 'QIMSDK', path: './QIMSDK'
+
+    pod 'QIMUIKit', '~> 2.0'
+    pod 'QIMRNKit', path: './QIMRNKit'
+    pod 'QIMKitVendor'
+    pod 'QIMGeneralModule'
+    pod 'QIMCommonCategories'
+
+    project 'IMSDK-iOS.project'
+    # 取决于你的工程如何组织，你的node_modules文件夹可能会在别的地方。
+    # 请将:path后面的内容修改为正确的路径。
+
+    pod 'yoga', :path => './node_modules/react-native/ReactCommon/yoga'
+    # Third party deps podspec link
+    #    pod 'DoubleConversion', :podspec => './node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+    #    pod 'glog', :podspec => './node_modules/react-native/third-party-podspecs/glog.podspec'
+    pod 'Folly', :podspec => './node_modules/react-native/third-party-podspecs/Folly.podspec'
+
+    pod 'React',
+    :path => './node_modules/react-native',
+    :subspecs => [
+    'Core',
+    'RCTImage',
+    'RCTNetwork',
+    'RCTText',
+    'RCTWebSocket',
+    'RCTLinkingIOS',
+    'RCTSettings',
+    'RCTVibration',
+    'RCTAnimation',
+    'ART',
+    'RCTGeolocation',
+    'RCTActionSheet',
+    'DevSupport',
+    'CxxBridge',
+    # 添加其他你想在工程中使用的依赖。
+    ]
+    pod 'react-native-image-picker', :path => './node_modules/react-native-image-picker'
+    pod 'RNSVG', :path => './node_modules/react-native-svg'
+    pod 'RNVectorIcons', :path => './node_modules/react-native-vector-icons'
+post_install do |installer_representation|
+
+    installer_representation.pods_project.targets.each do |target|
+
+        # 修复Pod resources中携带xcassets的情况。
+        # https://github.com/CocoaPods/CocoaPods/issues/7003
+        # https://github.com/CocoaPods/CocoaPods/pull/7020
+        if target.name.include? "IMSDK-iOS" then
+            puts "Adding app icons for #{target.name}"
+            copy_pods_resources_path = "Pods/Target Support Files/#{target.name}/#{target.name}-resources.sh"
+            string_to_replace = '--compile "${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"'
+            assets_compile_with_app_icon_arguments = '--compile "${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}" --output-partial-info-plist "${BUILD_DIR}/assetcatalog_generated_info.plist"'
+            text = File.read(copy_pods_resources_path)
+            new_contents = text.gsub(string_to_replace, assets_compile_with_app_icon_arguments)
+            File.open(copy_pods_resources_path, "w") {|file| file.puts new_contents }
+        end
+
+        target.build_configurations.each do |config|
+            config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'NO'
+            config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = '$(inherited) COCOAPODS=1 QIMWebRTCEnable=1 QIMNoteEnable=1 QIMLogEnable=1 QIMAudioEnable=1 QIMZipEnable=1 QIMPinYinEnable=1, QIMRNEnable=1'
+        end
+    end
+ end
+	
+	```    
+     
     
 2. 拷贝IMSDK-iOS根目录下的package.json文件到你项目根目录
 3. 在项目根目录执行 `npm install && pod install`
+4. 注意：IMSDK默认会依赖React-Native0.54版本，如果你不想依赖，可以在Podfile中移除 `pod QIMRNKit`, 并且在pod_install中移除`QIMRNEnable=1 `
 
 ## 历史版本:
 你可以在当前仓库的 [Release](https://github.com/qunarcorp/imsdk-ios/releases) 进行历史版本下载。

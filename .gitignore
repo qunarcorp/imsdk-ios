@@ -3,17 +3,17 @@
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 *.xcbkptlist
-*.xcuserstate
+*.xcuserstate  
+IMSDK-iOS.xcworkspace  
 xcuserdata  
 UserInterfaceState.xcuserstate  
-Untitled.xcworkspace/  
+IMSDK-iOS.xcworkspace/  
 xcuserdata/  
-UserInterface.xcuserstate 
+UserInterface.xcuserstate
 
 package-lock.json
 QIMSDK/Podfile.lock
 
-QIMPublicRedefineHeader/QIMPublicRedefineHeader.xcodeproj
 */.idea/
 .idea/
  

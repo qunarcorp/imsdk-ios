@@ -15,7 +15,6 @@ target 'IMSDK-iOS' do
     pod 'QIMSDK', path: './QIMSDK'
 
     pod 'QIMUIKit', '~> 2.0'
-    pod 'QIMRNKit', path: './QIMRNKit'
     pod 'QIMKitVendor'
     pod 'QIMGeneralModule'
     pod 'QIMCommonCategories'

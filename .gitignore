@@ -15,6 +15,14 @@ IMSDK-iOS.xcworkspace/xcuserdata/**/*
 QIMUIVendorKit/QIMUIVendorKit.xcworkspace/
 QIMDataBase/QIMDataBase.xcworkspace/
 
+*.xcuserstate  
+project.xcworkspace  
+xcuserdata  
+UserInterfaceState.xcuserstate  
+project.xcworkspace/  
+xcuserdata/  
+UserInterface.xcuserstate
+
 
 QIMCommon/Podfile.lock
 QIMCommonCategories/Podfile.lock

@@ -11,7 +11,7 @@ yarn.lock
 Untitled.xcworkspace/  
 xcuserdata/  
 UserInterface.xcuserstate 
-IMSDK-iOS.xcworkspace/xcuserdata/*
+IMSDK-iOS.xcworkspace/xcuserdata/**/*
 QIMUIVendorKit/QIMUIVendorKit.xcworkspace/
 QIMDataBase/QIMDataBase.xcworkspace/
 

@@ -33,7 +33,7 @@ Startalk私有云是一种去中心化的部署方式，
 ### Cocoapods集成
 我们建议你通过 Cocoapods 来进行 QIMSDK 的集成
 
-1. 先下载IMSDK中的QIMSDK文件夹及QIMRNKit文件夹到项目根目录下
+1. 先下载IMSDK中的QIMSDK文件夹到项目根目录下
 2. 在 Podfile 中加入以下内容:
 
 	```	

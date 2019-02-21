@@ -15,7 +15,6 @@ target 'IMSDK-iOS' do
     pod 'QIMSDK', path: './QIMSDK'
 
     pod 'QIMUIKit', '~> 2.0'
-    pod 'QIMRNKit', path: './QIMRNKit'
     pod 'QIMKitVendor'
     pod 'QIMGeneralModule'
     pod 'QIMCommonCategories'
@@ -74,7 +73,7 @@ post_install do |installer_representation|
 
         target.build_configurations.each do |config|
             config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'NO'
-            config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = '$(inherited) COCOAPODS=1 QIMWebRTCEnable=1 QIMNoteEnable=1 QIMLogEnable=1 QIMAudioEnable=1 QIMZipEnable=1 QIMPinYinEnable=1, QIMRNEnable=1'
+            config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = '$(inherited) COCOAPODS=1 QIMWebRTCEnable=1 QIMNoteEnable=1 QIMAudioEnable=1 QIMZipEnable=1 QIMPinYinEnable=1, QIMRNEnable=1'
         end
     end
 end

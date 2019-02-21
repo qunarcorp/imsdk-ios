@@ -78,13 +78,11 @@ Startalk私有云是一种去中心化的部署方式，
     pod 'react-native-image-picker', :path => './node_modules/react-native-image-picker'
     pod 'RNSVG', :path => './node_modules/react-native-svg'
     pod 'RNVectorIcons', :path => './node_modules/react-native-vector-icons'
-post_install do |installer_representation|
+    ```  
+    ```  
+    post_install do |installer_representation|
 
     installer_representation.pods_project.targets.each do |target|
-
-        # 修复Pod resources中携带xcassets的情况。
-        # https://github.com/CocoaPods/CocoaPods/issues/7003
-        # https://github.com/CocoaPods/CocoaPods/pull/7020
         if target.name.include? "IMSDK-iOS" then
             puts "Adding app icons for #{target.name}"
             copy_pods_resources_path = "Pods/Target Support Files/#{target.name}/#{target.name}-resources.sh"

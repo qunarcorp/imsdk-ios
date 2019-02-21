@@ -31,7 +31,7 @@ Startalk私有云是一种去中心化的部署方式，
 你可以通过[历史版本下载地址](https://github.com/qunarcorp/imsdk-ios/releases)下载最新版本，解压之后添加到工程中，具体步骤参考[集成文档](https://github.com/qunarcorp/imsdk-ios/wiki/QIMSDK-iOS%E6%8E%A5%E5%85%A5%E6%96%87%E6%A1%A3)
 
 ### Cocoapods集成
-我们建议你通过 Cocoapods 来进行 QIMSDK 的集成,
+我们建议你通过 Cocoapods 来进行 QIMSDK 的集成
 
 1. 先下载IMSDK中的QIMSDK文件夹及QIMRNKit文件夹到项目根目录下
 2. 在 Podfile 中加入以下内容:

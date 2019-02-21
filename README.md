@@ -35,6 +35,7 @@ Startalk私有云是一种去中心化的部署方式，
 1. 在 Podfile 中加入以下内容:
  `
     source 'https://github.com/qunarcorp/libqimkit-ios-cook.git'
+    
     pod 'QIMUIKit'
   `
     

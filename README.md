@@ -34,7 +34,6 @@ Startalk私有云是一种去中心化的部署方式，
 我们建议你通过 Cocoapods 来进行 QIMSDK 的集成,
 1. 在 Podfile 中加入以下内容:
  `
-  
     source 'https://github.com/qunarcorp/libqimkit-ios-cook.git'
     
     pod 'QIMUIKit'

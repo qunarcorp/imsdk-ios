@@ -40,17 +40,14 @@ Startalk私有云是一种去中心化的部署方式，
 我们建议你通过 Cocoapods 来进行 QIMSDK 的集成
 
 1. 先下载IMSDK中的QIMSDK文件夹到项目根目录下
-2. 在 Podfile 中加入以下内容:
+2. 在 Podfile 中加入以下内容（这里需要特别注意，如果你需要集成带React-Native的组件，那么请pod 'QIMUIKit'. 如果你不需要集成带React-Native的组件，那么请pod 'QIMUIKitNORN'. ）:
 
 	```	
 	source 'https://github.com/qunarcorp/libqimkit-ios-cook.git'
     pod 'QIMSDK', path: './QIMSDK'
-
-    ### QIMUIKit是默认依赖React-Native的组件
+    
     pod 'QIMUIKit', '~> 2.0'
-    ### QIMUIKitNORN是不依赖React-Native的组件
-    pod 'QIMUIKitNORN', '~> 2.0'
-    pod 'QIMRNKit', path: './QIMRNKit'
+    
     pod 'QIMKitVendor'
     pod 'QIMGeneralModule'
     pod 'QIMCommonCategories'

@@ -101,6 +101,7 @@ Startalk私有云是一种去中心化的部署方式，
         # 修复Pod resources中携带xcassets的情况。
         # https://github.com/CocoaPods/CocoaPods/issues/7003
         # https://github.com/CocoaPods/CocoaPods/pull/7020
+
         if target.name.include? "IMSDK-iOS" then
             puts "Adding app icons for #{target.name}"
             copy_pods_resources_path = "Pods/Target Support Files/#{target.name}/#{target.name}-resources.sh"
@@ -116,6 +117,7 @@ Startalk私有云是一种去中心化的部署方式，
             config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = '$(inherited) COCOAPODS=1 QIMWebRTCEnable=1 QIMNoteEnable=1 QIMLogEnable=1 QIMAudioEnable=1 QIMZipEnable=1 QIMPinYinEnable=1, QIMRNEnable=1'
         end
   	  end
+    	end
  		end
 	
 	```    

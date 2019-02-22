@@ -24,6 +24,12 @@ Startalk私有云是一种去中心化的部署方式，
 * QIMSDK (UI模块)
 * QIMRNKit (RN模块)
 
+## Demo运行
+
+1. 初始化项目:  
+   在项目根目录执行 `bash InstallDemo.sh` 或 `npm install && pod install`
+2. 使用XCode打开IMSDK-iOS.xcworkspace并运行;
+
 ## 集成
 `imsdk-ios` 目前提供手动集成与Cocoapods集成的方式(IMSDK默认会依赖React-Native0.54版本)
 
@@ -40,12 +46,20 @@ Startalk私有云是一种去中心化的部署方式，
 	source 'https://github.com/qunarcorp/libqimkit-ios-cook.git'
     pod 'QIMSDK', path: './QIMSDK'
 
+    ### QIMUIKit是默认依赖React-Native的组件
     pod 'QIMUIKit', '~> 2.0'
+    ### QIMUIKitNORN是不依赖React-Native的组件
+    pod 'QIMUIKitNORN', '~> 2.0'
     pod 'QIMRNKit', path: './QIMRNKit'
     pod 'QIMKitVendor'
     pod 'QIMGeneralModule'
     pod 'QIMCommonCategories'
 
+    ``` 
+    
+    ### 注意！！！ 如果你集成的是QIMUIKitNORN，那么请从Podfile中移除以下依赖。
+    
+    ``` 
     project 'IMSDK-iOS.project'
     # 取决于你的工程如何组织，你的node_modules文件夹可能会在别的地方。
     # 请将:path后面的内容修改为正确的路径。
@@ -78,9 +92,14 @@ Startalk私有云是一种去中心化的部署方式，
     pod 'react-native-image-picker', :path => './node_modules/react-native-image-picker'
     pod 'RNSVG', :path => './node_modules/react-native-svg'
     pod 'RNVectorIcons', :path => './node_modules/react-native-vector-icons'
-post_install do |installer_representation|
+    
+    ```
+    
+    ```    
+   	
+	post_install do |installer_representation|
 
-    installer_representation.pods_project.targets.each do |target|
+    	installer_representation.pods_project.targets.each do |target|
 
         # 修复Pod resources中携带xcassets的情况。
         # https://github.com/CocoaPods/CocoaPods/issues/7003
@@ -99,8 +118,8 @@ post_install do |installer_representation|
             config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'NO'
             config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = '$(inherited) COCOAPODS=1 QIMWebRTCEnable=1 QIMNoteEnable=1 QIMLogEnable=1 QIMAudioEnable=1 QIMZipEnable=1 QIMPinYinEnable=1, QIMRNEnable=1'
         end
-    end
- end
+  	  end
+ 		end
 	
 	```    
      
@@ -111,12 +130,6 @@ post_install do |installer_representation|
 
 ## 历史版本:
 你可以在当前仓库的 [Release](https://github.com/qunarcorp/imsdk-ios/releases) 进行历史版本下载。
-
-## Demo运行
-
-1. 初始化项目:  
-   在项目根目录执行 `bash InstallDemo.sh` 或 `npm install && pod install`
-2. 使用XCode打开IMSDK-iOS.xcworkspace并运行;
 
 ## 更新日志
 

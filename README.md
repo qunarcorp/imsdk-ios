@@ -29,6 +29,25 @@ Startalk私有云是一种去中心化的部署方式，
 ## 集成
 `imsdk-ios` 目前提供手动集成与Cocoapods集成的方式(IMSDK默认会依赖React-Native0.54版本), 具体步骤参考[集成文档](https://github.com/qunarcorp/imsdk-ios/wiki/QIMSDK-iOS%E6%8E%A5%E5%85%A5%E6%96%87%E6%A1%A3)
 
+## 如何使用(主要接口)
+首先需要对sdk进行初始化操作，之后配置导航Url，然后进行登录。
+ ```init
+  1.初始化SDKUI栈
+  
+  [QIMSDKUIHelper sharedInstanceWithRootNav:rootNav rootVc:rootVc];
+  ```
+ ```config
+  2.配置导航地址
+
+   BOOL success = [[QIMKit sharedInstance] qimNav_updateNavigationConfigWithDomain:@"qim.com" WithUserName:@"san.zhang"];
+
+  3. 账号密码登录账号
+
+  [[QIMKit sharedInstance] loginWithUserName:@"san.zhang" WithPassWord:@"abcdef"];
+  
+  ```
+  [其他接口参考](https://github.com/qunarcorp/imsdk-ios/wiki/QIMSDK-iOS%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E)
+
 ## 历史版本:
 你可以在当前仓库的 [Release](https://github.com/qunarcorp/imsdk-ios/releases) 进行历史版本下载。
 

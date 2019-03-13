@@ -12,12 +12,8 @@ target 'IMSDK-iOS' do
   # use_frameworks!
 
   # Pods for IMSDK-iOS
-    pod 'QIMSDK', path: './QIMSDK'
 
     pod 'QIMUIKit', '~> 2.0'
-    pod 'QIMKitVendor'
-    pod 'QIMGeneralModule'
-    pod 'QIMCommonCategories'
 
     project 'IMSDK-iOS.project'
     # 取决于你的工程如何组织，你的node_modules文件夹可能会在别的地方。
@@ -25,8 +21,6 @@ target 'IMSDK-iOS' do
 
     pod 'yoga', :path => './node_modules/react-native/ReactCommon/yoga'
     # Third party deps podspec link
-    #    pod 'DoubleConversion', :podspec => './node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
-    #    pod 'glog', :podspec => './node_modules/react-native/third-party-podspecs/glog.podspec'
     pod 'Folly', :podspec => './node_modules/react-native/third-party-podspecs/Folly.podspec'
 
     pod 'React',

@@ -32,18 +32,24 @@ Startalk私有云是一种去中心化的部署方式，
 ## 如何使用(主要接口)
 首先需要对sdk进行初始化操作，之后配置导航Url，然后进行登录。
  ```init
-  1.初始化SDKUI栈
+  1. 在需要使用QIMSDK的地方引入头文件QIMSDK.h
+     #import "QIMSDK.h"
+  2. 初始化QIMSDK中的UI栈（如果需要在不同的地方进行scheme跳转，切换页面务必重新初始化QIMSDK的UI栈）
   
-  [QIMSDKUIHelper sharedInstanceWithRootNav:rootNav rootVc:rootVc];
+     [QIMSDKUIHelper sharedInstanceWithRootNav:rootNav rootVc:rootVc];
   ```
  ```config
-  2.配置导航地址
+  3. 配置导航地址
 
-   BOOL success = [[QIMKit sharedInstance] qimNav_updateNavigationConfigWithDomain:@"qim.com" WithUserName:@"san.zhang"];
+      BOOL success = [[QIMKit sharedInstance] qimNav_updateNavigationConfigWithDomain:@"qim.com" WithUserName:@"san.zhang"];
 
-  3. 账号密码登录账号
+  4. 账号密码登录账号
 
-  [[QIMKit sharedInstance] loginWithUserName:@"san.zhang" WithPassWord:@"abcdef"];
+     [[QIMKit sharedInstance] loginWithUserName:@"san.zhang" WithPassWord:@"abcdef"];
+  
+  5. 获取消息对话列表页,贴到自定义VC的View上
+     UIView *sessionView = [[QIMSDKHelper sharedInstance] getQIMSessionListViewWithBaseFrame:self.view.bounds];
+     [self.view addSubview:sessionView];
   
   ```
   [其他接口参考](https://github.com/qunarcorp/imsdk-ios/wiki/QIMSDK-iOS%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E)

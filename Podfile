@@ -12,7 +12,7 @@ target 'IMSDK-iOS' do
   # use_frameworks!
 
   # Pods for IMSDK-iOS
-	    $debug = ENV['debug']
+  $debug = ENV['debug']
 
   if $debug
       puts '本地debug方式'

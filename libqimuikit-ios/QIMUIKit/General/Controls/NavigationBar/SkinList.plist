@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>kUserDefault_ViewBgImage</key>
+	<dict>
+		<key>BgImage_Normal</key>
+		<string>Resounce://</string>
+		<key>BgImage_NavBar</key>
+		<string>Resounce://navbar_background.png</string>
+		<key>BgImage_TabBar</key>
+		<string>Resounce://navbar_background.png</string>
+	</dict>
+	<key>kUserDefault_ViewBgColor</key>
+	<dict>
+		<key>BgColor_Normal</key>
+		<dict>
+			<key>kColor_Hex</key>
+			<integer>15395562</integer>
+			<key>kColor_Alpha</key>
+			<real>1</real>
+		</dict>
+		<key>BgColor_NavBar</key>
+		<dict>
+			<key>kColor_Hex</key>
+			<real>4636756</real>
+			<key>kColor_Alpha</key>
+			<integer>1</integer>
+		</dict>
+		<key>BgColor_Button</key>
+		<dict>
+			<key>kColor_Hex</key>
+			<integer>16777215</integer>
+			<key>kColor_Alpha</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>kUserDefault_DocumentFontName</key>
+	<dict>
+		<key>DocumentFont_Label</key>
+		<string>System Font</string>
+		<key>DocumentFont_Button</key>
+		<string>System Font</string>
+		<key>DocumentFont_NavBarButton</key>
+		<string>System Font</string>
+		<key>DocumentFont_Normal</key>
+		<string>System Font</string>
+	</dict>
+	<key>kUserDefault_DocumentColor</key>
+	<dict>
+		<key>DocumentFont_Label</key>
+		<dict>
+			<key>kColor_Hex</key>
+			<integer>16777215</integer>
+			<key>kColor_Alpha</key>
+			<integer>1</integer>
+		</dict>
+		<key>DocumentColor_Button</key>
+		<dict>
+			<key>kColor_Hex</key>
+			<integer>16777215</integer>
+			<key>kColor_Alpha</key>
+			<integer>1</integer>
+		</dict>
+		<key>DocumentColor_NavBarButton</key>
+		<dict>
+			<key>kColor_Hex</key>
+			<integer>16777215</integer>
+			<key>kColor_Alpha</key>
+			<integer>1</integer>
+		</dict>
+		<key>DocumentColor_Normal</key>
+		<dict>
+			<key>kColor_Hex</key>
+			<integer>0</integer>
+			<key>kColor_Alpha</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+</dict>
+</plist>

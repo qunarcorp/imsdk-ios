@@ -12,8 +12,22 @@ target 'IMSDK-iOS' do
   # use_frameworks!
 
   # Pods for IMSDK-iOS
+	    $debug = ENV['debug']
 
-    pod 'QIMUIKit', '~> 2.0'
+  if $debug
+      puts '本地debug方式'
+      pod 'QIMUIKit', path: './libqimuikit-ios'
+      pod 'QIMGeneralModule', path: './libqimgeneralmodule-ios'
+      pod 'QIMCommon', path: './libQIMCommon-iOS'
+      pod 'QIMKitVendor', path: './libqimkitvendor-ios'
+      pod 'QIMDataBase', path: './libqimdatabase-ios'
+      pod 'QIMCommonCategories', path: './libqimcommoncategories-ios'
+
+    else
+      puts '线上release方式'
+      pod 'QIMUIKit', '~> 2.0'
+
+    end
 
     project 'IMSDK-iOS.project'
     # 取决于你的工程如何组织，你的node_modules文件夹可能会在别的地方。

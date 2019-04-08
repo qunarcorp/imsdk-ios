@@ -85,5 +85,3 @@ npm-debug.log
 #
 Pods/*
 Podfile.lock
-QIMRNKit/Pods/*
-QIMSDK/Pods/*

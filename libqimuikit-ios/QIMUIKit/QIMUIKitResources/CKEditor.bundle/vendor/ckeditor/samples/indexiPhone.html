@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>A Simple Page with CKEditor</title>
+        <!-- Make sure the path to CKEditor is correct. -->
+        <script type="text/JavaScript" src="../ckeditor.js"></script>
+        <script type="text/javascript" src="../config.js"></script>
+        <script type="text/javascript">
+            function getData()
+            {
+                if ( CKEDITOR.instances.editor1.getData() == '' ) {
+                    alert( 'There is no data available.' );
+                }
+                return CKEDITOR.instances.editor1.getData();
+            }
+            function getText()
+            {
+                var stemTxt = CKEDITOR.instances.editor1.document.getBody().getText();
+                return stemTxt;
+            }
+        
+            //切换模式的方法，oc连续切换会导致崩溃。。。。。。
+            function toggleReadOnly( isReadOnly ) {
+                CKEDITOR.instances.editor1.setReadOnly( isReadOnly );
+            }
+        
+            function selectImageCallBack(funcNum,imageUrl,errMsg){
+                CKEDITOR.tools.callFunction(funcNum,imageUrl,errMsg);
+            }
+        
+        </script>
+        </head>
+    <body>
+        <form>
+            <textarea name="editor1" id="editor1" rows="10" cols="80">
+                [CONTENT]
+            </textarea>
+            
+            <script>
+                //<![CDATA[
+                var oCKeditor;
+                (function(){
+                 oCKeditor = CKEDITOR.replace('editor1');
+                 oCKeditor.on('instanceReady', function (event) {
+                              var editor = event.editor;
+                              setTimeout(function () {
+                                         // Delay bit more if editor is still not ready.
+                                         if (!editor.element) {
+                                         setTimeout(arguments.callee, 100);
+                                         return;
+                                         }
+                                         event.removeListener('instanceReady', this.callee);
+                                         if (editor.name == 'editor1') {
+                                         var command = editor.getCommand('maximize');
+                                         command.exec();
+                                         }
+                                         }, 0);
+                              
+                              document.getElementById( 'readOnlyOn' ).style.display = '';
+                              editor.on( 'readOnly', function () {
+                                        document.getElementById( 'readOnlyOn' ).style.display = this.readOnly ? 'none' : '';
+                                        document.getElementById( 'readOnlyOff' ).style.display = this.readOnly ? '' : 'none';
+                                        } );
+                              
+                              }, null, null, 9999);
+                 
+                 
+                 
+                 })();
+                 //]]>
+                </script>
+            
+          
+            
+            
+        </form>
+    </body>
+</html>

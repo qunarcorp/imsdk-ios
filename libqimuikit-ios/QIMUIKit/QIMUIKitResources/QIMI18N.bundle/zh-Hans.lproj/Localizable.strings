@@ -1,0 +1,359 @@
+/* 
+  Localizable.strings
+  qunarChatIphone
+
+  Created by admin on 16/1/21.
+
+*/
+//
+"ok" = "确定";
+"cancel" = "取消";
+"not ask me again" = "不再提示";
+"send" = "发送";
+//mapSchemes
+"baiduMap" = "百度地图";
+"tencentMap" = "腾讯地图";
+"iosamap" = "高德地图";
+"appleMap" = "苹果地图";
+
+"login_userNameInputView_placeholder" = "例: san.zhang";
+// Tab bar Title
+"tab_title_chat" = "会话";
+"tab_title_travel" = "行程";
+"tab_title_contact" = "通讯录";
+"tab_title_discover" = "发现";
+"tab_title_explore" = "探索";
+"tab_title_myself" = "我的";
+
+//Navigation server
+"nav_title_configManager" = "导航服务器管理";
+"nav_title_debug_configManager" = "Debug导航服务器";
+"nav_server_nickName" = "导航服务器名称";
+"nav_server_address" = "导航服务器地址";
+"nav_server_port" = "导航服务器端口";
+"nav_server_domain" = "导航服务器域名";
+"nav_server_httpHost" = "HTTP服务地址";
+"nav_server_file" = "文件服务器地址";
+
+// Text Bar Button Title
+"textbar_button_album" = "相册";
+"textbar_button_camera" = "拍摄";
+"textbar_button_videoCall" = "视频聊天";
+"textbar_button_voiceCall" = "语音聊天";
+"textbar_button_position" = "我的位置";
+"textbar_button_burn_after_reading" = "阅后即焚";
+"textbar_button_file" = "我的文件";
+"textbar_button_shake" = "窗口抖动";
+"textbar_button_quick_reply" = "快捷回复";
+"textbar_button_move_chat" = "会话转移";
+"textbar_button_send_product" = "发送产品";
+"textbar_button_share_card" = "分享名片";
+"textbar_button_red_package" = "红包";
+"textbar_button_aa" = "AA收款";
+"textbar_button_activity" = "发活动";
+"textbar_button_send" = "发送";
+"textbar_button_hold_talk" = "按住说话";
+"textbar_button_release_audition" = "松手试听";
+"textbar_button_release_cancel" = "松手取消发送";
+"textbar_input_tips" = "输入你要说的话";
+"textbar_refer_input_tips" = "输入以回复引用";
+
+//Contact Tab
+"contact_tab_friend" = "好  友";
+"contact_tab_group" = "群  组";
+"contact_tab_not_read" = "未读消息";
+"contact_tab_public_number" = "公众号";
+"contact_tab_organization" = "组织架构";
+"contact_tab_tips" = "请使用“探索”频道的骆驼帮查人功能查询";
+
+//explore tab
+"explore_tab_lvtu" = "旅途";
+"explore_tab_luotuobang" = "骆驼帮";
+"explore_tab_qrcode" = "扫一扫";
+"explore_tab_personality_dress_up" = "个性装扮";
+"explore_tab_my_file" = "我的文件";
+"explore_tab_account_information" = "账号信息";
+"explore_tab_sign_in_check" = "签到打卡";
+
+"send_custom_pruduct" = "推荐产品";
+"explore_tab_history" = "历史消息查询";
+"explore_tab_onekeyread" = "一键已读";
+"explore_tab_clear_message_list" = "清空消息列表";
+"explore_tab_notes" = "随记";
+
+//Setting tab
+"Setting_nav_back" = "返回";
+"Setting_tab_account" = "账号与安全";
+"Seeting_tab_notication" = "新消息通知";
+"Setting_tab_privacy" = "隐私";
+"Setting_tab_general" = "通用";
+"Setting_tab_Help" = "帮助与反馈";
+"Setting_tab_aboutQTalk" = "关于QTalk";
+"Setting_tab_aboutQChat" = "关于QChat";
+
+"Setting_tab_Logout" = "退出登录";
+
+//myself tab
+"myself_tab_id" = "ID";
+"myself_tab_department" = "部门";
+"myself_tab_red_package" = "我的红包";
+"myself_tab_max_count" = "人数上限";
+"myself_tab_balance" = "余额查询";
+"myself_tab_qrcode" = "我的二维码";
+"myself_tab_privacy_settings" = "联系人、隐私设置";
+"myself_tab_resetPwd" = "更改密码";
+"myself_tab_mconfig" = "账号管理";
+"myself_tab_about" = "关于我们";
+"myself_tab_myPush" = "在线接受通知";
+"myself_tab_notify_tone" = "通知提示音";
+"myself_tab_notify_shock" = "通知震动提示";
+"myself_tab_notify_switch" = "开启消息推送";
+"myself_tab_notify_content" = "通知显示消息详情";
+"myself_tab_show_favorite" = "我的收藏";
+"myself_tab_service" = "服务模式";
+"myself_tab_show_mood" = "优先显示心情短语";
+"myself_tab_clear_cache" = "清除用户缓存";
+"myself_tab_clear_image" = "清除缓存";
+"myself_tab_check_update" = "检查更新";
+"myself_tab_update_config" = "更新配置";
+"myself_tab_quit_log" = "退出登录";
+"myself_tab_setting" = "设置";
+"myself_tab_edit_signature" = "点击编辑个性签名";
+"user_tab_default_signature" = "他/她很懒，什么也没留下...";
+"myself_update_max_count" = "修改最大用户数";
+"myself_max_count" = "最大用户数";
+
+//About
+"About_nav_title_QTalk" = "关于QTalk";
+"About_nav_title_QChat" = "关于QChat";
+"About_nav_back" = "返回";
+"About_tab_rate" = "去评分";
+"About_tab_function" = "功能介绍";
+"About_tab_features" = "系统通知";
+"About_tab_feedBack" = "意见反馈";
+"About_tab_JoinUs" = "加入QTalk Family";
+"About_tab_sendLog" = "发送日志";
+"About_tab_recordLog" = "记录本地日志";
+"About_tab_instruments" = "监测App数据";
+
+//Group
+"group_name" = "群聊名称";
+"group_id" = "群ID";
+"group_setting" = "群设置";
+"group_msg_setting" = "群消息设置";
+"group_topic" = "群公告";
+"group_member" = "群成员";
+"group_qr_code" = "群二维码";
+"group_push" = "该群消息免打扰";
+"group_quit" = "退出群聊";
+"group_join" = "加入群聊";
+"group_message_reply" = "群消息回复";
+"group_owner" = "群主";
+"group_admin" = "管理员";
+"group_update_name" = "修改群名";
+"group_update_topic" = "修改群公告";
+"group_update_pwd" = "修改群密码";
+"group_setting_rcevRmd" = "接收消息并提醒";
+"group_setting_rcevNoRmd" = "接收消息但不提醒";
+
+//User
+"user_name" = "名字";
+"user_remark" = "备注";
+"user_id" = "ID";
+"user_department" = "部门";
+"user_introduce" = "个性签名";
+"user_leader" = "直属上级";
+"user_mobile_no" = "手机号";
+"user_web_name" = "Web昵称";
+"user_comment" = "评论";
+"user_send_mail" = "发送邮件";
+"user_push" = "Push提醒";
+"user_send_msg" = "发送消息";
+"user_add_friend" = "加为好友";
+"user_delete_friend" = "删除好友";
+"user_camera" = "拍照";
+"user_from_album" = "从相册中选择";
+"user_selected" = "选择";
+
+"add_to_blacklist" = "加入黑名单";
+"remove_to_blacklist" = "移除黑名单";
+"add_friend" = "添加好友";
+"delete_friend" = "删除好友";
+"send_message" = "发送消息";
+"Complaint" = "投诉";
+
+// Search Bar
+"search_bar_placeholder" = "搜索";
+"search_bar_tab" = "用户名/ID";
+
+// QRCode
+"qrcode_tips_group" = "扫一扫，快速打开群名片";
+"qrcode_tips_user" = "扫一扫，快速打开名片";
+"qrcode_tips_public_number" = "扫一扫，关注公众号";
+"qrcode_tips_client_nav" = "扫一扫，添加导航服务器";
+"qrcode_@_qrcode" = "%@的二维码";
+
+// Common
+"common_send_friend" = "发送给朋友";
+"common_back" = "返回";
+"common_close" = "关闭";
+"common_cancel" = "取消";
+"common_delete" = "删除";
+"common_unselect_all" = "全不选";
+"common_all" = "全选";
+"common_send" = "发送";
+"common_resume" = "恢复";
+"common_ok" = "确定";
+"common_group_card" = "群名片";
+"check_product" = "查询";
+"check_product_please_input_name" = "请输入产品ID查询...";
+"common_save" = "保存";
+"common_small_video" = "小视频";
+"common_prompt" = "提示";
+"common_got_it" = "知道了";
+"common_refresh" = "刷新";
+"common_open_in_safari" = "在Safari中打开";
+"common_add" = "添加";
+"common_black_list" = "黑名单";
+"common_input_username" = "请输入用户名";
+"common_today" = "今天";
+"common_yesterday" = "昨天";
+"common_not_download" = "未下载";
+"common_sent" = "已发送";
+"common_already_download" = "已下载";
+"common_from" = "来自";
+"common_issue" = "发给";
+"common_old_file" = "以前的文件无法浏览。~!-.-";
+"common_my_group" = "我的群组";
+"common_all_group" = "所有群组";
+"common_search_tips" = "请输入搜索关键词";
+"common_search_public_number" = "查找公众号";
+"common_more" = "更多";
+"common_search_pn_tips" = "输入名、拼音、id进行搜索公众号";
+"common_cancel" = "取消";
+"common_error" = "错误";
+"common_camera_faild" = "获取摄像头时出现问题，请检查是否允许访问摄像头！";
+
+"common_roaming_tips" = "您尚有本地收藏的表情未漫游，可能在升级/安装过程中丢失。是否立即漫游？";
+"common_done_roaming" = "漫游";
+
+// Login
+"login" = "登录";
+"login_faild" = "登录失败.";
+"login_get_code" = "获取";
+"login_code" = "验证码";
+"Login_name" = "用户名";
+"login_agree" = "我已阅读并同意";
+"login_privacy_policy" = "使用条款和隐私政策";
+"login_input_code" = "请输入验证码";
+"login_waiting" = "请您耐心等待, 登录中...";
+"login_get_code_tips" = "验证码获取成功，请输入手机短信接收到的验证码进行登录。"; 
+"relogin_checkNetWork" = "   加载登录页面失败， \n 请确保您已经开启Wi-Fi或移动数据，并点击确认按钮重新加载页面";
+
+// User Privacy Settings
+"privacy_settings" = "隐私设置";
+"pms_all_refuse" = "拒绝任何人的消息";
+"pms_only_friend" = "仅接收好友的消息";
+"pms_all_allow" = "接收任何人的消息";
+"ps_all_refuse" = "拒绝任何人";
+"ps_question_answer" = "需要正确回答问题";
+"ps_validation" = "需要验证信息";
+"ps_all_allow" = "允许任何人";
+"privacy_setting_faild" = "修改设置失败。";
+"NSCameraUsageDescription" = "QTalk想要访问你的相机";
+"NSLocationWhenInUseUsageDescription" = "允许QTalk在您使用该应用时访问您的位置吗？";
+"NSLocationAlwaysUsageDescription" = "允许QTalk在您使用该应用时访问您的位置吗？";
+"NSPhotoLibraryUsageDescription" = "QTalk想要访问你的照片";
+"NSMicrophoneUsageDescription" = "QTalk想要访问你的麦克风";
+
+// QR Code
+"qrcode_title" = "扫二维码";
+"qrcode_tips" = "将取景框对准二维码，即可自动扫描。";
+"bar_code_title" = "扫条形码";
+"qrcode_album" = "相册";
+"qrcode_lights" = "开灯";
+
+// Personality dress up
+"personality_change_bgimage" = "更换聊天背景";
+"personality_chat_bgimage" = "聊天背景";
+"personality_chat_bubblecolor" = "字体大小";
+"personality_select_bgimage" = "选择背景图";
+"personality_album" = "从手机相册选择";
+"personality_camera" = "拍一张";
+"personality_selected_current" = "将图片作为当前聊天界面背景";
+"personality_selected_normal" = "将图片作为通用聊天界面背景";
+"personality_selected_all" = "将图片作为所有聊天界面背景";
+"personality_default" = "系统自带背景图";
+
+//自定义颜色
+"qtalk_team" = "QTalk 团队";
+"thanks" = "好的，我知道了，非常感谢～";
+"custom_bubble_entrance" = "多彩气泡";
+"custom_color_title" = "自定义颜色";
+"custom_bubble_preview" = "气泡/文本颜色";
+"Custom_Color_Choose_Btn" = "点击对应的按钮，可以设置相应的颜色址";
+"Custom_Color_FeedBack" = "设置后，会改变所有聊天窗口的气泡背景颜色，或者聊天字体颜色，也可以通过输入RGB十六进制颜色值设置颜色哦。  如果在使用过程中存在问题或意见，可反馈给QTalk团队";
+"custom_target_bubble_color" = "修改对方气泡颜色";
+"custom_target_font_color" = "修改对方字体颜色";
+"custom_myself_font_color" = "修改我的字体颜色";
+"custom_myself_bubble_color" = "修改我的气泡颜色";
+"custom_back_to_normal" = "恢复初始颜色搭配";
+
+// 自定义字体大小
+"custom_font_size_entrance" = "字体大小";
+"Preview_text_size" = "预览字体大小";
+"Drag_Change_Text_Size" = "拖动下面的滑块，可设置字体大小";
+"Text_Size_FeedBack" = "设置后，会改变聊天界面，消息列表等中的字体大小。\n如果在使用过程中存在问题或意见，可反馈给QTalk团队";
+"font_size_small" = "小";
+"font_size_standard" = "标准";
+"font_size_big" = "大";
+
+//聊天记录转发
+"Combine and Forward" = "合并转发";
+"One-by-One Forward" = "逐条转发";
+
+//密码
+"account" = "账号";
+"password" = "密码";
+"explore_title_passwords" = "密码箱";
+"password_tab_textPlaceholder" = "密码名称";
+"password_tab_show" = "显示密码";
+"password_tab_new" = "生成新密码";
+"password_tab_reset" = "重新生成密码";
+"password_tab_history" = "查看密码更改记录";
+"password_tab_history" = "查看密码更改记录";
+"password_tab_favorite" = "添加到收藏夹";
+"password_tab_removeFavorite" = "从收藏夹中删除";
+"password_tab_copy" = "复制";
+"password_tab_share" = "分享";
+"password_tab_export" = "导出";
+"password_menu_reveal" = "显示";
+"password_menu_conceal" = "隐藏";
+"password_menu_large" = "放大显示";
+"password_slider_characters" = "字符";
+"password_slider_length" = "长度";
+"password_slider_digits" = "数字";
+"password_slider_symbols" = "符号";
+"password_slider_upper" = "大写";
+"password_box_moveToBasket" = "移动到废纸篓";
+"password_box_security" = "安全";
+"password_box_securityIntro" = "  每次离开应用程序或退出密码箱若干分钟后再次打开密码箱时需要输入您的主密码。";
+"Password_tab_trash" = "废纸篓";
+"password_share_title" = "当您共享时请注意";
+"password_share_message" = "共享您的项目至QTalk以外会以纯文本形式发送它们。请确保您共享时使用的应用程序的安全性。";
+"password_share_undestand" = "我已了解";
+
+//TODOList
+"TodoList" = "待办事项";
+"todolist_pull_add" = "下拉添加新的待办事项";
+"todolist_think" = "我想...";
+
+"Notes" = "笔记";
+
+
+//权限提示
+"QTalk Privacy Location Message" = "    无法获取你的位置信息。     请到手机系统的[设置]->[隐私]->[定位服务]中打开定位服务，并允许QTalk使用定位服务。";
+"QChat Privacy Location Message" = "    无法获取你的位置信息。     请到手机系统的[设置]->[隐私]->[定位服务]中打开定位服务，并允许QChat使用定位服务。";
+
+"QTalk Privacy NotificationCenter Message" = "你现在无法收到新消息通知。请到系统[设置]->[通知]->[QTalk]中开启";
+"QCalk Privacy NotificationCenter Message" = "你现在无法收到新消息通知。请到系统[设置]->[通知]->[QChat]中开启";

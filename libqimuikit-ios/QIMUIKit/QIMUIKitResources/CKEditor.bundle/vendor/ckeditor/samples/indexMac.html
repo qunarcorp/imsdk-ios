@@ -1,0 +1,101 @@
+<head>
+    <title>Replace Textareas by Class Name — CKEditor Sample</title>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <script type="text/JavaScript" src="../ckeditor.js"></script>
+    <script type="text/javascript" src="../config.js"></script>
+    <script type="text/javascript">
+        function getData()
+        {
+            alert(CKEDITOR.instances.editor1.getData()); ;
+        }
+    </script>
+</head>
+<body>
+    
+    <p>
+    <label for="editor1"/> 
+    <textarea class="ckeditor" cols="80" id="editor1" name="editor1" rows="10" style="margin-top:199px;"><table>
+        <tbody>
+            <tr>
+                <td colspan="3">
+                    <h1>欢迎使用印象笔记，记录点点滴滴</h1>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">可以用来存放你的所思所想，所见所得，并保存起来，永不丢失。轻轻松松入门吧：</td>
+            </tr>
+            <tr>
+                <td style="vertical-align:top">
+                    <p><strong>想记笔记？很简单</strong></p>
+                    
+                    <ul>
+                        <li>点击&ldquo;新建笔记&rdquo;，写下此刻的绝妙想法或待办事项，或者保存你最喜欢的图片</li>
+                        <li>使用<a href="http://www.yinxiang.com/webclipper/">网页剪辑插件</a>，保存网页中你最感兴趣的部分</li>
+                        <li>使用iPhone，Android和其他手机上的印象笔记应用拍下白板上的重要内容，聚会上收到的名片或陈年红酒上的标签。<em>印象笔记甚至可以识别并搜索这些照片中的文字！</em></li>
+                    </ul>
+                    
+                    <p><strong>众多实用的功能</strong></p>
+                    
+                    <ul>
+                        <li>记笔记，存图片，列任务，看文章，什么都能做...</li>
+                        <li>使用任何电脑或者手机查看或者编辑笔记</li>
+                        <li>搜索或查找笔记中的任何内容，包括图片中的印刷体文字</li>
+                    </ul>
+                    
+                    <p><strong>随时随地使用</strong></p>
+                    
+                    <ul>
+                        <li>在电脑或者手机上下载并安装</li>
+                        <li>在网页浏览器上安装<a href="http://www.yinxiang.com/webclipper/">网页剪辑插件</a></li>
+                        <li>通过电子邮件发送笔记到指定的笔记本中</li>
+                        <li>通过印象笔记应用，如人脉，圈点等，导入内容到印象笔记</li>
+                    </ul>
+                    
+                    <p>想要体验更先进的功能？加入印象笔记的<a href="http://www.yinxiang.com/premium">高级会员</a>吧！</p>
+                </td>
+                <td>&nbsp;</td>
+                <td style="vertical-align:top">
+                    <p><strong>在电脑上安装</strong></p>
+                    
+                    <ul>
+                        <li><a href="http://www.yinxiang.com/download/#Windows">Windows</a></li>
+                        <li><a href="http://www.yinxiang.com/download/#Mac">Mac</a></li>
+                        <li><a href="http://www.yinxiang.com/webclipper">网页浏览器插件</a></li>
+                    </ul>
+                    
+                    <p><strong>在手机上安装</strong></p>
+                    
+                    <ul>
+                        <li><a href="http://www.yinxiang.com/download/#iPhone">iPhone/iPod</a></li>
+                        <li><a href="http://www.yinxiang.com/download/#iPad">iPad</a></li>
+                        <li><a href="http://www.yinxiang.com/download/#Android">Android Phone</a></li>
+                        <li><a href="http://www.yinxiang.com/download/#Android">Android Tablet</a></li>
+                    </ul>
+                    
+                    <p><strong>第一时间收到最新产品消息</strong></p>
+                    
+                    <ul>
+                        <li>访问<a href="http://www.yinxiang.com/blog">印象笔记博客</a></li>
+                        <li>在<a href="http://weibo.com/yinxiangbiji">新浪微博</a>上关注我们</li>
+                        <li>访问<a href="http://www.yinxiang.com/contact/support/knowledge_base.php">用户知识库</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table></textarea>
+    </p>
+    <script type="text/javascript">
+        //<![CDATA[
+        CKEDITOR.replace( 'editor1',
+                         {
+                         toolbar : 'MyToolbar'
+                         });
+                         
+                         //]]>
+        </script>
+    <p>
+    <input type="button" value="Button" onMouseDown="getData()">
+     
+     </p--> 
+    
+</body>

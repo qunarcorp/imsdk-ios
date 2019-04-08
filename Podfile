@@ -26,7 +26,6 @@ target 'IMSDK-iOS' do
     else
       puts '线上release方式'
       pod 'QIMUIKit', '~> 2.0'
-
     end
 
     project 'IMSDK-iOS.project'

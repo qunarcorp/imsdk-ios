@@ -13,39 +13,7 @@ target 'IMSDK-iOS' do
 
   # Pods for IMSDK-iOS
 
-    pod 'QIMUIKit', '~> 2.0'
-
-    project 'IMSDK-iOS.project'
-    # 取决于你的工程如何组织，你的node_modules文件夹可能会在别的地方。
-    # 请将:path后面的内容修改为正确的路径。
-
-    pod 'yoga', :path => './node_modules/react-native/ReactCommon/yoga'
-    # Third party deps podspec link
-    pod 'Folly', :podspec => './node_modules/react-native/third-party-podspecs/Folly.podspec'
-
-    pod 'React',
-    :path => './node_modules/react-native',
-    :subspecs => [
-    'Core',
-    'RCTImage',
-    'RCTNetwork',
-    'RCTText',
-    'RCTWebSocket',
-    'RCTLinkingIOS',
-    'RCTSettings',
-    'RCTVibration',
-    'RCTAnimation',
-    'ART',
-    'RCTGeolocation',
-    'RCTActionSheet',
-    'DevSupport',
-    'CxxBridge',
-    # 添加其他你想在工程中使用的依赖。
-    ]
-    pod 'react-native-image-picker', :path => './node_modules/react-native-image-picker'
-    pod 'RNSVG', :path => './node_modules/react-native-svg'
-    pod 'RNVectorIcons', :path => './node_modules/react-native-vector-icons'
-
+    pod 'QIMUIKit', '~> 3.0'
 end
 
 post_install do |installer_representation|
@@ -63,11 +31,6 @@ post_install do |installer_representation|
             text = File.read(copy_pods_resources_path)
             new_contents = text.gsub(string_to_replace, assets_compile_with_app_icon_arguments)
             File.open(copy_pods_resources_path, "w") {|file| file.puts new_contents }
-        end
-
-        target.build_configurations.each do |config|
-            config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'NO'
-            config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = '$(inherited) COCOAPODS=1 QIMWebRTCEnable=1 QIMNoteEnable=1 QIMAudioEnable=1 QIMZipEnable=1 QIMPinYinEnable=1, QIMRNEnable=1'
         end
     end
 end

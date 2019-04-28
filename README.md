@@ -48,7 +48,7 @@ Startalk私有云是一种去中心化的部署方式，
      [[QIMKit sharedInstance] loginWithUserName:@"san.zhang" WithPassWord:@"abcdef"];
   
   5. 获取消息对话列表页,贴到自定义VC的View上
-     UIView *sessionView = [[QIMSDKHelper sharedInstance] getQIMSessionListViewWithBaseFrame:self.view.bounds];
+     UIView *sessionView = [[QIMSDKUIHelper sharedInstance] getQIMSessionListViewWithBaseFrame:self.view.bounds];
      [self.view addSubview:sessionView];
   
   ```

@@ -23,7 +23,7 @@ Startalk私有云是一种去中心化的部署方式，
 ## Demo运行
 
 1. 初始化项目:  
-   在项目根目录执行 `bash InstallDemo.sh` 或 `npm install && pod install`
+   在项目根目录执行` pod install`
 2. 使用XCode打开IMSDK-iOS.xcworkspace并运行;
 
 ## 集成

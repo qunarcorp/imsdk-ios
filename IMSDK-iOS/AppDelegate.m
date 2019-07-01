@@ -228,7 +228,7 @@ void InitCrashReport()
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    [QIMKit setQIMProjectType:2];
     [self applicationInit];
     [[QIMKit sharedInstance] chooseNewData:YES];
     return YES;

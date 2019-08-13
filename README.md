@@ -23,11 +23,40 @@ Startalk私有云是一种去中心化的部署方式，
 ## Demo运行
 
 1. 初始化项目:  
-   在项目根目录执行 `bash InstallDemo.sh` 或 `npm install && pod install`
+   在项目根目录执行` pod install`
 2. 使用XCode打开IMSDK-iOS.xcworkspace并运行;
 
 ## 集成
 `imsdk-ios` 目前提供手动集成与Cocoapods集成的方式(IMSDK默认会依赖React-Native0.54版本), 具体步骤参考[集成文档](https://github.com/qunarcorp/imsdk-ios/wiki/QIMSDK-iOS%E6%8E%A5%E5%85%A5%E6%96%87%E6%A1%A3)
+
+## Swift 集成
+
+目前不支持Swift集成
+
+## 如何使用(主要接口)
+首先需要对sdk进行初始化操作，之后配置导航Url，然后进行登录。
+ ```init
+  1. 在需要使用QIMSDK的地方引入头文件QIMSDK.h
+     #import "QIMSDK.h"
+  2. 初始化QIMSDK中的UI栈（如果需要在不同的地方进行scheme跳转，切换页面务必重新初始化QIMSDK的UI栈）
+  
+     [QIMSDKUIHelper sharedInstanceWithRootNav:rootNav rootVc:rootVc];
+  ```
+ ```config
+  3. 配置导航地址
+
+      BOOL success = [[QIMKit sharedInstance] qimNav_updateNavigationConfigWithDomain:@"qim.com" WithUserName:@"san.zhang"];
+
+  4. 账号密码登录账号
+
+     [[QIMKit sharedInstance] loginWithUserName:@"san.zhang" WithPassWord:@"abcdef"];
+  
+  5. 获取消息对话列表页,贴到自定义VC的View上
+     UIView *sessionView = [[QIMSDKUIHelper sharedInstance] getQIMSessionListViewWithBaseFrame:self.view.bounds];
+     [self.view addSubview:sessionView];
+  
+  ```
+  [其他接口参考](https://github.com/qunarcorp/imsdk-ios/wiki/QIMSDK-iOS%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E)
 
 ## 历史版本:
 你可以在当前仓库的 [Release](https://github.com/qunarcorp/imsdk-ios/releases) 进行历史版本下载。

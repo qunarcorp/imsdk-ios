@@ -21,11 +21,11 @@
 #import <UserNotifications/UserNotifications.h>
 #endif
 
-#if defined (QIMNoteEnable) && QIMNoteEnable == 1
+#if __has_include("QIMNoteManager.h")
 #import "QIMNoteManager.h"
 #endif
 
-#if defined (QIMLogEnable) && QIMLogEnable == 1
+#if __has_include("QIMLocalLog.h")
 #import "QIMLocalLog.h"
 #endif
 #import "AvoidCrash.h"
@@ -64,8 +64,8 @@ void UncaughtExceptionHandler(NSException *exception) {
     NSString *systemVersion = [[QIMKit sharedInstance] SystemVersion];
     NSString *appVersion = [[QIMKit sharedInstance] AppBuildVersion];
     NSString *eventName = [NSString stringWithFormat:@"【%@】 -【SystemVersion:%@】-【AppVersion:%@】UncaughtExceptionHandler 捕获到崩溃了 - 【%@ %@】\n", userId, systemVersion, appVersion, name, reason];
-#if defined (QIMLogEnable) && QIMLogEnable == 1
-    
+#if __has_include("QIMLocalLog.h")
+
     [[QIMLocalLog sharedInstance] submitFeedBackWithContent:[NSString stringWithFormat:@"%@", eventName] withUserInitiative:NO];
     
 #endif
@@ -228,7 +228,7 @@ void InitCrashReport()
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    [QIMKit setQIMProjectType:2];
     [self applicationInit];
     [[QIMKit sharedInstance] chooseNewData:YES];
     return YES;
@@ -661,7 +661,7 @@ void InitCrashReport()
                                          @"FileSize": fileSize,
                                          @"FileLength": @([NSData dataWithContentsOfURL:url].length)};
             NSString *extendInfo = [[QIMJSONSerializer sharedInstance] serializeObject:jsonObject];
-            Message *msg = [Message new];
+            QIMMessageModel *msg = [QIMMessageModel new];
             [msg setMessage:extendInfo];
             [msg setMessageType:QIMMessageType_File];
             [msg setMessageId:[QIMUUIDTools UUID]];

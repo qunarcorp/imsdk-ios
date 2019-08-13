@@ -3,14 +3,23 @@
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 *.xcbkptlist
-*.xcuserstate  
-IMSDK-iOS.xcworkspace  
+*.xcuserstate
+IMSDK-iOS.xcworkspace
 xcuserdata  
 UserInterfaceState.xcuserstate  
-IMSDK-iOS.xcworkspace/  
+IMSDK-iOS.xcworkspace/
 xcuserdata/  
 UserInterface.xcuserstate
 
+*.xcuserstate
+project.xcworkspace
+xcuserdata
+UserInterfaceState.xcuserstate
+project.xcworkspace/
+xcuserdata/
+UserInterface.xcuserstate
+
+yarn.lock
 package-lock.json
 QIMSDK/Podfile.lock
 
@@ -76,16 +85,5 @@ npm-debug.log
 #
 Pods/*
 Podfile.lock
-QIMGeneralModule/Pods/*
-QIMKitVendor/Pods/*
-QIMCommonCategories/Pods/*
-QIMCommon/Pods/*
-QIMUIKit/Pods/*
-QIMIPadKit/Pods/
 QIMRNKit/Pods/*
-QIMRNTest/Pods/*
-QIMUIVendorKit/Pods/*
 QIMSDK/Pods/*
-QIMDataBase/Pods/*
-QIMNoteUI/Pods/*
-QIMPublicRedefineHeader/Pods/*

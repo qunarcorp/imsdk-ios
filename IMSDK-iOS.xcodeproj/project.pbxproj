@@ -181,6 +181,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-IMSDK-iOS/Pods-IMSDK-iOS-resources.sh",
 				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/QIMCommon/QIMCommonResource.bundle",
 				"${PODS_ROOT}/QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/call_bg@2x.png",
 				"${PODS_ROOT}/QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_audio_receive_normal@2x.png",
 				"${PODS_ROOT}/QIMGeneralModule/QIMGeneralModule/WebRTC/RTC/icons/icon_audio_receive_press@2x.png",
@@ -289,6 +290,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QIMCommonResource.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/call_bg@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_audio_receive_normal@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_audio_receive_press@2x.png",

@@ -12,9 +12,8 @@ target 'IMSDK-iOS' do
   # use_frameworks!
 
   # Pods for IMSDK-iOS
-
-    pod 'YYDispatchQueuePool'
-    pod 'QIMUIKit', '~> 3.0'
+ 
+    pod 'QIMUIKit', '~> 4.0'
 end
 
 post_install do |installer_representation|

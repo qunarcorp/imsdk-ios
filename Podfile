@@ -13,7 +13,7 @@ target 'IMSDK-iOS' do
 
   # Pods for IMSDK-iOS
  
-    pod 'QIMUIKit', '~> 3.0'
+    pod 'QIMUIKit', '~> 4.0'
 end
 
 post_install do |installer_representation|

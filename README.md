@@ -9,6 +9,14 @@ After the 5 steps above, you own strong IM abilities.
 
 Download client app [Download](https://im.qunar.com/new/#/download)
 
+- Android
+
+[![Startalk on Android](https://s.qunarzz.com/qtalk_official_web/pages/download/android.png)](https://qt.qunar.com/downloads/qtalk_android.apk)
+
+- iOS
+
+[![Startalk on iOS](https://qim.qunar.com/file/v2/download/temp/new/82a410a7a85627c123b1a7bd06745b4d.png?w=260&h=260)](https://qim.qunar.com/file/v2/download/temp/new/82a410a7a85627c123b1a7bd06745b4d.png?w=260&h=260)
+
 Configure navigation for client app [Configure navigation](https://im.qunar.com/new/#/platform/access_guide/manage_nav?id=manage_nav_mb)
 
 Private Cloud(Startalk SDK)

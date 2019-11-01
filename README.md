@@ -1,70 +1,99 @@
-公有云（Startalk APP）
+Startalk, The Best open sourced instant messenger software in the world!
+* [Chinese Version(中文版)](https://github.com/qunarcorp/imsdk-ios/blob/master/README_zh_CN.md)
+
+Public Cloud(Startalk App)
 =====
-基于Startalk服务器及客户端，用户可建立属于自己的域,
+Based on Startalk server and client-side, users can build their own domain,
+Sign up an account, create new domains, add users, download client app, and configure navigation for domain,
+After the 5 steps above, you own strong IM abilities.
 
-注册账号、新建域、添加域用户、下载客户端、配置域导航，
+Download client app [Download](https://im.qunar.com/new/#/download)
 
-仅需5步，您就可以拥有强大的im能力，
+Configure navigation for client app [Configure navigation](https://im.qunar.com/new/#/platform/access_guide/manage_nav?id=manage_nav_mb)
 
-客户端下载[下载](https://im.qunar.com/new/#/download)
-
-客户端导航配置[配置导航](https://im.qunar.com/new/#/platform/access_guide/manage_nav?id=manage_nav_mb)
-
-私有云（Startalk SDK）
+Private Cloud(Startalk SDK)
 =====
-Startalk私有云是一种去中心化的部署方式，
+Private Cloud is a way for decentralized deployment. Customers or enterprises would deploy the back end code on their own servers, embedding SDK into their own app. Every enterprise is an independent node; every node works independently, and the data would only be saved in the node.  
 
-用户或企业将Startalk后端代码完全部署在自己的服务器上，
+Please see the guide of embedding Android SDK and the configuration below.
 
-选择SDK嵌入自己的APP中，
+## Requirements
 
-每个公司都是一个单独的节点，每个节点独立运营，数据只保存在节点中
+- iOS 9.0 or later
+- Xcode 10.0 or later
 
-## Demo运行
+## Getting Started
 
-1. 初始化项目:  
-   在项目根目录执行` pod install`
-2. 使用XCode打开IMSDK-iOS.xcworkspace并运行;
+- Read this Readme doc
 
-## 集成
-`imsdk-ios` 目前提供手动集成与Cocoapods集成的方式(IMSDK默认会依赖React-Native0.54版本), 具体步骤参考[集成文档](https://github.com/qunarcorp/imsdk-ios/wiki/QIMSDK-iOS%E6%8E%A5%E5%85%A5%E6%96%87%E6%A1%A3)
+## Communication
+- If you'd like to **ask a general question**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/startalk).
+- If you **found a bug**, open an issue.
+- If you **have a feature request**, open an issue.
 
-## Swift 集成
 
-目前不支持Swift集成
+## Example Run
+```
+1. pod install
+2. open IMSDK-iOS.xcworkspace use Xcode10+
+```
+## How To Use
 
-## 如何使用(主要接口)
-首先需要对sdk进行初始化操作，之后配置导航Url，然后进行登录。
- ```init
-  1. 在需要使用QIMSDK的地方引入头文件QIMSDK.h
-     #import "QIMSDK.h"
-  2. 初始化QIMSDK中的UI栈（如果需要在不同的地方进行scheme跳转，切换页面务必重新初始化QIMSDK的UI栈）
+* Objective-C
+
+```objective-c
+#import "QIMSDK.h"
+...
+[QIMSDKUIHelper sharedInstanceWithRootNav:rootNav rootVc:rootVc];
+...
+BOOL success = [[QIMKit sharedInstance] qimNav_updateNavigationConfigWithDomain:@"qim.com" WithUserName:@"san.zhang"];
+if (success = YES) {
+  [[QIMKit sharedInstance] loginWithUserName:userName WithPassWord:userPwd];
+} else {
   
-     [QIMSDKUIHelper sharedInstanceWithRootNav:rootNav rootVc:rootVc];
-  ```
- ```config
-  3. 配置导航地址
+}
+...
+UIView *sessionView = [[QIMSDKUIHelper sharedInstance] getQIMSessionListViewWithBaseFrame:self.view.bounds];
+[self.view addSubview:sessionView];
+```
 
-      BOOL success = [[QIMKit sharedInstance] qimNav_updateNavigationConfigWithDomain:@"qim.com" WithUserName:@"san.zhang"];
+- For details about how to use the library and clear examples, see [The detailed How to use](https://github.com/qunarcorp/imsdk-ios/wiki/QIMSDK-iOS%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E)
 
-  4. 账号密码登录账号
+## Installation
 
-     [[QIMKit sharedInstance] loginWithUserName:@"san.zhang" WithPassWord:@"abcdef"];
-  
-  5. 获取消息对话列表页,贴到自定义VC的View上
-     UIView *sessionView = [[QIMSDKUIHelper sharedInstance] getQIMSessionListViewWithBaseFrame:self.view.bounds];
-     [self.view addSubview:sessionView];
-  
-  ```
-  [其他接口参考](https://github.com/qunarcorp/imsdk-ios/wiki/QIMSDK-iOS%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E)
+There are four ways to use QIMSDK in your project:
+- using CocoaPods
+- manual install (build frameworks or embed Xcode Project)
 
-## 历史版本:
-你可以在当前仓库的 [Release](https://github.com/qunarcorp/imsdk-ios/releases) 进行历史版本下载。
+### Installation with CocoaPods
 
-## 更新日志
+[CocoaPods](http://cocoapods.org/) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries in your projects. See the [Get Started](http://cocoapods.org/#get_started) section for more details.
 
-你可以在 [这里](https://github.com/qunarcorp/imsdk-ios/wiki/QIMSDKDemo-Changelog) 查看IMSDK所有更新信息
+#### Podfile
+```
+source 'https://github.com/qunarcorp/libqimkit-ios-cook.git'
+source 'git@github.com:CocoaPods/Specs.git'
+platform :ios, '9.0'
+pod 'QIMUIKit', '~> 4.0'
+```
 
-## 问题反馈
+### Manual Installation Guide
 
--   qchat@qunar.com（邮件）
+See more on [Manual install Guide](https://github.com/qunarcorp/imsdk-ios/wiki/QIMSDK-iOS%E6%8E%A5%E5%85%A5%E6%96%87%E6%A1%A3)
+
+### Import headers in your source files
+
+In the source files where you need to use the library, import the umbrella header file:
+
+```objective-c
+#import "QIMSDK.h"
+```
+
+### Build Project
+
+At this point your workspace should build without error. If you are having problem, post to the Issue and the
+community can help you solve it.
+
+Feedback
+=====
+-   qchat@qunar.com（Email）

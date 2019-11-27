@@ -12,9 +12,8 @@ target 'IMSDK-iOS' do
   # use_frameworks!
 
   # Pods for IMSDK-iOS
-
-    pod 'YYDispatchQueuePool'
-    pod 'QIMUIKit', '~> 3.0'
+ 
+    pod 'QIMUIKit', '~> 4.0'
 end
 
 post_install do |installer_representation|
@@ -32,6 +31,11 @@ post_install do |installer_representation|
             text = File.read(copy_pods_resources_path)
             new_contents = text.gsub(string_to_replace, assets_compile_with_app_icon_arguments)
             File.open(copy_pods_resources_path, "w") {|file| file.puts new_contents }
+        end
+        target.build_configurations.each do |config|
+          config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'NO'
+          config.build_settings['ENABLE_BITCODE'] = 'NO'
+          #      config.build_settings['FRAMEWORK_SEARCH_PATHS'] = '${PODS_ROOT}/**'
         end
     end
 end

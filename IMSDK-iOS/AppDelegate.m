@@ -652,29 +652,37 @@ void InitCrashReport()
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options {
     
     NSLog(@"applicationOpenURL : %@, options : %@", url, options);
-    [[QIMKit sharedInstance] uploadFileForData:[NSData dataWithContentsOfURL:url] forCacheType:QIMFileCacheTypeColoction isFile:YES fileExt:[url pathExtension] completionBlock:^(UIImage *image, NSError *error, QIMFileCacheType cacheType, NSString *imageURL) {
-        NSLog(@"imageUrl : %@", imageURL);
-        if (imageURL.length > 0) {
-            NSString *fileSize = [NSByteCountFormatter stringFromByteCount:[NSData dataWithContentsOfURL:url].length countStyle:NSByteCountFormatterCountStyleFile];
-            NSDictionary *jsonObject = @{@"HttpUrl": imageURL,
-                                         @"FileName": [url lastPathComponent],
-                                         @"FileSize": fileSize,
-                                         @"FileLength": @([NSData dataWithContentsOfURL:url].length)};
-            NSString *extendInfo = [[QIMJSONSerializer sharedInstance] serializeObject:jsonObject];
-            QIMMessageModel *msg = [QIMMessageModel new];
-            [msg setMessage:extendInfo];
-            [msg setMessageType:QIMMessageType_File];
-            [msg setMessageId:[QIMUUIDTools UUID]];
-            [msg setExtendInformation:extendInfo];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UINavigationController *navigation = (UINavigationController *)application.keyWindow.rootViewController;
-                UIViewController *contactVc = [[QIMSDKUIHelper shareInstance] getContactSelectionVC:msg withExternalForward:YES];
-                UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:contactVc];
-                
-                [navigation presentViewController:nav animated:YES completion:nil];
-            });
-        }
-    }];
+    NSData *fileData = [NSData dataWithContentsOfURL:url];
+    if (fileData.length > 0) {
+      NSString *fileName = url.absoluteString.lastPathComponent;
+      [[QIMKit sharedInstance] qim_saveLocalFileData:fileData withFileName:fileName];
+      NSString *filePath = [[QIMKit sharedInstance] qim_getLocalFileDataWithFileName:fileName];
+      NSString *fileSize = [NSByteCountFormatter stringFromByteCount:[NSData dataWithContentsOfURL:url].length countStyle:NSByteCountFormatterCountStyleFile];
+      NSString *fileMd5 = [fileData qim_md5String];
+      NSDictionary *jsonObject = @{
+                                   @"FileName": fileName,
+                                   @"FileSize": fileSize,
+                                   @"FileLength": @(fileData.length),
+                                   @"FileMd5": fileMd5 ? fileMd5 : @"",
+                                   @"IPLocalPath": filePath!=nil?filePath:@"",
+                                   @"Uploading": @(1)
+                                   };
+      NSString *extendInfo = [[QIMJSONSerializer sharedInstance] serializeObject:jsonObject];
+      QIMMessageModel *msg = [QIMMessageModel new];
+      [msg setMessage:extendInfo];
+      [msg setMessageType:QIMMessageType_File];
+      [msg setMessageId:[QIMUUIDTools UUID]];
+      [msg setMessageSendState:QIMMessageSendState_Waiting];
+      [msg setExtendInformation:extendInfo];
+      
+      dispatch_async(dispatch_get_main_queue(), ^{
+          UINavigationController *navigation = (UINavigationController *)application.keyWindow.rootViewController;
+          UIViewController *contactVc = [[QIMSDKUIHelper shareInstance] getContactSelectionVC:msg withExternalForward:YES];
+          UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:contactVc];
+          
+          [navigation presentViewController:nav animated:YES completion:nil];
+      });
+    }
     return YES;
 }
 #endif

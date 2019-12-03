@@ -32,5 +32,9 @@ post_install do |installer_representation|
             new_contents = text.gsub(string_to_replace, assets_compile_with_app_icon_arguments)
             File.open(copy_pods_resources_path, "w") {|file| file.puts new_contents }
         end
+        target.build_configurations.each do |config|
+          config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'NO'
+          config.build_settings['ENABLE_BITCODE'] = 'NO'
+        end
     end
 end

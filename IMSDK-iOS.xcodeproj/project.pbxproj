@@ -10,7 +10,6 @@
 		2C794BF921B173F90063BA11 /* open_scheme.html in Resources */ = {isa = PBXBuildFile; fileRef = 2C794BF821B173F90063BA11 /* open_scheme.html */; };
 		2CC52E1721B027DC0009EAB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC52E1621B027DC0009EAB5 /* AppDelegate.m */; };
 		2CC52E1A21B027DC0009EAB5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC52E1921B027DC0009EAB5 /* ViewController.m */; };
-		2CC52E1D21B027DC0009EAB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC52E1B21B027DC0009EAB5 /* Main.storyboard */; };
 		2CC52E1F21B027DE0009EAB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC52E1E21B027DE0009EAB5 /* Assets.xcassets */; };
 		2CC52E2221B027DE0009EAB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC52E2021B027DE0009EAB5 /* LaunchScreen.storyboard */; };
 		2CC52E2521B027DE0009EAB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC52E2421B027DE0009EAB5 /* main.m */; };
@@ -26,7 +25,6 @@
 		2CC52E1621B027DC0009EAB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2CC52E1821B027DC0009EAB5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2CC52E1921B027DC0009EAB5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		2CC52E1C21B027DC0009EAB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CC52E1E21B027DE0009EAB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CC52E2121B027DE0009EAB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CC52E2321B027DE0009EAB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 				2CC52E1621B027DC0009EAB5 /* AppDelegate.m */,
 				2CC52E1821B027DC0009EAB5 /* ViewController.h */,
 				2CC52E1921B027DC0009EAB5 /* ViewController.m */,
-				2CC52E1B21B027DC0009EAB5 /* Main.storyboard */,
 				2CC52E1E21B027DE0009EAB5 /* Assets.xcassets */,
 				2CC52E2021B027DE0009EAB5 /* LaunchScreen.storyboard */,
 				2CC52E2321B027DE0009EAB5 /* Info.plist */,
@@ -165,7 +162,6 @@
 				2CC52E2221B027DE0009EAB5 /* LaunchScreen.storyboard in Resources */,
 				2CC52E1F21B027DE0009EAB5 /* Assets.xcassets in Resources */,
 				2C794BF921B173F90063BA11 /* open_scheme.html in Resources */,
-				2CC52E1D21B027DC0009EAB5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +240,7 @@
 				"${PODS_ROOT}/QIMUIKit/QIMNoteUI/CKEditor5.bundle",
 				"${PODS_ROOT}/QIMUIKit/QIMNoteUI/QTPassword/EditPasswordView.xib",
 				"${PODS_ROOT}/QIMUIKit/QIMRNKit/QIMRNKit.bundle",
+				"${PODS_ROOT}/QIMUIKit/QIMUIKit/General/Verders/QIMSuperPlayer/SuperPlayer/Resource/SuperPlayer.bundle",
 				"${PODS_ROOT}/QIMUIKit/QIMUIKit/QIMUIKitResources/片段/NetWorkSetting.html",
 				"${PODS_ROOT}/QIMUIKit/QIMUIKit/QIMUIKitResources/片段/QIMMicroTourRoot.css",
 				"${PODS_ROOT}/QIMUIKit/QIMUIKit/QIMUIKitResources/片段/QIMMicroTourRoot.html",
@@ -353,6 +350,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CKEditor5.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EditPasswordView.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QIMRNKit.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SuperPlayer.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NetWorkSetting.html",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QIMMicroTourRoot.css",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QIMMicroTourRoot.html",
@@ -451,14 +449,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2CC52E1B21B027DC0009EAB5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CC52E1C21B027DC0009EAB5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2CC52E2021B027DE0009EAB5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -591,14 +581,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = B6CPF58V3M;
 				INFOPLIST_FILE = "IMSDK-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ProductName.IMSDK-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.qunar.qtalkDevelop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -612,14 +602,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = B6CPF58V3M;
 				INFOPLIST_FILE = "IMSDK-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.ProductName.IMSDK-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.qunar.qtalkDevelop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -652,6 +652,7 @@ void InitCrashReport()
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options {
     
     NSLog(@"applicationOpenURL : %@, options : %@", url, options);
+    /*
     [[QIMKit sharedInstance] uploadFileForData:[NSData dataWithContentsOfURL:url] forCacheType:QIMFileCacheTypeColoction isFile:YES fileExt:[url pathExtension] completionBlock:^(UIImage *image, NSError *error, QIMFileCacheType cacheType, NSString *imageURL) {
         NSLog(@"imageUrl : %@", imageURL);
         if (imageURL.length > 0) {
@@ -675,6 +676,7 @@ void InitCrashReport()
             });
         }
     }];
+    */
     return YES;
 }
 #endif
